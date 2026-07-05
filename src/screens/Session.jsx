@@ -5,6 +5,7 @@ import { loadLadder, loadEpisode, normalizeWord } from '../lib/contentLoader'
 import { dueItems } from '../lib/srs'
 import { useSegmentPlayer } from '../lib/audio'
 import { playClick, playCorrect, playWrong } from '../lib/sounds'
+import { playWord } from '../lib/speak'
 import QuestionCard from '../components/QuestionCard.jsx'
 import TranscriptBubbles from '../components/TranscriptBubbles.jsx'
 import VocabExercise from '../components/VocabExercise.jsx'
@@ -142,12 +143,15 @@ function WordsFlow({ episode, step, episodeId, navigate }) {
 
   const total = items.length
 
+  // Wordt aangeroepen vanuit een klik, zodat het automatisch uitspreken van het
+  // volgende woord als user-gesture telt (anders blokkeert de browser het).
   function next() {
     if (index >= total - 1) {
       completeStep(episodeId, step.id)
       navigate('/path')
       return
     }
+    playWord(items[index + 1].es)
     setIndex((i) => i + 1)
     setItemChecked(false)
   }
@@ -209,6 +213,7 @@ function WordsFlow({ episode, step, episodeId, navigate }) {
             style={{ marginTop: 14 }}
             onClick={() => {
               playClick()
+              playWord(items[0].es)
               setPhase('exercise')
             }}
           >

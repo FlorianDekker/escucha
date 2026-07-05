@@ -47,6 +47,7 @@ export default function Words() {
       options: buildOptions(item, allNl),
     }))
     if (!questions.length) return
+    playWord(questions[0].es)
     setSession({ questions, index: 0, selected: null, correctCount: 0, done: false })
   }
 
@@ -62,6 +63,9 @@ export default function Words() {
 
   function next() {
     playClick()
+    // Binnen de klik afspelen zodat de browser het niet als autoplay blokkeert.
+    const upcoming = session.questions[session.index + 1]
+    if (upcoming) playWord(upcoming.es)
     setSession((s) => {
       const nextIndex = s.index + 1
       if (nextIndex >= s.questions.length) return { ...s, done: true }
