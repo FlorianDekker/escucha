@@ -14,69 +14,324 @@
     "attributionNl": "Audio en transcript © Babbel — Un día en español"
   },
   "vocab": [
-    { "id": "la-playa", "es": "la playa", "nl": "het strand", "exampleEs": "Me encanta estar en la playa.", "core": true },
-    { "id": "la-ola", "es": "la ola", "nl": "de golf", "exampleEs": "¡Viene una ola!", "core": true },
-    { "id": "nadar", "es": "nadar", "nl": "zwemmen", "exampleEs": "Tengo un problema: ¡no sé nadar!", "core": true },
-    { "id": "la-tabla", "es": "la tabla", "nl": "de (surf)plank", "exampleEs": "Solo necesitas estar bien asegurada a la tabla.", "core": true },
-    { "id": "el-chaleco-salvavidas", "es": "el chaleco salvavidas", "nl": "het reddingsvest", "exampleEs": "Para mi primera lección tengo un chaleco salvavidas.", "core": true },
-    { "id": "el-miedo", "es": "el miedo", "nl": "de angst", "exampleEs": "Andrea supera sus miedos.", "core": true },
-    { "id": "temprano", "es": "temprano", "nl": "vroeg", "exampleEs": "Voy a la playa temprano en la mañana.", "core": true },
-    { "id": "madrugar", "es": "madrugar", "nl": "vroeg opstaan", "exampleEs": "Normalmente no me gusta madrugar.", "core": true },
-    { "id": "me-encanta", "es": "me encanta", "nl": "ik vind het geweldig", "exampleEs": "¡Me encanta el surf!", "core": true },
-    { "id": "aprender", "es": "aprender", "nl": "leren", "exampleEs": "Si quieres aprender, yo te puedo ayudar.", "core": true },
-    { "id": "las-vacaciones", "es": "las vacaciones", "nl": "de vakantie", "exampleEs": "Estoy de vacaciones en la costa pacífica de México.", "core": true },
-    { "id": "la-leccion", "es": "la lección", "nl": "de les", "exampleEs": "Estoy lista para mi primera lección de surf.", "core": true }
+    {
+      "id": "la-playa",
+      "es": "la playa",
+      "nl": "het strand",
+      "exampleEs": "Me encanta estar en la playa.",
+      "core": true,
+      "clip": {
+        "startSec": 146.96,
+        "endSec": 147.81
+      }
+    },
+    {
+      "id": "la-ola",
+      "es": "la ola",
+      "nl": "de golf",
+      "exampleEs": "¡Viene una ola!",
+      "core": true,
+      "clip": {
+        "startSec": 267.08,
+        "endSec": 268.17
+      }
+    },
+    {
+      "id": "nadar",
+      "es": "nadar",
+      "nl": "zwemmen",
+      "exampleEs": "Tengo un problema: ¡no sé nadar!",
+      "core": true,
+      "clip": {
+        "startSec": 139.46,
+        "endSec": 140.51
+      }
+    },
+    {
+      "id": "la-tabla",
+      "es": "la tabla",
+      "nl": "de (surf)plank",
+      "exampleEs": "Solo necesitas estar bien asegurada a la tabla.",
+      "core": true,
+      "clip": {
+        "startSec": 208.53,
+        "endSec": 209.56
+      }
+    },
+    {
+      "id": "el-chaleco-salvavidas",
+      "es": "el chaleco salvavidas",
+      "nl": "het reddingsvest",
+      "exampleEs": "Para mi primera lección tengo un chaleco salvavidas.",
+      "core": true,
+      "clip": {
+        "startSec": 231.24,
+        "endSec": 234.13
+      }
+    },
+    {
+      "id": "el-miedo",
+      "es": "el miedo",
+      "nl": "de angst",
+      "exampleEs": "Andrea supera sus miedos.",
+      "core": true,
+      "clip": {
+        "startSec": 65.8,
+        "endSec": 66.79
+      }
+    },
+    {
+      "id": "temprano",
+      "es": "temprano",
+      "nl": "vroeg",
+      "exampleEs": "Voy a la playa temprano en la mañana.",
+      "core": true,
+      "clip": {
+        "startSec": 147.44,
+        "endSec": 148.45
+      }
+    },
+    {
+      "id": "madrugar",
+      "es": "madrugar",
+      "nl": "vroeg opstaan",
+      "exampleEs": "Normalmente no me gusta madrugar.",
+      "core": true,
+      "clip": {
+        "startSec": 320.82,
+        "endSec": 321.81
+      }
+    },
+    {
+      "id": "me-encanta",
+      "es": "me encanta",
+      "nl": "ik vind het geweldig",
+      "exampleEs": "¡Me encanta el surf!",
+      "core": true,
+      "clip": {
+        "startSec": 296.34,
+        "endSec": 297.31
+      }
+    },
+    {
+      "id": "aprender",
+      "es": "aprender",
+      "nl": "leren",
+      "exampleEs": "Si quieres aprender, yo te puedo ayudar.",
+      "core": true,
+      "clip": {
+        "startSec": 213.23,
+        "endSec": 214.46
+      }
+    },
+    {
+      "id": "las-vacaciones",
+      "es": "las vacaciones",
+      "nl": "de vakantie",
+      "exampleEs": "Estoy de vacaciones en la costa pacífica de México.",
+      "core": true,
+      "clip": {
+        "startSec": 101.22,
+        "endSec": 102.27
+      }
+    },
+    {
+      "id": "la-leccion",
+      "es": "la lección",
+      "nl": "de les",
+      "exampleEs": "Estoy lista para mi primera lección de surf.",
+      "core": true,
+      "clip": {
+        "startSec": 226.74,
+        "endSec": 227.63
+      }
+    }
   ],
   "glossary": {
-    "hola": "hallo", "soy": "ik ben", "bienvenida": "welkom", "pódcast": "podcast", "español": "Spaans",
-    "vida": "leven", "hispanohablantes": "Spaanstaligen", "aprendes": "je leert", "episodio": "aflevering",
-    "historias": "verhalen", "reales": "echte", "personas": "mensen", "contadas": "verteld", "día": "dag",
-    "tranquilo": "rustig", "relajado": "ontspannen", "playa": "strand", "giro": "wending",
-    "inesperado": "onverwacht", "aventura": "avontuur", "supera": "overwint", "miedos": "angsten",
-    "escuchas": "je luistert", "atención": "aandacht", "ejemplos": "voorbeelden", "gusta": "bevalt / vind je leuk",
-    "encanta": "vind je geweldig", "saber": "weten, kunnen", "sabes": "je weet / je kunt",
-    "escuchamos": "we luisteren", "vacaciones": "vakantie", "costa": "kust", "pacífica": "Stille (Oceaan)",
-    "ciudad": "stad", "favorita": "favoriete", "famoso": "beroemd", "turistas": "toeristen",
-    "amantes": "liefhebbers", "olas": "golven", "ola": "golf", "grandes": "grote", "practican": "beoefenen",
-    "practicar": "beoefenen, doen aan", "problema": "probleem", "nadar": "zwemmen", "voy": "ik ga",
-    "temprano": "vroeg", "mañana": "ochtend / morgen", "todos": "alle", "días": "dagen",
-    "mirar": "kijken naar", "surfistas": "surfers", "leer": "lezen", "beber": "drinken",
-    "jugos": "sapjes", "frutas": "fruit", "repente": "plotseling (de repente)", "instructores": "instructeurs",
-    "instructor": "instructeur", "hablar": "praten", "conmigo": "met mij", "quieres": "je wilt",
-    "curso": "cursus", "mejor": "beter / liever", "gracias": "dank je", "verdad": "waarheid",
-    "entiendo": "ik begrijp (het)", "necesitas": "je hebt nodig", "asegurada": "vastgemaakt",
-    "tabla": "plank", "serio": "serieus (en serio = echt waar)", "ayudar": "helpen", "buenísimo": "supergoed",
-    "tarde": "middag", "vez": "keer (otra vez = nog een keer)", "lista": "klaar", "lección": "les",
-    "chaleco": "vest", "salvavidas": "reddings- (redt levens)", "seguridad": "veiligheid",
-    "primero": "eerst", "primera": "eerste", "fuera": "buiten", "agua": "water", "explica": "legt uit",
-    "cosas": "dingen", "responde": "antwoordt", "preguntas": "vragen", "nerviosa": "nerveus",
-    "tomar": "nemen, pakken", "esperamos": "we wachten (op)", "viene": "komt", "puedo": "ik kan",
-    "intento": "ik probeer", "después": "daarna", "finalmente": "eindelijk", "genial": "geweldig",
-    "horas": "uren", "terminamos": "we ronden af", "repetir": "herhalen", "perfectas": "perfecte",
-    "segunda": "tweede", "normalmente": "normaal gesproken", "madrugar": "vroeg opstaan",
-    "impresionado": "onder de indruk", "valor": "moed", "fácil": "makkelijk", "atreverse": "durven",
-    "menos": "minder (y menos si = laat staan als)", "veces": "keren (a veces = soms)",
-    "necesitamos": "we hebben nodig", "buen": "goed", "superar": "overwinnen", "nuestros": "onze",
-    "producido": "geproduceerd", "expertos": "experts", "idiomas": "talen", "amigos": "vrienden",
-    "explorar": "verkennen", "cultura": "cultuur", "lengua": "taal", "opinión": "mening",
-    "pregunta": "vraag", "correo": "e-mail", "comentario": "reactie", "preferida": "favoriete",
-    "escuchar": "luisteren", "próximo": "volgende", "quiero": "ik wil", "vivo": "ik woon",
-    "estoy": "ik ben (nu)", "ahora": "nu", "aquí": "hier", "también": "ook", "muy": "heel",
-    "pero": "maar", "porque": "omdat", "gustar": "leuk vinden",
-    "algo": "iets", "aprender": "leren", "bien": "goed", "bueno": "goed / nou ja",
-    "claro": "natuurlijk", "convierte": "verandert (in)", "da": "geeft", "doy": "ik geef",
-    "decir": "zeggen", "dos": "twee", "escuchado": "geluisterd", "estamos": "we zijn",
-    "expresar": "uitdrukken", "hacer": "doen, maken", "hispanohablante": "Spaanstalige",
-    "llevamos": "we nemen (je) mee", "monolingüe": "eentalig", "muchas": "veel",
-    "pasar": "doorbrengen", "perfecto": "perfect", "planea": "is van plan",
-    "practicamos": "we oefenen", "quiere": "wil", "solo": "alleen (maar)", "sí": "ja",
-    "surf": "surfen", "tablas": "planken", "aahh": "aah", "oh": "oh", "ok": "oké",
-    "andrea": "Andrea (naam)", "rodrigo": "Rodrigo (naam)", "tivo": "Tivo (naam)",
-    "méxico": "Mexico", "panamá": "Panama", "puerto": "Puerto (Escondido, plaats in Mexico)",
-    "escondido": "Escondido (letterlijk: verborgen)", "hawái": "Hawaï", "cancún": "Cancún (badplaats)",
-    "cabo": "Cabo (badplaats)", "estados": "Estados Unidos: Verenigde Staten",
-    "unidos": "Estados Unidos: Verenigde Staten", "latinoamérica": "Latijns-Amerika",
-    "babbel": "Babbel (maker van de podcast)", "app": "app", "hasta": "tot"
+    "hola": "hallo",
+    "soy": "ik ben",
+    "bienvenida": "welkom",
+    "pódcast": "podcast",
+    "español": "Spaans",
+    "vida": "leven",
+    "hispanohablantes": "Spaanstaligen",
+    "aprendes": "je leert",
+    "episodio": "aflevering",
+    "historias": "verhalen",
+    "reales": "echte",
+    "personas": "mensen",
+    "contadas": "verteld",
+    "día": "dag",
+    "tranquilo": "rustig",
+    "relajado": "ontspannen",
+    "playa": "strand",
+    "giro": "wending",
+    "inesperado": "onverwacht",
+    "aventura": "avontuur",
+    "supera": "overwint",
+    "miedos": "angsten",
+    "escuchas": "je luistert",
+    "atención": "aandacht",
+    "ejemplos": "voorbeelden",
+    "gusta": "bevalt / vind je leuk",
+    "encanta": "vind je geweldig",
+    "saber": "weten, kunnen",
+    "sabes": "je weet / je kunt",
+    "escuchamos": "we luisteren",
+    "vacaciones": "vakantie",
+    "costa": "kust",
+    "pacífica": "Stille (Oceaan)",
+    "ciudad": "stad",
+    "favorita": "favoriete",
+    "famoso": "beroemd",
+    "turistas": "toeristen",
+    "amantes": "liefhebbers",
+    "olas": "golven",
+    "ola": "golf",
+    "grandes": "grote",
+    "practican": "beoefenen",
+    "practicar": "beoefenen, doen aan",
+    "problema": "probleem",
+    "nadar": "zwemmen",
+    "voy": "ik ga",
+    "temprano": "vroeg",
+    "mañana": "ochtend / morgen",
+    "todos": "alle",
+    "días": "dagen",
+    "mirar": "kijken naar",
+    "surfistas": "surfers",
+    "leer": "lezen",
+    "beber": "drinken",
+    "jugos": "sapjes",
+    "frutas": "fruit",
+    "repente": "plotseling (de repente)",
+    "instructores": "instructeurs",
+    "instructor": "instructeur",
+    "hablar": "praten",
+    "conmigo": "met mij",
+    "quieres": "je wilt",
+    "curso": "cursus",
+    "mejor": "beter / liever",
+    "gracias": "dank je",
+    "verdad": "waarheid",
+    "entiendo": "ik begrijp (het)",
+    "necesitas": "je hebt nodig",
+    "asegurada": "vastgemaakt",
+    "tabla": "plank",
+    "serio": "serieus (en serio = echt waar)",
+    "ayudar": "helpen",
+    "buenísimo": "supergoed",
+    "tarde": "middag",
+    "vez": "keer (otra vez = nog een keer)",
+    "lista": "klaar",
+    "lección": "les",
+    "chaleco": "vest",
+    "salvavidas": "reddings- (redt levens)",
+    "seguridad": "veiligheid",
+    "primero": "eerst",
+    "primera": "eerste",
+    "fuera": "buiten",
+    "agua": "water",
+    "explica": "legt uit",
+    "cosas": "dingen",
+    "responde": "antwoordt",
+    "preguntas": "vragen",
+    "nerviosa": "nerveus",
+    "tomar": "nemen, pakken",
+    "esperamos": "we wachten (op)",
+    "viene": "komt",
+    "puedo": "ik kan",
+    "intento": "ik probeer",
+    "después": "daarna",
+    "finalmente": "eindelijk",
+    "genial": "geweldig",
+    "horas": "uren",
+    "terminamos": "we ronden af",
+    "repetir": "herhalen",
+    "perfectas": "perfecte",
+    "segunda": "tweede",
+    "normalmente": "normaal gesproken",
+    "madrugar": "vroeg opstaan",
+    "impresionado": "onder de indruk",
+    "valor": "moed",
+    "fácil": "makkelijk",
+    "atreverse": "durven",
+    "menos": "minder (y menos si = laat staan als)",
+    "veces": "keren (a veces = soms)",
+    "necesitamos": "we hebben nodig",
+    "buen": "goed",
+    "superar": "overwinnen",
+    "nuestros": "onze",
+    "producido": "geproduceerd",
+    "expertos": "experts",
+    "idiomas": "talen",
+    "amigos": "vrienden",
+    "explorar": "verkennen",
+    "cultura": "cultuur",
+    "lengua": "taal",
+    "opinión": "mening",
+    "pregunta": "vraag",
+    "correo": "e-mail",
+    "comentario": "reactie",
+    "preferida": "favoriete",
+    "escuchar": "luisteren",
+    "próximo": "volgende",
+    "quiero": "ik wil",
+    "vivo": "ik woon",
+    "estoy": "ik ben (nu)",
+    "ahora": "nu",
+    "aquí": "hier",
+    "también": "ook",
+    "muy": "heel",
+    "pero": "maar",
+    "porque": "omdat",
+    "gustar": "leuk vinden",
+    "algo": "iets",
+    "aprender": "leren",
+    "bien": "goed",
+    "bueno": "goed / nou ja",
+    "claro": "natuurlijk",
+    "convierte": "verandert (in)",
+    "da": "geeft",
+    "doy": "ik geef",
+    "decir": "zeggen",
+    "dos": "twee",
+    "escuchado": "geluisterd",
+    "estamos": "we zijn",
+    "expresar": "uitdrukken",
+    "hacer": "doen, maken",
+    "hispanohablante": "Spaanstalige",
+    "llevamos": "we nemen (je) mee",
+    "monolingüe": "eentalig",
+    "muchas": "veel",
+    "pasar": "doorbrengen",
+    "perfecto": "perfect",
+    "planea": "is van plan",
+    "practicamos": "we oefenen",
+    "quiere": "wil",
+    "solo": "alleen (maar)",
+    "sí": "ja",
+    "surf": "surfen",
+    "tablas": "planken",
+    "aahh": "aah",
+    "oh": "oh",
+    "ok": "oké",
+    "andrea": "Andrea (naam)",
+    "rodrigo": "Rodrigo (naam)",
+    "tivo": "Tivo (naam)",
+    "méxico": "Mexico",
+    "panamá": "Panama",
+    "puerto": "Puerto (Escondido, plaats in Mexico)",
+    "escondido": "Escondido (letterlijk: verborgen)",
+    "hawái": "Hawaï",
+    "cancún": "Cancún (badplaats)",
+    "cabo": "Cabo (badplaats)",
+    "estados": "Estados Unidos: Verenigde Staten",
+    "unidos": "Estados Unidos: Verenigde Staten",
+    "latinoamérica": "Latijns-Amerika",
+    "babbel": "Babbel (maker van de podcast)",
+    "app": "app",
+    "hasta": "tot"
   },
   "segments": [
     {
@@ -84,13 +339,26 @@
       "startSec": 7.0,
       "endSec": 50.0,
       "sentences": [
-        { "startSec": 7.0, "speaker": "Rodrigo", "es": "Hola, soy Rodrigo y te doy la bienvenida a Un día en español – monolingüe, el pódcast en español que te da la bienvenida a la vida de hispanohablantes en Estados Unidos y Latinoamérica." },
-        { "startSec": 27.0, "speaker": "Rodrigo", "es": "¿Hace poco que aprendes español? Entonces, este pódcast es perfecto para ti. En cada episodio te llevamos a un día en la vida de un hispanohablante. Son historias reales contadas por personas reales y en español, ¡claro!" }
+        {
+          "startSec": 7.0,
+          "speaker": "Rodrigo",
+          "es": "Hola, soy Rodrigo y te doy la bienvenida a Un día en español – monolingüe, el pódcast en español que te da la bienvenida a la vida de hispanohablantes en Estados Unidos y Latinoamérica."
+        },
+        {
+          "startSec": 27.0,
+          "speaker": "Rodrigo",
+          "es": "¿Hace poco que aprendes español? Entonces, este pódcast es perfecto para ti. En cada episodio te llevamos a un día en la vida de un hispanohablante. Son historias reales contadas por personas reales y en español, ¡claro!"
+        }
       ],
       "question": {
         "type": "mc",
         "promptNl": "Wat voor verhalen belooft deze podcast?",
-        "choices": ["Echte verhalen van echte mensen, in het Spaans", "Sprookjes voor kinderen", "Nieuwsberichten uit Spanje", "Interviews met beroemdheden"],
+        "choices": [
+          "Echte verhalen van echte mensen, in het Spaans",
+          "Sprookjes voor kinderen",
+          "Nieuwsberichten uit Spanje",
+          "Interviews met beroemdheden"
+        ],
         "answerIndex": 0,
         "explanationNl": "Rodrigo zegt: \"Son historias reales contadas por personas reales y en español.\" (Het zijn echte verhalen, verteld door echte mensen, in het Spaans.)"
       }
@@ -100,14 +368,31 @@
       "startSec": 50.0,
       "endSec": 94.0,
       "sentences": [
-        { "startSec": 50.0, "speaker": "Rodrigo", "es": "Andrea planea pasar un día tranquilo y relajado en la playa, pero su día da un giro inesperado: un día tranquilo se convierte en una aventura en la que Andrea supera sus miedos." },
-        { "startSec": 67.0, "speaker": "Rodrigo", "es": "Si escuchas con atención, este episodio tiene ejemplos de cómo expresar si algo te gusta o si te encanta. También puedes escuchar cómo usar \"saber\" y decir si sabes o no sabes hacer algo." },
-        { "startSec": 89.0, "speaker": "Rodrigo", "es": "¡Escuchamos ahora la aventura de Andrea!" }
+        {
+          "startSec": 50.0,
+          "speaker": "Rodrigo",
+          "es": "Andrea planea pasar un día tranquilo y relajado en la playa, pero su día da un giro inesperado: un día tranquilo se convierte en una aventura en la que Andrea supera sus miedos."
+        },
+        {
+          "startSec": 67.0,
+          "speaker": "Rodrigo",
+          "es": "Si escuchas con atención, este episodio tiene ejemplos de cómo expresar si algo te gusta o si te encanta. También puedes escuchar cómo usar \"saber\" y decir si sabes o no sabes hacer algo."
+        },
+        {
+          "startSec": 89.0,
+          "speaker": "Rodrigo",
+          "es": "¡Escuchamos ahora la aventura de Andrea!"
+        }
       ],
       "question": {
         "type": "mc",
         "promptNl": "Wat was Andrea's plan voor vandaag?",
-        "choices": ["Een rustige, ontspannen dag op het strand", "Een surfwedstrijd winnen", "Een lange wandeling in de bergen", "De hele dag thuisblijven"],
+        "choices": [
+          "Een rustige, ontspannen dag op het strand",
+          "Een surfwedstrijd winnen",
+          "Een lange wandeling in de bergen",
+          "De hele dag thuisblijven"
+        ],
         "answerIndex": 0,
         "explanationNl": "\"Andrea planea pasar un día tranquilo y relajado en la playa\": ze is een rustige stranddag van plan, maar het loopt anders."
       }
@@ -117,14 +402,27 @@
       "startSec": 94.0,
       "endSec": 121.0,
       "sentences": [
-        { "startSec": 94.0, "speaker": "Andrea", "es": "¡Hola! Soy Andrea. Soy de Panamá pero vivo en México. Ahora estoy de vacaciones en la costa pacífica de México, en Puerto Escondido, mi ciudad favorita." },
-        { "startSec": 109.0, "speaker": "Andrea", "es": "Puerto Escondido no es muy famoso para los turistas, como Cancún o Cabo, ¡pero es famoso para todos los amantes del surf!" }
+        {
+          "startSec": 94.0,
+          "speaker": "Andrea",
+          "es": "¡Hola! Soy Andrea. Soy de Panamá pero vivo en México. Ahora estoy de vacaciones en la costa pacífica de México, en Puerto Escondido, mi ciudad favorita."
+        },
+        {
+          "startSec": 109.0,
+          "speaker": "Andrea",
+          "es": "Puerto Escondido no es muy famoso para los turistas, como Cancún o Cabo, ¡pero es famoso para todos los amantes del surf!"
+        }
       ],
       "question": {
         "type": "vocabInContext",
         "vocabId": "las-vacaciones",
         "promptNl": "Je hoorde \"estoy de vacaciones\". Wat betekent dat?",
-        "choices": ["Ik ben op vakantie", "Ik ben aan het werk", "Ik ben verdwaald", "Ik ben thuis"],
+        "choices": [
+          "Ik ben op vakantie",
+          "Ik ben aan het werk",
+          "Ik ben verdwaald",
+          "Ik ben thuis"
+        ],
         "answerIndex": 0,
         "explanationNl": "\"Estar de vacaciones\" = op vakantie zijn. Andrea is op vakantie in Puerto Escondido, haar favoriete stad."
       }
@@ -134,13 +432,26 @@
       "startSec": 121.0,
       "endSec": 160.0,
       "sentences": [
-        { "startSec": 121.0, "speaker": "Andrea", "es": "Las olas en Puerto Escondido son como las olas de Hawái: ¡son olas muy grandes! Por eso hay muchas personas que practican surf aquí. Yo quiero practicar surf, pero tengo un problema: ¡no sé nadar!" },
-        { "startSec": 143.0, "speaker": "Andrea", "es": "Me encanta estar en la playa. Voy a la playa temprano en la mañana todos los días. Me gusta mirar a los surfistas. También me gusta leer en la playa y beber jugos de frutas." }
+        {
+          "startSec": 121.0,
+          "speaker": "Andrea",
+          "es": "Las olas en Puerto Escondido son como las olas de Hawái: ¡son olas muy grandes! Por eso hay muchas personas que practican surf aquí. Yo quiero practicar surf, pero tengo un problema: ¡no sé nadar!"
+        },
+        {
+          "startSec": 143.0,
+          "speaker": "Andrea",
+          "es": "Me encanta estar en la playa. Voy a la playa temprano en la mañana todos los días. Me gusta mirar a los surfistas. También me gusta leer en la playa y beber jugos de frutas."
+        }
       ],
       "question": {
         "type": "mc",
         "promptNl": "Wat is Andrea's probleem?",
-        "choices": ["Ze kan niet zwemmen", "Ze heeft geen surfplank", "Ze vindt het strand saai", "Ze is bang voor de zon"],
+        "choices": [
+          "Ze kan niet zwemmen",
+          "Ze heeft geen surfplank",
+          "Ze vindt het strand saai",
+          "Ze is bang voor de zon"
+        ],
         "answerIndex": 0,
         "explanationNl": "\"Tengo un problema: ¡no sé nadar!\": ze wil surfen, maar ze kan niet zwemmen."
       }
@@ -150,20 +461,61 @@
       "startSec": 160.0,
       "endSec": 220.0,
       "sentences": [
-        { "startSec": 160.0, "speaker": "Andrea", "es": "De repente, uno de los instructores de surf quiere hablar conmigo." },
-        { "startSec": 166.0, "speaker": "Tivo", "es": "¡Hola! ¿Cómo estás? Soy Tivo. Soy instructor de surf. ¿Quieres hacer un curso de surf?" },
-        { "startSec": 180.0, "speaker": "Andrea", "es": "Oh... Mejor no... gracias." },
-        { "startSec": 183.0, "speaker": "Tivo", "es": "¿Por qué no? ¿No te gusta el surf?" },
-        { "startSec": 187.0, "speaker": "Andrea", "es": "Bueno... la verdad es que… no sé nadar." },
-        { "startSec": 191.0, "speaker": "Tivo", "es": "Aahh… Entiendo, pero eso no es un problema: ¡no necesitas saber nadar! ¡Solo necesitas estar bien asegurada a la tabla!" },
-        { "startSec": 209.0, "speaker": "Andrea", "es": "¿En serio?" },
-        { "startSec": 210.0, "speaker": "Tivo", "es": "Sí, en serio. Si quieres aprender, yo te puedo ayudar." },
-        { "startSec": 217.0, "speaker": "Andrea", "es": "¡OK! Buenísimo." }
+        {
+          "startSec": 160.0,
+          "speaker": "Andrea",
+          "es": "De repente, uno de los instructores de surf quiere hablar conmigo."
+        },
+        {
+          "startSec": 166.0,
+          "speaker": "Tivo",
+          "es": "¡Hola! ¿Cómo estás? Soy Tivo. Soy instructor de surf. ¿Quieres hacer un curso de surf?"
+        },
+        {
+          "startSec": 180.0,
+          "speaker": "Andrea",
+          "es": "Oh... Mejor no... gracias."
+        },
+        {
+          "startSec": 183.0,
+          "speaker": "Tivo",
+          "es": "¿Por qué no? ¿No te gusta el surf?"
+        },
+        {
+          "startSec": 187.0,
+          "speaker": "Andrea",
+          "es": "Bueno... la verdad es que… no sé nadar."
+        },
+        {
+          "startSec": 191.0,
+          "speaker": "Tivo",
+          "es": "Aahh… Entiendo, pero eso no es un problema: ¡no necesitas saber nadar! ¡Solo necesitas estar bien asegurada a la tabla!"
+        },
+        {
+          "startSec": 209.0,
+          "speaker": "Andrea",
+          "es": "¿En serio?"
+        },
+        {
+          "startSec": 210.0,
+          "speaker": "Tivo",
+          "es": "Sí, en serio. Si quieres aprender, yo te puedo ayudar."
+        },
+        {
+          "startSec": 217.0,
+          "speaker": "Andrea",
+          "es": "¡OK! Buenísimo."
+        }
       ],
       "question": {
         "type": "mc",
         "promptNl": "Waarom is niet kunnen zwemmen volgens Tivo geen probleem?",
-        "choices": ["Je zit goed vastgemaakt aan de surfplank", "De zee is daar heel ondiep", "Hij zwemt de hele tijd naast je", "Je blijft gewoon op het strand oefenen"],
+        "choices": [
+          "Je zit goed vastgemaakt aan de surfplank",
+          "De zee is daar heel ondiep",
+          "Hij zwemt de hele tijd naast je",
+          "Je blijft gewoon op het strand oefenen"
+        ],
         "answerIndex": 0,
         "explanationNl": "Tivo zegt: \"¡Solo necesitas estar bien asegurada a la tabla!\" (Je hoeft alleen maar goed vast te zitten aan de plank.)"
       }
@@ -173,16 +525,33 @@
       "startSec": 220.0,
       "endSec": 257.0,
       "sentences": [
-        { "startSec": 220.0, "speaker": "Andrea", "es": "En la tarde estoy otra vez en la playa, lista para mi primera lección de surf." },
-        { "startSec": 228.0, "speaker": "Andrea", "es": "Para mi primera lección tengo un chaleco salvavidas. Eso está bien: me gusta la seguridad." },
-        { "startSec": 238.0, "speaker": "Andrea", "es": "Primero Tivo y yo practicamos fuera del agua. Él me explica muchas cosas y responde a todas mis preguntas. Ahora no estoy nerviosa y estoy lista para tomar olas." }
+        {
+          "startSec": 220.0,
+          "speaker": "Andrea",
+          "es": "En la tarde estoy otra vez en la playa, lista para mi primera lección de surf."
+        },
+        {
+          "startSec": 228.0,
+          "speaker": "Andrea",
+          "es": "Para mi primera lección tengo un chaleco salvavidas. Eso está bien: me gusta la seguridad."
+        },
+        {
+          "startSec": 238.0,
+          "speaker": "Andrea",
+          "es": "Primero Tivo y yo practicamos fuera del agua. Él me explica muchas cosas y responde a todas mis preguntas. Ahora no estoy nerviosa y estoy lista para tomar olas."
+        }
       ],
       "question": {
         "type": "gap",
         "vocabId": "el-chaleco-salvavidas",
         "promptNl": "Vul aan wat je hoorde:",
         "textEs": "Para mi primera lección tengo un chaleco ___.",
-        "choices": ["salvavidas", "favorito", "pequeño", "nuevo"],
+        "choices": [
+          "salvavidas",
+          "favorito",
+          "pequeño",
+          "nuevo"
+        ],
         "answerIndex": 0,
         "explanationNl": "\"Un chaleco salvavidas\" = een reddingsvest (letterlijk: een vest dat levens redt)."
       }
@@ -192,16 +561,41 @@
       "startSec": 257.0,
       "endSec": 291.0,
       "sentences": [
-        { "startSec": 257.0, "speaker": "Andrea", "es": "Tivo y yo estamos en las tablas y esperamos una ola." },
-        { "startSec": 266.0, "speaker": "Andrea", "es": "¡Viene una ola!" },
-        { "startSec": 271.0, "speaker": "Andrea", "es": "Pero no puedo tomar la primera ola." },
-        { "startSec": 275.0, "speaker": "Andrea", "es": "Intento tomar otra ola y después otra y otra, y, finalmente, tomo la ola. ¡Es genial!" },
-        { "startSec": 285.0, "speaker": "Andrea", "es": "Dos horas después Tivo y yo terminamos la lección." }
+        {
+          "startSec": 257.0,
+          "speaker": "Andrea",
+          "es": "Tivo y yo estamos en las tablas y esperamos una ola."
+        },
+        {
+          "startSec": 266.0,
+          "speaker": "Andrea",
+          "es": "¡Viene una ola!"
+        },
+        {
+          "startSec": 271.0,
+          "speaker": "Andrea",
+          "es": "Pero no puedo tomar la primera ola."
+        },
+        {
+          "startSec": 275.0,
+          "speaker": "Andrea",
+          "es": "Intento tomar otra ola y después otra y otra, y, finalmente, tomo la ola. ¡Es genial!"
+        },
+        {
+          "startSec": 285.0,
+          "speaker": "Andrea",
+          "es": "Dos horas después Tivo y yo terminamos la lección."
+        }
       ],
       "question": {
         "type": "mc",
         "promptNl": "Lukt het Andrea om een golf te pakken?",
-        "choices": ["Ja, maar pas na een paar pogingen", "Ja, meteen bij de eerste golf", "Nee, het lukt haar niet", "Nee, ze durft het water niet in"],
+        "choices": [
+          "Ja, maar pas na een paar pogingen",
+          "Ja, meteen bij de eerste golf",
+          "Nee, het lukt haar niet",
+          "Nee, ze durft het water niet in"
+        ],
         "answerIndex": 0,
         "explanationNl": "Ze mist de eerste golf, probeert het steeds opnieuw (\"otra y otra\") en pakt hem dan eindelijk: \"finalmente, tomo la ola\"."
       }
@@ -211,16 +605,37 @@
       "startSec": 291.0,
       "endSec": 325.0,
       "sentences": [
-        { "startSec": 291.0, "speaker": "Tivo", "es": "¿Qué tal? ¿Te gusta el surf?" },
-        { "startSec": 295.0, "speaker": "Andrea", "es": "¡Sí! ¡Me encanta el surf! ¡Mañana quiero repetir! ¿Puedo?" },
-        { "startSec": 301.0, "speaker": "Tivo", "es": "Sí, pero tiene que ser muy temprano, mañana a las 6 de la mañana las olas van a estar perfectas para tu segunda lección." },
-        { "startSec": 316.0, "speaker": "Andrea", "es": "Normalmente no me gusta madrugar… ¡pero puedo madrugar si voy a practicar surf!" }
+        {
+          "startSec": 291.0,
+          "speaker": "Tivo",
+          "es": "¿Qué tal? ¿Te gusta el surf?"
+        },
+        {
+          "startSec": 295.0,
+          "speaker": "Andrea",
+          "es": "¡Sí! ¡Me encanta el surf! ¡Mañana quiero repetir! ¿Puedo?"
+        },
+        {
+          "startSec": 301.0,
+          "speaker": "Tivo",
+          "es": "Sí, pero tiene que ser muy temprano, mañana a las 6 de la mañana las olas van a estar perfectas para tu segunda lección."
+        },
+        {
+          "startSec": 316.0,
+          "speaker": "Andrea",
+          "es": "Normalmente no me gusta madrugar… ¡pero puedo madrugar si voy a practicar surf!"
+        }
       ],
       "question": {
         "type": "vocabInContext",
         "vocabId": "madrugar",
         "promptNl": "Je hoorde \"no me gusta madrugar\". Wat betekent \"madrugar\"?",
-        "choices": ["Vroeg opstaan", "Laat naar bed gaan", "Ontbijten", "Hardlopen"],
+        "choices": [
+          "Vroeg opstaan",
+          "Laat naar bed gaan",
+          "Ontbijten",
+          "Hardlopen"
+        ],
         "answerIndex": 0,
         "explanationNl": "\"Madrugar\" = heel vroeg opstaan. Andrea houdt er niet van, maar voor het surfen doet ze het graag."
       }
@@ -230,12 +645,21 @@
       "startSec": 325.0,
       "endSec": 350.0,
       "sentences": [
-        { "startSec": 325.0, "speaker": "Rodrigo", "es": "¿Tú también estás impresionado con el valor de Andrea? No es fácil atreverse a hacer surf con olas tan grandes, ¡y menos si no sabes nadar! A veces necesitamos un buen chaleco salvavidas para superar nuestros miedos." }
+        {
+          "startSec": 325.0,
+          "speaker": "Rodrigo",
+          "es": "¿Tú también estás impresionado con el valor de Andrea? No es fácil atreverse a hacer surf con olas tan grandes, ¡y menos si no sabes nadar! A veces necesitamos un buen chaleco salvavidas para superar nuestros miedos."
+        }
       ],
       "question": {
         "type": "mc",
         "promptNl": "Wat is de boodschap van Rodrigo aan het einde?",
-        "choices": ["Soms heb je een 'reddingsvest' nodig om je angsten te overwinnen", "Surfen is te gevaarlijk als je niet kunt zwemmen", "Iedereen moet surfles nemen in Mexico", "Vroeg opstaan is goed voor je gezondheid"],
+        "choices": [
+          "Soms heb je een 'reddingsvest' nodig om je angsten te overwinnen",
+          "Surfen is te gevaarlijk als je niet kunt zwemmen",
+          "Iedereen moet surfles nemen in Mexico",
+          "Vroeg opstaan is goed voor je gezondheid"
+        ],
         "answerIndex": 0,
         "explanationNl": "\"A veces necesitamos un buen chaleco salvavidas para superar nuestros miedos\": soms heb je iets (of iemand) nodig dat je veiligheid geeft om je angst te overwinnen."
       }

@@ -132,9 +132,9 @@ export const useStore = create(
       },
 
       /* Woord toevoegen aan de SRS-stapel (uit vocab-les of tap-op-woord). */
-      srsAdd(key, es, nl, sourceEpisodeId) {
+      srsAdd(key, es, nl, sourceEpisodeId, extras) {
         if (get().srs[key]) return
-        set((s) => ({ srs: { ...s.srs, [key]: newSrsItem(es, nl, sourceEpisodeId) } }))
+        set((s) => ({ srs: { ...s.srs, [key]: newSrsItem(es, nl, sourceEpisodeId, extras) } }))
       },
 
       srsReview(key, correct) {

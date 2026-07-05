@@ -122,19 +122,58 @@ function WordsFlow({ episode, step, episodeId, navigate }) {
   const [itemChecked, setItemChecked] = useState(false)
 
   // Oefenitems eenmalig samenstellen: core-vocab + max 6 due SRS-items (geen duplicaten).
+  // Elk item krijgt waar mogelijk een audioclip (woord uitgesproken in de podcast).
   const [items] = useState(() => {
-    const core = episode.vocab.filter((v) => v.core)
+    const core = episode.vocab
+      .filter((v) => v.core)
+      .map((v) => ({ ...v, audioUrl: v.clip ? episode.audioUrl : null }))
     const keys = new Set(core.map((v) => normalizeWord(v.es)))
     const extra = []
     for (const it of dueItems(useStore.getState().srs)) {
       const k = normalizeWord(it.es)
       if (keys.has(k)) continue
       keys.add(k)
-      extra.push({ id: 'srs-' + k, es: it.es, nl: it.nl })
+      extra.push({ id: 'srs-' + k, es: it.es, nl: it.nl, clip: it.clip, audioUrl: it.audioUrl })
       if (extra.length >= 6) break
     }
     return [...core, ...extra]
   })
+
+  // Woordclips afspelen: één <audio>-element per bron-mp3, gestopt via een timer
+  // die pas wordt gezet als het afspelen echt loopt (seek/buffer-vertraging).
+  const clipAudiosRef = useRef(new Map())
+  const clipTimerRef = useRef(null)
+  useEffect(() => {
+    const audios = clipAudiosRef.current
+    return () => {
+      clearTimeout(clipTimerRef.current)
+      for (const a of audios.values()) {
+        a.pause()
+        a.removeAttribute('src')
+        a.load()
+      }
+      audios.clear()
+    }
+  }, [])
+
+  async function playWordClip(clip, url) {
+    if (!clip || !url) return
+    let a = clipAudiosRef.current.get(url)
+    if (!a) {
+      a = new Audio(url)
+      a.preload = 'auto'
+      clipAudiosRef.current.set(url, a)
+    }
+    clearTimeout(clipTimerRef.current)
+    try {
+      a.currentTime = clip.startSec
+      await a.play()
+      const remaining = Math.max(0.15, clip.endSec - a.currentTime)
+      clipTimerRef.current = setTimeout(() => a.pause(), remaining * 1000)
+    } catch {
+      /* geen audio is geen ramp */
+    }
+  }
 
   const pool = useMemo(() => items.map((i) => i.nl), [items])
   const glossaryValues = useMemo(() => Object.values(episode.glossary || {}), [episode])
@@ -261,6 +300,7 @@ function WordsFlow({ episode, step, episodeId, navigate }) {
           pool={pool}
           glossaryValues={glossaryValues}
           episodeId={episodeId}
+          onPlayClip={item.clip && item.audioUrl ? () => playWordClip(item.clip, item.audioUrl) : null}
           onChecked={() => setItemChecked(true)}
           onContinue={next}
           isLast={index === total - 1}

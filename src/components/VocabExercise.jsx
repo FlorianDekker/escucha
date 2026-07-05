@@ -22,6 +22,7 @@ export default function VocabExercise({
   pool,
   glossaryValues,
   episodeId,
+  onPlayClip,
   onChecked,
   onContinue,
   isLast,
@@ -76,8 +77,16 @@ export default function VocabExercise({
       ok = matchesTyped(typed, item.nl)
     }
     // SRS bijwerken: eerst toevoegen indien nieuw, dan de review verwerken.
+    // Clip + audioUrl gaan mee zodat het woord ook bij latere herhalingen
+    // door de podcast kan worden uitgesproken.
     const key = normalizeWord(item.es)
-    srsAdd(key, item.es, item.nl, episodeId)
+    srsAdd(
+      key,
+      item.es,
+      item.nl,
+      episodeId,
+      item.clip && item.audioUrl ? { clip: item.clip, audioUrl: item.audioUrl } : undefined,
+    )
     srsReview(key, ok)
     if (ok) playCorrect()
     else playWrong()
@@ -92,10 +101,20 @@ export default function VocabExercise({
     <>
       <p className="q-prompt">Wat betekent dit woord?</p>
 
-      <div className="word-card">
+      <div
+        className="word-card"
+        onClick={onPlayClip || undefined}
+        role={onPlayClip ? 'button' : undefined}
+        style={onPlayClip ? { cursor: 'pointer' } : undefined}
+      >
         <div className="spk" aria-hidden="true">🔊</div>
         <div>
           <p className="es">{item.es}</p>
+          {onPlayClip && (
+            <p style={{ margin: '2px 0 0', color: 'var(--brand-soft)', fontWeight: 700, fontSize: 12 }}>
+              tik om te beluisteren
+            </p>
+          )}
         </div>
       </div>
 

@@ -6,7 +6,7 @@
 
 const DAY_MS = 24 * 60 * 60 * 1000
 
-export function newSrsItem(es, nl, sourceEpisodeId, today = todayStr()) {
+export function newSrsItem(es, nl, sourceEpisodeId, extras = {}, today = todayStr()) {
   return {
     es,
     nl,
@@ -16,6 +16,9 @@ export function newSrsItem(es, nl, sourceEpisodeId, today = todayStr()) {
     lapses: 0,
     dueDate: today,
     sourceEpisodeId,
+    // extras: bijv. { clip: {startSec, endSec}, audioUrl } zodat het woord ook
+    // in latere herhalingen door de podcast kan worden uitgesproken
+    ...extras,
   }
 }
 
