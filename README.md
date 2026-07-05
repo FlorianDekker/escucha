@@ -1,4 +1,4 @@
-# Escucha
+# Vamos!
 
 Duolingo-achtige web-app om Spaans te leren met echte podcasts: eerst de kernwoorden oefenen, dan luisteren met auto-pauze per fragment en een vraag over wat je net hoorde, daarna meelezen met tap-op-woord-vertaling. Voortgang (streak, XP, spaced repetition) staat in localStorage.
 
