@@ -14,6 +14,26 @@ import '../session.css'
 
 const RATES = [0.75, 1, 1.25]
 
+/* Bewijsfragment onder de feedback: de zin waarin het antwoord zat, terug te
+   luisteren met NL-vertaling ernaast. */
+function EvidenceCard({ evidence, onPlay }) {
+  if (!evidence || evidence.startSec == null) return null
+  return (
+    <div className="answer-card">
+      <p className="lbl">HIER HOORDE JE HET</p>
+      <div className="evidence-row">
+        <button type="button" className="evidence-play" onClick={onPlay} aria-label="Speel het fragment">
+          <span />
+        </button>
+        <div>
+          <p className="evidence-es">{evidence.es}</p>
+          <p className="evidence-nl">{evidence.nl}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Session() {
   const { unitId, stepId } = useParams()
   const navigate = useNavigate()
@@ -101,7 +121,8 @@ export default function Session() {
   }
 
   const episodeId = episode.id
-  const common = { episode, unit, step, episodeId, navigate }
+  const podcast = ladder.podcasts?.[episode.podcastId]
+  const common = { episode, unit, step, episodeId, podcast, navigate }
 
   if (step.type === 'words') return <WordsFlow key={stepId} {...common} />
   if (step.type === 'listen') return <ListenFlow key={stepId} {...common} />
@@ -114,7 +135,7 @@ export default function Session() {
 /* ============================================================
    A) WORDS  ·  intro (scherm 3) -> woordoefening (scherm 4)
    ============================================================ */
-function WordsFlow({ episode, step, episodeId, navigate }) {
+function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
   const completeStep = useStore((s) => s.completeStep)
   const streak = useStore((s) => s.streak)
 
@@ -158,8 +179,6 @@ function WordsFlow({ episode, step, episodeId, navigate }) {
 
   // ---- Intro (scherm 3) ----
   if (phase === 'intro') {
-    const chips = episode.vocab.slice(0, 6)
-    const extra = episode.vocab.length - chips.length
     const minutes = Math.round(episode.durationSec / 60)
     const meta = `${episode.segments.length} fragmenten · ${minutes} min · ${episode.vocab.length} woorden`
     return (
@@ -174,7 +193,18 @@ function WordsFlow({ episode, step, episodeId, navigate }) {
           </button>
         </div>
 
-        <div className="intro-art" />
+        <div
+          className="intro-art"
+          style={
+            podcast?.artUrl
+              ? {
+                  backgroundImage: `url(${import.meta.env.BASE_URL}${podcast.artUrl})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }
+              : undefined
+          }
+        />
         <p className="intro-kicker">PODCAST · {episode.level}</p>
         <p className="intro-title">{episode.title}</p>
         <p className="intro-meta">{meta}</p>
@@ -182,13 +212,21 @@ function WordsFlow({ episode, step, episodeId, navigate }) {
         <div className="intro-sheet">
           <p className="intro-desc">{episode.descriptionNl}</p>
           <p className="intro-h">Woorden in deze aflevering</p>
-          <div className="chips">
-            {chips.map((v) => (
-              <span key={v.id} className="chip">
-                {v.es}
-              </span>
+          <div className="word-list">
+            {episode.vocab.map((v) => (
+              <button key={v.id} type="button" className="word-row" onClick={() => playWord(v.es)}>
+                <span className="word-es">
+                  <i>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 9v6h4l5 4V5L8 9H4z" />
+                      <path d="M16.5 8.5a5 5 0 0 1 0 7" />
+                    </svg>
+                  </i>
+                  {v.es}
+                </span>
+                <span className="word-nl">{v.nl}</span>
+              </button>
             ))}
-            {extra > 0 && <span className="chip more">+{extra}</span>}
           </div>
 
           <div className="grow" />
@@ -466,6 +504,11 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
             <p className="answer-note">{q.explanationNl}</p>
           </div>
 
+          <EvidenceCard
+            evidence={q.evidence}
+            onPlay={() => playSegment(q.evidence.startSec, q.evidence.endSec, rate)}
+          />
+
           <p className="intro-h" style={{ color: '#fff', marginTop: 22 }}>
             Transcript
           </p>
@@ -585,7 +628,7 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
                 style={{ marginTop: 12 }}
                 onClick={check}
               >
-                Controleer
+                Controleren
               </button>
             )}
           </div>
@@ -755,12 +798,18 @@ function GateFlow({ episode, step, episodeId, navigate }) {
         />
 
         {revealed && (
-          <div className={'fb-bar ' + (selected === seg.question.answerIndex ? 'ok' : 'bad')}>
-            <p className="head">
-              {selected === seg.question.answerIndex ? '¡Correcto!' : 'Helaas, niet goed'}
-            </p>
-            <p className="sub">{seg.question.explanationNl}</p>
-          </div>
+          <>
+            <div className={'fb-bar ' + (selected === seg.question.answerIndex ? 'ok' : 'bad')}>
+              <p className="head">
+                {selected === seg.question.answerIndex ? '¡Correcto!' : 'Helaas, niet goed'}
+              </p>
+              <p className="sub">{seg.question.explanationNl}</p>
+            </div>
+            <EvidenceCard
+              evidence={seg.question.evidence}
+              onPlay={() => playSegment(seg.question.evidence.startSec, seg.question.evidence.endSec, rate)}
+            />
+          </>
         )}
 
         <div className="grow" style={{ minHeight: 16 }} />
@@ -776,7 +825,7 @@ function GateFlow({ episode, step, episodeId, navigate }) {
             onClick={check}
             disabled={selected === null}
           >
-            Nagaan
+            Controleren
           </button>
         )}
       </div>

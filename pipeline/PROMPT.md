@@ -13,6 +13,7 @@ Je zet een gescrapete podcast-aflevering om naar een Escucha-aflevering-JSON. In
    - `vocabInContext`: "Je hoorde \"...\", wat betekent ...?" gekoppeld aan een `vocabId`
    - `gap`: één zin uit het segment met `___` (textEs) + 4 keuzes voor het ontbrekende woord
    Het juiste antwoord staat NIET altijd op index 0: varieer answerIndex. Afleiders moeten plausibel maar eenduidig fout zijn. Alle promptNl/choices/explanationNl in natuurlijk Nederlands, geen em-dash.
+   Elke vraag krijgt ook een `evidence`-object: de letterlijke zin(nen) uit het transcript waarin het antwoord te horen was (`es`) plus een natuurlijke NL-vertaling (`nl`). De audiotijden worden daarna gevuld met `python3.13 pipeline/evidence_times.py <episode.json> pipeline/work/<epId>` (vereist words.json van word_clips.py).
 6. Schrijf naar `public/content/episodes/<podcastId>/<epId>.json` en voeg de aflevering toe aan `public/content/ladder.json`: nieuwe unit met steps `words`, 2 (of bij >7 min: 3) `listen`-delen met gebalanceerde segmentIds, en `gate` met passPct 80.
 7. Draai `python3.13 pipeline/word_clips.py <episode.json> pipeline/work/<epId>/audio.mp3` om per vocab-item de audioclip (woord uitgesproken in de podcast) toe te voegen; download de mp3 eerst als die er nog niet staat. Los items "zonder clip" op door het woord of de matcher te checken.
 8. Draai `python3.13 pipeline/validate.py <pad>` en los alle FOUTEN en zo veel mogelijk WAARSCHUWINGEN op.

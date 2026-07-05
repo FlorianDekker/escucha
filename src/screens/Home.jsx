@@ -62,6 +62,8 @@ export default function Home() {
     episode?.level ||
     'A1'
   const contTitle = episode?.title || current?.unit?.title || 'Aan de slag'
+  const artUrl =
+    ladder && current && ladder.podcasts?.[podcastIdFor(ladder, current.unit.episodeId)]?.artUrl
   const stepNr = current ? current.stepIndex + 1 : 0
   const stepTotal = currentUnitInfo?.total || 0
   const unitPct = stepTotal ? Math.round((currentUnitInfo.doneCount / stepTotal) * 100) : 0
@@ -111,7 +113,9 @@ export default function Home() {
                   height: 74,
                   borderRadius: 18,
                   flex: '0 0 auto',
-                  background: artGradient,
+                  background: artUrl
+                    ? `url(${import.meta.env.BASE_URL}${artUrl}) center / cover`
+                    : artGradient,
                 }}
               />
               <div style={{ flex: 1, minWidth: 0 }}>

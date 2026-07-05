@@ -360,7 +360,13 @@
           "Interviews met beroemdheden"
         ],
         "answerIndex": 0,
-        "explanationNl": "Rodrigo zegt: \"Son historias reales contadas por personas reales y en español.\" (Het zijn echte verhalen, verteld door echte mensen, in het Spaans.)"
+        "explanationNl": "Rodrigo zegt: \"Son historias reales contadas por personas reales y en español.\" (Het zijn echte verhalen, verteld door echte mensen, in het Spaans.)",
+        "evidence": {
+          "es": "Son historias reales contadas por personas reales y en español, ¡claro!",
+          "nl": "Het zijn echte verhalen, verteld door echte mensen, en in het Spaans natuurlijk!",
+          "startSec": 42.03,
+          "endSec": 49.13
+        }
       }
     },
     {
@@ -394,7 +400,13 @@
           "De hele dag thuisblijven"
         ],
         "answerIndex": 0,
-        "explanationNl": "\"Andrea planea pasar un día tranquilo y relajado en la playa\": ze is een rustige stranddag van plan, maar het loopt anders."
+        "explanationNl": "\"Andrea planea pasar un día tranquilo y relajado en la playa\": ze is een rustige stranddag van plan, maar het loopt anders.",
+        "evidence": {
+          "es": "Andrea planea pasar un día tranquilo y relajado en la playa, pero su día da un giro inesperado.",
+          "nl": "Andrea is van plan een rustige en ontspannen dag op het strand door te brengen, maar haar dag neemt een onverwachte wending.",
+          "startSec": 49.81,
+          "endSec": 59.83
+        }
       }
     },
     {
@@ -424,7 +436,13 @@
           "Ik ben thuis"
         ],
         "answerIndex": 0,
-        "explanationNl": "\"Estar de vacaciones\" = op vakantie zijn. Andrea is op vakantie in Puerto Escondido, haar favoriete stad."
+        "explanationNl": "\"Estar de vacaciones\" = op vakantie zijn. Andrea is op vakantie in Puerto Escondido, haar favoriete stad.",
+        "evidence": {
+          "es": "Ahora estoy de vacaciones en la costa pacífica de México, en Puerto Escondido, mi ciudad favorita.",
+          "nl": "Ik ben nu op vakantie aan de Pacifische kust van Mexico, in Puerto Escondido, mijn favoriete stad.",
+          "startSec": 100.25,
+          "endSec": 108.87
+        }
       }
     },
     {
@@ -453,7 +471,13 @@
           "Ze is bang voor de zon"
         ],
         "answerIndex": 0,
-        "explanationNl": "\"Tengo un problema: ¡no sé nadar!\": ze wil surfen, maar ze kan niet zwemmen."
+        "explanationNl": "\"Tengo un problema: ¡no sé nadar!\": ze wil surfen, maar ze kan niet zwemmen.",
+        "evidence": {
+          "es": "Yo quiero practicar surf, pero tengo un problema: ¡no sé nadar!",
+          "nl": "Ik wil surfen, maar ik heb een probleem: ik kan niet zwemmen!",
+          "startSec": 134.43,
+          "endSec": 140.61
+        }
       }
     },
     {
@@ -517,7 +541,13 @@
           "Je blijft gewoon op het strand oefenen"
         ],
         "answerIndex": 0,
-        "explanationNl": "Tivo zegt: \"¡Solo necesitas estar bien asegurada a la tabla!\" (Je hoeft alleen maar goed vast te zitten aan de plank.)"
+        "explanationNl": "Tivo zegt: \"¡Solo necesitas estar bien asegurada a la tabla!\" (Je hoeft alleen maar goed vast te zitten aan de plank.)",
+        "evidence": {
+          "es": "Eso no es un problema: ¡no necesitas saber nadar! ¡Solo necesitas estar bien asegurada a la tabla!",
+          "nl": "Dat is geen probleem: je hoeft niet te kunnen zwemmen! Je hoeft alleen maar goed vast te zitten aan de plank!",
+          "startSec": 195.0,
+          "endSec": 209.66
+        }
       }
     },
     {
@@ -553,7 +583,13 @@
           "nuevo"
         ],
         "answerIndex": 0,
-        "explanationNl": "\"Un chaleco salvavidas\" = een reddingsvest (letterlijk: een vest dat levens redt)."
+        "explanationNl": "\"Un chaleco salvavidas\" = een reddingsvest (letterlijk: een vest dat levens redt).",
+        "evidence": {
+          "es": "Para mi primera lección tengo un chaleco salvavidas. Eso está bien: me gusta la seguridad.",
+          "nl": "Voor mijn eerste les heb ik een reddingsvest. Dat is fijn: ik hou van veiligheid.",
+          "startSec": 228.47,
+          "endSec": 237.81
+        }
       }
     },
     {
@@ -597,7 +633,13 @@
           "Nee, ze durft het water niet in"
         ],
         "answerIndex": 0,
-        "explanationNl": "Ze mist de eerste golf, probeert het steeds opnieuw (\"otra y otra\") en pakt hem dan eindelijk: \"finalmente, tomo la ola\"."
+        "explanationNl": "Ze mist de eerste golf, probeert het steeds opnieuw (\"otra y otra\") en pakt hem dan eindelijk: \"finalmente, tomo la ola\".",
+        "evidence": {
+          "es": "Intento tomar otra ola y después otra y otra, y, finalmente, tomo la ola. ¡Es genial!",
+          "nl": "Ik probeer nog een golf te pakken en daarna nog een en nog een, en eindelijk pak ik de golf. Het is geweldig!",
+          "startSec": 275.33,
+          "endSec": 285.75
+        }
       }
     },
     {
@@ -637,7 +679,13 @@
           "Hardlopen"
         ],
         "answerIndex": 0,
-        "explanationNl": "\"Madrugar\" = heel vroeg opstaan. Andrea houdt er niet van, maar voor het surfen doet ze het graag."
+        "explanationNl": "\"Madrugar\" = heel vroeg opstaan. Andrea houdt er niet van, maar voor het surfen doet ze het graag.",
+        "evidence": {
+          "es": "Normalmente no me gusta madrugar… ¡pero puedo madrugar si voy a practicar surf!",
+          "nl": "Normaal hou ik niet van vroeg opstaan, maar ik kan vroeg opstaan als ik ga surfen!",
+          "startSec": 316.51,
+          "endSec": 324.19
+        }
       }
     },
     {
@@ -661,7 +709,13 @@
           "Vroeg opstaan is goed voor je gezondheid"
         ],
         "answerIndex": 0,
-        "explanationNl": "\"A veces necesitamos un buen chaleco salvavidas para superar nuestros miedos\": soms heb je iets (of iemand) nodig dat je veiligheid geeft om je angst te overwinnen."
+        "explanationNl": "\"A veces necesitamos un buen chaleco salvavidas para superar nuestros miedos\": soms heb je iets (of iemand) nodig dat je veiligheid geeft om je angst te overwinnen.",
+        "evidence": {
+          "es": "A veces necesitamos un buen chaleco salvavidas para superar nuestros miedos.",
+          "nl": "Soms hebben we een goed reddingsvest nodig om onze angsten te overwinnen.",
+          "startSec": 340.83,
+          "endSec": 349.21
+        }
       }
     }
   ]

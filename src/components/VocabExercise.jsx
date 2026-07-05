@@ -99,7 +99,13 @@ export default function VocabExercise({
         role="button"
         style={{ cursor: 'pointer' }}
       >
-        <div className="spk" aria-hidden="true">🔊</div>
+        <div className="spk" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4 9v6h4l5 4V5L8 9H4z" />
+            <path d="M16.5 8.5a5 5 0 0 1 0 7" />
+            <path d="M19 6a8 8 0 0 1 0 12" />
+          </svg>
+        </div>
         <div>
           <p className="es">{item.es}</p>
           <p style={{ margin: '2px 0 0', color: 'var(--brand-soft)', fontWeight: 700, fontSize: 12 }}>
@@ -182,7 +188,7 @@ export default function VocabExercise({
           className={'btn btn-primary pad-b' + (canCheck ? '' : ' is-locked')}
           onClick={grade}
         >
-          Nagaan
+          Controleren
         </button>
       )}
     </>
