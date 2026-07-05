@@ -5,6 +5,7 @@ import { loadLadder, loadEpisode, normalizeWord } from '../lib/contentLoader'
 import { dueItems } from '../lib/srs'
 import { useSegmentPlayer } from '../lib/audio'
 import { playClick, playCorrect, playWrong } from '../lib/sounds'
+import { playWord } from '../lib/speak'
 import QuestionCard from '../components/QuestionCard.jsx'
 import TranscriptBubbles from '../components/TranscriptBubbles.jsx'
 import VocabExercise from '../components/VocabExercise.jsx'
@@ -301,7 +302,11 @@ function WordsFlow({ episode, step, episodeId, navigate }) {
           pool={pool}
           glossaryValues={glossaryValues}
           episodeId={episodeId}
-          onPlayClip={item.clip && item.audioUrl ? () => playWordClip(item.clip, item.audioUrl) : null}
+          onPlayClip={
+            item.clip && item.audioUrl
+              ? () => playWordClip(item.clip, item.audioUrl)
+              : () => playWord(item.es)
+          }
           onChecked={() => setItemChecked(true)}
           onContinue={next}
           isLast={index === total - 1}

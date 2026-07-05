@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useStore } from '../lib/store'
 import { normalizeWord } from '../lib/contentLoader'
+import { playWord } from '../lib/speak'
 
 /*
  * Transcript als chatbubbels met sprekerlabel.
@@ -104,6 +105,9 @@ function Words({ text, si, glossary, active, setActive, srsAdd, srsMap, episodeI
             {token}
             {isActive && (
               <span className="popover" onClick={(e) => e.stopPropagation()}>
+                <button type="button" className="popover-spk" onClick={() => playWord(token)} aria-label="Spreek uit">
+                  🔊
+                </button>
                 <span className="tr">{translation}</span>
                 {hasTranslation && (
                   <button

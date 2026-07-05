@@ -699,6 +699,16 @@
   background: var(--good);
   opacity: 1;
 }
+.popover button.popover-spk {
+  margin: 0 0 4px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 14px;
+  line-height: 1;
+}
 
 /* Bottom-sheet met vraag (auto-pauze) */
 .sheet {

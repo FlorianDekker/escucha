@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { useStore } from '../lib/store'
 import { dueItems, isDue, todayStr } from '../lib/srs'
 import { playClick, playCorrect, playWrong } from '../lib/sounds'
+import { playWord } from '../lib/speak'
 import TabBar from '../components/TabBar.jsx'
 import '../overview.css'
 
@@ -89,10 +90,18 @@ export default function Words() {
             </span>
           </div>
 
-          <div className="card" style={{ marginTop: 16, padding: 20, textAlign: 'center' }}>
+          <div
+            className="card"
+            style={{ marginTop: 16, padding: 20, textAlign: 'center', cursor: 'pointer' }}
+            onClick={() => playWord(q.es)}
+            role="button"
+          >
             <p style={{ margin: 0, color: 'var(--ink-mute)', fontWeight: 700, fontSize: 12 }}>Wat betekent</p>
             <p style={{ margin: '8px 0 0', fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 26, color: 'var(--ink)' }}>
-              {q.es}
+              🔊 {q.es}
+            </p>
+            <p style={{ margin: '6px 0 0', color: 'var(--ink-faint)', fontWeight: 700, fontSize: 11.5 }}>
+              tik om te beluisteren
             </p>
           </div>
 
