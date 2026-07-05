@@ -104,6 +104,7 @@ export default function Session() {
 
   if (step.type === 'words') return <WordsFlow key={stepId} {...common} />
   if (step.type === 'listen') return <ListenFlow key={stepId} {...common} />
+  if (step.type === 'read') return <ListenFlow key={stepId} {...common} reading />
   if (step.type === 'gate') return <GateFlow key={stepId} {...common} />
 
   return null
@@ -313,7 +314,12 @@ function WordsFlow({ episode, step, episodeId, navigate }) {
 /* ============================================================
    B) LISTEN  ·  luisteren (scherm 5) -> feedback (scherm 6)
    ============================================================ */
-function ListenFlow({ episode, step, episodeId, navigate }) {
+/*
+ * reading=false: luister-eerst (transcript van het huidige fragment pas ná het
+ * antwoord). reading=true (leesmodus): het transcript van het huidige fragment
+ * leest live mee tijdens het luisteren, met de actieve zin uitgelicht.
+ */
+function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
   const answerSegment = useStore((s) => s.answerSegment)
   const completeStep = useStore((s) => s.completeStep)
   const setSegmentIndex = useStore((s) => s.setSegmentIndex)
@@ -561,14 +567,24 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
       )}
 
       <div className="transcript">
-        {prevSentences.length > 0 ? (
+        {prevSentences.length > 0 && (
           <TranscriptBubbles sentences={prevSentences} glossary={episode.glossary} episodeId={episodeId} dimmed />
+        )}
+        {reading ? (
+          <TranscriptBubbles
+            sentences={seg.sentences}
+            glossary={episode.glossary}
+            episodeId={episodeId}
+            highlightSec={isPlaying || position > seg.startSec ? position : null}
+          />
         ) : (
-          <p className="transcript-empty">
-            Tik op play en luister goed.
-            <br />
-            De vraag verschijnt zodra het fragment klaar is.
-          </p>
+          prevSentences.length === 0 && (
+            <p className="transcript-empty">
+              Tik op play en luister goed.
+              <br />
+              De vraag verschijnt zodra het fragment klaar is.
+            </p>
+          )
         )}
 
         {phase === 'question' && (

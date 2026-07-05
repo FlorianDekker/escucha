@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useStore } from '../lib/store'
 import { normalizeWord } from '../lib/contentLoader'
 
@@ -7,10 +7,18 @@ import { normalizeWord } from '../lib/contentLoader'
  *  - dimmed=true: gedimde bubbels van eerdere fragmenten (niet tikbaar).
  *  - dimmed=false: massieve bubbels van het huidige fragment; ELK woord is tikbaar
  *    -> popover met NL-vertaling uit de glossary + knop "+ Mijn woorden".
+ *  - highlightSec (leesmodus): afspeelpositie in seconden; de zin die nu klinkt
+ *    krijgt een accent-rand zodat je live kunt meelezen.
  *
- * Props: sentences [{speaker, es}], glossary, episodeId, dimmed
+ * Props: sentences [{speaker, es, startSec}], glossary, episodeId, dimmed, highlightSec
  */
-export default function TranscriptBubbles({ sentences, glossary = {}, episodeId, dimmed = false }) {
+export default function TranscriptBubbles({
+  sentences,
+  glossary = {},
+  episodeId,
+  dimmed = false,
+  highlightSec = null,
+}) {
   const srsAdd = useStore((s) => s.srsAdd)
   const srsMap = useStore((s) => s.srs)
   const [active, setActive] = useState(null) // "sentenceIdx-wordIdx"
@@ -20,6 +28,20 @@ export default function TranscriptBubbles({ sentences, glossary = {}, episodeId,
   for (const s of sentences) if (!order.includes(s.speaker)) order.push(s.speaker)
   const sideOf = (speaker) => (order.indexOf(speaker) % 2 === 0 ? 'left' : 'right')
 
+  // De actieve zin: de laatste waarvan startSec voorbij de afspeelpositie is.
+  let liveIndex = -1
+  if (highlightSec != null) {
+    for (let i = 0; i < sentences.length; i++) {
+      if (sentences[i].startSec != null && sentences[i].startSec <= highlightSec) liveIndex = i
+    }
+  }
+
+  // Leesmodus: scroll de actieve zin in beeld.
+  const liveRef = useRef(null)
+  useEffect(() => {
+    liveRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+  }, [liveIndex])
+
   return (
     <div className="bubbles" onClick={() => active && setActive(null)}>
       {sentences.map((sentence, si) => {
@@ -27,8 +49,12 @@ export default function TranscriptBubbles({ sentences, glossary = {}, episodeId,
         return (
           <div
             key={si}
+            ref={si === liveIndex ? liveRef : undefined}
             className={
-              'bubble ' + (dimmed ? 'dim' : 'solid') + (right ? ' right' : '')
+              'bubble ' +
+              (dimmed ? 'dim' : 'solid') +
+              (right ? ' right' : '') +
+              (si === liveIndex ? ' live' : '')
             }
           >
             {sentence.speaker && <span className="spk-name">{sentence.speaker}</span>}

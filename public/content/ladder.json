@@ -18,6 +18,7 @@
         { "id": "unit-1-words", "type": "words" },
         { "id": "unit-1-listen-1", "type": "listen", "labelNl": "Luister · deel 1", "segmentIds": ["s01", "s02", "s03", "s04", "s05"] },
         { "id": "unit-1-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s06", "s07", "s08", "s09"] },
+        { "id": "unit-1-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09"] },
         { "id": "unit-1-gate", "type": "gate", "passPct": 80 }
       ]
     }

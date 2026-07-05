@@ -68,12 +68,14 @@ export function computeProgress(ladder, episodes) {
 function stepLabel(step) {
   if (step.type === 'words') return 'Woorden'
   if (step.type === 'gate') return 'Quiz · poort'
+  if (step.type === 'read') return step.labelNl || 'Lezen'
   return step.labelNl || 'Luister'
 }
 
 function iconTypeFor(step) {
   if (step.type === 'words') return 'words'
   if (step.type === 'gate') return 'gate'
+  if (step.type === 'read') return 'read'
   return 'listen'
 }
 
@@ -104,6 +106,15 @@ function StepIcon({ type, color }) {
       <svg width="26" height="26" viewBox="0 0 24 24" {...stroke}>
         <rect x="5" y="10.5" width="14" height="9.5" rx="2.5" />
         <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" />
+      </svg>
+    )
+  }
+  if (type === 'read') {
+    // open boek
+    return (
+      <svg width="28" height="28" viewBox="0 0 24 24" {...stroke}>
+        <path d="M12 6c-1.5-1.4-3.7-2-6.5-2v13c2.8 0 5 .6 6.5 2 1.5-1.4 3.7-2 6.5-2V4c-2.8 0-5 .6-6.5 2z" />
+        <path d="M12 6v13" />
       </svg>
     )
   }

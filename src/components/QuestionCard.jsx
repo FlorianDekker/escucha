@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { playClick } from '../lib/sounds'
 
 /*
@@ -5,15 +6,29 @@ import { playClick } from '../lib/sounds'
  * Vraagtypes: 'mc' en 'vocabInContext' -> promptNl + choices;
  * 'gap' -> promptNl + textEs met gestileerd gat + choices.
  *
+ * De weergavevolgorde van de opties wordt hier geschud; selected/onSelect werken
+ * met de ORIGINELE index uit de content, zodat de aanroepende code gewoon tegen
+ * question.answerIndex kan checken en het juiste antwoord nooit voorspelbaar
+ * op dezelfde plek staat.
+ *
  * Props:
  *  - question: het vraag-object uit de content
- *  - selected: geselecteerde index (of null)
- *  - onSelect(index): keuze-handler
+ *  - selected: geselecteerde originele index (of null)
+ *  - onSelect(index): keuze-handler (originele index)
  *  - revealed: na 'Nagaan' -> juist/fout kleuren tonen
  *  - onBrand: true als de kaart op de brand-achtergrond staat (witte prompttekst)
  */
 export default function QuestionCard({ question, selected, onSelect, revealed = false, onBrand = false }) {
   const answerIndex = question.answerIndex
+
+  const order = useMemo(() => {
+    const idx = question.choices.map((_, i) => i)
+    for (let i = idx.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[idx[i], idx[j]] = [idx[j], idx[i]]
+    }
+    return idx
+  }, [question])
 
   function cls(i) {
     if (revealed) {
@@ -36,7 +51,7 @@ export default function QuestionCard({ question, selected, onSelect, revealed = 
       )}
 
       <div className="opts">
-        {question.choices.map((choice, i) => (
+        {order.map((i) => (
           <button
             key={i}
             type="button"
@@ -48,7 +63,7 @@ export default function QuestionCard({ question, selected, onSelect, revealed = 
             }}
             disabled={revealed}
           >
-            <span>{choice}</span>
+            <span>{question.choices[i]}</span>
             {revealed && i === answerIndex && <span className="opt-badge ok">✓</span>}
             {revealed && i === selected && i !== answerIndex && (
               <span className="opt-badge bad">✕</span>
