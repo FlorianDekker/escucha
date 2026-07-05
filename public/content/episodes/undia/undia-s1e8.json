@@ -1,0 +1,865 @@
+{
+  "schemaVersion": 1,
+  "id": "undia-s1e8",
+  "podcastId": "undia",
+  "title": "Mama neemt (geen) afscheid",
+  "titleEs": "La (no) despedida de mamá",
+  "level": "A1",
+  "audioUrl": "https://api.spreaker.com/download/episode/43346841/udm_s1e8_puertorico.mp3",
+  "durationSec": 487.35,
+  "descriptionNl": "Alexandra maakt met haar ouders een rondrit over Puerto Rico omdat mama denkt dat ze doodgaat en afscheid wil nemen van haar favoriete plekken, maar het blijkt loos alarm.",
+  "source": {
+    "rssUrl": "https://www.spreaker.com/show/4638090/episodes/feed",
+    "transcriptUrl": "https://player.timelinenotation.com/undiamonolingue/19941",
+    "attributionNl": "Audio en transcript © Babbel — Un día en español"
+  },
+  "vocab": [
+    {
+      "id": "la-despedida",
+      "es": "la despedida",
+      "nl": "het afscheid",
+      "exampleEs": "El tour no termina siendo una despedida pero un día entrañable para la familia.",
+      "core": true,
+      "clip": {
+        "startSec": 59.18,
+        "endSec": 61.09
+      }
+    },
+    {
+      "id": "despedirse",
+      "es": "despedirse",
+      "nl": "afscheid nemen",
+      "exampleEs": "Quiere despedirse de esos lugares…",
+      "core": true,
+      "clip": {
+        "startSec": 186.5,
+        "endSec": 187.59
+      }
+    },
+    {
+      "id": "morir",
+      "es": "morir",
+      "nl": "sterven / doodgaan",
+      "exampleEs": "Creo que me voy a morir.",
+      "core": true,
+      "clip": {
+        "startSec": 162.9,
+        "endSec": 163.63
+      }
+    },
+    {
+      "id": "doler",
+      "es": "doler",
+      "nl": "pijn doen",
+      "exampleEs": "Sí, estoy muy mal, me duele la cabeza.",
+      "core": true,
+      "clip": {
+        "startSec": 77.5,
+        "endSec": 78.79
+      }
+    },
+    {
+      "id": "el-dolor-de-cabeza",
+      "es": "el dolor de cabeza",
+      "nl": "de hoofdpijn",
+      "exampleEs": "Pero tener un dolor de cabeza es normal de vez en cuando, mamá.",
+      "core": true,
+      "clip": {
+        "startSec": 321.0,
+        "endSec": 322.67
+      }
+    },
+    {
+      "id": "la-barriga",
+      "es": "la barriga",
+      "nl": "de buik",
+      "exampleEs": "También estoy muy cansada y desde hace una hora me duele la barriga.",
+      "core": true,
+      "clip": {
+        "startSec": 336.42,
+        "endSec": 337.83
+      }
+    },
+    {
+      "id": "cansada",
+      "es": "cansada",
+      "nl": "moe",
+      "exampleEs": "También estoy muy cansada y desde hace una hora me duele la barriga.",
+      "core": true,
+      "clip": {
+        "startSec": 331.82,
+        "endSec": 332.99
+      }
+    },
+    {
+      "id": "la-salud",
+      "es": "la salud",
+      "nl": "de gezondheid",
+      "exampleEs": "En este episodio hay expresiones para hablar sobre tu salud.",
+      "core": true,
+      "clip": {
+        "startSec": 72.6,
+        "endSec": 73.45
+      }
+    },
+    {
+      "id": "enferma",
+      "es": "enferma",
+      "nl": "ziek",
+      "exampleEs": "Ahora estamos preocupados, ¿estará realmente enferma?",
+      "core": true,
+      "clip": {
+        "startSec": 376.12,
+        "endSec": 377.19
+      }
+    },
+    {
+      "id": "el-hospital",
+      "es": "el hospital",
+      "nl": "het ziekenhuis",
+      "exampleEs": "Vamos al hospital para un examen médico.",
+      "core": true,
+      "clip": {
+        "startSec": 356.64,
+        "endSec": 357.45
+      }
+    },
+    {
+      "id": "la-tension-alta",
+      "es": "la tensión alta",
+      "nl": "de hoge bloeddruk",
+      "exampleEs": "¡Mamá solo tiene la tensión alta!",
+      "core": true,
+      "clip": {
+        "startSec": 387.34,
+        "endSec": 388.79
+      }
+    },
+    {
+      "id": "el-susto",
+      "es": "el susto",
+      "nl": "de schrik",
+      "exampleEs": "Finalmente, y felizmente, todo ha sido un susto y la mamá de Alexandra está bien.",
+      "core": true,
+      "clip": {
+        "startSec": 427.62,
+        "endSec": 428.73
+      }
+    }
+  ],
+  "glossary": {
+    "hola": "hallo",
+    "rodrigo": "Rodrigo (de presentator)",
+    "doy": "ik geef (te doy la bienvenida = ik heet je welkom)",
+    "bienvenida": "welkom",
+    "día": "dag",
+    "español": "Spaans",
+    "monolingüe": "eentalig",
+    "pódcast": "podcast",
+    "da": "geeft (te da la bienvenida = heet je welkom)",
+    "vida": "leven",
+    "hispanohablantes": "Spaanstaligen",
+    "estados": "staten (Estados Unidos = Verenigde Staten)",
+    "unidos": "verenigd (Estados Unidos)",
+    "latinoamérica": "Latijns-Amerika",
+    "aprendes": "je leert",
+    "perfecto": "perfect",
+    "hoy": "vandaag",
+    "hacer": "doen / maken",
+    "tour": "rondrit / tour",
+    "hermosa": "prachtig",
+    "isla": "eiland",
+    "puerto": "Puerto (Rico: eiland in de Caribbean)",
+    "rico": "Rico (Puerto Rico)",
+    "alexandra": "Alexandra (de hoofdpersoon)",
+    "padres": "ouders",
+    "mamá": "moeder / mama",
+    "cree": "denkt / gelooft",
+    "despedirse": "afscheid nemen",
+    "lugares": "plekken",
+    "favoritos": "favoriete",
+    "suerte": "geluk (por suerte = gelukkig)",
+    "termina": "eindigt (no termina siendo = wordt uiteindelijk geen)",
+    "siendo": "zijnde (termina siendo = wordt uiteindelijk)",
+    "despedida": "afscheid",
+    "entrañable": "hartverwarmend / dierbaar",
+    "familia": "familie / gezin",
+    "escuchas": "je luistert",
+    "atención": "aandacht",
+    "episodio": "aflevering",
+    "expresiones": "uitdrukkingen",
+    "hablar": "praten",
+    "salud": "gezondheid",
+    "ejemplos": "voorbeelden",
+    "usar": "gebruiken",
+    "verbo": "werkwoord",
+    "doler": "pijn doen",
+    "llamo": "ik heet (me llamo = ik heet)",
+    "terminan": "eindigen / aflopen",
+    "vacaciones": "vakantie",
+    "amigos": "vrienden",
+    "culebra": "Culebra (eilandje bij Puerto Rico); culebra = slang",
+    "vuelvo": "ik keer terug / ik ga terug",
+    "san": "San (Juan: hoofdstad van Puerto Rico)",
+    "juan": "Juan (San Juan)",
+    "pequeña": "klein",
+    "cerca": "dichtbij (cerca de = vlak bij)",
+    "tranquilos": "rustig / geen zorgen",
+    "culebras": "slangen",
+    "papá": "vader / papa",
+    "maría": "María (de moeder)",
+    "llevar": "brengen / vervoeren",
+    "carro": "auto (Lat.-Amerika)",
+    "vuelta": "terug (de vuelta = terug)",
+    "casa": "huis",
+    "vemos": "we zien (elkaar)",
+    "semana": "week",
+    "cosas": "dingen",
+    "contarles": "hun vertellen",
+    "esperando": "wachtend",
+    "calle": "straat",
+    "algo": "iets",
+    "bien": "goed",
+    "serio": "serieus / ernstig",
+    "explica": "legt uit",
+    "quiere": "wil",
+    "decirme": "me vertellen / me zeggen",
+    "mejor": "beter (es mejor = het is beter)",
+    "contestar": "antwoorden",
+    "nada": "niets",
+    "callar": "zwijgen",
+    "pasa": "gebeurt (¿qué le pasa? = wat is er met haar?)",
+    "dice": "zegt",
+    "mala": "slecht",
+    "noticia": "nieuwtje / bericht",
+    "hija": "dochter",
+    "encuentro": "ik voel me (no me encuentro bien = ik voel me niet goed)",
+    "creo": "ik denk / ik geloof",
+    "voy": "ik ga (me voy a morir = ik ga sterven)",
+    "morir": "sterven / doodgaan",
+    "quedo": "ik blijf (me quedo en shock = ik ben in shock)",
+    "shock": "shock",
+    "miro": "ik kijk (naar)",
+    "mira": "kijkt (naar)",
+    "ojos": "ogen",
+    "exagerando": "overdrijvend (está exagerando = zij overdrijft)",
+    "visitar": "bezoeken",
+    "preferidos": "favoriete / voorkeurs-",
+    "esos": "die",
+    "ir": "gaan",
+    "hospital": "ziekenhuis",
+    "decidimos": "we besluiten",
+    "naguabo": "Naguabo (dorp aan zee in Puerto Rico)",
+    "pueblo": "dorp",
+    "mar": "zee",
+    "comer": "eten",
+    "empanadillas": "empanadillas (gevulde deegpasteitjes)",
+    "chapín": "chapín (soort vis)",
+    "tipo": "soort",
+    "pescado": "vis",
+    "deliciosas": "heerlijk",
+    "buena": "goed / goede",
+    "idea": "idee",
+    "decir": "zeggen",
+    "adiós": "dag / vaarwel",
+    "estas": "deze",
+    "compra": "koopt",
+    "seis": "zes",
+    "caja": "doos",
+    "muchas": "veel",
+    "persona": "persoon",
+    "digo": "ik zeg",
+    "abrazo": "ik omhels (abrazo a mi mamá = ik omhels mijn moeder)",
+    "quiero": "ik hou van / ik wil (la quiero mucho = ik hou veel van haar)",
+    "mucho": "veel / heel erg",
+    "satisfechos": "voldaan",
+    "barrigas": "buiken",
+    "llenas": "vol",
+    "continuamos": "we vervolgen / we gaan door",
+    "cruzar": "oversteken / doorkruisen",
+    "parque": "park",
+    "natural": "natuur- (parque natural = natuurpark)",
+    "yunque": "Yunque (El Yunque, regenwoud in Puerto Rico)",
+    "uno": "één (uno de los lugares = een van de plekken)",
+    "carretera": "weg / snelweg",
+    "escuchamos": "we horen / we luisteren",
+    "coquíes": "coquíes (kikkertjes van Puerto Rico)",
+    "sapos": "kikkers / padden",
+    "típicos": "typisch",
+    "suenan": "klinken",
+    "exacto": "precies",
+    "nombre": "naam",
+    "coqui": "co-qui (het geluid en de naam van de coquí)",
+    "camino": "weg / pad",
+    "precioso": "prachtig",
+    "llegamos": "we komen aan / we kwamen aan",
+    "pregunto": "ik vraag",
+    "sientes": "je voelt (¿te sientes mejor? = voel je je beter?)",
+    "ay": "ach / oh",
+    "siento": "ik voel me (no me siento mejor = ik voel me niet beter)",
+    "último": "laatste (mi último día = mijn laatste dag)",
+    "mal": "slecht / niet goed",
+    "duele": "doet pijn (me duele = doet me pijn)",
+    "cabeza": "hoofd",
+    "tener": "hebben",
+    "dolor": "pijn (dolor de cabeza = hoofdpijn)",
+    "normal": "normaal",
+    "vez": "keer (de vez en cuando = af en toe)",
+    "horrible": "verschrikkelijk",
+    "cansada": "moe",
+    "hora": "uur (desde hace una hora = sinds een uur)",
+    "barriga": "buik",
+    "también": "ook",
+    "pienso": "ik denk",
+    "comimos": "we aten / we hebben gegeten",
+    "porque": "omdat",
+    "examen": "onderzoek (examen médico = medisch onderzoek)",
+    "médico": "medisch / dokters-",
+    "esperamos": "we wachten",
+    "sala": "zaal / kamer",
+    "espera": "wachten (sala de espera = wachtkamer)",
+    "televisión": "televisie",
+    "miramos": "we kijken (naar)",
+    "preocupados": "bezorgd",
+    "realmente": "echt / werkelijk",
+    "estará": "zou ... zijn (¿estará enferma? = zou ze ziek zijn?)",
+    "enferma": "ziek",
+    "minutos": "minuten",
+    "después": "daarna / na",
+    "doctora": "dokter (vrouw)",
+    "viene": "komt",
+    "tienen": "ze hebben",
+    "buenas": "goed / goede",
+    "noticias": "nieuws / berichten",
+    "solo": "alleen / maar",
+    "tensión": "(bloed)druk (tensión alta = hoge bloeddruk)",
+    "alta": "hoog (tensión alta = hoge bloeddruk)",
+    "todos": "allemaal / iedereen",
+    "reímos": "we lachen (nos reímos = we lachen)",
+    "alegramos": "we zijn blij (nos alegramos = we verheugen ons)",
+    "tenemos": "we hebben",
+    "cenar": "avondeten (om 's avonds te eten)",
+    "emociones": "emoties",
+    "volvemos": "we keren terug / we gaan terug",
+    "contentos": "blij",
+    "pequeño": "klein",
+    "viaje": "reis / uitstapje",
+    "juntos": "samen",
+    "aliviados": "opgelucht",
+    "finalmente": "uiteindelijk",
+    "felizmente": "gelukkig",
+    "susto": "schrik",
+    "alivio": "opluchting",
+    "gracias": "dank / dankzij (gracias a = dankzij)",
+    "preocupación": "bezorgdheid / ongerustheid",
+    "han": "ze hebben (han tenido = ze hebben gehad)",
+    "tenido": "gehad (han tenido = ze hebben gehad)",
+    "oportunidad": "gelegenheid / kans",
+    "importantes": "belangrijk",
+    "cena": "avondeten / diner",
+    "deliciosa": "heerlijk"
+  },
+  "segments": [
+    {
+      "id": "s01",
+      "startSec": 9.0,
+      "endSec": 65.0,
+      "sentences": [
+        {
+          "startSec": 9.0,
+          "speaker": "Rodrigo",
+          "es": "Hola, soy Rodrigo y te doy la bienvenida a Un día en español – monolingüe, el pódcast en español que te da la bienvenida a la vida de hispanohablantes en Estados Unidos y Latinoamérica."
+        },
+        {
+          "startSec": 29.0,
+          "speaker": "Rodrigo",
+          "es": "¿Hace poco que aprendes español? Entonces, este pódcast es perfecto para ti."
+        },
+        {
+          "startSec": 38.0,
+          "speaker": "Rodrigo",
+          "es": "Hoy vamos a hacer un tour por la hermosa isla de Puerto Rico con Alexandra y sus padres. La mamá de Alexandra cree que tiene que despedirse de sus lugares favoritos, pero, por suerte, el tour no termina siendo una despedida pero un día entrañable para la familia."
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat gaan Alexandra en haar ouders vandaag doen?",
+        "choices": [
+          "Verhuizen naar de Verenigde Staten",
+          "Een week op vakantie op Culebra",
+          "Een rondrit maken over het eiland Puerto Rico",
+          "Alexandra ophalen van het vliegveld"
+        ],
+        "answerIndex": 2,
+        "explanationNl": "Rodrigo kondigt aan: \"Hoy vamos a hacer un tour por la hermosa isla de Puerto Rico con Alexandra y sus padres.\" Ze maken samen een rondrit over het eiland.",
+        "evidence": {
+          "es": "Hoy vamos a hacer un tour por la hermosa isla de Puerto Rico con Alexandra y sus padres.",
+          "nl": "Vandaag maken we een rondrit over het prachtige eiland Puerto Rico met Alexandra en haar ouders.",
+          "startSec": 37.81,
+          "endSec": 46.83
+        }
+      }
+    },
+    {
+      "id": "s02",
+      "startSec": 65.0,
+      "endSec": 107.0,
+      "sentences": [
+        {
+          "startSec": 65.0,
+          "speaker": "Rodrigo",
+          "es": "Si escuchas con atención, en este episodio hay expresiones para hablar sobre tu salud y también ejemplos sobre cómo usar el verbo “doler”."
+        },
+        {
+          "startSec": 79.0,
+          "speaker": "Rodrigo",
+          "es": "¡Nos vamos ahora a Puerto Rico!"
+        },
+        {
+          "startSec": 84.0,
+          "speaker": "Alexandra",
+          "es": "Hola, me llamo Alexandra y soy de Puerto Rico. Hoy terminan mis vacaciones con amigos en la isla Culebra y vuelvo a San Juan con mis padres."
+        },
+        {
+          "startSec": 97.0,
+          "speaker": "Alexandra",
+          "es": "Culebra es una isla pequeña cerca de Puerto Rico, pero tranquilos, Culebra no tiene culebras."
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat zegt Alexandra grappig genoeg over het eilandje Culebra?",
+        "choices": [
+          "Dat er geen slangen (culebras) zijn",
+          "Dat het heel groot is",
+          "Dat er veel toeristen komen",
+          "Dat het ver van Puerto Rico ligt"
+        ],
+        "answerIndex": 0,
+        "explanationNl": "Alexandra grapt: \"Culebra no tiene culebras.\" Ondanks de naam (culebra betekent slang) zitten er geen slangen.",
+        "evidence": {
+          "es": "Culebra es una isla pequeña cerca de Puerto Rico, pero tranquilos, Culebra no tiene culebras.",
+          "nl": "Culebra is een klein eiland vlak bij Puerto Rico, maar geen zorgen: op Culebra zitten geen slangen.",
+          "startSec": 96.89,
+          "endSec": 105.93
+        }
+      }
+    },
+    {
+      "id": "s03",
+      "startSec": 107.0,
+      "endSec": 151.0,
+      "sentences": [
+        {
+          "startSec": 107.0,
+          "speaker": "Alexandra",
+          "es": "Mi papá y mi mamá, María, me van a llevar en carro de vuelta a casa. Mis padres y yo no nos vemos desde hace una semana. Tengo muchas cosas que contarles."
+        },
+        {
+          "startSec": 123.0,
+          "speaker": "Alexandra",
+          "es": "Mi papá está esperando en la calle y mi mamá está esperando en el carro."
+        },
+        {
+          "startSec": 132.0,
+          "speaker": "Alexandra",
+          "es": "Algo no está bien. Mi papá está muy serio. Él me explica que mamá quiere decirme algo y que es mejor no contestar nada a mamá, mejor callar. ¿Qué le pasa a mamá?"
+        }
+      ],
+      "question": {
+        "type": "gap",
+        "promptNl": "Vul aan wat je hoorde:",
+        "textEs": "Él me explica que mamá quiere decirme algo y que es mejor no contestar nada a mamá, mejor ___.",
+        "choices": [
+          "cantar",
+          "gritar",
+          "callar",
+          "reír"
+        ],
+        "answerIndex": 2,
+        "explanationNl": "Papa maakt duidelijk dat het beter is niets terug te zeggen: \"mejor no contestar nada a mamá, mejor callar.\" \"Callar\" betekent zwijgen.",
+        "evidence": {
+          "es": "Es mejor no contestar nada a mamá, mejor callar.",
+          "nl": "Het is beter niets terug te zeggen tegen mama, beter zwijgen.",
+          "startSec": 141.61,
+          "endSec": 147.39
+        }
+      }
+    },
+    {
+      "id": "s04",
+      "startSec": 151.0,
+      "endSec": 179.0,
+      "sentences": [
+        {
+          "startSec": 151.0,
+          "speaker": "Alexandra",
+          "es": "En el carro mamá me dice la mala noticia."
+        },
+        {
+          "startSec": 157.0,
+          "speaker": "Mamá",
+          "es": "Hija, no me encuentro bien."
+        },
+        {
+          "startSec": 160.0,
+          "speaker": "Mamá",
+          "es": "Creo que me voy a morir."
+        },
+        {
+          "startSec": 164.0,
+          "speaker": "Alexandra",
+          "es": "Yo me quedo en shock. Miro a mi papá y él me mira muy serio y con sus ojos me dice “mejor callar”. ¿Está exagerando mamá?"
+        }
+      ],
+      "question": {
+        "type": "vocabInContext",
+        "vocabId": "morir",
+        "promptNl": "Je hoorde \"Creo que me voy a morir\". Wat betekent \"morir\"?",
+        "choices": [
+          "slapen",
+          "sterven",
+          "vertrekken",
+          "huilen"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "\"Morir\" betekent sterven. Mama denkt dat ze doodgaat: \"Creo que me voy a morir.\"",
+        "evidence": {
+          "es": "Creo que me voy a morir.",
+          "nl": "Ik denk dat ik ga sterven.",
+          "startSec": 160.67,
+          "endSec": 163.73
+        }
+      }
+    },
+    {
+      "id": "s05",
+      "startSec": 179.0,
+      "endSec": 221.0,
+      "sentences": [
+        {
+          "startSec": 179.0,
+          "speaker": "Alexandra",
+          "es": "Mamá quiere hacer un tour por la isla para visitar todos sus lugares preferidos. Quiere despedirse de esos lugares… ¿No es mejor ir al hospital ya?"
+        },
+        {
+          "startSec": 193.0,
+          "speaker": "Alexandra",
+          "es": "Entonces decidimos ir a Naguabo, un pueblo cerca del mar. Mamá quiere comer empanadillas de chapín, un tipo de pescado, antes de morir."
+        },
+        {
+          "startSec": 208.0,
+          "speaker": "Alexandra",
+          "es": "Las empanadillas de chapín son deliciosas, creo que es una buena idea decir adiós a estas empanadillas."
+        }
+      ],
+      "question": {
+        "type": "vocabInContext",
+        "vocabId": "despedirse",
+        "promptNl": "Je hoorde \"Quiere despedirse de esos lugares\". Wat betekent \"despedirse\"?",
+        "choices": [
+          "afscheid nemen van",
+          "foto's maken van",
+          "praten over",
+          "dromen van"
+        ],
+        "answerIndex": 0,
+        "explanationNl": "\"Despedirse\" betekent afscheid nemen. Mama wil afscheid nemen van haar favoriete plekken: \"Quiere despedirse de esos lugares.\"",
+        "evidence": {
+          "es": "Mamá quiere hacer un tour por la isla para visitar todos sus lugares preferidos. Quiere despedirse de esos lugares…",
+          "nl": "Mama wil een rondrit over het eiland maken om al haar favoriete plekken te bezoeken. Ze wil afscheid nemen van die plekken…",
+          "startSec": 179.17,
+          "endSec": 188.75
+        }
+      }
+    },
+    {
+      "id": "s06",
+      "startSec": 221.0,
+      "endSec": 258.0,
+      "sentences": [
+        {
+          "startSec": 221.0,
+          "speaker": "Alexandra",
+          "es": "Vamos a Naguabo y mamá compra seis empanadillas de chapín para nosotros, pero también una caja de 12 empanadillas."
+        },
+        {
+          "startSec": 234.0,
+          "speaker": "Alexandra",
+          "es": "¿No son muchas empanadillas para una persona que dice que se va a morir? Pero no digo nada a mamá. Solo abrazo a mi mamá y le digo que la quiero mucho"
+        },
+        {
+          "startSec": 248.0,
+          "speaker": "Alexandra",
+          "es": "Después de comer las empanadillas, satisfechos y con las barrigas llenas, continuamos nuestro tour por la isla."
+        }
+      ],
+      "question": {
+        "type": "gap",
+        "promptNl": "Vul aan wat je hoorde:",
+        "textEs": "Solo abrazo a mi mamá y le digo que la ___ mucho.",
+        "choices": [
+          "veo",
+          "llamo",
+          "quiero",
+          "escucho"
+        ],
+        "answerIndex": 2,
+        "explanationNl": "Alexandra omhelst haar moeder: \"le digo que la quiero mucho.\" \"Querer\" betekent hier houden van.",
+        "evidence": {
+          "es": "Solo abrazo a mi mamá y le digo que la quiero mucho.",
+          "nl": "Ik omhels mijn moeder alleen maar en zeg dat ik veel van haar hou.",
+          "startSec": 243.73,
+          "endSec": 247.93
+        }
+      }
+    },
+    {
+      "id": "s07",
+      "startSec": 258.0,
+      "endSec": 293.0,
+      "sentences": [
+        {
+          "startSec": 258.0,
+          "speaker": "Alexandra",
+          "es": "Ahora vamos a ir a San Juan, pero vamos a cruzar el parque natural, Yunque. Es uno de los lugares favoritos de mi mamá."
+        },
+        {
+          "startSec": 271.0,
+          "speaker": "Alexandra",
+          "es": "En la carretera que pasa por el Yunque escuchamos los coquíes. Son unos sapos típicos de Puerto Rico, que suenan exacto como su nombre: “co-qui, co-qui”."
+        },
+        {
+          "startSec": 288.0,
+          "speaker": "Alexandra",
+          "es": "El camino a San Juan por El Yunque es un camino precioso."
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat zijn de coquíes die ze in El Yunque horen?",
+        "choices": [
+          "Vogels",
+          "Watervallen",
+          "Muzikanten",
+          "Kleine kikkertjes die typisch zijn voor Puerto Rico"
+        ],
+        "answerIndex": 3,
+        "explanationNl": "Alexandra legt uit: \"Son unos sapos típicos de Puerto Rico, que suenan exacto como su nombre.\" Coquíes zijn kikkertjes die klinken als hun naam.",
+        "evidence": {
+          "es": "Son unos sapos típicos de Puerto Rico, que suenan exacto como su nombre: “co-qui, co-qui”.",
+          "nl": "Het zijn kikkertjes die typisch zijn voor Puerto Rico en die precies als hun naam klinken: co-qui, co-qui.",
+          "startSec": 277.41,
+          "endSec": 288.81
+        }
+      }
+    },
+    {
+      "id": "s08",
+      "startSec": 293.0,
+      "endSec": 320.0,
+      "sentences": [
+        {
+          "startSec": 293.0,
+          "speaker": "Alexandra",
+          "es": "Cuándo llegamos a San Juan vamos al hospital. En el camino le pregunto a mi mamá si ya está mejor."
+        },
+        {
+          "startSec": 303.0,
+          "speaker": "Alexandra",
+          "es": "¿Te sientes mejor, mamá?"
+        },
+        {
+          "startSec": 305.0,
+          "speaker": "Mamá",
+          "es": "Ay, mi hija, no me siento mejor. Creo que hoy es mi último día."
+        },
+        {
+          "startSec": 313.0,
+          "speaker": "Alexandra",
+          "es": "¿Estás mal, mamá?"
+        },
+        {
+          "startSec": 315.0,
+          "speaker": "Mamá",
+          "es": "Sí, estoy muy mal, me duele la cabeza."
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat antwoordt mama als Alexandra vraagt of ze zich beter voelt?",
+        "choices": [
+          "Nee, ze denkt dat het haar laatste dag is",
+          "Ja, het gaat al veel beter",
+          "Ze wil naar huis",
+          "Ze heeft honger"
+        ],
+        "answerIndex": 0,
+        "explanationNl": "Mama zegt: \"no me siento mejor. Creo que hoy es mi último día.\" Ze voelt zich niet beter en denkt dat het haar laatste dag is.",
+        "evidence": {
+          "es": "Ay, mi hija, no me siento mejor. Creo que hoy es mi último día.",
+          "nl": "Ach, mijn kind, ik voel me niet beter. Ik denk dat vandaag mijn laatste dag is.",
+          "startSec": 305.91,
+          "endSec": 313.23
+        }
+      }
+    },
+    {
+      "id": "s09",
+      "startSec": 320.0,
+      "endSec": 355.0,
+      "sentences": [
+        {
+          "startSec": 320.0,
+          "speaker": "Alexandra",
+          "es": "Pero tener un dolor de cabeza es normal de vez en cuando, mamá."
+        },
+        {
+          "startSec": 324.0,
+          "speaker": "Mamá",
+          "es": "No, mi hija, es un dolor de cabeza horrible. También estoy muy cansada y desde hace una hora me duele la barriga."
+        },
+        {
+          "startSec": 337.0,
+          "speaker": "Alexandra",
+          "es": "¿También la barriga?"
+        },
+        {
+          "startSec": 339.0,
+          "speaker": "Mamá",
+          "es": "Sí, mi hija, sí."
+        },
+        {
+          "startSec": 342.0,
+          "speaker": "Alexandra",
+          "es": "Pienso que el dolor de barriga puede ser porque comimos muchas empanadillas, pero miro a mi papá, que con sus ojos me dice otra vez “mejor callar”."
+        }
+      ],
+      "question": {
+        "type": "vocabInContext",
+        "vocabId": "la-barriga",
+        "promptNl": "Je hoorde \"me duele la barriga\". Wat betekent \"la barriga\"?",
+        "choices": [
+          "het hoofd",
+          "de buik",
+          "de rug",
+          "de keel"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "\"La barriga\" is de buik. Mama zegt: \"desde hace una hora me duele la barriga.\"",
+        "evidence": {
+          "es": "También estoy muy cansada y desde hace una hora me duele la barriga.",
+          "nl": "Ik ben ook heel moe en sinds een uur heb ik buikpijn.",
+          "startSec": 329.83,
+          "endSec": 337.93
+        }
+      }
+    },
+    {
+      "id": "s10",
+      "startSec": 355.0,
+      "endSec": 392.0,
+      "sentences": [
+        {
+          "startSec": 355.0,
+          "speaker": "Alexandra",
+          "es": "Vamos al hospital para un examen médico. Papá y yo esperamos en la sala de espera del hospital."
+        },
+        {
+          "startSec": 365.0,
+          "speaker": "Alexandra",
+          "es": "Hay una televisión, pero papá y yo no miramos la televisión, ahora estamos preocupados, ¿estará realmente enferma?"
+        },
+        {
+          "startSec": 378.0,
+          "speaker": "Alexandra",
+          "es": "Minutos después, la doctora viene con mamá y tienen buenas noticias: ¡mamá solo tiene la tensión alta! ¡Eso explica el dolor de cabeza!"
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat blijkt er volgens de dokter met mama aan de hand te zijn?",
+        "choices": [
+          "Ze heeft een ernstige ziekte",
+          "Ze heeft te veel gegeten",
+          "Ze heeft alleen een hoge bloeddruk",
+          "Er is niets gevonden"
+        ],
+        "answerIndex": 2,
+        "explanationNl": "De dokter komt met goed nieuws: \"¡mamá solo tiene la tensión alta! ¡Eso explica el dolor de cabeza!\" Ze heeft alleen een hoge bloeddruk.",
+        "evidence": {
+          "es": "Minutos después, la doctora viene con mamá y tienen buenas noticias: ¡mamá solo tiene la tensión alta!",
+          "nl": "Minuten later komt de dokter met mama en ze hebben goed nieuws: mama heeft alleen een hoge bloeddruk!",
+          "startSec": 378.45,
+          "endSec": 388.89
+        }
+      }
+    },
+    {
+      "id": "s11",
+      "startSec": 392.0,
+      "endSec": 422.0,
+      "sentences": [
+        {
+          "startSec": 392.0,
+          "speaker": "Alexandra",
+          "es": "Todos nos reímos y nos alegramos mucho porque mamá está bien, y porque tenemos una caja de 12 empanadillas de chapín para cenar."
+        },
+        {
+          "startSec": 406.0,
+          "speaker": "Alexandra",
+          "es": "Después de un día con muchas emociones, volvemos a casa, contentos por el pequeño viaje juntos y aliviados porque mamá está bien."
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Waarom zijn ze aan het einde blij en opgelucht?",
+        "choices": [
+          "Omdat de vakantie langer duurt",
+          "Omdat mama in orde is en ze empanadillas hebben voor het avondeten",
+          "Omdat ze een nieuw huis kopen",
+          "Omdat papa jarig is"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "Alexandra zegt: \"nos alegramos mucho porque mamá está bien, y porque tenemos una caja de 12 empanadillas de chapín para cenar.\" Mama is in orde en er zijn empanadillas voor het eten.",
+        "evidence": {
+          "es": "Todos nos reímos y nos alegramos mucho porque mamá está bien, y porque tenemos una caja de 12 empanadillas de chapín para cenar.",
+          "nl": "We lachen allemaal en zijn heel blij omdat mama in orde is, en omdat we een doos met twaalf empanadillas de chapín hebben voor het avondeten.",
+          "startSec": 392.83,
+          "endSec": 404.87
+        }
+      }
+    },
+    {
+      "id": "s12",
+      "startSec": 422.0,
+      "endSec": 453.0,
+      "sentences": [
+        {
+          "startSec": 422.0,
+          "speaker": "Rodrigo",
+          "es": "Finalmente, y felizmente, todo ha sido un susto y la mamá de Alexandra está bien. ¡Qué alivio para toda la familia! Pero gracias a esa preocupación, han tenido la oportunidad de ir a todos los lugares importantes de la isla para María y también les espera una cena deliciosa."
+        }
+      ],
+      "question": {
+        "type": "vocabInContext",
+        "vocabId": "el-susto",
+        "promptNl": "Je hoorde \"todo ha sido un susto\". Wat betekent \"un susto\"?",
+        "choices": [
+          "een feest",
+          "een schrik",
+          "een reis",
+          "een ziekte"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "Rodrigo besluit: \"todo ha sido un susto y la mamá de Alexandra está bien.\" \"Un susto\" is een schrik; het liep met een sisser af.",
+        "evidence": {
+          "es": "Finalmente, y felizmente, todo ha sido un susto y la mamá de Alexandra está bien.",
+          "nl": "Uiteindelijk, en gelukkig, was het allemaal loos alarm en is de moeder van Alexandra in orde.",
+          "startSec": 423.19,
+          "endSec": 431.85
+        }
+      }
+    }
+  ]
+}

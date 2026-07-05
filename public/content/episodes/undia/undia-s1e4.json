@@ -1,0 +1,641 @@
+{
+  "schemaVersion": 1,
+  "id": "undia-s1e4",
+  "podcastId": "undia",
+  "title": "De eerste keer dat ik mijn zus ontmoette",
+  "titleEs": "La primera vez que conocí a mi hermana",
+  "level": "A1",
+  "audioUrl": "https://api.spreaker.com/download/episode/42878424/udm_s1e4_sister.mp3",
+  "durationSec": 341.25,
+  "descriptionNl": "Melina uit Lima ontmoet na 22 jaar voor het eerst haar zus Shirley tijdens een familievakantie in Cusco, en een liedje op de radio breekt het ijs.",
+  "source": {
+    "rssUrl": "https://www.spreaker.com/show/4638090/episodes/feed",
+    "transcriptUrl": "https://player.timelinenotation.com/undiamonolingue/19897",
+    "attributionNl": "Audio en transcript © Babbel — Un día en español"
+  },
+  "vocab": [
+    {
+      "id": "la-hermana",
+      "es": "la hermana",
+      "nl": "de zus",
+      "exampleEs": "Shirley es mi hermana.",
+      "core": true,
+      "clip": {
+        "startSec": 97.52,
+        "endSec": 98.27
+      }
+    },
+    {
+      "id": "conocer",
+      "es": "conocer",
+      "nl": "leren kennen / ontmoeten",
+      "exampleEs": "Por fin, voy a conocer a mi hermana.",
+      "core": true,
+      "clip": {
+        "startSec": 131.0,
+        "endSec": 131.77
+      }
+    },
+    {
+      "id": "la-esposa",
+      "es": "la esposa",
+      "nl": "de vrouw / echtgenote",
+      "exampleEs": "Mi papá y su esposa tienen una hija, Shirley.",
+      "core": true,
+      "clip": {
+        "startSec": 91.06,
+        "endSec": 91.95
+      }
+    },
+    {
+      "id": "los-abuelos",
+      "es": "los abuelos",
+      "nl": "de grootouders",
+      "exampleEs": "Vivo aquí con mi mamá y mis abuelos.",
+      "core": true,
+      "clip": {
+        "startSec": 82.32,
+        "endSec": 83.27
+      }
+    },
+    {
+      "id": "divorciado",
+      "es": "divorciado",
+      "nl": "gescheiden",
+      "exampleEs": "Mi papá y mi mamá están divorciados desde que soy un bebé.",
+      "core": true,
+      "clip": {
+        "startSec": 85.9,
+        "endSec": 87.07
+      }
+    },
+    {
+      "id": "el-vuelo",
+      "es": "el vuelo",
+      "nl": "de vlucht",
+      "exampleEs": "El vuelo de Lima a Cusco es solo una hora y media, ¡pero para mí es una eternidad!",
+      "core": true,
+      "clip": {
+        "startSec": 164.8,
+        "endSec": 166.35
+      }
+    },
+    {
+      "id": "nerviosa",
+      "es": "nerviosa",
+      "nl": "zenuwachtig",
+      "exampleEs": "¡Estoy muy nerviosa por conocer a mi hermana!",
+      "core": true,
+      "clip": {
+        "startSec": 175.56,
+        "endSec": 176.67
+      }
+    },
+    {
+      "id": "por-fin",
+      "es": "por fin",
+      "nl": "eindelijk",
+      "exampleEs": "Por fin, mi hermana y yo nos conocemos en persona.",
+      "core": true,
+      "clip": {
+        "startSec": 190.06,
+        "endSec": 191.33
+      }
+    },
+    {
+      "id": "la-cancion",
+      "es": "la canción",
+      "nl": "het liedje",
+      "exampleEs": "Entonces suena una canción en la radio.",
+      "core": true,
+      "clip": {
+        "startSec": 241.1,
+        "endSec": 242.23
+      }
+    },
+    {
+      "id": "favorito",
+      "es": "favorito",
+      "nl": "favoriet / lievelings-",
+      "exampleEs": "¡Es mi grupo favorito!",
+      "core": true,
+      "clip": {
+        "startSec": 261.18,
+        "endSec": 262.25
+      }
+    },
+    {
+      "id": "la-familia",
+      "es": "la familia",
+      "nl": "de familie",
+      "exampleEs": "Estoy muy feliz de conocer más a mi nueva familia.",
+      "core": true,
+      "clip": {
+        "startSec": 302.59,
+        "endSec": 303.62
+      }
+    },
+    {
+      "id": "feliz",
+      "es": "feliz",
+      "nl": "blij / gelukkig",
+      "exampleEs": "Estoy muy feliz de conocer más a mi nueva familia y de tener de repente a Shirley como hermana.",
+      "core": true,
+      "clip": {
+        "startSec": 305.41,
+        "endSec": 306.24
+      }
+    }
+  ],
+  "glossary": {
+    "hola": "hallo",
+    "rodrigo": "Rodrigo (de presentator)",
+    "doy": "ik geef (te doy la bienvenida = ik heet je welkom)",
+    "da": "geeft (te da la bienvenida = heet je welkom)",
+    "bienvenida": "welkom",
+    "día": "dag",
+    "español": "Spaans",
+    "monolingüe": "eentalig",
+    "pódcast": "podcast",
+    "vida": "leven",
+    "hispanohablantes": "Spaanstaligen",
+    "estados": "Staten (Estados Unidos = Verenigde Staten)",
+    "unidos": "Verenigde (Estados Unidos = Verenigde Staten)",
+    "latinoamérica": "Latijns-Amerika",
+    "imagínate": "stel je voor",
+    "hoy": "vandaag",
+    "vas": "je gaat",
+    "conocer": "leren kennen / ontmoeten",
+    "hermano": "broer",
+    "hermana": "zus",
+    "primera": "eerste",
+    "vez": "keer (por primera vez = voor de eerste keer)",
+    "crees": "je denkt / je gelooft",
+    "sería": "het zou zijn",
+    "estarías": "je zou zijn",
+    "nervioso": "zenuwachtig",
+    "nerviosa": "zenuwachtig",
+    "preguntarías": "je zou je afvragen",
+    "tienen": "ze hebben",
+    "muchas": "veel",
+    "cosas": "dingen",
+    "común": "gemeenschappelijk (en común = gemeen)",
+    "pensando": "denkend (está pensando en = denkt na over)",
+    "melina": "Melina (de hoofdpersoon)",
+    "nuestra": "onze",
+    "protagonista": "hoofdpersoon",
+    "después": "na / daarna (después de = na)",
+    "años": "jaren",
+    "fin": "einde (por fin = eindelijk)",
+    "conocerá": "zij zal leren kennen / ontmoeten",
+    "escuchas": "je luistert",
+    "atención": "aandacht",
+    "episodio": "aflevering",
+    "expresiones": "uitdrukkingen",
+    "hablar": "praten",
+    "planes": "plannen",
+    "futuros": "toekomstige",
+    "escuchamos": "we luisteren (naar)",
+    "historia": "verhaal",
+    "llamo": "ik heet (me llamo = ik heet)",
+    "lima": "Lima (de hoofdstad van Peru)",
+    "capital": "hoofdstad",
+    "perú": "Peru (land in Zuid-Amerika)",
+    "vivo": "ik woon",
+    "mamá": "mama / moeder",
+    "abuelos": "grootouders",
+    "papá": "papa / vader",
+    "están": "ze zijn",
+    "divorciados": "gescheiden",
+    "bebé": "baby",
+    "esposa": "vrouw / echtgenote",
+    "hija": "dochter",
+    "shirley": "Shirley (de zus van Melina)",
+    "viven": "ze wonen",
+    "lejos": "ver (weg)",
+    "conozco": "ik ken (no conozco = ik ken niet)",
+    "tampoco": "ook niet",
+    "veces": "keren (a veces = soms)",
+    "hablo": "ik praat",
+    "teléfono": "telefoon",
+    "quiero": "ik wil",
+    "persona": "persoon (en persona = in het echt)",
+    "importante": "belangrijk",
+    "voy": "ik ga",
+    "encontrarme": "afspreken (voy a encontrarme con = ik ga afspreken met)",
+    "cusco": "Cusco (stad in de Peruaanse Andes)",
+    "ciudad": "stad",
+    "andes": "de Andes (gebergte in Zuid-Amerika)",
+    "días": "dagen",
+    "vacaciones": "vakantie",
+    "cuatro": "vier",
+    "primero": "eerst",
+    "tomar": "nemen",
+    "avión": "vliegtuig",
+    "vuelo": "vlucht",
+    "solo": "alleen / slechts",
+    "hora": "uur",
+    "media": "half (una hora y media = anderhalf uur)",
+    "eternidad": "eeuwigheid",
+    "entendernos": "elkaar begrijpen",
+    "bien": "goed",
+    "aeropuerto": "vliegveld",
+    "esperan": "ze wachten (me esperan = ze wachten op mij)",
+    "conocemos": "we leren elkaar kennen (nos conocemos = we ontmoeten elkaar)",
+    "tal": "(¿qué tal? = hoe gaat het / hoe was het?)",
+    "gracias": "bedankt",
+    "ehmm": "ehm (aarzeling)",
+    "saludarnos": "elkaar begroeten",
+    "miramos": "we kijken (nos miramos = we kijken elkaar aan)",
+    "sé": "ik weet (no sé = ik weet niet)",
+    "decir": "zeggen",
+    "quizás": "misschien",
+    "mismo": "zelfde",
+    "problema": "probleem",
+    "miran": "ze kijken (nos miran = ze kijken naar ons)",
+    "preocupados": "bezorgd",
+    "preocupada": "bezorgd",
+    "también": "ook",
+    "taxi": "taxi",
+    "hotel": "hotel",
+    "estamos": "we zijn",
+    "todos": "allemaal / iedereen",
+    "silencio": "stilte",
+    "suena": "klinkt (suena una canción = er klinkt een liedje)",
+    "canción": "liedje",
+    "radio": "radio",
+    "grupo": "groep / band",
+    "favorito": "favoriet / lievelings-",
+    "rock": "rock(muziek)",
+    "subir": "omhoog doen (subir el volumen = het volume harder zetten)",
+    "volumen": "volume",
+    "serio": "serieus (¿en serio? = echt waar?)",
+    "ir": "gaan",
+    "concierto": "concert",
+    "empezamos": "we beginnen",
+    "paramos": "we stoppen (no paramos = we houden niet op)",
+    "hablamos": "we praten",
+    "música": "muziek",
+    "durante": "gedurende / tijdens",
+    "mágica": "magisch / betoverend",
+    "gente": "mensen",
+    "amable": "vriendelijk",
+    "danzas": "dansen",
+    "tradicionales": "traditionele",
+    "nueva": "nieuwe",
+    "familia": "familie",
+    "feliz": "blij / gelukkig",
+    "tener": "hebben",
+    "repente": "(de repente = opeens)",
+    "evento": "gebeurtenis",
+    "cambiarte": "jou veranderen (cambiarte la vida = je leven veranderen)",
+    "además": "bovendien",
+    "entienden": "ze begrijpen (se entienden = ze begrijpen elkaar)",
+    "maravilla": "wonder (de maravilla = geweldig)",
+    "seguro": "zeker",
+    "ninguna": "geen (ninguna de las dos = geen van beiden)",
+    "dos": "twee",
+    "podrá": "zal kunnen",
+    "olvidar": "vergeten",
+    "escuchar": "luisteren",
+    "próximo": "volgende"
+  },
+  "segments": [
+    {
+      "id": "s01",
+      "startSec": 6.0,
+      "endSec": 43.0,
+      "sentences": [
+        {
+          "startSec": 6.0,
+          "speaker": "Rodrigo",
+          "es": "Hola, soy Rodrigo y te doy la bienvenida a Un día en español – monolingüe, el pódcast en español que te da la bienvenida a la vida de hispanohablantes en Estados Unidos y Latinoamérica."
+        },
+        {
+          "startSec": 26.0,
+          "speaker": "Rodrigo",
+          "es": "Imagínate que hoy vas a conocer a tu hermano o hermana por primera vez. ¿Cómo crees que sería? ¿Estarías nervioso o nerviosa? ¿Te preguntarías si tienen muchas cosas en común?"
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat vraagt Rodrigo je je aan het begin voor te stellen?",
+        "choices": [
+          "Dat je naar een ander land verhuist",
+          "Dat je vandaag je broer of zus voor het eerst ontmoet",
+          "Dat je je ouders een week niet ziet",
+          "Dat je een beroemde zanger tegenkomt"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "Rodrigo zegt: \"Imagínate que hoy vas a conocer a tu hermano o hermana por primera vez.\" Je moet je dus voorstellen dat je vandaag voor het eerst je broer of zus ontmoet.",
+        "evidence": {
+          "es": "Imagínate que hoy vas a conocer a tu hermano o hermana por primera vez.",
+          "nl": "Stel je voor dat je vandaag je broer of zus voor de eerste keer gaat ontmoeten.",
+          "startSec": 26.05,
+          "endSec": 33.69
+        }
+      }
+    },
+    {
+      "id": "s02",
+      "startSec": 43.0,
+      "endSec": 71.0,
+      "sentences": [
+        {
+          "startSec": 43.0,
+          "speaker": "Rodrigo",
+          "es": "En todo esto está pensando Melina, nuestra protagonista de hoy. Después de 22 años, hoy, por fin, conocerá a su hermana."
+        },
+        {
+          "startSec": 56.0,
+          "speaker": "Rodrigo",
+          "es": "Si escuchas con atención, en este episodio hay expresiones para hablar sobre tus planes futuros."
+        },
+        {
+          "startSec": 65.0,
+          "speaker": "Rodrigo",
+          "es": "¡Escuchamos la historia de Melina!"
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Na hoeveel jaar ontmoet Melina eindelijk haar zus?",
+        "choices": [
+          "Na 2 jaar",
+          "Na 10 jaar",
+          "Na 15 jaar",
+          "Na 22 jaar"
+        ],
+        "answerIndex": 3,
+        "explanationNl": "Rodrigo vertelt: \"Después de 22 años, hoy, por fin, conocerá a su hermana.\" Na 22 jaar ontmoet ze haar zus dus eindelijk.",
+        "evidence": {
+          "es": "Después de 22 años, hoy, por fin, conocerá a su hermana.",
+          "nl": "Na 22 jaar zal ze vandaag eindelijk haar zus ontmoeten.",
+          "startSec": 49.35,
+          "endSec": 55.71
+        }
+      }
+    },
+    {
+      "id": "s03",
+      "startSec": 71.0,
+      "endSec": 126.0,
+      "sentences": [
+        {
+          "startSec": 71.0,
+          "speaker": "Melina",
+          "es": "¡Hola! Me llamo Melina y tengo 22 años. Soy de Lima, la capital de Perú. Vivo aquí con mi mamá y mis abuelos. Mi papá y mi mamá están divorciados desde que soy un bebé."
+        },
+        {
+          "startSec": 89.0,
+          "speaker": "Melina",
+          "es": "Mi papá y su esposa tienen una hija, Shirley. Shirley es mi hermana."
+        },
+        {
+          "startSec": 99.0,
+          "speaker": "Melina",
+          "es": "Pero mi papá, su esposa y mi hermana viven muy lejos. No conozco a la esposa de mi papá y tampoco conozco a mi hermana."
+        },
+        {
+          "startSec": 115.0,
+          "speaker": "Melina",
+          "es": "A veces hablo por teléfono con mi papá, su esposa y mi hermana. Pero yo quiero conocer a Shirley en persona."
+        }
+      ],
+      "question": {
+        "type": "vocabInContext",
+        "vocabId": "los-abuelos",
+        "promptNl": "Je hoorde \"Vivo aquí con mi mamá y mis abuelos\". Wat betekent \"abuelos\"?",
+        "choices": [
+          "grootouders",
+          "ooms en tantes",
+          "buren",
+          "neven en nichten"
+        ],
+        "answerIndex": 0,
+        "explanationNl": "\"Los abuelos\" zijn de grootouders. Melina woont in Lima bij haar moeder en haar grootouders.",
+        "evidence": {
+          "es": "Vivo aquí con mi mamá y mis abuelos.",
+          "nl": "Ik woon hier met mijn moeder en mijn grootouders.",
+          "startSec": 79.37,
+          "endSec": 83.37
+        }
+      }
+    },
+    {
+      "id": "s04",
+      "startSec": 126.0,
+      "endSec": 183.0,
+      "sentences": [
+        {
+          "startSec": 126.0,
+          "speaker": "Melina",
+          "es": "Hoy es un día importante. Por fin, voy a conocer a mi hermana. Voy a encontrarme con mi papá, su esposa y mi hermana en Cusco. Cusco es una ciudad en Perú que está en los Andes. Vamos a estar unos días de vacaciones en Cusco los cuatro: papá, su esposa, mi hermana y yo."
+        },
+        {
+          "startSec": 160.0,
+          "speaker": "Melina",
+          "es": "Primero voy a tomar un avión a Cusco. El vuelo de Lima a Cusco es solo una hora y media, ¡pero para mí es una eternidad! ¡Estoy muy nerviosa por conocer a mi hermana! ¿Vamos a entendernos bien?"
+        }
+      ],
+      "question": {
+        "type": "vocabInContext",
+        "vocabId": "el-vuelo",
+        "promptNl": "Je hoorde \"El vuelo de Lima a Cusco es solo una hora y media\". Wat betekent \"el vuelo\"?",
+        "choices": [
+          "de busreis",
+          "de vlucht",
+          "de weg",
+          "de koffer"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "\"El vuelo\" is de vlucht. De vlucht van Lima naar Cusco duurt maar anderhalf uur, maar voor de zenuwachtige Melina voelt dat als een eeuwigheid.",
+        "evidence": {
+          "es": "El vuelo de Lima a Cusco es solo una hora y media, ¡pero para mí es una eternidad!",
+          "nl": "De vlucht van Lima naar Cusco duurt maar anderhalf uur, maar voor mij is het een eeuwigheid!",
+          "startSec": 164.77,
+          "endSec": 174.07
+        }
+      }
+    },
+    {
+      "id": "s05",
+      "startSec": 183.0,
+      "endSec": 233.0,
+      "sentences": [
+        {
+          "startSec": 183.0,
+          "speaker": "Melina",
+          "es": "En el aeropuerto mi papá, su esposa y mi hermana me esperan."
+        },
+        {
+          "startSec": 190.0,
+          "speaker": "Melina",
+          "es": "Por fin, mi hermana y yo nos conocemos en persona."
+        },
+        {
+          "startSec": 196.0,
+          "speaker": "Melina",
+          "es": "–¡Hola, Shirley! ¿Cómo estás?"
+        },
+        {
+          "startSec": 199.0,
+          "speaker": "Shirley",
+          "es": "–¡Hola, Melina! ¡Bien! ¿Tú cómo estás? ¿Qué tal el vuelo?"
+        },
+        {
+          "startSec": 207.0,
+          "speaker": "Melina",
+          "es": "–Muy bien, gracias… ehmm…"
+        },
+        {
+          "startSec": 211.0,
+          "speaker": "Melina",
+          "es": "Después de saludarnos, mi hermana y yo solo nos miramos sin hablar. No sé qué decir. Quizás Shirley tiene el mismo problema."
+        },
+        {
+          "startSec": 225.0,
+          "speaker": "Melina",
+          "es": "Mi papá y su esposa nos miran preocupados. Yo también estoy preocupada."
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat gebeurt er nadat de zussen elkaar hebben begroet?",
+        "choices": [
+          "Ze omhelzen elkaar en huilen van blijdschap",
+          "Ze maken meteen ruzie",
+          "Ze kijken elkaar alleen aan en weten niet wat ze moeten zeggen",
+          "Ze gaan direct samen eten"
+        ],
+        "answerIndex": 2,
+        "explanationNl": "Melina vertelt: \"Después de saludarnos, mi hermana y yo solo nos miramos sin hablar. No sé qué decir.\" Na de begroeting valt er dus een ongemakkelijke stilte.",
+        "evidence": {
+          "es": "Después de saludarnos, mi hermana y yo solo nos miramos sin hablar. No sé qué decir.",
+          "nl": "Na de begroeting kijken mijn zus en ik elkaar alleen maar aan zonder te praten. Ik weet niet wat ik moet zeggen.",
+          "startSec": 210.83,
+          "endSec": 219.99
+        }
+      }
+    },
+    {
+      "id": "s06",
+      "startSec": 233.0,
+      "endSec": 286.0,
+      "sentences": [
+        {
+          "startSec": 233.0,
+          "speaker": "Melina",
+          "es": "En el taxi al hotel estamos todos en silencio."
+        },
+        {
+          "startSec": 239.0,
+          "speaker": "Melina",
+          "es": "Entonces suena una canción en la radio. ¡Es mi grupo favorito! Es un grupo de rock en español."
+        },
+        {
+          "startSec": 253.0,
+          "speaker": "Shirley",
+          "es": "–¿Puede subir el volumen? ¡Es mi grupo favorito!"
+        },
+        {
+          "startSec": 258.0,
+          "speaker": "Melina",
+          "es": "–¿En serio? ¡También es mi grupo favorito! Voy a ir a un concierto en Lima."
+        },
+        {
+          "startSec": 272.0,
+          "speaker": "Melina",
+          "es": "Entonces Shirley y yo empezamos a hablar y no paramos. Hablamos de todo… pero sobre todo hablamos de música."
+        }
+      ],
+      "question": {
+        "type": "gap",
+        "vocabId": "favorito",
+        "promptNl": "Vul aan wat Shirley in de taxi zegt:",
+        "textEs": "¿Puede subir el volumen? ¡Es mi grupo ___!",
+        "choices": [
+          "pequeño",
+          "nuevo",
+          "favorito",
+          "tradicional"
+        ],
+        "answerIndex": 2,
+        "explanationNl": "Shirley zegt: \"¿Puede subir el volumen? ¡Es mi grupo favorito!\" De band op de radio is haar lievelingsband, en die van Melina ook.",
+        "evidence": {
+          "es": "¿Puede subir el volumen? ¡Es mi grupo favorito!",
+          "nl": "Kunt u het volume harder zetten? Het is mijn lievelingsband!",
+          "startSec": 253.39,
+          "endSec": 258.77
+        }
+      }
+    },
+    {
+      "id": "s07",
+      "startSec": 286.0,
+      "endSec": 313.0,
+      "sentences": [
+        {
+          "startSec": 286.0,
+          "speaker": "Melina",
+          "es": "Durante 10 días estamos en la mágica Cusco y conozco la ciudad, su gente amable y sus danzas tradicionales. Y también, y más importante, conozco a mi \"nueva familia\". Estoy muy feliz de conocer más a mi nueva familia y de tener de repente a Shirley como hermana."
+        }
+      ],
+      "question": {
+        "type": "gap",
+        "vocabId": "la-familia",
+        "promptNl": "Vul aan wat je hoorde:",
+        "textEs": "Estoy muy feliz de conocer más a mi nueva ___.",
+        "choices": [
+          "escuela",
+          "familia",
+          "casa",
+          "canción"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "Melina zegt: \"Estoy muy feliz de conocer más a mi nueva familia.\" Ze is heel blij dat ze haar nieuwe familie beter leert kennen.",
+        "evidence": {
+          "es": "Estoy muy feliz de conocer más a mi nueva familia y de tener de repente a Shirley como hermana.",
+          "nl": "Ik ben heel blij dat ik mijn nieuwe familie beter leer kennen en dat ik opeens Shirley als zus heb.",
+          "startSec": 304.28,
+          "endSec": 312.86
+        }
+      }
+    },
+    {
+      "id": "s08",
+      "startSec": 313.0,
+      "endSec": 341.0,
+      "sentences": [
+        {
+          "startSec": 313.0,
+          "speaker": "Rodrigo",
+          "es": "Un evento como este, conocer a tu hermana, puede cambiarte la vida. Y, además, Melina y su hermana se entienden de maravilla. Estoy seguro de que este es un día que ninguna de las dos podrá olvidar."
+        },
+        {
+          "startSec": 334.0,
+          "speaker": "Rodrigo",
+          "es": "Gracias por escuchar y hasta el próximo día."
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat zegt Rodrigo aan het einde over Melina en haar zus?",
+        "choices": [
+          "Ze begrijpen elkaar geweldig",
+          "Ze hebben nog steeds niets gemeen",
+          "Ze gaan samen in Cusco wonen",
+          "Ze bellen elkaar nooit meer"
+        ],
+        "answerIndex": 0,
+        "explanationNl": "Rodrigo zegt: \"Melina y su hermana se entienden de maravilla.\" Ze begrijpen elkaar dus geweldig, en volgens hem zal geen van beiden deze dag ooit vergeten.",
+        "evidence": {
+          "es": "Melina y su hermana se entienden de maravilla. Estoy seguro de que este es un día que ninguna de las dos podrá olvidar.",
+          "nl": "Melina en haar zus begrijpen elkaar geweldig. Ik weet zeker dat dit een dag is die geen van beiden zal vergeten.",
+          "startSec": 322.48,
+          "endSec": 334.18
+        }
+      }
+    }
+  ]
+}

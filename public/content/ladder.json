@@ -50,6 +50,47 @@
         { "id": "unit-3-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10"] },
         { "id": "unit-3-gate", "type": "gate", "passPct": 80 }
       ]
+    },
+    {
+      "id": "unit-4",
+      "title": "La familia",
+      "subtitleNl": "De eerste keer dat ik mijn zus ontmoette",
+      "episodeId": "undia-s1e4",
+      "steps": [
+        { "id": "unit-4-words", "type": "words" },
+        { "id": "unit-4-listen-1", "type": "listen", "labelNl": "Luister · deel 1", "segmentIds": ["s01", "s02", "s03", "s04"] },
+        { "id": "unit-4-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s05", "s06", "s07", "s08"] },
+        { "id": "unit-4-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08"] },
+        { "id": "unit-4-gate", "type": "gate", "passPct": 80 }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "title": "La familia",
+      "subtitleNl": "De familie leren kennen in het Spaans",
+      "episodeId": "undia-s1e9",
+      "steps": [
+        { "id": "unit-5-words", "type": "words" },
+        { "id": "unit-5-listen-1", "type": "listen", "labelNl": "Luister · deel 1", "segmentIds": ["s01", "s02", "s03", "s04"] },
+        { "id": "unit-5-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s05", "s06", "s07", "s08"] },
+        { "id": "unit-5-listen-3", "type": "listen", "labelNl": "Luister · deel 3", "segmentIds": ["s09", "s10", "s11", "s12"] },
+        { "id": "unit-5-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12"] },
+        { "id": "unit-5-gate", "type": "gate", "passPct": 80 }
+      ]
+    },
+    {
+      "id": "unit-6",
+      "title": "La familia",
+      "subtitleNl": "Mama neemt (geen) afscheid",
+      "episodeId": "undia-s1e8",
+      "steps": [
+        { "id": "unit-6-words", "type": "words" },
+        { "id": "unit-6-listen-1", "type": "listen", "labelNl": "Luister · deel 1", "segmentIds": ["s01", "s02", "s03", "s04"] },
+        { "id": "unit-6-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s05", "s06", "s07", "s08"] },
+        { "id": "unit-6-listen-3", "type": "listen", "labelNl": "Luister · deel 3", "segmentIds": ["s09", "s10", "s11", "s12"] },
+        { "id": "unit-6-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12"] },
+        { "id": "unit-6-gate", "type": "gate", "passPct": 80 }
+      ]
     }
   ]
 }
