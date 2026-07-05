@@ -74,7 +74,7 @@ export default function Home() {
           <div>
             <p style={{ margin: 0, color: 'var(--brand-soft)', fontWeight: 700, fontSize: 14 }}>{greeting}</p>
             <p style={{ margin: '3px 0 0', fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 24, color: '#fff' }}>
-              {NAME} 👋
+              {NAME}
             </p>
           </div>
           <div style={{ display: 'flex', gap: 9, flexShrink: 0 }}>
@@ -93,22 +93,6 @@ export default function Home() {
             >
               <span style={{ color: 'var(--gold)' }}>🔥</span>
               {streak.current}
-            </span>
-            <span
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 5,
-                background: 'rgba(255,255,255,.13)',
-                padding: '6px 11px',
-                borderRadius: 999,
-                color: '#fff',
-                fontWeight: 800,
-                fontSize: 14,
-              }}
-            >
-              <span style={{ width: 14, height: 14, borderRadius: '50%', background: 'var(--gold)' }} />
-              {xp.total}
             </span>
           </div>
         </div>
@@ -153,7 +137,15 @@ export default function Home() {
             </div>
             <div style={{ marginTop: 13, display: 'flex', alignItems: 'center', gap: 11 }}>
               <div style={{ flex: 1, height: 9, borderRadius: 999, background: '#ECEAF6', overflow: 'hidden' }}>
-                <div style={{ width: `${unitPct}%`, height: '100%', background: 'var(--accent)', borderRadius: 999 }} />
+                <div
+                  style={{
+                    width: `${unitPct}%`,
+                    height: '100%',
+                    background: 'var(--accent)',
+                    borderRadius: 999,
+                    animation: 'fillbar .7s ease',
+                  }}
+                />
               </div>
               <div
                 style={{
@@ -193,7 +185,9 @@ export default function Home() {
                 overflow: 'hidden',
               }}
             >
-              <div style={{ width: `${goalPct}%`, height: '100%', background: 'var(--gold)' }} />
+              <div
+                style={{ width: `${goalPct}%`, height: '100%', background: 'var(--gold)', animation: 'fillbar .7s ease' }}
+              />
             </div>
           </div>
           <Link

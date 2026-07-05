@@ -4,6 +4,7 @@ import { newSrsItem, review, todayStr } from './srs'
 
 const SCHEMA_VERSION = 1
 const XP_PER_CORRECT = 15
+const XP_PER_TRY = 5
 const MAX_STRUGGLES = 50
 
 const initialState = {
@@ -65,7 +66,8 @@ export const useStore = create(
       answerSegment(episodeId, segmentId, correct) {
         get().ensureEpisode(episodeId)
         get().touchStreak()
-        if (correct) get().addXp()
+        // Ook een foute poging levert wat XP op (¡Casi!-ontwerp uit het prototype).
+        get().addXp(correct ? XP_PER_CORRECT : XP_PER_TRY)
         set((s) => {
           const ep = s.episodes[episodeId]
           const prev = ep.answers[segmentId] || { correct: false, attempts: 0 }
@@ -179,4 +181,4 @@ export const useStore = create(
   ),
 )
 
-export { XP_PER_CORRECT }
+export { XP_PER_CORRECT, XP_PER_TRY }

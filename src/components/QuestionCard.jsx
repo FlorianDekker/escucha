@@ -43,8 +43,10 @@ export default function QuestionCard({ question, selected, onSelect, revealed = 
             disabled={revealed}
           >
             <span>{choice}</span>
-            {revealed && i === answerIndex && <span>✓</span>}
-            {revealed && i === selected && i !== answerIndex && <span>✗</span>}
+            {revealed && i === answerIndex && <span className="opt-badge ok">✓</span>}
+            {revealed && i === selected && i !== answerIndex && (
+              <span className="opt-badge bad">✕</span>
+            )}
           </button>
         ))}
       </div>

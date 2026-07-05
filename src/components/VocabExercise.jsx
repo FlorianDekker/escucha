@@ -107,6 +107,10 @@ export default function VocabExercise({
               disabled={checked}
             >
               <span className="num">{i + 1}</span>
+              {checked && i === correctChoiceIndex && <span className="badge ok">✓</span>}
+              {checked && i === selected && i !== correctChoiceIndex && (
+                <span className="badge bad">✕</span>
+              )}
               {choice}
             </button>
           ))}
@@ -147,14 +151,13 @@ export default function VocabExercise({
 
       {checked ? (
         <button type="button" className="btn btn-primary pad-b" onClick={onContinue}>
-          {isLast ? 'Afronden ▸' : 'Doorgaan'}
+          {isLast ? 'Afronden ▸' : 'Doorgaan ▸'}
         </button>
       ) : (
         <button
           type="button"
-          className="btn btn-primary pad-b"
+          className={'btn btn-primary pad-b' + (canCheck ? '' : ' is-locked')}
           onClick={grade}
-          disabled={!canCheck}
         >
           Nagaan
         </button>

@@ -13,6 +13,37 @@
   position: relative;
   overflow: hidden;
   font-family: var(--font-body);
+  animation: screenIn 0.35s ease;
+}
+
+/* Schermovergangen en accent-animaties (keyframes uitsluitend hier, niet in theme.css) */
+@keyframes screenIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fillbar {
+  from {
+    width: 0;
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ---- Statusregel / header ---- */
@@ -63,12 +94,28 @@
   background: var(--gold);
   border-radius: 999px;
   transition: width 0.3s ease;
+  animation: fillbar 0.6s ease;
+}
+.s-progress.green > i {
+  background: var(--good);
 }
 .s-count {
   font-weight: 800;
   font-size: 13px;
   color: #fff;
   flex: 0 0 auto;
+}
+.s-streak {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--gold);
+  font-weight: 800;
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+.s-streak .fire {
+  font-size: 15px;
 }
 
 /* ---- Scrollbaar body-gebied ---- */
@@ -125,6 +172,11 @@
   transform: none;
   box-shadow: 0 6px 0 var(--accent-deep);
   cursor: default;
+}
+/* Prototype-disabled: knop blijft zichtbaar maar niet klikbaar zolang er geen keuze is */
+.btn.is-locked {
+  opacity: 0.4;
+  pointer-events: none;
 }
 .btn-row {
   display: flex;
@@ -355,13 +407,35 @@
   box-shadow: 0 4px 0 var(--accent-deep);
 }
 .vopt.ok {
-  border-color: var(--good);
-  background: rgba(63, 178, 127, 0.12);
-  box-shadow: 0 4px 0 var(--good-deep);
+  border-color: #3fb27f;
+  background: #eaf7f0;
+  box-shadow: none;
 }
 .vopt.bad {
-  border-color: var(--accent);
-  background: rgba(240, 89, 42, 0.12);
+  border-color: #e06b6b;
+  background: #fbecec;
+  box-shadow: none;
+}
+/* Ronde ✓/✕-badge rechtsboven in de tegel na het nagaan */
+.vopt .badge {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: #fff;
+}
+.vopt .badge.ok {
+  background: #3fb27f;
+}
+.vopt .badge.bad {
+  background: #e06b6b;
 }
 
 .type-field {
@@ -632,6 +706,7 @@
   box-shadow: 0 -14px 30px -12px rgba(20, 22, 58, 0.35);
   max-height: 82%;
   overflow-y: auto;
+  animation: screenIn 0.4s ease;
 }
 .sheet-label {
   display: flex;
@@ -721,14 +796,33 @@
   background: var(--chip);
 }
 .opt.ok {
-  border-color: var(--good);
-  background: rgba(63, 178, 127, 0.14);
-  color: var(--good-deep);
+  border-color: #3fb27f;
+  background: #eaf7f0;
+  color: var(--ink);
 }
 .opt.bad {
-  border-color: var(--accent);
-  background: rgba(240, 89, 42, 0.12);
-  color: var(--accent-deep);
+  border-color: #e06b6b;
+  background: #fbecec;
+  color: var(--ink);
+}
+/* Ronde ✓/✕-badge rechts in de antwoordrij na het controleren */
+.opt-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: #fff;
+  flex: 0 0 auto;
+}
+.opt-badge.ok {
+  background: #3fb27f;
+}
+.opt-badge.bad {
+  background: #e06b6b;
 }
 
 /* ============ SCHERM 6 · FEEDBACK ============ */
@@ -744,6 +838,9 @@
   color: #fff;
   margin: 8px 0 0;
 }
+.fb-badge {
+  animation: pop 0.5s ease;
+}
 .fb-badge.ok {
   background: var(--good);
   box-shadow: 0 10px 24px rgba(63, 178, 127, 0.5);
@@ -751,6 +848,10 @@
 .fb-badge.bad {
   background: var(--accent);
   box-shadow: 0 10px 24px rgba(240, 89, 42, 0.5);
+}
+.fb-badge.casi {
+  background: var(--gold);
+  box-shadow: 0 10px 24px rgba(245, 176, 46, 0.45);
 }
 .fb-headline {
   font-family: var(--font-head);
@@ -770,6 +871,7 @@
   font-size: 14px;
   padding: 6px 14px;
   border-radius: 999px;
+  animation: pop 0.6s ease;
 }
 .xp-pill i {
   width: 14px;
@@ -807,6 +909,13 @@
 }
 .answer-chip.neutral {
   background: rgba(255, 255, 255, 0.16);
+}
+/* Gekozen (foute) antwoord: klein en rood-neutraal boven het juiste antwoord */
+.answer-chip.chosen-wrong {
+  background: rgba(224, 107, 107, 0.22);
+  color: #fff;
+  font-size: 13px;
+  padding: 10px 15px;
 }
 .answer-note {
   color: var(--brand-soft);

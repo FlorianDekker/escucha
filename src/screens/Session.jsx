@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { useStore, XP_PER_CORRECT } from '../lib/store'
+import { useStore, XP_PER_CORRECT, XP_PER_TRY } from '../lib/store'
 import { loadLadder, loadEpisode, normalizeWord } from '../lib/contentLoader'
 import { dueItems } from '../lib/srs'
 import { useSegmentPlayer } from '../lib/audio'
@@ -113,6 +113,7 @@ export default function Session() {
    ============================================================ */
 function WordsFlow({ episode, step, episodeId, navigate }) {
   const completeStep = useStore((s) => s.completeStep)
+  const streak = useStore((s) => s.streak)
 
   const [phase, setPhase] = useState('intro')
   const [index, setIndex] = useState(0)
@@ -156,7 +157,7 @@ function WordsFlow({ episode, step, episodeId, navigate }) {
     const minutes = Math.round(episode.durationSec / 60)
     const meta = `${episode.segments.length} fragmenten · ${minutes} min · ${episode.vocab.length} woorden`
     return (
-      <div className="session">
+      <div className="session" key="intro">
         <div className="s-header">
           <button className="s-iconbtn" onClick={() => navigate('/path')} aria-label="Terug">
             ‹
@@ -217,16 +218,17 @@ function WordsFlow({ episode, step, episodeId, navigate }) {
   const item = items[index]
   const fill = (((index + 1) / total) * 100).toFixed(1)
   return (
-    <div className="session">
+    <div className="session" key={'ex-' + index}>
       <div className="s-header">
         <button className="s-iconbtn" onClick={() => navigate('/path')} aria-label="Sluiten">
           ✕
         </button>
-        <div className="s-progress">
+        <div className="s-progress green">
           <i style={{ width: fill + '%' }} />
         </div>
-        <span className="s-count">
-          {index + 1}/{total}
+        <span className="s-streak" aria-label="Streak">
+          <span className="fire">🔥</span>
+          {streak.current}
         </span>
       </div>
 
@@ -287,6 +289,7 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
 
   const [phase, setPhase] = useState('listen') // listen | question | feedback | done
   const [selected, setSelected] = useState(null)
+  const [revealed, setRevealed] = useState(false) // in de vraagsheet: na Controleer kleuren tonen
   const [correct, setCorrect] = useState(false)
   const [hasPlayed, setHasPlayed] = useState(false)
   const [results, setResults] = useState({}) // segId -> correct
@@ -300,6 +303,7 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
   useEffect(() => {
     setPhase('listen')
     setSelected(null)
+    setRevealed(false)
     setCorrect(false)
     setHasPlayed(false)
   }, [idx])
@@ -335,13 +339,14 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
     setRate(nextRate)
   }
 
-  function submit() {
-    if (selected === null) return
+  // Controleer: onthul de kleuren in de sheet en registreer het antwoord meteen.
+  function check() {
+    if (selected === null || revealed) return
     const ok = selected === seg.question.answerIndex
     answerSegment(episodeId, seg.id, ok)
     setResults((r) => ({ ...r, [seg.id]: ok }))
     setCorrect(ok)
-    setPhase('feedback')
+    setRevealed(true)
   }
 
   function advance() {
@@ -359,6 +364,7 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
   function listenAgain() {
     pause()
     setSelected(null)
+    setRevealed(false)
     setHasPlayed(false)
     setPhase('listen')
   }
@@ -367,9 +373,12 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
 
   // ---- Afronding ----
   if (phase === 'done') {
-    const good = Object.values(results).filter(Boolean).length
+    const outcomes = Object.values(results)
+    const good = outcomes.filter(Boolean).length
+    const wrong = outcomes.length - good
+    const earnedXp = good * XP_PER_CORRECT + wrong * XP_PER_TRY
     return (
-      <div className="session">
+      <div className="session" key="done">
         <div className="s-header">
           <span className="s-iconbtn" style={{ visibility: 'hidden' }} />
           <span className="s-title">{step.labelNl || episode.title}</span>
@@ -384,7 +393,7 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
             Je had {good} van {segments.length} vragen goed in dit deel.
           </p>
           <div className="xp-pill" style={{ marginTop: 16 }}>
-            <i />+{good * XP_PER_CORRECT} XP
+            <i />+{earnedXp} XP
           </div>
           <div className="result-actions">
             <button type="button" className="btn btn-primary" onClick={() => navigate('/path')}>
@@ -402,7 +411,7 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
     const chosen = q.choices[selected]
     const right = q.choices[q.answerIndex]
     return (
-      <div className="session">
+      <div className="session" key={'fb-' + idx}>
         <div className="s-header">
           <button className="s-iconbtn" onClick={listenAgain} aria-label="Terug">
             ‹
@@ -417,27 +426,25 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
 
         <div className="s-body">
           <div style={{ textAlign: 'center' }}>
-            <div className={'fb-badge ' + (correct ? 'ok' : 'bad')}>{correct ? '✓' : '✗'}</div>
-            <p className="fb-headline">{correct ? '¡Correcto!' : 'Nog niet…'}</p>
-            {correct && (
-              <div className="xp-pill">
-                <i />+{XP_PER_CORRECT} XP
-              </div>
-            )}
+            <div className={'fb-badge ' + (correct ? 'ok' : 'casi')}>{correct ? '✓' : '!'}</div>
+            <p className="fb-headline">{correct ? '¡Correcto!' : '¡Casi!'}</p>
+            <div className="xp-pill">
+              <i />+{correct ? XP_PER_CORRECT : XP_PER_TRY} XP
+            </div>
           </div>
 
           <div className="answer-card">
-            <p className="lbl">JE ANTWOORD</p>
-            <div className={'answer-chip ' + (correct ? 'ok' : 'neutral')}>
-              {chosen}
-              <span style={{ fontSize: 16 }}>{correct ? '✓' : '✗'}</span>
-            </div>
+            <p className="lbl">JUISTE ANTWOORD</p>
             {!correct && (
-              <div className="answer-chip ok" style={{ marginTop: 8 }}>
-                {right}
-                <span style={{ fontSize: 16 }}>✓</span>
+              <div className="answer-chip chosen-wrong">
+                {chosen}
+                <span style={{ fontSize: 16 }}>✕</span>
               </div>
             )}
+            <div className="answer-chip ok">
+              {right}
+              <span style={{ fontSize: 16 }}>✓</span>
+            </div>
             <p className="answer-note">{q.explanationNl}</p>
           </div>
 
@@ -477,7 +484,7 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
   for (let i = 0; i < idx; i++) for (const s of segments[i].sentences) prevSentences.push(s)
 
   return (
-    <div className="session">
+    <div className="session" key={'listen-' + idx}>
       <div className="s-header">
         <button className="s-iconbtn" onClick={() => navigate('/path')} aria-label="Terug">
           ‹
@@ -527,19 +534,32 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
               question={seg.question}
               selected={selected}
               onSelect={setSelected}
+              revealed={revealed}
             />
-            <button type="button" className="sheet-replay" onClick={onReplay}>
-              ‹‹ Nog eens luisteren
-            </button>
-            <button
-              type="button"
-              className="btn btn-primary"
-              style={{ marginTop: 12 }}
-              onClick={submit}
-              disabled={selected === null}
-            >
-              Nagaan
-            </button>
+            {!revealed && (
+              <button type="button" className="sheet-replay" onClick={onReplay}>
+                ‹‹ Nog eens luisteren
+              </button>
+            )}
+            {revealed ? (
+              <button
+                type="button"
+                className="btn btn-primary"
+                style={{ marginTop: 12 }}
+                onClick={() => setPhase('feedback')}
+              >
+                Doorgaan ▸
+              </button>
+            ) : (
+              <button
+                type="button"
+                className={'btn btn-primary' + (selected === null ? ' is-locked' : '')}
+                style={{ marginTop: 12 }}
+                onClick={check}
+              >
+                Controleer
+              </button>
+            )}
           </div>
         )}
       </div>
@@ -628,7 +648,7 @@ function GateFlow({ episode, step, episodeId, navigate }) {
     const score = scoreRef.current
     const passed = score >= passPct
     return (
-      <div className="session">
+      <div className="session" key="result">
         <div className="s-header">
           <span className="s-iconbtn" style={{ visibility: 'hidden' }} />
           <span className="s-title">Quiz · poort</span>
@@ -667,7 +687,7 @@ function GateFlow({ episode, step, episodeId, navigate }) {
   // ---- Quizvraag ----
   const fill = (((idx + 1) / total) * 100).toFixed(1)
   return (
-    <div className="session">
+    <div className="session" key={'quiz-' + idx}>
       <div className="s-header">
         <button className="s-iconbtn" onClick={() => navigate('/path')} aria-label="Sluiten">
           ✕

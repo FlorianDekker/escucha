@@ -70,98 +70,140 @@ function stepLabel(step) {
   return step.labelNl || 'Luister'
 }
 
-// Zigzag-offsets zoals in het design: midden, links, midden, rechts, ...
-const OFFSETS = [0, -46, 0, 46]
+function iconTypeFor(step) {
+  if (step.type === 'words') return 'words'
+  if (step.type === 'gate') return 'gate'
+  return 'listen'
+}
 
-function PathNode({ status, unitId, stepId, label, offset }) {
-  const labelStyle = {
-    textAlign: 'center',
-    margin: '6px 0 0',
-    transform: `translateX(${offset}px)`,
-    fontWeight: 800,
-    fontSize: 11,
+// Verticaal ritme van het knopenpad en de starthoogte binnen het frame.
+const RHYTHM = 92
+const TOP0 = 24
+
+// Horizontale positie: eerste knoop midden, daarna afwisselend links/rechts.
+function leftFor(index) {
+  if (index === 0) return '46.5%'
+  return index % 2 === 1 ? '29%' : '64.5%'
+}
+
+// SVG-iconen exact uit het design, kleur via stroke (wit bij done, grijs bij locked).
+function StepIcon({ type, color }) {
+  const stroke = { fill: 'none', stroke: color, strokeWidth: 2.2, strokeLinecap: 'round', strokeLinejoin: 'round' }
+  if (type === 'words') {
+    return (
+      <svg width="28" height="28" viewBox="0 0 24 24" {...stroke}>
+        <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-4 3v-3H6a2 2 0 0 1-2-2V6z" />
+        <path d="M8 9h8" />
+        <path d="M8 12h5" />
+      </svg>
+    )
   }
+  if (type === 'gate') {
+    return (
+      <svg width="26" height="26" viewBox="0 0 24 24" {...stroke}>
+        <rect x="5" y="10.5" width="14" height="9.5" rx="2.5" />
+        <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" />
+      </svg>
+    )
+  }
+  // listen
+  return (
+    <svg width="30" height="30" viewBox="0 0 24 24" {...stroke}>
+      <path d="M4 13v-1a8 8 0 0 1 16 0v1" />
+      <rect x="3.8" y="12.5" width="3.6" height="7" rx="1.6" />
+      <rect x="16.6" y="12.5" width="3.6" height="7" rx="1.6" />
+    </svg>
+  )
+}
+
+function ChestIcon({ color }) {
+  return (
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="4" y="8.5" width="16" height="4" rx="1" />
+      <path d="M5.5 12.5V20h13v-7.5" />
+      <path d="M12 8.5V20" />
+      <path d="M12 8.5C10.5 8.5 8.5 8 8.5 6.2 8.5 5 9.4 4 10.5 4c1.5 0 1.5 2 1.5 4.5z" />
+      <path d="M12 8.5c1.5 0 3.5-.5 3.5-2.3C15.5 5 14.6 4 13.5 4 12 4 12 6 12 8.5z" />
+    </svg>
+  )
+}
+
+function PathNode({ step, unitId, top, left }) {
+  const status = step.status
+  const label = stepLabel(step)
+  const iconType = iconTypeFor(step)
+  const wrap = { position: 'absolute', top, left, transform: 'translateX(-50%)', textAlign: 'center' }
 
   if (status === 'current') {
     return (
-      <>
-        <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
+      <div style={{ ...wrap, zIndex: 3 }}>
+        <div style={{ position: 'relative', width: 76, height: 68, margin: '0 auto' }}>
+          <div style={{ position: 'absolute', top: -26, left: '50%', transform: 'translateX(-50%)', zIndex: 2 }}>
+            <div
+              style={{
+                whiteSpace: 'nowrap',
+                background: '#fff',
+                color: 'var(--accent)',
+                fontFamily: 'var(--font-head)',
+                fontWeight: 800,
+                fontSize: 11,
+                padding: '5px 11px',
+                borderRadius: 12,
+                boxShadow: '0 6px 14px rgba(20,22,58,.2)',
+                animation: 'floaty 2.6s ease-in-out infinite',
+              }}
+            >
+              START ▸
+            </div>
+          </div>
           <div
             style={{
               position: 'absolute',
-              top: -6,
-              transform: `translateX(${offset + 44}px)`,
-              background: '#fff',
-              color: 'var(--accent)',
-              fontFamily: 'var(--font-head)',
-              fontWeight: 800,
-              fontSize: 11,
-              padding: '5px 11px',
-              borderRadius: 12,
-              boxShadow: '0 6px 14px rgba(20,22,58,.2)',
-              animation: 'floaty 2.6s ease-in-out infinite',
-              whiteSpace: 'nowrap',
-              zIndex: 2,
+              left: 0,
+              top: 0,
+              width: 76,
+              height: 75,
+              borderRadius: '50% / 54%',
+              background: 'var(--accent)',
+              opacity: 0.5,
+              animation: 'pulseRing 1.8s ease-out infinite',
             }}
+          />
+          <Link
+            to={`/session/${unitId}/${step.id}`}
+            className="node--current-inner"
+            style={{ position: 'relative' }}
+            aria-label={label}
           >
-            START ▸
-          </div>
-          <div style={{ position: 'relative', width: 76, height: 72, transform: `translateX(${offset}px)` }}>
-            <div
-              style={{
-                position: 'absolute',
-                inset: 0,
-                borderRadius: '50%',
-                background: 'var(--accent)',
-                opacity: 0.5,
-                animation: 'pulseRing 1.8s ease-out infinite',
-              }}
-            />
-            <Link
-              to={`/session/${unitId}/${stepId}`}
-              className="node--current-inner"
-              style={{ position: 'relative' }}
-              aria-label={label}
-            >
-              <span className="play-tri play-tri--lg" />
-            </Link>
-          </div>
+            <span className="play-tri play-tri--lg" />
+          </Link>
         </div>
-        <p
-          style={{
-            ...labelStyle,
-            fontFamily: 'var(--font-head)',
-            fontSize: 13,
-            color: 'var(--accent)',
-          }}
-        >
+        <p style={{ margin: '8px 0 0', fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 13, color: 'var(--accent)' }}>
           {label}
         </p>
-      </>
+      </div>
     )
   }
 
-  const node =
-    status === 'done' ? (
-      <Link
-        to={`/session/${unitId}/${stepId}`}
-        className="node node--done"
-        style={{ transform: `translateX(${offset}px)` }}
-        aria-label={label}
-      >
-        <span style={{ color: '#fff', fontSize: 26, fontWeight: 800 }}>✓</span>
-      </Link>
-    ) : (
-      <div className="node node--locked" style={{ transform: `translateX(${offset}px)` }} aria-label={label}>
-        <span style={{ color: '#9998BE', fontSize: 22 }}>🔒</span>
+  if (status === 'done') {
+    return (
+      <div style={wrap}>
+        <Link to={`/session/${unitId}/${step.id}`} className="node node--done" aria-label={label}>
+          <StepIcon type={iconType} color="#fff" />
+        </Link>
+        <p style={{ margin: '5px 0 0', fontWeight: 800, fontSize: 11, color: 'var(--ink-mute)' }}>{label}</p>
       </div>
     )
+  }
 
+  // locked
   return (
-    <>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>{node}</div>
-      <p style={{ ...labelStyle, color: status === 'done' ? 'var(--ink-mute)' : 'var(--ink-faint)' }}>{label}</p>
-    </>
+    <div style={wrap}>
+      <div className="node node--locked" aria-label={label}>
+        <StepIcon type={iconType} color="#9998BE" />
+      </div>
+      <p style={{ margin: '5px 0 0', fontWeight: 800, fontSize: 11, color: 'var(--ink-faint)' }}>{label}</p>
+    </div>
   )
 }
 
@@ -223,54 +265,38 @@ export default function LearningPath() {
         </div>
 
         {/* Knopenpad */}
-        <div style={{ padding: '30px 0 24px' }}>
+        <div
+          style={{
+            position: 'relative',
+            minHeight: currentUnit ? TOP0 + (currentUnit.steps.length + 1) * RHYTHM + 40 : 200,
+          }}
+        >
           {currentUnit &&
             currentUnit.steps.map((step, i) => (
-              <div key={step.id}>
-                {i > 0 && (
-                  <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <div className="path-connector" style={{ transform: `translateX(${OFFSETS[i % 4]}px)` }} />
-                  </div>
-                )}
-                <PathNode
-                  status={step.status}
-                  unitId={currentUnit.unit.id}
-                  stepId={step.id}
-                  label={stepLabel(step)}
-                  offset={OFFSETS[i % 4]}
-                />
-              </div>
+              <PathNode
+                key={step.id}
+                step={step}
+                unitId={currentUnit.unit.id}
+                top={TOP0 + i * RHYTHM}
+                left={leftFor(i)}
+              />
             ))}
 
-          {/* Kist voor de volgende unit */}
+          {/* Kist voor de volgende unit: altijd midden, na de laatste stap */}
           {currentUnit && (
-            <div>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <div
-                  className="path-connector"
-                  style={{ transform: `translateX(${OFFSETS[currentUnit.steps.length % 4]}px)` }}
-                />
+            <div
+              style={{
+                position: 'absolute',
+                top: TOP0 + currentUnit.steps.length * RHYTHM,
+                left: '46.5%',
+                transform: 'translateX(-50%)',
+                textAlign: 'center',
+              }}
+            >
+              <div className="node node--chest" aria-label={chestLabel}>
+                <ChestIcon color="#9998BE" />
               </div>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <div
-                  className="node node--chest"
-                  style={{ transform: `translateX(${OFFSETS[currentUnit.steps.length % 4]}px)` }}
-                >
-                  <span style={{ fontSize: 24 }}>🎁</span>
-                </div>
-              </div>
-              <p
-                style={{
-                  textAlign: 'center',
-                  margin: '6px 0 0',
-                  transform: `translateX(${OFFSETS[currentUnit.steps.length % 4]}px)`,
-                  fontWeight: 800,
-                  fontSize: 11,
-                  color: 'var(--ink-faint)',
-                }}
-              >
-                {chestLabel}
-              </p>
+              <p style={{ margin: '5px 0 0', fontWeight: 800, fontSize: 11, color: 'var(--ink-faint)' }}>{chestLabel}</p>
             </div>
           )}
 

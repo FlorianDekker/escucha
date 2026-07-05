@@ -97,13 +97,12 @@
   cursor: not-allowed;
 }
 
-/* --- Leerpad-knoop --- */
-.path-connector {
-  width: 3px;
-  height: 24px;
-  border-left: 3px dotted var(--brand-soft);
-  margin: 2px 0;
+/* --- Vul-animatie voor voortgangsbalken (Thuis) --- */
+@keyframes fillbar {
+  from { width: 0; }
 }
+
+/* --- Leerpad-knoop --- */
 .node {
   width: 66px;
   height: 60px;
