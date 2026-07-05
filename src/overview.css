@@ -1,0 +1,184 @@
+/* Overzichtsschermen (Thuis, Leerpad, Woorden, Profiel) */
+
+/* --- App-shell: mobile-first, gecentreerd op desktop, vaste tabbar --- */
+.screen {
+  max-width: 480px;
+  margin: 0 auto;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.screen--brand { background: var(--brand); }
+.screen--page { background: var(--page); }
+
+.screen__scroll {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- TabBar --- */
+.tabbar {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 8px calc(12px + env(safe-area-inset-bottom, 0px));
+}
+.tabbar--dark { background: var(--brand-deep); }
+.tabbar--light { background: #fff; border-top: 1px solid var(--line); }
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-width: 56px;
+  min-height: 46px;
+  text-decoration: none;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 10.5px;
+  letter-spacing: .01em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --- Brand-header (Woorden, Profiel, Leerpad) --- */
+.brand-header {
+  background: var(--brand);
+  color: #fff;
+  padding: 22px 20px 20px;
+  border-radius: 0 0 22px 22px;
+}
+
+/* --- Kaart --- */
+.card {
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: 0 14px 30px -14px rgba(20, 22, 58, .4);
+}
+
+/* --- Knoppen --- */
+.btn-accent {
+  width: 100%;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 6px 0 var(--accent-deep);
+  cursor: pointer;
+}
+.btn-accent:disabled {
+  background: var(--locked);
+  color: #fff;
+  box-shadow: 0 6px 0 var(--locked-deep);
+  cursor: not-allowed;
+}
+.btn-ghost {
+  border: 2px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 15px;
+  padding: 12px 15px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+.btn-ghost:disabled {
+  color: var(--ink-faint);
+  cursor: not-allowed;
+}
+
+/* --- Leerpad-knoop --- */
+.path-connector {
+  width: 3px;
+  height: 24px;
+  border-left: 3px dotted var(--brand-soft);
+  margin: 2px 0;
+}
+.node {
+  width: 66px;
+  height: 60px;
+  border-radius: 50% / 54%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+}
+.node--done { background: var(--good); box-shadow: 0 6px 0 var(--good-deep); cursor: pointer; }
+.node--locked { background: var(--locked); box-shadow: 0 6px 0 var(--locked-deep); cursor: default; }
+.node--chest { background: var(--locked); box-shadow: 0 6px 0 var(--locked-deep); border-radius: 18px; }
+.node--current-inner {
+  width: 76px;
+  height: 68px;
+  border-radius: 50% / 54%;
+  background: var(--accent);
+  box-shadow: 0 7px 0 var(--accent-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.play-tri {
+  width: 0; height: 0;
+  border-left: 14px solid #fff;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  margin-left: 4px;
+}
+.play-tri--lg {
+  border-left: 20px solid #fff;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  margin-left: 5px;
+}
+
+/* --- Segmented control --- */
+.segmented {
+  display: flex;
+  background: var(--line-soft);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+}
+.segmented button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--ink-mute);
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 9px 0;
+  border-radius: 999px;
+  cursor: pointer;
+  min-height: 44px;
+}
+.segmented button[data-active='true'] {
+  background: #fff;
+  color: var(--brand);
+  box-shadow: 0 2px 8px rgba(20, 22, 58, .12);
+}
+
+textarea.io {
+  width: 100%;
+  min-height: 96px;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+  color: var(--ink);
+  resize: vertical;
+  background: #fff;
+}

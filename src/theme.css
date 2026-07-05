@@ -1,0 +1,67 @@
+/* Design-tokens uit Claude Design handoff (Podcast Leerapp.dc.html) */
+:root, [data-theme='aubergine'] {
+  --brand: #6A3E8E;
+  --brand-deep: #522f6e;
+  --brand-soft: #D9C4E8;
+  --brand-mute: #B08FC9;
+  --accent: #F0592A;
+  --accent-deep: #c2431d;
+  --page: #F0EAF4;
+  --chip: #F1E9F6;
+  --canvas: #EAE1F0;
+}
+[data-theme='indigo'] {
+  --brand: #4C4FD6; --brand-deep: #3F42C4; --brand-soft: #C6C7FF; --brand-mute: #9FA0E8;
+  --accent: #F15A29; --accent-deep: #c2431d; --page: #EDECF9; --chip: #F1EFFB; --canvas: #DFDEF8;
+}
+[data-theme='groen'] {
+  --brand: #1F9E63; --brand-deep: #16794c; --brand-soft: #BCE8D2; --brand-mute: #7FCBA3;
+  --accent: #F2A93B; --accent-deep: #cf8712; --page: #E9F5EE; --chip: #E4F3EA; --canvas: #DCEFE3;
+}
+[data-theme='oceaan'] {
+  --brand: #2C6FB0; --brand-deep: #22568a; --brand-soft: #BBD6EF; --brand-mute: #7FA8D3;
+  --accent: #F2724B; --accent-deep: #cf5330; --page: #E7EFF7; --chip: #E3EDF7; --canvas: #DBE7F3;
+}
+
+:root {
+  --ink: #2C2B4A;
+  --ink-soft: #6B6B8A;
+  --ink-mute: #8A8AA8;
+  --ink-faint: #B0AFCB;
+  --card: #FFFDF7;
+  --line: #E6E4F3;
+  --line-soft: #ECEAF6;
+  --good: #3FB27F;
+  --good-deep: #2f8f65;
+  --gold: #F5B02E;
+  --locked: #D6D5EC;
+  --locked-deep: #bcbbd8;
+  --font-head: 'Baloo 2', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--brand);
+  font-family: var(--font-body);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+button {
+  font-family: var(--font-head);
+  cursor: pointer;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
