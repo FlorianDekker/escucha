@@ -1,0 +1,863 @@
+{
+  "schemaVersion": 1,
+  "id": "undia-s2e1",
+  "podcastId": "undia",
+  "title": "Overvallen door het noodweer",
+  "titleEs": "A Tormentous Hike",
+  "level": "A1",
+  "audioUrl": "https://player.timelinenotation.com/media/episode/audio/22752.mp3",
+  "durationSec": 604.84,
+  "descriptionNl": "Gissell en haar vriend Dani maken een bergwandeling in Costa Rica, maar een hevig onweer verandert hun tocht in een spannend avontuur.",
+  "source": {
+    "rssUrl": "https://www.spreaker.com/show/4638090/episodes/feed",
+    "transcriptUrl": "https://player.timelinenotation.com/undiamonolingue2/22752",
+    "attributionNl": "Audio en transcript © Babbel — Un día en español"
+  },
+  "vocab": [
+    {
+      "id": "el-senderismo",
+      "es": "el senderismo",
+      "nl": "het wandelen / bergwandelen",
+      "exampleEs": "Él y yo empezamos a hacer senderismo en 2017 en los parques de Costa Rica.",
+      "core": true,
+      "clip": {
+        "startSec": 149.88,
+        "endSec": 150.97
+      }
+    },
+    {
+      "id": "el-tiempo",
+      "es": "el tiempo",
+      "nl": "het weer",
+      "exampleEs": "Hay algo muy importante que debes tener en cuenta: el tiempo.",
+      "core": true,
+      "clip": {
+        "startSec": 192.48,
+        "endSec": 193.51
+      }
+    },
+    {
+      "id": "buen-tiempo",
+      "es": "buen tiempo",
+      "nl": "mooi weer",
+      "exampleEs": "El cielo está despejado y hace muy buen tiempo.",
+      "core": true,
+      "clip": {
+        "startSec": 266.46,
+        "endSec": 267.61
+      }
+    },
+    {
+      "id": "la-lluvia",
+      "es": "la lluvia",
+      "nl": "de regen",
+      "exampleEs": "La lluvia no para y los rayos y truenos tampoco.",
+      "core": true,
+      "clip": {
+        "startSec": 383.3,
+        "endSec": 385.11
+      }
+    },
+    {
+      "id": "llover",
+      "es": "llover",
+      "nl": "regenen",
+      "exampleEs": "Y, a veces, puede llover mucho.",
+      "core": true,
+      "clip": {
+        "startSec": 236.68,
+        "endSec": 237.47
+      }
+    },
+    {
+      "id": "la-tormenta",
+      "es": "la tormenta",
+      "nl": "de storm / het onweer",
+      "exampleEs": "Justo en ese momento empieza una tormenta eléctrica.",
+      "core": true,
+      "clip": {
+        "startSec": 352.7,
+        "endSec": 354.69
+      }
+    },
+    {
+      "id": "la-estacion",
+      "es": "la estación",
+      "nl": "het seizoen",
+      "exampleEs": "Nosotros solo tenemos dos: la estación seca y la estación lluviosa.",
+      "core": true,
+      "clip": {
+        "startSec": 202.66,
+        "endSec": 203.63
+      }
+    },
+    {
+      "id": "el-volcan",
+      "es": "el volcán",
+      "nl": "de vulkaan",
+      "exampleEs": "Es famoso por tener un volcán activo llamado Barva.",
+      "core": true,
+      "clip": {
+        "startSec": 175.8,
+        "endSec": 176.85
+      }
+    },
+    {
+      "id": "el-refugio",
+      "es": "el refugio",
+      "nl": "de schuilplaats",
+      "exampleEs": "Tenemos que buscar refugio.",
+      "core": true,
+      "clip": {
+        "startSec": 333.94,
+        "endSec": 335.23
+      }
+    },
+    {
+      "id": "el-rayo",
+      "es": "el rayo",
+      "nl": "de bliksem(schicht)",
+      "exampleEs": "¿Y si cae un rayo aquí?",
+      "core": true,
+      "clip": {
+        "startSec": 399.42,
+        "endSec": 400.27
+      }
+    },
+    {
+      "id": "asustado",
+      "es": "asustado",
+      "nl": "bang / geschrokken",
+      "exampleEs": "También estamos un poco asustados.",
+      "core": true,
+      "clip": {
+        "startSec": 394.04,
+        "endSec": 395.29
+      }
+    },
+    {
+      "id": "el-carro",
+      "es": "el carro",
+      "nl": "de auto (Lat.-Amerika)",
+      "exampleEs": "Estamos muy lejos del carro.",
+      "core": true,
+      "clip": {
+        "startSec": 330.32,
+        "endSec": 331.05
+      }
+    }
+  ],
+  "glossary": {
+    "hola": "hallo",
+    "nuevo": "nieuw (de nuevo = opnieuw)",
+    "doy": "ik geef (te doy la bienvenida = ik heet je welkom)",
+    "bienvenida": "welkom",
+    "segunda": "tweede",
+    "temporada": "seizoen (van een serie)",
+    "día": "dag",
+    "español": "Spaans",
+    "monolingüe": "eentalig",
+    "pódcast": "podcast",
+    "babbel": "Babbel (maker van de podcast)",
+    "puedes": "je kunt",
+    "escuchar": "luisteren",
+    "historias": "verhalen",
+    "reales": "echte",
+    "personas": "mensen",
+    "hispanohablantes": "Spaanstaligen",
+    "rodrigo": "Rodrigo (de presentator)",
+    "contento": "blij",
+    "vuelta": "terug (estar de vuelta = terug zijn)",
+    "poder": "kunnen",
+    "compartir": "delen",
+    "contigo": "met jou",
+    "montón": "hoop / heleboel (un montón de = een heleboel)",
+    "nuevas": "nieuwe",
+    "tenemos": "we hebben",
+    "sorpresa": "verrassing",
+    "después": "daarna / na",
+    "episodio": "aflevering",
+    "entrevista": "interview",
+    "nuestros": "onze",
+    "nuestras": "onze",
+    "protagonistas": "hoofdpersonen",
+    "bonus": "bonus",
+    "empecemos": "laten we beginnen",
+    "hoy": "vandaag",
+    "costa": "Costa (Rica: land in Midden-Amerika)",
+    "rica": "Rica (Costa Rica)",
+    "pequeño": "klein",
+    "país": "land",
+    "centroamericano": "Midden-Amerikaans",
+    "lleno": "vol",
+    "paisajes": "landschappen",
+    "hermosos": "prachtig",
+    "animales": "dieren",
+    "increíbles": "ongelooflijk",
+    "muchos": "veel",
+    "volcanes": "vulkanen",
+    "ahí": "daar",
+    "acompañaremos": "we vergezellen",
+    "gissell": "Gissell (de hoofdpersoon)",
+    "dani": "Dani (Gissells vriend uit Spanje)",
+    "mientras": "terwijl",
+    "hacen": "ze doen / ze maken",
+    "ruta": "route",
+    "senderismo": "wandelen / bergwandelen",
+    "resultará": "zal blijken",
+    "peligrosa": "gevaarlijk",
+    "habían": "ze hadden",
+    "planeado": "gepland",
+    "escuchas": "je luistert",
+    "atención": "aandacht",
+    "ejemplos": "voorbeelden",
+    "hablar": "praten",
+    "tiempo": "weer / tijd",
+    "vayamos": "laten we gaan",
+    "conocer": "leren kennen",
+    "están": "jullie zijn / ze zijn",
+    "llamo": "ik heet (me llamo = ik heet)",
+    "fascinante": "fascinerend",
+    "naturaleza": "natuur",
+    "también": "ook",
+    "lugar": "plek",
+    "perfecto": "perfect",
+    "interesadas": "geïnteresseerd",
+    "porque": "omdat",
+    "parques": "parken",
+    "nacionales": "nationale",
+    "reservas": "reservaten",
+    "naturales": "natuur- (reservas naturales = natuurreservaten)",
+    "amigo": "vriend",
+    "españa": "Spanje",
+    "empezamos": "we beginnen / we begonnen",
+    "hacer": "doen / maken",
+    "además": "bovendien",
+    "descubrir": "ontdekken",
+    "lugares": "plekken",
+    "fascinantes": "fascinerend",
+    "vivimos": "we beleven / we leven",
+    "algunas": "enkele / sommige",
+    "aventuras": "avonturen",
+    "parque": "park",
+    "nacional": "nationaal",
+    "braulio": "Braulio (Parque Nacional Braulio Carrillo)",
+    "carrillo": "Carrillo (naam van het park)",
+    "áreas": "gebieden",
+    "protegidas": "beschermd",
+    "grandes": "groot / grote",
+    "famoso": "beroemd",
+    "tener": "hebben",
+    "volcán": "vulkaan",
+    "activo": "actief",
+    "llamado": "genaamd",
+    "barva": "Barva (vulkaan, meer en stadje)",
+    "quieres": "je wilt",
+    "algo": "iets",
+    "importante": "belangrijk",
+    "debes": "je moet",
+    "cuenta": "rekening (tener en cuenta = rekening houden met)",
+    "acá": "hier",
+    "existen": "bestaan (er zijn)",
+    "cuatro": "vier",
+    "estaciones": "seizoenen",
+    "otros": "andere",
+    "países": "landen",
+    "dos": "twee",
+    "estación": "seizoen",
+    "seca": "droog",
+    "lluviosa": "regenachtig / regen-",
+    "ambas": "allebei",
+    "duran": "duren",
+    "aproximadamente": "ongeveer",
+    "seis": "zes",
+    "meses": "maanden",
+    "nuestra": "onze",
+    "visita": "bezoek",
+    "plena": "vol (en plena = midden in)",
+    "durante": "gedurende / tijdens",
+    "periodo": "periode",
+    "suele": "doet meestal (suele hacer sol = meestal is het zonnig)",
+    "sol": "zon",
+    "mañanas": "ochtenden",
+    "normalmente": "normaal gesproken",
+    "tres": "drie",
+    "tarde": "middag",
+    "llueve": "het regent",
+    "veces": "keren (a veces = soms)",
+    "llover": "regenen",
+    "planeas": "je bent van plan",
+    "recomendable": "aan te raden",
+    "empezar": "beginnen",
+    "temprano": "vroeg",
+    "mañana": "ochtend / morgen",
+    "embargo": "echter (sin embargo = echter)",
+    "medio": "half (al medio día = rond het middaguur)",
+    "llegamos": "we komen aan / we kwamen aan",
+    "caminar": "lopen",
+    "cielo": "lucht / hemel",
+    "despejado": "helder / onbewolkt",
+    "buen": "goed / mooi (buen tiempo = mooi weer)",
+    "contentos": "blij",
+    "buena": "goed / fijn",
+    "suerte": "geluk (buena suerte = mazzel)",
+    "vistas": "uitzichten",
+    "impresionantes": "indrukwekkend",
+    "gracias": "dank / dankzij (gracias a = dankzij)",
+    "lluvia": "regen",
+    "ayer": "gisteren",
+    "hojas": "bladeren",
+    "tienen": "ze hebben",
+    "colores": "kleuren",
+    "intensos": "intens / fel",
+    "hermosas": "prachtig",
+    "seguimos": "we gaan door",
+    "caminando": "lopend (door)",
+    "disfrutamos": "we genieten",
+    "paisaje": "landschap",
+    "montañoso": "bergachtig",
+    "metros": "meter",
+    "altura": "hoogte",
+    "nivel": "niveau / peil (nivel del mar = zeeniveau)",
+    "mar": "zee",
+    "continuamos": "we vervolgen",
+    "llegar": "aankomen / bereiken",
+    "laguna": "meer / lagune",
+    "especial": "bijzonder",
+    "cráter": "krater",
+    "empieza": "begint",
+    "oh": "oh",
+    "lloviendo": "aan het regenen (está lloviendo = het regent)",
+    "hacemos": "we doen (¿qué hacemos? = wat doen we?)",
+    "lejos": "ver",
+    "carro": "auto (Lat.-Amerika)",
+    "buscar": "zoeken",
+    "refugio": "schuilplaats",
+    "corremos": "we rennen",
+    "mirador": "uitkijkpunt",
+    "justo": "precies / net",
+    "momento": "moment",
+    "tormenta": "storm / onweer",
+    "eléctrica": "elektrisch (tormenta eléctrica = onweer met bliksem)",
+    "creo": "ik denk / ik geloof",
+    "pedir": "vragen (pedir ayuda = om hulp vragen)",
+    "ayuda": "hulp",
+    "celular": "mobiele telefoon",
+    "señal": "bereik / signaal",
+    "mío": "de mijne",
+    "tampoco": "ook niet",
+    "esperar": "wachten",
+    "para": "stopt (no para = houdt niet op)",
+    "rayos": "bliksemschichten",
+    "truenos": "donderslagen",
+    "preocupados": "bezorgd",
+    "asustados": "bang / geschrokken",
+    "asustado": "bang / geschrokken",
+    "pasa": "gebeurt (¿nos pasa algo? = overkomt ons iets?)",
+    "cae": "valt (cae un rayo = de bliksem slaat in)",
+    "rayo": "bliksem(schicht)",
+    "pensar": "denken (pensar en = denken aan)",
+    "cosa": "ding (otra cosa = iets anders)",
+    "entonces": "dan / dus",
+    "mantener": "behouden (mantener la calma = kalm blijven)",
+    "calma": "rust / kalmte",
+    "recordar": "herinneren / ophalen",
+    "momentos": "momenten",
+    "graciosos": "grappig",
+    "hablamos": "we praten",
+    "infancia": "jeugd / kindertijd",
+    "películas": "films",
+    "comida": "eten",
+    "parar": "stoppen (sin parar = zonder ophouden)",
+    "vuela": "vliegt (el tiempo vuela = de tijd vliegt)",
+    "damos": "we geven (nos damos cuenta = we beseffen)",
+    "parado": "gestopt (ha parado = is opgehouden)",
+    "inmediatamente": "onmiddellijk",
+    "corriendo": "rennend (vamos corriendo = we rennen)",
+    "ciudad": "stad",
+    "horas": "uren",
+    "esperando": "wachtend",
+    "morimos": "we sterven (morir de hambre = uitgehongerd zijn)",
+    "hambre": "honger",
+    "fin": "einde (por fin = eindelijk)",
+    "centro": "centrum",
+    "terminamos": "we eindigen / we sluiten af",
+    "aventura": "avontuur",
+    "comiendo": "etend (terwijl we eten)",
+    "deliciosa": "heerlijk",
+    "pizza": "pizza",
+    "duda": "twijfel (sin duda = zonder twijfel)",
+    "alguna": "enige (sin duda alguna = absoluut zeker)",
+    "actividad": "activiteit",
+    "seguir": "blijven / doorgaan",
+    "disfrutando": "genietend (seguir disfrutando = blijven genieten)",
+    "sabemos": "we weten",
+    "importancia": "belang",
+    "siempre": "altijd",
+    "tomar": "nemen (tomar precauciones = voorzorgsmaatregelen nemen)",
+    "precauciones": "voorzorgsmaatregelen",
+    "investigar": "onderzoeken / uitzoeken",
+    "queremos": "we willen",
+    "visitar": "bezoeken",
+    "viajar": "reizen",
+    "forma": "manier (de forma más segura = op een veiligere manier)",
+    "segura": "veilig",
+    "antes": "eerder / vóór (antes de = vóór)",
+    "caso": "geval (en este caso = in dit geval)",
+    "pudieron": "ze konden",
+    "experimentar": "ervaren / meemaken",
+    "sorprende": "verbaast (no me sorprende = het verbaast me niet)",
+    "quieran": "dat ze willen",
+    "haciendo": "doend (seguir haciendo = blijven doen)",
+    "acabo": "ik heb net (acabo de ver = ik heb net gezien)",
+    "ver": "zien / kijken",
+    "fotos": "foto's",
+    "espectaculares": "spectaculair",
+    "espero": "ik hoop",
+    "vuelvan": "dat ze weer (terugkeren)",
+    "problemas": "problemen"
+  },
+  "segments": [
+    {
+      "id": "s01",
+      "startSec": 14.0,
+      "endSec": 70.0,
+      "sentences": [
+        {
+          "startSec": 14.0,
+          "speaker": "Rodrigo",
+          "es": "¡Hola de nuevo! Te doy la bienvenida a la segunda temporada de Un día en español - Monolingüe, el pódcast de Babbel en el que puedes escuchar historias reales de personas hispanohablantes. Soy Rodrigo y estoy muy contento de estar de vuelta y poder compartir contigo un montón de historias nuevas."
+        },
+        {
+          "startSec": 45.0,
+          "speaker": "Rodrigo",
+          "es": "En esta temporada tenemos una sorpresa para ti: después de cada episodio, puedes escuchar una entrevista con nuestros y nuestras protagonistas en el bonus de cada episodio. ¡Empecemos!"
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat is er nieuw in dit tweede seizoen van de podcast?",
+        "choices": [
+          "Elke aflevering is nu in twee talen",
+          "Er is een nieuwe presentator",
+          "Na elke aflevering is er een bonusinterview met de hoofdpersoon",
+          "De afleveringen duren nu een uur"
+        ],
+        "answerIndex": 2,
+        "explanationNl": "Rodrigo zegt: \"después de cada episodio, puedes escuchar una entrevista con nuestros y nuestras protagonistas en el bonus.\" Er is dus een bonusinterview met de hoofdpersonen.",
+        "evidence": {
+          "es": "Después de cada episodio, puedes escuchar una entrevista con nuestros y nuestras protagonistas en el bonus de cada episodio.",
+          "nl": "Na elke aflevering kun je in de bonus een interview met onze hoofdpersonen beluisteren.",
+          "startSec": 50.07,
+          "endSec": 61.85
+        }
+      }
+    },
+    {
+      "id": "s02",
+      "startSec": 70.0,
+      "endSec": 113.0,
+      "sentences": [
+        {
+          "startSec": 70.0,
+          "speaker": "Rodrigo",
+          "es": "Hoy vamos a Costa Rica, un pequeño país centroamericano lleno de paisajes hermosos, animales increíbles y muchos volcanes. Es ahí donde acompañaremos a Gissell y a Dani mientras hacen una ruta de senderismo que resultará ser más peligrosa de lo que habían planeado."
+        },
+        {
+          "startSec": 100.0,
+          "speaker": "Rodrigo",
+          "es": "Si escuchas con atención, en este episodio hay ejemplos sobre cómo hablar del tiempo en español."
+        },
+        {
+          "startSec": 108.0,
+          "speaker": "Rodrigo",
+          "es": "¡Vayamos ahora a conocer a Gissell!"
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat gaan Gissell en Dani in dit verhaal doen?",
+        "choices": [
+          "Een bergwandeling maken die gevaarlijker wordt dan gepland",
+          "Leren surfen aan de kust",
+          "Een museum in de stad bezoeken",
+          "Vrijwilligerswerk doen in een dierentuin"
+        ],
+        "answerIndex": 0,
+        "explanationNl": "Rodrigo kondigt aan: \"hacen una ruta de senderismo que resultará ser más peligrosa de lo que habían planeado.\" Ze maken een wandeling die gevaarlijker wordt dan verwacht.",
+        "evidence": {
+          "es": "Acompañaremos a Gissell y a Dani mientras hacen una ruta de senderismo que resultará ser más peligrosa de lo que habían planeado.",
+          "nl": "We vergezellen Gissell en Dani terwijl ze een wandelroute lopen die gevaarlijker zal blijken dan ze gepland hadden.",
+          "startSec": 85.95,
+          "endSec": 99.77
+        }
+      }
+    },
+    {
+      "id": "s03",
+      "startSec": 113.0,
+      "endSec": 164.0,
+      "sentences": [
+        {
+          "startSec": 113.0,
+          "speaker": "Gissell",
+          "es": "¡Hola! ¿Cómo están? Me llamo Gissell y soy de Costa Rica, un pequeño país centroamericano lleno de fascinante naturaleza, animales increíbles y muchos volcanes."
+        },
+        {
+          "startSec": 132.0,
+          "speaker": "Gissell",
+          "es": "También es el lugar perfecto para las personas interesadas en el senderismo porque hay muchos parques nacionales y reservas naturales por todo el país."
+        },
+        {
+          "startSec": 145.0,
+          "speaker": "Gissell",
+          "es": "Dani es mi amigo de España. Él y yo empezamos a hacer senderismo en 2017 en los parques de Costa Rica. Además de descubrir lugares fascinantes, también vivimos algunas aventuras."
+        }
+      ],
+      "question": {
+        "type": "vocabInContext",
+        "vocabId": "el-senderismo",
+        "promptNl": "Je hoorde \"empezamos a hacer senderismo\". Wat betekent \"senderismo\"?",
+        "choices": [
+          "vissen",
+          "wandelen in de natuur (bergwandelen)",
+          "zwemmen",
+          "fietsen"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "\"Senderismo\" is wandelen of trekken door de natuur. Gissell en Dani doen dat samen in de parken van Costa Rica.",
+        "evidence": {
+          "es": "Él y yo empezamos a hacer senderismo en 2017 en los parques de Costa Rica.",
+          "nl": "Hij en ik zijn in 2017 begonnen met wandelen in de parken van Costa Rica.",
+          "startSec": 147.67,
+          "endSec": 154.63
+        }
+      }
+    },
+    {
+      "id": "s04",
+      "startSec": 164.0,
+      "endSec": 218.0,
+      "sentences": [
+        {
+          "startSec": 164.0,
+          "speaker": "Gissell",
+          "es": "Hoy vamos al Parque Nacional Braulio Carrillo. Este parque es una de las áreas protegidas más grandes de Costa Rica. Y también es famoso por tener un volcán activo llamado Barva."
+        },
+        {
+          "startSec": 184.0,
+          "speaker": "Gissell",
+          "es": "Si quieres hacer senderismo en Costa Rica, hay algo muy importante que debes tener en cuenta: el tiempo. Acá no existen las cuatro estaciones como en muchos otros países. Nosotros solo tenemos dos: la estación seca y la estación lluviosa; ambas duran aproximadamente seis meses."
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Hoeveel seizoenen heeft Costa Rica volgens Gissell?",
+        "choices": [
+          "Vier, net als in veel andere landen",
+          "Twee: een droog en een regenseizoen",
+          "Drie seizoenen",
+          "Helemaal geen seizoenen"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "Gissell zegt: \"Nosotros solo tenemos dos: la estación seca y la estación lluviosa.\" Costa Rica heeft dus een droog en een regenseizoen.",
+        "evidence": {
+          "es": "Nosotros solo tenemos dos: la estación seca y la estación lluviosa; ambas duran aproximadamente seis meses.",
+          "nl": "Wij hebben er maar twee: het droge seizoen en het regenseizoen; beide duren ongeveer zes maanden.",
+          "startSec": 200.27,
+          "endSec": 217.21
+        }
+      }
+    },
+    {
+      "id": "s05",
+      "startSec": 218.0,
+      "endSec": 259.0,
+      "sentences": [
+        {
+          "startSec": 218.0,
+          "speaker": "Gissell",
+          "es": "Nuestra visita al parque nacional es en plena estación lluviosa. Durante este periodo suele hacer sol por las mañanas, pero, normalmente, después de las tres de la tarde llueve. Y, a veces, puede llover mucho. Por eso, si planeas hacer senderismo, es recomendable empezar temprano en la mañana. Sin embargo, Dani y yo empezamos nuestra ruta al medio día…"
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Waarom is het riskant dat ze pas rond het middaguur beginnen te wandelen?",
+        "choices": [
+          "Omdat het na drie uur 's middags vaak gaat regenen",
+          "Omdat het park om twaalf uur sluit",
+          "Omdat het 's middags te heet wordt om te lopen",
+          "Omdat er 's middags wilde dieren tevoorschijn komen"
+        ],
+        "answerIndex": 0,
+        "explanationNl": "Gissell legt uit: \"después de las tres de la tarde llueve. Y, a veces, puede llover mucho.\" Daarom is het beter vroeg te vertrekken, maar zij beginnen pas rond het middaguur.",
+        "evidence": {
+          "es": "Normalmente, después de las tres de la tarde llueve. Y, a veces, puede llover mucho.",
+          "nl": "Normaal gesproken regent het na drie uur 's middags. En soms kan het hard regenen.",
+          "startSec": 228.97,
+          "endSec": 238.29
+        }
+      }
+    },
+    {
+      "id": "s06",
+      "startSec": 259.0,
+      "endSec": 290.0,
+      "sentences": [
+        {
+          "startSec": 259.0,
+          "speaker": "Gissell",
+          "es": "Llegamos al parque y empezamos a caminar. El cielo está despejado y hace muy buen tiempo."
+        },
+        {
+          "startSec": 269.0,
+          "speaker": "Gissell",
+          "es": "Estamos muy contentos de tener tan buena suerte con el tiempo. Las vistas son impresionantes y, gracias a la lluvia de ayer, las hojas tienen colores muy intensos. ¡Están hermosas!"
+        }
+      ],
+      "question": {
+        "type": "gap",
+        "vocabId": "buen-tiempo",
+        "promptNl": "Vul aan wat je hoorde:",
+        "textEs": "El cielo está despejado y hace muy buen ___.",
+        "choices": [
+          "frío",
+          "viento",
+          "sol",
+          "tiempo"
+        ],
+        "answerIndex": 3,
+        "explanationNl": "\"Hace buen tiempo\" betekent dat het mooi weer is. \"El cielo está despejado\" wil zeggen dat de lucht helder is.",
+        "evidence": {
+          "es": "El cielo está despejado y hace muy buen tiempo.",
+          "nl": "De lucht is helder en het is heel mooi weer.",
+          "startSec": 263.51,
+          "endSec": 267.71
+        }
+      }
+    },
+    {
+      "id": "s07",
+      "startSec": 290.0,
+      "endSec": 324.0,
+      "sentences": [
+        {
+          "startSec": 290.0,
+          "speaker": "Gissell",
+          "es": "Seguimos caminando mientras disfrutamos de un paisaje montañoso. El parque está a 500 metros sobre la altura del nivel del mar. Después, continuamos nuestra ruta hasta llegar a la laguna de Barva. Es un lugar muy especial; la laguna está en el cráter del volcán. Pero entonces… empieza a llover."
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat is bijzonder aan de laguna de Barva?",
+        "choices": [
+          "Ze is het grootste meer van het land",
+          "Er leven zeldzame vissen in",
+          "Ze ligt in de krater van een vulkaan",
+          "Ze ligt vlak naast de zee"
+        ],
+        "answerIndex": 2,
+        "explanationNl": "Gissell zegt: \"la laguna está en el cráter del volcán.\" Het meer ligt dus in de krater van de vulkaan.",
+        "evidence": {
+          "es": "Es un lugar muy especial; la laguna está en el cráter del volcán.",
+          "nl": "Het is een heel bijzondere plek; het meer ligt in de krater van de vulkaan.",
+          "startSec": 306.55,
+          "endSec": 313.49
+        }
+      }
+    },
+    {
+      "id": "s08",
+      "startSec": 324.0,
+      "endSec": 362.0,
+      "sentences": [
+        {
+          "startSec": 324.0,
+          "speaker": "Dani",
+          "es": "¡Oh, no! ¡Está lloviendo!"
+        },
+        {
+          "startSec": 327.0,
+          "speaker": "Gissell",
+          "es": "¿Qué hacemos? Estamos muy lejos del carro…"
+        },
+        {
+          "startSec": 332.0,
+          "speaker": "Dani",
+          "es": "Tenemos que buscar refugio…"
+        },
+        {
+          "startSec": 336.0,
+          "speaker": "Gissell",
+          "es": "Corremos hasta el mirador de la laguna mientras llueve más y más. Llegamos al mirador y justo en ese momento empieza una tormenta eléctrica."
+        }
+      ],
+      "question": {
+        "type": "vocabInContext",
+        "vocabId": "el-refugio",
+        "promptNl": "Je hoorde \"Tenemos que buscar refugio\". Wat betekent \"refugio\"?",
+        "choices": [
+          "een kaart",
+          "proviand",
+          "een schuilplaats",
+          "een gids"
+        ],
+        "answerIndex": 2,
+        "explanationNl": "\"Refugio\" is een schuilplaats. Omdat het begint te regenen, moeten Gissell en Dani ergens schuilen.",
+        "evidence": {
+          "es": "Tenemos que buscar refugio…",
+          "nl": "We moeten een schuilplaats zoeken…",
+          "startSec": 332.41,
+          "endSec": 335.33
+        }
+      }
+    },
+    {
+      "id": "s09",
+      "startSec": 362.0,
+      "endSec": 406.0,
+      "sentences": [
+        {
+          "startSec": 362.0,
+          "speaker": "Gissell",
+          "es": "Creo que tenemos que pedir ayuda. ¿Tu celular tiene señal?"
+        },
+        {
+          "startSec": 369.0,
+          "speaker": "Dani",
+          "es": "No, no tiene…"
+        },
+        {
+          "startSec": 372.0,
+          "speaker": "Gissell",
+          "es": "El mío tampoco tiene señal… Tenemos que esperar."
+        },
+        {
+          "startSec": 384.0,
+          "speaker": "Gissell",
+          "es": "La lluvia no para y los rayos y truenos tampoco. Los dos estamos preocupados… Y también estamos un poco asustados. ¿Y si nos pasa algo? ¿Y si cae un rayo aquí? Tenemos que pensar en otra cosa…"
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Waarom kunnen Gissell en Dani geen hulp inroepen?",
+        "choices": [
+          "Hun telefoons hebben geen bereik",
+          "Ze zijn hun telefoons kwijt",
+          "De batterijen zijn leeg",
+          "Ze weten het alarmnummer niet"
+        ],
+        "answerIndex": 0,
+        "explanationNl": "Gissell zegt: \"El mío tampoco tiene señal… Tenemos que esperar.\" Geen van beide telefoons heeft bereik, dus ze moeten wachten.",
+        "evidence": {
+          "es": "El mío tampoco tiene señal… Tenemos que esperar.",
+          "nl": "De mijne heeft ook geen bereik… We moeten wachten.",
+          "startSec": 371.75,
+          "endSec": 376.67
+        }
+      }
+    },
+    {
+      "id": "s10",
+      "startSec": 406.0,
+      "endSec": 441.0,
+      "sentences": [
+        {
+          "startSec": 406.0,
+          "speaker": "Gissell",
+          "es": "Entonces, para poder mantener la calma, empezamos a recordar momentos graciosos. Hablamos de nuestra infancia, de películas, aventuras, comida… Hablamos mientras llueve sin parar, pero ya no estamos asustados. El tiempo vuela y cuando nos damos cuenta… ¡La tormenta ha parado!"
+        }
+      ],
+      "question": {
+        "type": "vocabInContext",
+        "vocabId": "asustado",
+        "promptNl": "Je hoorde \"ya no estamos asustados\". Wat betekent \"asustados\"?",
+        "choices": [
+          "moe",
+          "bang / geschrokken",
+          "blij",
+          "hongerig"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "\"Asustado\" betekent bang of geschrokken. Door samen grappige herinneringen op te halen zijn ze niet meer bang: \"ya no estamos asustados.\"",
+        "evidence": {
+          "es": "Hablamos mientras llueve sin parar, pero ya no estamos asustados.",
+          "nl": "We praten terwijl het onophoudelijk regent, maar we zijn niet meer bang.",
+          "startSec": 421.93,
+          "endSec": 428.39
+        }
+      }
+    },
+    {
+      "id": "s11",
+      "startSec": 441.0,
+      "endSec": 497.0,
+      "sentences": [
+        {
+          "startSec": 441.0,
+          "speaker": "Gissell",
+          "es": "Inmediatamente vamos corriendo al carro de mi amigo y después vamos a la ciudad de Barva."
+        },
+        {
+          "startSec": 456.0,
+          "speaker": "Gissell",
+          "es": "Después de hacer senderismo y estar horas esperando en la tormenta nos morimos de hambre. Así que, cuando por fin llegamos al centro de Barva, terminamos nuestra aventura comiendo una deliciosa pizza."
+        },
+        {
+          "startSec": 475.0,
+          "speaker": "Gissell",
+          "es": "Sin duda alguna el senderismo es una actividad que vamos a seguir disfrutando. Pero ahora sabemos la importancia de siempre tomar precauciones e investigar los lugares que queremos visitar para viajar de forma más segura."
+        }
+      ],
+      "question": {
+        "type": "gap",
+        "promptNl": "Vul aan wat je hoorde:",
+        "textEs": "Terminamos nuestra aventura comiendo una deliciosa ___.",
+        "choices": [
+          "sopa",
+          "pizza",
+          "ensalada",
+          "tortilla"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "Gissell zegt: \"terminamos nuestra aventura comiendo una deliciosa pizza.\" Ze sluiten hun avontuur af met een heerlijke pizza.",
+        "evidence": {
+          "es": "Cuando por fin llegamos al centro de Barva, terminamos nuestra aventura comiendo una deliciosa pizza.",
+          "nl": "Toen we eindelijk in het centrum van Barva aankwamen, sloten we ons avontuur af met een heerlijke pizza.",
+          "startSec": 466.03,
+          "endSec": 474.39
+        }
+      }
+    },
+    {
+      "id": "s12",
+      "startSec": 497.0,
+      "endSec": 529.0,
+      "sentences": [
+        {
+          "startSec": 497.0,
+          "speaker": "Rodrigo",
+          "es": "Se suele hablar de la calma antes de la tormenta, pero en este caso, por suerte, Gissell y Dani pudieron experimentar la calma después de la tormenta. Y no me sorprende que quieran seguir haciendo senderismo, acabo de ver algunas de las fotos de su ruta y son espectaculares. Eso sí, ¡espero que no vuelvan a tener problemas con el tiempo!"
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat zegt Rodrigo aan het einde over Gissell en Dani?",
+        "choices": [
+          "Ze willen nooit meer gaan wandelen",
+          "Ze beleefden de rust ná de storm en willen blijven wandelen",
+          "Ze zijn boos op elkaar geworden",
+          "Ze verhuizen naar Spanje"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "Rodrigo zegt: \"Gissell y Dani pudieron experimentar la calma después de la tormenta. Y no me sorprende que quieran seguir haciendo senderismo.\" Ze willen dus blijven wandelen.",
+        "evidence": {
+          "es": "Gissell y Dani pudieron experimentar la calma después de la tormenta. Y no me sorprende que quieran seguir haciendo senderismo.",
+          "nl": "Gissell en Dani konden de rust na de storm ervaren. En het verbaast me niet dat ze willen blijven wandelen.",
+          "startSec": 504.43,
+          "endSec": 516.09
+        }
+      }
+    }
+  ]
+}

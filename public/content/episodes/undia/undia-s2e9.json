@@ -1,0 +1,743 @@
+{
+  "schemaVersion": 1,
+  "id": "undia-s2e9",
+  "podcastId": "undia",
+  "title": "De dood was geen strand",
+  "titleEs": "La muerte no era una playa",
+  "level": "A1",
+  "audioUrl": "https://player.timelinenotation.com/media/episode/audio/23009.mp3",
+  "durationSec": 532.49,
+  "descriptionNl": "Silvia vertelt hoe ze als zesjarig meisje in Andalucía besefte dat niemand onsterfelijk is, en hoe de tune van een tv-serie haar leerde van het moment te genieten.",
+  "source": {
+    "rssUrl": "https://www.spreaker.com/show/4638090/episodes/feed",
+    "transcriptUrl": "https://player.timelinenotation.com/undiamonolingue2/23009",
+    "attributionNl": "Audio en transcript © Babbel — Un día en español"
+  },
+  "vocab": [
+    {
+      "id": "la-muerte",
+      "es": "la muerte",
+      "nl": "de dood",
+      "exampleEs": "El narrador dijo el nombre del episodio: “La muerte es una playa”.",
+      "core": true,
+      "clip": {
+        "startSec": 308.73,
+        "endSec": 309.94
+      }
+    },
+    {
+      "id": "morir",
+      "es": "morir",
+      "nl": "sterven, doodgaan",
+      "exampleEs": "Mamá, ¿tú y yo nos vamos a morir?",
+      "core": true,
+      "clip": {
+        "startSec": 327.15,
+        "endSec": 328.14
+      }
+    },
+    {
+      "id": "inmortal",
+      "es": "inmortal",
+      "nl": "onsterfelijk",
+      "exampleEs": "Con esta poción era posible ser inmortal.",
+      "core": true,
+      "clip": {
+        "startSec": 201.43,
+        "endSec": 202.36
+      }
+    },
+    {
+      "id": "la-pocion",
+      "es": "la poción",
+      "nl": "de toverdrank",
+      "exampleEs": "Mi padre me contaba una historia sobre una poción mágica.",
+      "core": true,
+      "clip": {
+        "startSec": 195.59,
+        "endSec": 196.7
+      }
+    },
+    {
+      "id": "el-bocadillo",
+      "es": "el bocadillo",
+      "nl": "het broodje",
+      "exampleEs": "Mientras yo comía mi bocadillo el narrador dijo el nombre del episodio.",
+      "core": true,
+      "clip": {
+        "startSec": 301.91,
+        "endSec": 302.94
+      }
+    },
+    {
+      "id": "la-merienda",
+      "es": "la merienda",
+      "nl": "het vieruurtje (middagsnack)",
+      "exampleEs": "Un día estaba sentada con mi madre en el salón a la hora de la merienda.",
+      "core": true,
+      "clip": {
+        "startSec": 293.37,
+        "endSec": 294.42
+      }
+    },
+    {
+      "id": "llorar",
+      "es": "llorar",
+      "nl": "huilen",
+      "exampleEs": "Entonces, solté mi bocadillo y empecé a llorar desconsoladamente.",
+      "core": true,
+      "clip": {
+        "startSec": 359.25,
+        "endSec": 360.04
+      }
+    },
+    {
+      "id": "la-preocupacion",
+      "es": "la preocupación",
+      "nl": "de zorg",
+      "exampleEs": "Y esta idea era una gran preocupación para mí.",
+      "core": true,
+      "clip": {
+        "startSec": 188.11,
+        "endSec": 189.46
+      }
+    },
+    {
+      "id": "me-tranquilizo",
+      "es": "me tranquilizó",
+      "nl": "stelde me gerust",
+      "exampleEs": "La música de la serie me tranquilizó.",
+      "core": true,
+      "clip": {
+        "startSec": 402.33,
+        "endSec": 404.22
+      }
+    },
+    {
+      "id": "el-salon",
+      "es": "el salón",
+      "nl": "de woonkamer",
+      "exampleEs": "Todas las tardes, después de la escuela, merendaba en el salón con mi madre.",
+      "core": true,
+      "clip": {
+        "startSec": 243.03,
+        "endSec": 243.96
+      }
+    },
+    {
+      "id": "disfrutar",
+      "es": "disfrutar",
+      "nl": "genieten (van)",
+      "exampleEs": "Y por eso es importante disfrutar del momento.",
+      "core": true,
+      "clip": {
+        "startSec": 434.85,
+        "endSec": 436.44
+      }
+    },
+    {
+      "id": "el-verano",
+      "es": "el verano",
+      "nl": "de zomer",
+      "exampleEs": "En el verano de 1991 yo era una niña de seis años.",
+      "core": true,
+      "clip": {
+        "startSec": 165.77,
+        "endSec": 166.8
+      }
+    }
+  ],
+  "glossary": {
+    "hola": "hallo",
+    "estamos": "we zijn",
+    "vuelta": "terug (de vuelta = terug)",
+    "nuevo": "nieuw",
+    "episodio": "aflevering",
+    "día": "dag",
+    "español": "Spaans",
+    "monolingüe": "eentalig",
+    "casi": "bijna",
+    "final": "einde",
+    "nuestra": "onze",
+    "nuestros": "onze",
+    "segunda": "tweede",
+    "temporada": "seizoen",
+    "así": "zo (así que = dus)",
+    "tal": "qué tal = hoe gaat het",
+    "hoy": "vandaag",
+    "hacemos": "we doen",
+    "difícil": "moeilijk",
+    "historia": "verhaal",
+    "muchos": "veel",
+    "verbos": "werkwoorden",
+    "pasado": "verleden (tijd)",
+    "usar": "gebruiken",
+    "familiarizarte": "vertrouwd raken (met)",
+    "vas": "je gaat",
+    "ver": "zien",
+    "reconocer": "herkennen",
+    "conoces": "je kent",
+    "forma": "vorm",
+    "presente": "tegenwoordige tijd",
+    "recuerda": "onthoud / herinnert eraan",
+    "quieres": "je wilt",
+    "leer": "lezen",
+    "escuchar": "luisteren",
+    "vez": "keer (a la vez = tegelijk)",
+    "babbel.com/podcasts": "babbel.com/podcasts (website van Babbel)",
+    "encontrar": "vinden",
+    "transcripción": "transcript",
+    "conoceremos": "we gaan kennismaken met",
+    "silvia": "Silvia (naam, de vertelster)",
+    "españa": "Spanje",
+    "ella": "zij",
+    "contarnos": "ons vertellen",
+    "evento": "gebeurtenis",
+    "importante": "belangrijk",
+    "vida": "leven",
+    "pasó": "gebeurde",
+    "solo": "alleen (maar)",
+    "niña": "meisje",
+    "niñas": "meisjes",
+    "niños": "kinderen / jongens",
+    "vayamos": "laten we gaan",
+    "conocer": "leren kennen",
+    "andalucía": "Andalusië (regio in Zuid-Spanje)",
+    "sur": "zuiden",
+    "lugar": "plek",
+    "famoso": "beroemd",
+    "buen": "goed",
+    "tiempo": "weer / tijd",
+    "comida": "eten",
+    "deliciosa": "heerlijk",
+    "deliciosos": "heerlijke",
+    "playas": "stranden",
+    "playa": "strand",
+    "hermosas": "prachtige",
+    "rica": "rijk",
+    "diversa": "divers",
+    "quiero": "ik wil",
+    "hablar": "praten",
+    "momento": "moment",
+    "años": "jaren",
+    "algún": "een of ander (en algún momento = op een bepaald moment)",
+    "todas": "alle",
+    "personas": "mensen",
+    "tenemos": "we hebben",
+    "revelación": "openbaring",
+    "somos": "we zijn",
+    "inmortales": "onsterfelijk (meervoud)",
+    "inmortal": "onsterfelijk",
+    "impactante": "aangrijpend, heftig",
+    "especialmente": "vooral",
+    "verano": "zomer",
+    "seis": "zes",
+    "sé": "ik weet",
+    "pensaba": "ik dacht",
+    "mucho": "veel",
+    "existencia": "bestaan",
+    "mejor": "beter (mejor dicho = beter gezegd)",
+    "dicho": "gezegd",
+    "posibilidad": "mogelijkheid",
+    "existir": "bestaan",
+    "idea": "idee",
+    "gran": "grote",
+    "preocupación": "zorg",
+    "padre": "vader",
+    "contaba": "vertelde (steeds)",
+    "poción": "toverdrank",
+    "mágica": "magische",
+    "posible": "mogelijk",
+    "aún": "nog steeds",
+    "médico": "arts",
+    "estaba": "was / stond",
+    "consulta": "(dokters)praktijk",
+    "suerte": "geluk",
+    "verdad": "waarheid",
+    "tranquilizaba": "stelde gerust",
+    "expresión": "uitdrukking",
+    "cara": "gezicht",
+    "sincera": "oprecht",
+    "mintiendo": "aan het liegen",
+    "tardes": "middagen",
+    "después": "na / daarna",
+    "escuela": "school",
+    "merendaba": "at (als vieruurtje)",
+    "salón": "woonkamer",
+    "madre": "moeder",
+    "normalmente": "normaal gesproken",
+    "preparaba": "maakte klaar",
+    "bocadillos": "broodjes",
+    "bocadillo": "broodje",
+    "juntas": "samen",
+    "veíamos": "we keken naar",
+    "serie": "serie",
+    "series": "series",
+    "canadá": "Canada",
+    "tropical": "Tropical Heat (tv-serie; tropical = tropisch)",
+    "heat": "Tropical Heat (tv-serie; heat = Engels voor hitte)",
+    "detective": "detective",
+    "nick": "Nick Slaughter (hoofdpersoon van de serie)",
+    "slaughter": "Nick Slaughter (hoofdpersoon van de serie)",
+    "inglés": "Engels",
+    "américa": "América Latina: Latijns-Amerika",
+    "latina": "América Latina: Latijns-Amerika",
+    "están": "zijn",
+    "dobladas": "nagesynchroniseerd",
+    "narrador": "verteller",
+    "decía": "zei (steeds)",
+    "siempre": "altijd",
+    "título": "titel",
+    "sentada": "zittend",
+    "hora": "uur (a la hora de = op het moment van)",
+    "merienda": "vieruurtje, middagsnack",
+    "televisión": "televisie",
+    "mientras": "terwijl",
+    "comía": "ik at",
+    "dijo": "zei",
+    "nombre": "naam",
+    "muerte": "dood",
+    "escuché": "ik hoorde",
+    "pregunté": "ik vroeg",
+    "mamá": "mama",
+    "morir": "sterven",
+    "hija": "dochter",
+    "mundo": "wereld (todo el mundo = iedereen)",
+    "cariño": "lieverd",
+    "creo": "ik denk / ik geloof",
+    "pensar": "denken",
+    "estas": "deze",
+    "cosas": "dingen",
+    "pasar": "gebeuren",
+    "dentro": "over (dentro de mucho tiempo = pas over heel lange tijd)",
+    "solté": "ik liet los",
+    "empecé": "ik begon",
+    "llorar": "huilen",
+    "desconsoladamente": "ontroostbaar",
+    "recuerdo": "ik herinner me",
+    "miedo": "angst",
+    "decepción": "teleurstelling",
+    "aquel": "dat, die (daar)",
+    "tristeza": "verdriet",
+    "duró": "duurde",
+    "exactamente": "precies",
+    "mismos": "dezelfde",
+    "minutos": "minuten",
+    "introducción": "intro, begin",
+    "empezó": "begon",
+    "melodía": "melodie",
+    "marimbas": "marimba's (muziekinstrument)",
+    "timbales": "timbales (trommels)",
+    "guitarras": "gitaren",
+    "eléctricas": "elektrische",
+    "letra": "songtekst",
+    "canción": "lied",
+    "música": "muziek",
+    "tranquilizó": "stelde gerust",
+    "agarré": "ik pakte",
+    "pude": "ik kon",
+    "seguir": "doorgaan (met)",
+    "mentalidad": "mentaliteit",
+    "diferente": "anders",
+    "fotografía": "foto",
+    "protagonista": "hoofdpersoon",
+    "pared": "muur",
+    "foto": "foto",
+    "nada": "niets",
+    "disfrutar": "genieten (van)",
+    "parece": "het lijkt",
+    "increíble": "ongelooflijk",
+    "pueda": "kan",
+    "tener": "hebben",
+    "impacto": "impact",
+    "fuerte": "sterk",
+    "gracias": "dankzij (gracias a) / bedankt",
+    "sabe": "zij weet",
+    "vivir": "leven",
+    "saber": "weten",
+    "bonus": "bonus(aflevering)"
+  },
+  "segments": [
+    {
+      "id": "s01",
+      "startSec": 13.0,
+      "endSec": 71.0,
+      "sentences": [
+        {
+          "startSec": 13.0,
+          "speaker": "Rodrigo",
+          "es": "¡Hola! Estamos de vuelta con un nuevo episodio de Un día en español – Monolingüe. Estamos casi al final de nuestra segunda temporada, así que, ¿qué tal si hoy hacemos algo un poco más difícil? En la historia de hoy hay muchos verbos en el pasado. Puedes usar el episodio para familiarizarte con el pasado en español. Vas a ver que hay muchos verbos que puedes reconocer si conoces su forma en presente. Y recuerda que si quieres leer y escuchar a la vez, en babbel.com/podcasts puedes encontrar la transcripción del episodio."
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Waarom is deze aflevering volgens Rodrigo iets moeilijker dan anders?",
+        "choices": [
+          "Er wordt heel snel gesproken",
+          "Er komen veel Engelse woorden in voor",
+          "Er staan veel werkwoorden in de verleden tijd in",
+          "Het verhaal duurt twee keer zo lang"
+        ],
+        "answerIndex": 2,
+        "explanationNl": "Rodrigo zegt: \"En la historia de hoy hay muchos verbos en el pasado.\" (In het verhaal van vandaag staan veel werkwoorden in de verleden tijd.)",
+        "evidence": {
+          "es": "En la historia de hoy hay muchos verbos en el pasado. Puedes usar el episodio para familiarizarte con el pasado en español.",
+          "nl": "In het verhaal van vandaag staan veel werkwoorden in de verleden tijd. Je kunt de aflevering gebruiken om vertrouwd te raken met de verleden tijd in het Spaans.",
+          "startSec": 34.81,
+          "endSec": 46.79
+        }
+      }
+    },
+    {
+      "id": "s02",
+      "startSec": 71.0,
+      "endSec": 125.0,
+      "sentences": [
+        {
+          "startSec": 71.0,
+          "speaker": "Rodrigo",
+          "es": "Hoy conoceremos a Silvia, de España. Ella va a contarnos sobre un evento muy importante en su vida. Esto pasó cuando ella era solo una niña."
+        },
+        {
+          "startSec": 87.0,
+          "speaker": "Rodrigo",
+          "es": "¡Vayamos a España para conocer a Silvia!"
+        },
+        {
+          "startSec": 102.0,
+          "speaker": "Silvia",
+          "es": "¡Hola! ¿Qué tal? Soy Silvia y soy de Andalucía, en el sur de España. Andalucía es un lugar famoso por su buen tiempo, su comida deliciosa, sus playas hermosas y una historia muy rica y diversa."
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Waar komt Silvia vandaan?",
+        "choices": [
+          "Uit Andalusië, in het zuiden van Spanje",
+          "Uit Canada",
+          "Uit Mexico",
+          "Uit het noorden van Spanje"
+        ],
+        "answerIndex": 0,
+        "explanationNl": "Silvia stelt zich voor: \"Soy Silvia y soy de Andalucía, en el sur de España.\" (Ik ben Silvia en ik kom uit Andalusië, in het zuiden van Spanje.)",
+        "evidence": {
+          "es": "Soy Silvia y soy de Andalucía, en el sur de España.",
+          "nl": "Ik ben Silvia en ik kom uit Andalusië, in het zuiden van Spanje.",
+          "startSec": 104.73,
+          "endSec": 109.81
+        }
+      }
+    },
+    {
+      "id": "s03",
+      "startSec": 125.0,
+      "endSec": 165.0,
+      "sentences": [
+        {
+          "startSec": 125.0,
+          "speaker": "Silvia",
+          "es": "Hoy quiero hablar de un momento muy importante en mi vida. Es algo que pasó hace muchos años, en 1991, cuando yo era una niña."
+        },
+        {
+          "startSec": 143.0,
+          "speaker": "Silvia",
+          "es": "En algún momento de nuestra vida, todas las personas tenemos una revelación: no somos inmortales. Esta revelación puede ser muy impactante, especialmente cuando somos niñas y niños."
+        }
+      ],
+      "question": {
+        "type": "vocabInContext",
+        "vocabId": "inmortal",
+        "promptNl": "Je hoorde \"no somos inmortales\". Wat betekent \"inmortal\"?",
+        "choices": [
+          "Sterfelijk",
+          "Onsterfelijk",
+          "Onzichtbaar",
+          "Onbelangrijk"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "\"Inmortal\" betekent onsterfelijk. Silvia zegt dat ieder mens ooit de openbaring krijgt: \"no somos inmortales\", we zijn niet onsterfelijk.",
+        "evidence": {
+          "es": "En algún momento de nuestra vida, todas las personas tenemos una revelación: no somos inmortales.",
+          "nl": "Op een bepaald moment in ons leven krijgen alle mensen een openbaring: we zijn niet onsterfelijk.",
+          "startSec": 142.76,
+          "endSec": 154.28
+        }
+      }
+    },
+    {
+      "id": "s04",
+      "startSec": 165.0,
+      "endSec": 216.0,
+      "sentences": [
+        {
+          "startSec": 165.0,
+          "speaker": "Silvia",
+          "es": "En el verano de 1991 yo era una niña de seis años. No sé por qué, pero yo con seis años pensaba mucho en mi existencia. O mejor dicho, pensaba mucho en la posibilidad de no existir más. Y esta idea era una gran preocupación para mí."
+        },
+        {
+          "startSec": 192.0,
+          "speaker": "Silvia",
+          "es": "Mi padre me contaba una historia sobre una poción mágica. Con esta poción era posible ser inmortal. Él era y aún es médico. Y me contaba que esta poción estaba en su consulta. ¡Qué suerte! ¿no?"
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat vertelde Silvia's vader over de toverdrank?",
+        "choices": [
+          "Dat hij hem zelf ooit had gedronken",
+          "Dat hij heel vies smaakte",
+          "Dat je er heel oud van werd",
+          "Dat hij in zijn dokterspraktijk stond"
+        ],
+        "answerIndex": 3,
+        "explanationNl": "Haar vader is arts en vertelde: \"esta poción estaba en su consulta\", de toverdrank stond in zijn praktijk.",
+        "evidence": {
+          "es": "Él era y aún es médico. Y me contaba que esta poción estaba en su consulta.",
+          "nl": "Hij was en is nog steeds arts. En hij vertelde me dat deze toverdrank in zijn praktijk stond.",
+          "startSec": 203.32,
+          "endSec": 211.88
+        }
+      }
+    },
+    {
+      "id": "s05",
+      "startSec": 216.0,
+      "endSec": 267.0,
+      "sentences": [
+        {
+          "startSec": 216.0,
+          "speaker": "Silvia",
+          "es": "La verdad es que esa historia de mi padre no me tranquilizaba… porque la expresión en la cara de mi padre no era muy sincera. ¿Estaba mintiendo?"
+        },
+        {
+          "startSec": 238.0,
+          "speaker": "Silvia",
+          "es": "Todas las tardes, después de la escuela, merendaba en el salón con mi madre. Normalmente, ella me preparaba bocadillos deliciosos y juntas veíamos una serie de Canadá: “Tropical Heat”, con el famoso detective Nick Slaughter."
+        }
+      ],
+      "question": {
+        "type": "gap",
+        "vocabId": "el-bocadillo",
+        "promptNl": "Vul aan wat je hoorde:",
+        "textEs": "Normalmente, ella me preparaba ___ deliciosos.",
+        "choices": [
+          "bocadillos",
+          "regalos",
+          "zapatos",
+          "libros"
+        ],
+        "answerIndex": 0,
+        "explanationNl": "\"Bocadillos deliciosos\" = heerlijke broodjes. Die maakte haar moeder elke middag na school voor haar klaar.",
+        "evidence": {
+          "es": "Normalmente, ella me preparaba bocadillos deliciosos y juntas veíamos una serie de Canadá.",
+          "nl": "Meestal maakte ze heerlijke broodjes voor me klaar en samen keken we naar een serie uit Canada.",
+          "startSec": 245.66,
+          "endSec": 255.98
+        }
+      }
+    },
+    {
+      "id": "s06",
+      "startSec": 267.0,
+      "endSec": 323.0,
+      "sentences": [
+        {
+          "startSec": 267.0,
+          "speaker": "Silvia",
+          "es": "Las series en inglés en España y América Latina están dobladas al español. En “Tropical Heat” un narrador decía siempre el título del episodio en español."
+        },
+        {
+          "startSec": 288.0,
+          "speaker": "Silvia",
+          "es": "Un día estaba sentada con mi madre en el salón a la hora de la merienda. \"Tropical Heat\" estaba en la televisión. Mientras yo comía mi bocadillo el narrador dijo el nombre del episodio: “La muerte es una playa”."
+        },
+        {
+          "startSec": 313.0,
+          "speaker": "Silvia",
+          "es": "Cuando escuché el título le pregunté a mi madre sobre mi gran preocupación:"
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Welke afleveringstitel zegt de verteller op tv?",
+        "choices": [
+          "Het leven is een feest",
+          "De detective op het strand",
+          "De dood is een strand",
+          "De zomer van 1991"
+        ],
+        "answerIndex": 2,
+        "explanationNl": "De verteller zegt: \"La muerte es una playa\" (De dood is een strand). Die titel brengt Silvia op haar grote vraag.",
+        "evidence": {
+          "es": "Mientras yo comía mi bocadillo el narrador dijo el nombre del episodio: “La muerte es una playa”.",
+          "nl": "Terwijl ik mijn broodje at, zei de verteller de naam van de aflevering: “De dood is een strand”.",
+          "startSec": 299.62,
+          "endSec": 312.58
+        }
+      }
+    },
+    {
+      "id": "s07",
+      "startSec": 323.0,
+      "endSec": 354.0,
+      "sentences": [
+        {
+          "startSec": 323.0,
+          "speaker": "Silvia",
+          "es": "– Mamá, ¿tú y yo nos vamos a morir?"
+        },
+        {
+          "startSec": 328.0,
+          "speaker": "Mamá",
+          "es": "– Sí, hija, como todo el mundo."
+        },
+        {
+          "startSec": 332.0,
+          "speaker": "Silvia",
+          "es": "– Pero… ¿y la poción para ser inmortal?"
+        },
+        {
+          "startSec": 337.0,
+          "speaker": "Mamá",
+          "es": "– ¿La poción? ¿Qué poción, cariño?"
+        },
+        {
+          "startSec": 341.0,
+          "speaker": "Silvia",
+          "es": "– ¿No hay una poción para ser inmortal?"
+        },
+        {
+          "startSec": 344.0,
+          "speaker": "Mamá",
+          "es": "– Creo que no. Pero… ahora no tienes que pensar en estas cosas. Eso va a pasar dentro de mucho tiempo."
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat zegt mama over de toverdrank om onsterfelijk te worden?",
+        "choices": [
+          "Dat die alleen voor kinderen werkt",
+          "Dat die volgens haar niet bestaat",
+          "Dat papa hem thuis bewaart",
+          "Dat die heel duur is"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "Op de vraag \"¿No hay una poción para ser inmortal?\" antwoordt mama: \"Creo que no.\" (Ik denk het niet.)",
+        "evidence": {
+          "es": "Creo que no. Pero… ahora no tienes que pensar en estas cosas. Eso va a pasar dentro de mucho tiempo.",
+          "nl": "Ik denk het niet. Maar aan die dingen hoef je nu niet te denken. Dat gebeurt pas over heel lange tijd.",
+          "startSec": 344.1,
+          "endSec": 353.66
+        }
+      }
+    },
+    {
+      "id": "s08",
+      "startSec": 354.0,
+      "endSec": 400.0,
+      "sentences": [
+        {
+          "startSec": 354.0,
+          "speaker": "Silvia",
+          "es": "Entonces, solté mi bocadillo y empecé a llorar desconsoladamente. Recuerdo el miedo y la decepción de aquel momento."
+        },
+        {
+          "startSec": 370.0,
+          "speaker": "Silvia",
+          "es": "Pero mi tristeza duró exactamente los mismos minutos que la introducción del episodio. Entonces empezó la melodía de la serie: marimbas, timbales, guitarras eléctricas y la letra de la canción."
+        }
+      ],
+      "question": {
+        "type": "vocabInContext",
+        "vocabId": "llorar",
+        "promptNl": "Je hoorde \"empecé a llorar\". Wat betekent \"llorar\"?",
+        "choices": [
+          "Huilen",
+          "Lachen",
+          "Schreeuwen",
+          "Rennen"
+        ],
+        "answerIndex": 0,
+        "explanationNl": "\"Llorar\" = huilen. Silvia laat haar broodje los en begint ontroostbaar te huilen: \"empecé a llorar desconsoladamente\".",
+        "evidence": {
+          "es": "Entonces, solté mi bocadillo y empecé a llorar desconsoladamente.",
+          "nl": "Toen liet ik mijn broodje los en begon ik ontroostbaar te huilen.",
+          "startSec": 354.04,
+          "endSec": 362.22
+        }
+      }
+    },
+    {
+      "id": "s09",
+      "startSec": 400.0,
+      "endSec": 442.0,
+      "sentences": [
+        {
+          "startSec": 400.0,
+          "speaker": "Silvia",
+          "es": "La música de la serie me tranquilizó. Agarré el bocadillo y pude seguir con mi vida con una mentalidad diferente."
+        },
+        {
+          "startSec": 413.0,
+          "speaker": "Silvia",
+          "es": "A día de hoy tengo una fotografía del protagonista de la serie, Nick Slaughter, en la pared de mi salón. Su foto me recuerda que nada es para siempre. Y por eso es importante disfrutar del momento."
+        }
+      ],
+      "question": {
+        "type": "gap",
+        "vocabId": "me-tranquilizo",
+        "promptNl": "Vul aan wat je hoorde:",
+        "textEs": "La música de la serie me ___.",
+        "choices": [
+          "despertó",
+          "asustó",
+          "aburrió",
+          "tranquilizó"
+        ],
+        "answerIndex": 3,
+        "explanationNl": "\"La música de la serie me tranquilizó\": de muziek van de serie stelde haar gerust, waarna ze haar broodje weer pakte.",
+        "evidence": {
+          "es": "La música de la serie me tranquilizó. Agarré el bocadillo y pude seguir con mi vida con una mentalidad diferente.",
+          "nl": "De muziek van de serie stelde me gerust. Ik pakte het broodje en kon verder met mijn leven, met een andere mentaliteit.",
+          "startSec": 399.66,
+          "endSec": 411.56
+        }
+      }
+    },
+    {
+      "id": "s10",
+      "startSec": 442.0,
+      "endSec": 477.0,
+      "sentences": [
+        {
+          "startSec": 442.0,
+          "speaker": "Rodrigo",
+          "es": "Parece increíble que la melodía de una serie de televisión pueda tener un impacto tan fuerte, ¿verdad? Pero gracias a la melodía de esta serie, Silvia sabe que tiene que vivir el momento."
+        },
+        {
+          "startSec": 462.0,
+          "speaker": "Rodrigo",
+          "es": "¡Si quieres saber más sobre la historia de Silvia, puedes escuchar el bonus del episodio!"
+        }
+      ],
+      "question": {
+        "type": "mc",
+        "promptNl": "Wat weet Silvia dankzij de tune van de serie, volgens Rodrigo?",
+        "choices": [
+          "Dat ze detective wil worden",
+          "Dat ze in het moment moet leven",
+          "Dat ze nooit meer tv wil kijken",
+          "Dat ze muziek wil gaan maken"
+        ],
+        "answerIndex": 1,
+        "explanationNl": "Rodrigo zegt: \"gracias a la melodía de esta serie, Silvia sabe que tiene que vivir el momento\" (dankzij de melodie van deze serie weet Silvia dat ze in het moment moet leven).",
+        "evidence": {
+          "es": "Pero gracias a la melodía de esta serie, Silvia sabe que tiene que vivir el momento.",
+          "nl": "Maar dankzij de melodie van deze serie weet Silvia dat ze in het moment moet leven.",
+          "startSec": 453.36,
+          "endSec": 461.68
+        }
+      }
+    }
+  ]
+}

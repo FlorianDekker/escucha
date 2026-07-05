@@ -12,7 +12,7 @@
   "units": [
     {
       "id": "unit-1",
-      "title": "Primeros pasos",
+      "title": "¡Aventura!",
       "subtitleNl": "Surfen in Puerto Escondido",
       "episodeId": "undia-s1e1",
       "steps": [
@@ -21,6 +21,34 @@
         { "id": "unit-1-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s06", "s07", "s08", "s09"] },
         { "id": "unit-1-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09"] },
         { "id": "unit-1-gate", "type": "gate", "passPct": 80 }
+      ]
+    },
+    {
+      "id": "unit-2",
+      "title": "¡Aventura!",
+      "subtitleNl": "Overvallen door het noodweer",
+      "episodeId": "undia-s2e1",
+      "steps": [
+        { "id": "unit-2-words", "type": "words" },
+        { "id": "unit-2-listen-1", "type": "listen", "labelNl": "Luister · deel 1", "segmentIds": ["s01", "s02", "s03", "s04"] },
+        { "id": "unit-2-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s05", "s06", "s07", "s08"] },
+        { "id": "unit-2-listen-3", "type": "listen", "labelNl": "Luister · deel 3", "segmentIds": ["s09", "s10", "s11", "s12"] },
+        { "id": "unit-2-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12"] },
+        { "id": "unit-2-gate", "type": "gate", "passPct": 80 }
+      ]
+    },
+    {
+      "id": "unit-3",
+      "title": "¡Aventura!",
+      "subtitleNl": "De dood was geen strand",
+      "episodeId": "undia-s2e9",
+      "steps": [
+        { "id": "unit-3-words", "type": "words" },
+        { "id": "unit-3-listen-1", "type": "listen", "labelNl": "Luister · deel 1", "segmentIds": ["s01", "s02", "s03"] },
+        { "id": "unit-3-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s04", "s05", "s06"] },
+        { "id": "unit-3-listen-3", "type": "listen", "labelNl": "Luister · deel 3", "segmentIds": ["s07", "s08", "s09", "s10"] },
+        { "id": "unit-3-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10"] },
+        { "id": "unit-3-gate", "type": "gate", "passPct": 80 }
       ]
     }
   ]
