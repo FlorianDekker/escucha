@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { useStore } from '../lib/store'
 import { dueItems, isDue, todayStr } from '../lib/srs'
+import { playClick, playCorrect, playWrong } from '../lib/sounds'
 import TabBar from '../components/TabBar.jsx'
 import '../overview.css'
 
@@ -52,11 +53,14 @@ export default function Words() {
     if (session.selected != null) return
     const q = session.questions[session.index]
     const correct = option === q.nl
+    if (correct) playCorrect()
+    else playWrong()
     srsReview(q.key, correct)
     setSession((s) => ({ ...s, selected: option, correctCount: s.correctCount + (correct ? 1 : 0) }))
   }
 
   function next() {
+    playClick()
     setSession((s) => {
       const nextIndex = s.index + 1
       if (nextIndex >= s.questions.length) return { ...s, done: true }

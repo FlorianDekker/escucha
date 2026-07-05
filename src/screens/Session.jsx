@@ -4,6 +4,7 @@ import { useStore, XP_PER_CORRECT, XP_PER_TRY } from '../lib/store'
 import { loadLadder, loadEpisode, normalizeWord } from '../lib/contentLoader'
 import { dueItems } from '../lib/srs'
 import { useSegmentPlayer } from '../lib/audio'
+import { playClick, playCorrect, playWrong } from '../lib/sounds'
 import QuestionCard from '../components/QuestionCard.jsx'
 import TranscriptBubbles from '../components/TranscriptBubbles.jsx'
 import VocabExercise from '../components/VocabExercise.jsx'
@@ -205,7 +206,10 @@ function WordsFlow({ episode, step, episodeId, navigate }) {
             type="button"
             className="btn btn-primary"
             style={{ marginTop: 14 }}
-            onClick={() => setPhase('exercise')}
+            onClick={() => {
+              playClick()
+              setPhase('exercise')
+            }}
           >
             Leer de woorden
           </button>
@@ -343,6 +347,8 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
   function check() {
     if (selected === null || revealed) return
     const ok = selected === seg.question.answerIndex
+    if (ok) playCorrect()
+    else playWrong()
     answerSegment(episodeId, seg.id, ok)
     setResults((r) => ({ ...r, [seg.id]: ok }))
     setCorrect(ok)
@@ -350,6 +356,7 @@ function ListenFlow({ episode, step, episodeId, navigate }) {
   }
 
   function advance() {
+    playClick()
     if (idx >= segments.length - 1) {
       completeStep(episodeId, step.id)
       setSegmentIndex(episodeId, step.id, 0)
@@ -615,11 +622,14 @@ function GateFlow({ episode, step, episodeId, navigate }) {
   function check() {
     if (selected === null || revealed) return
     const ok = selected === seg.question.answerIndex
+    if (ok) playCorrect()
+    else playWrong()
     if (ok) setCorrectCount((c) => c + 1)
     setRevealed(true)
   }
 
   function next() {
+    playClick()
     pause()
     if (idx >= total - 1) {
       const score = Math.round((correctCount / total) * 100)

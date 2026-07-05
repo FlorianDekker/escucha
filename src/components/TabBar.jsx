@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { playClick } from '../lib/sounds'
 
 /* Vier tabs met de SVG-iconen exact uit het design (viewBox 0 0 24 24). */
 const TABS = [
@@ -62,6 +63,7 @@ export default function TabBar({ variant = 'light' }) {
           to={t.to}
           end={t.end}
           className="tab"
+          onClick={playClick}
           style={({ isActive }) => ({ color: isActive ? activeColor : inactiveColor })}
         >
           <svg

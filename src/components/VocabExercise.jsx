@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useStore } from '../lib/store'
 import { normalizeWord } from '../lib/contentLoader'
+import { playClick, playCorrect, playWrong } from '../lib/sounds'
 
 /*
  * Eén woordoefening (scherm 4), in meerkeuze- of typvorm.
@@ -78,6 +79,8 @@ export default function VocabExercise({
     const key = normalizeWord(item.es)
     srsAdd(key, item.es, item.nl, episodeId)
     srsReview(key, ok)
+    if (ok) playCorrect()
+    else playWrong()
     setCorrect(ok)
     setChecked(true)
     onChecked && onChecked()
@@ -103,7 +106,11 @@ export default function VocabExercise({
               key={i}
               type="button"
               className={'vopt' + vClass(i, selected, checked, correctChoiceIndex)}
-              onClick={() => !checked && setSelected(i)}
+              onClick={() => {
+                if (checked) return
+                playClick()
+                setSelected(i)
+              }}
               disabled={checked}
             >
               <span className="num">{i + 1}</span>
@@ -150,7 +157,14 @@ export default function VocabExercise({
       )}
 
       {checked ? (
-        <button type="button" className="btn btn-primary pad-b" onClick={onContinue}>
+        <button
+          type="button"
+          className="btn btn-primary pad-b"
+          onClick={() => {
+            playClick()
+            onContinue()
+          }}
+        >
           {isLast ? 'Afronden ▸' : 'Doorgaan ▸'}
         </button>
       ) : (

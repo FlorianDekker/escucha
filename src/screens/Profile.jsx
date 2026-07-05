@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useStore } from '../lib/store'
+import { playClick } from '../lib/sounds'
 import TabBar from '../components/TabBar.jsx'
 import '../overview.css'
 
@@ -144,6 +145,25 @@ export default function Profile() {
                   {v}×
                 </button>
               ))}
+            </div>
+          </div>
+
+          {/* Geluid */}
+          <p style={sectionTitle}>Geluidseffecten</p>
+          <div className="card" style={cardStyle}>
+            <div className="segmented">
+              <button
+                data-active={settings.sounds !== false}
+                onClick={() => {
+                  setSetting('sounds', true)
+                  playClick()
+                }}
+              >
+                Aan
+              </button>
+              <button data-active={settings.sounds === false} onClick={() => setSetting('sounds', false)}>
+                Uit
+              </button>
             </div>
           </div>
 

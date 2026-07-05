@@ -1,3 +1,5 @@
+import { playClick } from '../lib/sounds'
+
 /*
  * Toont één vraag met antwoordopties (verticaal, 2px border).
  * Vraagtypes: 'mc' en 'vocabInContext' -> promptNl + choices;
@@ -39,7 +41,11 @@ export default function QuestionCard({ question, selected, onSelect, revealed = 
             key={i}
             type="button"
             className={cls(i)}
-            onClick={() => !revealed && onSelect(i)}
+            onClick={() => {
+              if (revealed) return
+              playClick()
+              onSelect(i)
+            }}
             disabled={revealed}
           >
             <span>{choice}</span>

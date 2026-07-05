@@ -8,7 +8,7 @@ const XP_PER_TRY = 5
 const MAX_STRUGGLES = 50
 
 const initialState = {
-  settings: { playbackRate: 1, theme: 'aubergine', dailyGoal: 3 },
+  settings: { playbackRate: 1, theme: 'aubergine', dailyGoal: 3, sounds: true },
   streak: { current: 0, best: 0, lastActiveDate: null },
   xp: { total: 0, byDate: {} },
   episodes: {}, // epId -> { status, segmentIndexByStep, answers: {segId: {correct, attempts}}, scorePct, completedSteps: [] }

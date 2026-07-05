@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { playClick } from '../lib/sounds'
 import { useStore } from '../lib/store'
 import { loadLadder } from '../lib/contentLoader'
 import TabBar from '../components/TabBar.jsx'
@@ -174,6 +175,7 @@ function PathNode({ step, unitId, top, left }) {
             className="node--current-inner"
             style={{ position: 'relative' }}
             aria-label={label}
+            onClick={playClick}
           >
             <span className="play-tri play-tri--lg" />
           </Link>
@@ -188,7 +190,12 @@ function PathNode({ step, unitId, top, left }) {
   if (status === 'done') {
     return (
       <div style={wrap}>
-        <Link to={`/session/${unitId}/${step.id}`} className="node node--done" aria-label={label}>
+        <Link
+          to={`/session/${unitId}/${step.id}`}
+          className="node node--done"
+          aria-label={label}
+          onClick={playClick}
+        >
           <StepIcon type={iconType} color="#fff" />
         </Link>
         <p style={{ margin: '5px 0 0', fontWeight: 800, fontSize: 11, color: 'var(--ink-mute)' }}>{label}</p>
