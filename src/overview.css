@@ -102,44 +102,13 @@
   from { width: 0; }
 }
 
-/* --- Leerpad-knoop --- */
-.node {
-  width: 66px;
-  height: 60px;
-  border-radius: 50% / 54%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  padding: 0;
-}
-.node--done { background: var(--good); box-shadow: 0 6px 0 var(--good-deep); cursor: pointer; }
-.node--locked { background: var(--locked); box-shadow: 0 6px 0 var(--locked-deep); cursor: default; }
-.node--chest { background: var(--locked); box-shadow: 0 6px 0 var(--locked-deep); border-radius: 18px; }
-.node--current-inner {
-  width: 76px;
-  height: 68px;
-  border-radius: 50% / 54%;
-  background: var(--accent);
-  box-shadow: 0 7px 0 var(--accent-deep);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
+/* --- Play-driehoek (Thuis: ga-verder-kaart) --- */
 .play-tri {
   width: 0; height: 0;
   border-left: 14px solid #fff;
   border-top: 9px solid transparent;
   border-bottom: 9px solid transparent;
   margin-left: 4px;
-}
-.play-tri--lg {
-  border-left: 20px solid #fff;
-  border-top: 13px solid transparent;
-  border-bottom: 13px solid transparent;
-  margin-left: 5px;
 }
 
 /* --- Segmented control --- */

@@ -9,11 +9,22 @@
       "artUrl": "content/art/undia.jpg"
     }
   },
+  "chapters": [
+    { "id": "ch-1", "title": "¡Aventura!", "theme": "aventura", "unitIds": ["unit-1", "unit-2", "unit-3"] },
+    { "id": "ch-2", "title": "La familia", "theme": "familia", "unitIds": ["unit-4", "unit-5", "unit-6"] },
+    { "id": "ch-3", "title": "¡Qué rico!", "theme": "rico", "unitIds": [] },
+    { "id": "ch-4", "title": "De viaje", "theme": "viaje", "unitIds": [] },
+    { "id": "ch-5", "title": "Animales y naturaleza", "theme": "animales", "unitIds": [] },
+    { "id": "ch-6", "title": "Amor y amistad", "theme": "amor", "unitIds": [] },
+    { "id": "ch-7", "title": "Fiestas y leyendas", "theme": "fiestas", "unitIds": [] },
+    { "id": "ch-8", "title": "Sueños y trabajo", "theme": "suenos", "unitIds": [] }
+  ],
   "units": [
     {
       "id": "unit-1",
       "title": "¡Aventura!",
       "subtitleNl": "Surfen in Puerto Escondido",
+      "illustration": "surfer.svg",
       "episodeId": "undia-s1e1",
       "steps": [
         { "id": "unit-1-words", "type": "words" },
@@ -26,7 +37,8 @@
     {
       "id": "unit-2",
       "title": "¡Aventura!",
-      "subtitleNl": "Overvallen door het noodweer",
+      "subtitleNl": "Een zware bergtocht",
+      "illustration": "climbing.svg",
       "episodeId": "undia-s2e1",
       "steps": [
         { "id": "unit-2-words", "type": "words" },
@@ -41,6 +53,7 @@
       "id": "unit-3",
       "title": "¡Aventura!",
       "subtitleNl": "De dood was geen strand",
+      "illustration": "standout.svg",
       "episodeId": "undia-s2e9",
       "steps": [
         { "id": "unit-3-words", "type": "words" },
@@ -54,7 +67,8 @@
     {
       "id": "unit-4",
       "title": "La familia",
-      "subtitleNl": "De eerste keer dat ik mijn zus ontmoette",
+      "subtitleNl": "Mijn zus ontmoeten",
+      "illustration": "curly.svg",
       "episodeId": "undia-s1e4",
       "steps": [
         { "id": "unit-4-words", "type": "words" },
@@ -67,7 +81,8 @@
     {
       "id": "unit-5",
       "title": "La familia",
-      "subtitleNl": "De familie leren kennen in het Spaans",
+      "subtitleNl": "De familie ontmoeten",
+      "illustration": "ash.svg",
       "episodeId": "undia-s1e9",
       "steps": [
         { "id": "unit-5-words", "type": "words" },
@@ -81,7 +96,8 @@
     {
       "id": "unit-6",
       "title": "La familia",
-      "subtitleNl": "Mama neemt (geen) afscheid",
+      "subtitleNl": "Het (niet-)afscheid van mama",
+      "illustration": "mother.svg",
       "episodeId": "undia-s1e8",
       "steps": [
         { "id": "unit-6-words", "type": "words" },
