@@ -65,6 +65,17 @@ export function computeProgress(ladder, episodes) {
   return { unitInfos, currentUnitIndex, current }
 }
 
+/* Admin-stand (instelling "Alle lessen ontgrendeld"): locked steps worden
+   aanklikbaar ('open'); done/current blijven zoals ze zijn. */
+export function unlockProgress(progress) {
+  progress.unitInfos.forEach((u) => {
+    u.steps.forEach((s) => {
+      if (s.status === 'locked') s.status = 'open'
+    })
+  })
+  return progress
+}
+
 function stepLabel(step) {
   if (step.type === 'words') return 'Woorden'
   if (step.type === 'gate') return 'Quiz · poort'
@@ -214,6 +225,23 @@ function PathNode({ step, unitId, top, left }) {
     )
   }
 
+  // 'open' (admin-stand): aanklikbaar, grijze knoop met brand-icoon
+  if (status === 'open') {
+    return (
+      <div style={wrap}>
+        <Link
+          to={`/session/${unitId}/${step.id}`}
+          className="node node--locked"
+          aria-label={label}
+          onClick={playClick}
+        >
+          <StepIcon type={iconType} color="var(--brand)" />
+        </Link>
+        <p style={{ margin: '5px 0 0', fontWeight: 800, fontSize: 11, color: 'var(--brand)' }}>{label}</p>
+      </div>
+    )
+  }
+
   // locked
   return (
     <div style={wrap}>
@@ -227,6 +255,7 @@ function PathNode({ step, unitId, top, left }) {
 
 export default function LearningPath() {
   const episodes = useStore((s) => s.episodes)
+  const unlockAll = useStore((s) => s.settings.unlockAll)
   const [ladder, setLadder] = useState(null)
 
   useEffect(() => {
@@ -234,11 +263,15 @@ export default function LearningPath() {
   }, [])
 
   const progress = ladder ? computeProgress(ladder, episodes) : null
+  if (progress && unlockAll) unlockProgress(progress)
   const units = ladder?.units || []
   const currentUnit = progress ? progress.unitInfos[progress.currentUnitIndex] : null
 
+  // Admin-stand toont alle units onder elkaar; normaal alleen de huidige.
+  const shownUnits = progress ? (unlockAll ? progress.unitInfos : currentUnit ? [currentUnit] : []) : []
+
   const nextUnitExists = progress && progress.currentUnitIndex + 1 < units.length
-  const chestLabel = nextUnitExists ? `Unidad ${progress.currentUnitIndex + 2}` : 'Binnenkort meer'
+  const chestLabel = unlockAll || !nextUnitExists ? 'Binnenkort meer' : `Unidad ${progress.currentUnitIndex + 2}`
 
   return (
     <div className="screen screen--page">
@@ -282,48 +315,83 @@ export default function LearningPath() {
           </div>
         </div>
 
-        {/* Knopenpad */}
-        <div
-          style={{
-            position: 'relative',
-            minHeight: currentUnit ? TOP0 + (currentUnit.steps.length + 1) * RHYTHM + 40 : 200,
-          }}
-        >
-          {currentUnit &&
-            currentUnit.steps.map((step, i) => (
-              <PathNode
-                key={step.id}
-                step={step}
-                unitId={currentUnit.unit.id}
-                top={TOP0 + i * RHYTHM}
-                left={leftFor(i)}
-              />
-            ))}
+        {unlockAll && (
+          <p
+            style={{
+              margin: '14px 20px 0',
+              textAlign: 'center',
+              color: 'var(--accent)',
+              fontWeight: 800,
+              fontSize: 11.5,
+              letterSpacing: '.04em',
+            }}
+          >
+            ADMIN · alle lessen ontgrendeld
+          </p>
+        )}
 
-          {/* Kist voor de volgende unit: altijd midden, na de laatste stap */}
-          {currentUnit && (
+        {/* Knopenpad, in admin-stand één blok per unit */}
+        {shownUnits.map((u, ui) => (
+          <div key={u.unit.id}>
+            {unlockAll && (
+              <p
+                style={{
+                  margin: '20px 20px 0',
+                  fontFamily: 'var(--font-head)',
+                  fontWeight: 800,
+                  fontSize: 13,
+                  color: 'var(--ink-mute)',
+                  textAlign: 'center',
+                }}
+              >
+                UNIDAD {u.index + 1} · {u.unit.title}
+              </p>
+            )}
             <div
               style={{
-                position: 'absolute',
-                top: TOP0 + currentUnit.steps.length * RHYTHM,
-                left: '46.5%',
-                transform: 'translateX(-50%)',
-                textAlign: 'center',
+                position: 'relative',
+                minHeight:
+                  TOP0 + (u.steps.length + (ui === shownUnits.length - 1 ? 1 : 0)) * RHYTHM + 30,
               }}
             >
-              <div className="node node--chest" aria-label={chestLabel}>
-                <ChestIcon color="#9998BE" />
-              </div>
-              <p style={{ margin: '5px 0 0', fontWeight: 800, fontSize: 11, color: 'var(--ink-faint)' }}>{chestLabel}</p>
-            </div>
-          )}
+              {u.steps.map((step, i) => (
+                <PathNode
+                  key={step.id}
+                  step={step}
+                  unitId={u.unit.id}
+                  top={TOP0 + i * RHYTHM}
+                  left={leftFor(i)}
+                />
+              ))}
 
-          {!currentUnit && (
-            <p style={{ textAlign: 'center', color: 'var(--ink-mute)', fontWeight: 700, marginTop: 40 }}>
-              Nog geen leerpad beschikbaar.
-            </p>
-          )}
-        </div>
+              {/* Kist voor de volgende unit: altijd midden, na de laatste stap */}
+              {ui === shownUnits.length - 1 && (
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: TOP0 + u.steps.length * RHYTHM,
+                    left: '46.5%',
+                    transform: 'translateX(-50%)',
+                    textAlign: 'center',
+                  }}
+                >
+                  <div className="node node--chest" aria-label={chestLabel}>
+                    <ChestIcon color="#9998BE" />
+                  </div>
+                  <p style={{ margin: '5px 0 0', fontWeight: 800, fontSize: 11, color: 'var(--ink-faint)' }}>
+                    {chestLabel}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+
+        {!currentUnit && (
+          <p style={{ textAlign: 'center', color: 'var(--ink-mute)', fontWeight: 700, marginTop: 40 }}>
+            Nog geen leerpad beschikbaar.
+          </p>
+        )}
       </div>
 
       <TabBar variant="light" />

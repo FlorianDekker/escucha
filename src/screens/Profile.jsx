@@ -167,6 +167,35 @@ export default function Profile() {
             </div>
           </div>
 
+          {/* Admin */}
+          <p style={sectionTitle}>Admin</p>
+          <div className="card" style={cardStyle}>
+            <p style={{ margin: '0 0 10px', color: 'var(--ink-mute)', fontWeight: 700, fontSize: 12.5, lineHeight: 1.5 }}>
+              Alle lessen ontgrendeld: het leerpad toont alle units en elke stap is direct
+              speelbaar, ongeacht je voortgang.
+            </p>
+            <div className="segmented">
+              <button
+                data-active={settings.unlockAll === true}
+                onClick={() => {
+                  playClick()
+                  setSetting('unlockAll', true)
+                }}
+              >
+                Aan
+              </button>
+              <button
+                data-active={!settings.unlockAll}
+                onClick={() => {
+                  playClick()
+                  setSetting('unlockAll', false)
+                }}
+              >
+                Uit
+              </button>
+            </div>
+          </div>
+
           {/* Back-up */}
           <p style={sectionTitle}>Back-up</p>
           <div className="card" style={cardStyle}>
