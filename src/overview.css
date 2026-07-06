@@ -16,6 +16,8 @@
 .screen__scroll {
   flex: 1 1 auto;
   overflow-y: auto;
+  /* Eilanden/illustraties steken links en rechts uit; nooit horizontaal scrollen */
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
 

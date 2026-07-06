@@ -50,6 +50,7 @@ html, body {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   overscroll-behavior-y: none;
+  overflow-x: hidden;
 }
 
 button {
