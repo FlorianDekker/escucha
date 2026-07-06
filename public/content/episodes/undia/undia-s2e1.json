@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "undia-s2e1",
   "podcastId": "undia",
   "title": "Overvallen door het noodweer",
@@ -420,43 +420,8 @@
   "segments": [
     {
       "id": "s01",
-      "startSec": 14.0,
-      "endSec": 70.0,
-      "sentences": [
-        {
-          "startSec": 14.0,
-          "speaker": "Rodrigo",
-          "es": "¡Hola de nuevo! Te doy la bienvenida a la segunda temporada de Un día en español - Monolingüe, el pódcast de Babbel en el que puedes escuchar historias reales de personas hispanohablantes. Soy Rodrigo y estoy muy contento de estar de vuelta y poder compartir contigo un montón de historias nuevas."
-        },
-        {
-          "startSec": 45.0,
-          "speaker": "Rodrigo",
-          "es": "En esta temporada tenemos una sorpresa para ti: después de cada episodio, puedes escuchar una entrevista con nuestros y nuestras protagonistas en el bonus de cada episodio. ¡Empecemos!"
-        }
-      ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat is er nieuw in dit tweede seizoen van de podcast?",
-        "choices": [
-          "Elke aflevering is nu in twee talen",
-          "Er is een nieuwe presentator",
-          "Na elke aflevering is er een bonusinterview met de hoofdpersoon",
-          "De afleveringen duren nu een uur"
-        ],
-        "answerIndex": 2,
-        "explanationNl": "Rodrigo zegt: \"después de cada episodio, puedes escuchar una entrevista con nuestros y nuestras protagonistas en el bonus.\" Er is dus een bonusinterview met de hoofdpersonen.",
-        "evidence": {
-          "es": "Después de cada episodio, puedes escuchar una entrevista con nuestros y nuestras protagonistas en el bonus de cada episodio.",
-          "nl": "Na elke aflevering kun je in de bonus een interview met onze hoofdpersonen beluisteren.",
-          "startSec": 50.07,
-          "endSec": 61.85
-        }
-      }
-    },
-    {
-      "id": "s02",
       "startSec": 70.0,
-      "endSec": 113.0,
+      "endSec": 108.0,
       "sentences": [
         {
           "startSec": 70.0,
@@ -467,42 +432,119 @@
           "startSec": 100.0,
           "speaker": "Rodrigo",
           "es": "Si escuchas con atención, en este episodio hay ejemplos sobre cómo hablar del tiempo en español."
+        }
+      ],
+      "echo": {
+        "es": "Es ahí donde acompañaremos a Gissell y a Dani",
+        "startSec": 83.75,
+        "endSec": 89.79
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat gaan Gissell en Dani in dit verhaal doen?",
+          "choices": [
+            "Een museum in de stad bezoeken",
+            "Een bergwandeling maken die gevaarlijker wordt dan gepland",
+            "Leren surfen aan de kust",
+            "Vrijwilligerswerk doen in een dierentuin"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Rodrigo kondigt aan: \"hacen una ruta de senderismo que resultará ser más peligrosa de lo que habían planeado.\" Ze maken een wandeling die gevaarlijker wordt dan verwacht.",
+          "evidence": {
+            "es": "Acompañaremos a Gissell y a Dani mientras hacen una ruta de senderismo que resultará ser más peligrosa de lo que habían planeado.",
+            "nl": "We vergezellen Gissell en Dani terwijl ze een wandelroute lopen die gevaarlijker zal blijken dan ze gepland hadden.",
+            "startSec": 85.95,
+            "endSec": 99.77
+          }
         },
+        {
+          "type": "gap",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "Hacen una ruta de ___ que resultará ser más peligrosa de lo que habían planeado.",
+          "choices": [
+            "bicicleta",
+            "autobús",
+            "senderismo",
+            "barco"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "\"Una ruta de senderismo\" is een wandelroute. Rodrigo zegt dat die gevaarlijker zal blijken dan gepland.",
+          "evidence": {
+            "es": "Hacen una ruta de senderismo que resultará ser más peligrosa de lo que habían planeado.",
+            "nl": "Ze lopen een wandelroute die gevaarlijker zal blijken dan ze gepland hadden.",
+            "startSec": 90.45,
+            "endSec": 99.77
+          }
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "startSec": 108.0,
+      "endSec": 132.0,
+      "sentences": [
         {
           "startSec": 108.0,
           "speaker": "Rodrigo",
           "es": "¡Vayamos ahora a conocer a Gissell!"
-        }
-      ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat gaan Gissell en Dani in dit verhaal doen?",
-        "choices": [
-          "Een bergwandeling maken die gevaarlijker wordt dan gepland",
-          "Leren surfen aan de kust",
-          "Een museum in de stad bezoeken",
-          "Vrijwilligerswerk doen in een dierentuin"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "Rodrigo kondigt aan: \"hacen una ruta de senderismo que resultará ser más peligrosa de lo que habían planeado.\" Ze maken een wandeling die gevaarlijker wordt dan verwacht.",
-        "evidence": {
-          "es": "Acompañaremos a Gissell y a Dani mientras hacen una ruta de senderismo que resultará ser más peligrosa de lo que habían planeado.",
-          "nl": "We vergezellen Gissell en Dani terwijl ze een wandelroute lopen die gevaarlijker zal blijken dan ze gepland hadden.",
-          "startSec": 85.95,
-          "endSec": 99.77
-        }
-      }
-    },
-    {
-      "id": "s03",
-      "startSec": 113.0,
-      "endSec": 164.0,
-      "sentences": [
+        },
         {
           "startSec": 113.0,
           "speaker": "Gissell",
           "es": "¡Hola! ¿Cómo están? Me llamo Gissell y soy de Costa Rica, un pequeño país centroamericano lleno de fascinante naturaleza, animales increíbles y muchos volcanes."
+        }
+      ],
+      "echo": {
+        "es": "Me llamo Gissell y soy de Costa Rica",
+        "startSec": 115.75,
+        "endSec": 119.41
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Waar komt Gissell vandaan?",
+          "choices": [
+            "Uit Costa Rica",
+            "Uit Spanje",
+            "Uit Mexico",
+            "Uit Argentinië"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Gissell stelt zich voor: \"Me llamo Gissell y soy de Costa Rica.\" Ze komt dus uit Costa Rica.",
+          "evidence": {
+            "es": "Me llamo Gissell y soy de Costa Rica.",
+            "nl": "Ik heet Gissell en ik kom uit Costa Rica.",
+            "startSec": 115.75,
+            "endSec": 119.41
+          }
         },
+        {
+          "type": "vocabInContext",
+          "vocabId": "el-volcan",
+          "promptNl": "Je hoorde \"muchos volcanes\". Wat betekent \"volcán\"?",
+          "choices": [
+            "een rivier",
+            "een strand",
+            "een vulkaan",
+            "een meer"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "\"Volcán\" betekent vulkaan. Gissell zegt dat haar land vol \"fascinante naturaleza, animales increíbles y muchos volcanes\" is.",
+          "evidence": {
+            "es": "Un pequeño país centroamericano lleno de fascinante naturaleza, animales increíbles y muchos volcanes.",
+            "nl": "Een klein Midden-Amerikaans land vol fascinerende natuur, ongelooflijke dieren en veel vulkanen.",
+            "startSec": 119.49,
+            "endSec": 128.53
+          }
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "startSec": 132.0,
+      "endSec": 164.0,
+      "sentences": [
         {
           "startSec": 132.0,
           "speaker": "Gissell",
@@ -514,25 +556,50 @@
           "es": "Dani es mi amigo de España. Él y yo empezamos a hacer senderismo en 2017 en los parques de Costa Rica. Además de descubrir lugares fascinantes, también vivimos algunas aventuras."
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "el-senderismo",
-        "promptNl": "Je hoorde \"empezamos a hacer senderismo\". Wat betekent \"senderismo\"?",
-        "choices": [
-          "vissen",
-          "wandelen in de natuur (bergwandelen)",
-          "zwemmen",
-          "fietsen"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "\"Senderismo\" is wandelen of trekken door de natuur. Gissell en Dani doen dat samen in de parken van Costa Rica.",
-        "evidence": {
-          "es": "Él y yo empezamos a hacer senderismo en 2017 en los parques de Costa Rica.",
-          "nl": "Hij en ik zijn in 2017 begonnen met wandelen in de parken van Costa Rica.",
-          "startSec": 147.67,
-          "endSec": 154.63
+      "echo": {
+        "es": "Él y yo empezamos a hacer senderismo",
+        "startSec": 147.67,
+        "endSec": 151.07
+      },
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "el-senderismo",
+          "promptNl": "Je hoorde \"empezamos a hacer senderismo\". Wat betekent \"senderismo\"?",
+          "choices": [
+            "vissen",
+            "wandelen in de natuur (bergwandelen)",
+            "zwemmen",
+            "fietsen"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"Senderismo\" is wandelen of trekken door de natuur. Gissell en Dani doen dat samen in de parken van Costa Rica.",
+          "evidence": {
+            "es": "Él y yo empezamos a hacer senderismo en 2017 en los parques de Costa Rica.",
+            "nl": "Hij en ik zijn in 2017 begonnen met wandelen in de parken van Costa Rica.",
+            "startSec": 147.67,
+            "endSec": 154.63
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Waar komt Dani, de vriend van Gissell, vandaan?",
+          "choices": [
+            "Uit Costa Rica",
+            "Uit Frankrijk",
+            "Uit Portugal",
+            "Uit Spanje"
+          ],
+          "answerIndex": 3,
+          "explanationNl": "Gissell zegt: \"Dani es mi amigo de España.\" Dani komt dus uit Spanje.",
+          "evidence": {
+            "es": "Dani es mi amigo de España.",
+            "nl": "Dani is mijn vriend uit Spanje.",
+            "startSec": 144.09,
+            "endSec": 147.49
+          }
         }
-      }
+      ]
     },
     {
       "id": "s04",
@@ -550,24 +617,49 @@
           "es": "Si quieres hacer senderismo en Costa Rica, hay algo muy importante que debes tener en cuenta: el tiempo. Acá no existen las cuatro estaciones como en muchos otros países. Nosotros solo tenemos dos: la estación seca y la estación lluviosa; ambas duran aproximadamente seis meses."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Hoeveel seizoenen heeft Costa Rica volgens Gissell?",
-        "choices": [
-          "Vier, net als in veel andere landen",
-          "Twee: een droog en een regenseizoen",
-          "Drie seizoenen",
-          "Helemaal geen seizoenen"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "Gissell zegt: \"Nosotros solo tenemos dos: la estación seca y la estación lluviosa.\" Costa Rica heeft dus een droog en een regenseizoen.",
-        "evidence": {
-          "es": "Nosotros solo tenemos dos: la estación seca y la estación lluviosa; ambas duran aproximadamente seis meses.",
-          "nl": "Wij hebben er maar twee: het droge seizoen en het regenseizoen; beide duren ongeveer zes maanden.",
-          "startSec": 200.27,
-          "endSec": 217.21
+      "echo": {
+        "es": "Acá no existen las cuatro estaciones",
+        "startSec": 194.19,
+        "endSec": 197.73
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Hoeveel seizoenen heeft Costa Rica volgens Gissell?",
+          "choices": [
+            "Vier, net als in veel andere landen",
+            "Twee: een droog en een regenseizoen",
+            "Drie seizoenen",
+            "Helemaal geen seizoenen"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Gissell zegt: \"Nosotros solo tenemos dos: la estación seca y la estación lluviosa.\" Costa Rica heeft dus een droog en een regenseizoen.",
+          "evidence": {
+            "es": "Nosotros solo tenemos dos: la estación seca y la estación lluviosa; ambas duran aproximadamente seis meses.",
+            "nl": "Wij hebben er maar twee: het droge seizoen en het regenseizoen; beide duren ongeveer zes maanden.",
+            "startSec": 200.27,
+            "endSec": 217.21
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Waarom is het Parque Nacional Braulio Carrillo bijzonder?",
+          "choices": [
+            "Er ligt een actieve vulkaan die Barva heet",
+            "Het is het kleinste park van het land",
+            "Er is een groot strand",
+            "Het ligt in Spanje"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Gissell zegt: \"es famoso por tener un volcán activo llamado Barva.\" Het park is beroemd om de actieve vulkaan Barva.",
+          "evidence": {
+            "es": "Y también es famoso por tener un volcán activo llamado Barva.",
+            "nl": "En het is ook beroemd omdat er een actieve vulkaan is die Barva heet.",
+            "startSec": 173.03,
+            "endSec": 178.81
+          }
         }
-      }
+      ]
     },
     {
       "id": "s05",
@@ -580,24 +672,49 @@
           "es": "Nuestra visita al parque nacional es en plena estación lluviosa. Durante este periodo suele hacer sol por las mañanas, pero, normalmente, después de las tres de la tarde llueve. Y, a veces, puede llover mucho. Por eso, si planeas hacer senderismo, es recomendable empezar temprano en la mañana. Sin embargo, Dani y yo empezamos nuestra ruta al medio día…"
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Waarom is het riskant dat ze pas rond het middaguur beginnen te wandelen?",
-        "choices": [
-          "Omdat het na drie uur 's middags vaak gaat regenen",
-          "Omdat het park om twaalf uur sluit",
-          "Omdat het 's middags te heet wordt om te lopen",
-          "Omdat er 's middags wilde dieren tevoorschijn komen"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "Gissell legt uit: \"después de las tres de la tarde llueve. Y, a veces, puede llover mucho.\" Daarom is het beter vroeg te vertrekken, maar zij beginnen pas rond het middaguur.",
-        "evidence": {
-          "es": "Normalmente, después de las tres de la tarde llueve. Y, a veces, puede llover mucho.",
-          "nl": "Normaal gesproken regent het na drie uur 's middags. En soms kan het hard regenen.",
-          "startSec": 228.97,
-          "endSec": 238.29
+      "echo": {
+        "es": "Después de las tres de la tarde llueve",
+        "startSec": 230.07,
+        "endSec": 234.35
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Waarom is het riskant dat ze pas rond het middaguur beginnen te wandelen?",
+          "choices": [
+            "Omdat het na drie uur 's middags vaak gaat regenen",
+            "Omdat het park om twaalf uur sluit",
+            "Omdat het 's middags te heet wordt om te lopen",
+            "Omdat er 's middags wilde dieren tevoorschijn komen"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Gissell legt uit: \"después de las tres de la tarde llueve. Y, a veces, puede llover mucho.\" Daarom is het beter vroeg te vertrekken, maar zij beginnen pas rond het middaguur.",
+          "evidence": {
+            "es": "Normalmente, después de las tres de la tarde llueve. Y, a veces, puede llover mucho.",
+            "nl": "Normaal gesproken regent het na drie uur 's middags. En soms kan het hard regenen.",
+            "startSec": 228.97,
+            "endSec": 238.29
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wanneer beginnen Dani en Gissell hun wandeling?",
+          "choices": [
+            "Vroeg in de ochtend",
+            "'s Avonds laat",
+            "Rond het middaguur",
+            "Precies om drie uur"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Hoewel het aan te raden is vroeg te beginnen, zegt Gissell: \"Dani y yo empezamos nuestra ruta al medio día.\" Ze vertrekken pas rond het middaguur.",
+          "evidence": {
+            "es": "Sin embargo, Dani y yo empezamos nuestra ruta al medio día…",
+            "nl": "Toch beginnen Dani en ik onze route pas rond het middaguur.",
+            "startSec": 246.97,
+            "endSec": 260.33
+          }
         }
-      }
+      ]
     },
     {
       "id": "s06",
@@ -615,26 +732,51 @@
           "es": "Estamos muy contentos de tener tan buena suerte con el tiempo. Las vistas son impresionantes y, gracias a la lluvia de ayer, las hojas tienen colores muy intensos. ¡Están hermosas!"
         }
       ],
-      "question": {
-        "type": "gap",
-        "vocabId": "buen-tiempo",
-        "promptNl": "Vul aan wat je hoorde:",
-        "textEs": "El cielo está despejado y hace muy buen ___.",
-        "choices": [
-          "frío",
-          "viento",
-          "sol",
-          "tiempo"
-        ],
-        "answerIndex": 3,
-        "explanationNl": "\"Hace buen tiempo\" betekent dat het mooi weer is. \"El cielo está despejado\" wil zeggen dat de lucht helder is.",
-        "evidence": {
-          "es": "El cielo está despejado y hace muy buen tiempo.",
-          "nl": "De lucht is helder en het is heel mooi weer.",
-          "startSec": 263.51,
-          "endSec": 267.71
+      "echo": {
+        "es": "Estamos muy contentos de tener tan buena suerte",
+        "startSec": 269.29,
+        "endSec": 274.25
+      },
+      "questions": [
+        {
+          "type": "gap",
+          "vocabId": "buen-tiempo",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "El cielo está despejado y hace muy buen ___.",
+          "choices": [
+            "frío",
+            "viento",
+            "sol",
+            "tiempo"
+          ],
+          "answerIndex": 3,
+          "explanationNl": "\"Hace buen tiempo\" betekent dat het mooi weer is. \"El cielo está despejado\" wil zeggen dat de lucht helder is.",
+          "evidence": {
+            "es": "El cielo está despejado y hace muy buen tiempo.",
+            "nl": "De lucht is helder en het is heel mooi weer.",
+            "startSec": 263.51,
+            "endSec": 267.71
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Waarom hebben de bladeren zulke felle kleuren?",
+          "choices": [
+            "Door de regen van gisteren",
+            "Door de felle middagzon",
+            "Omdat het herfst is",
+            "Door de harde wind"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Gissell zegt: \"gracias a la lluvia de ayer, las hojas tienen colores muy intensos.\" De felle kleuren komen dus door de regen van de vorige dag.",
+          "evidence": {
+            "es": "Gracias a la lluvia de ayer, las hojas tienen colores muy intensos.",
+            "nl": "Dankzij de regen van gisteren hebben de bladeren heel felle kleuren.",
+            "startSec": 279.11,
+            "endSec": 285.01
+          }
         }
-      }
+      ]
     },
     {
       "id": "s07",
@@ -647,24 +789,49 @@
           "es": "Seguimos caminando mientras disfrutamos de un paisaje montañoso. El parque está a 500 metros sobre la altura del nivel del mar. Después, continuamos nuestra ruta hasta llegar a la laguna de Barva. Es un lugar muy especial; la laguna está en el cráter del volcán. Pero entonces… empieza a llover."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat is bijzonder aan de laguna de Barva?",
-        "choices": [
-          "Ze is het grootste meer van het land",
-          "Er leven zeldzame vissen in",
-          "Ze ligt in de krater van een vulkaan",
-          "Ze ligt vlak naast de zee"
-        ],
-        "answerIndex": 2,
-        "explanationNl": "Gissell zegt: \"la laguna está en el cráter del volcán.\" Het meer ligt dus in de krater van de vulkaan.",
-        "evidence": {
-          "es": "Es un lugar muy especial; la laguna está en el cráter del volcán.",
-          "nl": "Het is een heel bijzondere plek; het meer ligt in de krater van de vulkaan.",
-          "startSec": 306.55,
-          "endSec": 313.49
+      "echo": {
+        "es": "La laguna está en el cráter del volcán",
+        "startSec": 309.81,
+        "endSec": 313.49
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat is bijzonder aan de laguna de Barva?",
+          "choices": [
+            "Ze is het grootste meer van het land",
+            "Er leven zeldzame vissen in",
+            "Ze ligt in de krater van een vulkaan",
+            "Ze ligt vlak naast de zee"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Gissell zegt: \"la laguna está en el cráter del volcán.\" Het meer ligt dus in de krater van de vulkaan.",
+          "evidence": {
+            "es": "Es un lugar muy especial; la laguna está en el cráter del volcán.",
+            "nl": "Het is een heel bijzondere plek; het meer ligt in de krater van de vulkaan.",
+            "startSec": 306.55,
+            "endSec": 313.49
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat gebeurt er aan het einde van dit stuk van de wandeling?",
+          "choices": [
+            "De zon komt door",
+            "Het begint te regenen",
+            "Ze zien een beer",
+            "Ze bereiken de top van de vulkaan"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Na een rustige wandeling zegt Gissell: \"Pero entonces… empieza a llover.\" Het begint dus te regenen.",
+          "evidence": {
+            "es": "Pero entonces… empieza a llover.",
+            "nl": "Maar dan begint het te regenen.",
+            "startSec": 313.59,
+            "endSec": 319.73
+          }
         }
-      }
+      ]
     },
     {
       "id": "s08",
@@ -692,25 +859,50 @@
           "es": "Corremos hasta el mirador de la laguna mientras llueve más y más. Llegamos al mirador y justo en ese momento empieza una tormenta eléctrica."
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "el-refugio",
-        "promptNl": "Je hoorde \"Tenemos que buscar refugio\". Wat betekent \"refugio\"?",
-        "choices": [
-          "een kaart",
-          "proviand",
-          "een schuilplaats",
-          "een gids"
-        ],
-        "answerIndex": 2,
-        "explanationNl": "\"Refugio\" is een schuilplaats. Omdat het begint te regenen, moeten Gissell en Dani ergens schuilen.",
-        "evidence": {
-          "es": "Tenemos que buscar refugio…",
-          "nl": "We moeten een schuilplaats zoeken…",
-          "startSec": 332.41,
-          "endSec": 335.33
+      "echo": {
+        "es": "Corremos hasta el mirador de la laguna",
+        "startSec": 335.83,
+        "endSec": 338.93
+      },
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "el-refugio",
+          "promptNl": "Je hoorde \"Tenemos que buscar refugio\". Wat betekent \"refugio\"?",
+          "choices": [
+            "een kaart",
+            "proviand",
+            "een schuilplaats",
+            "een gids"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "\"Refugio\" is een schuilplaats. Omdat het begint te regenen, moeten Gissell en Dani ergens schuilen.",
+          "evidence": {
+            "es": "Tenemos que buscar refugio…",
+            "nl": "We moeten een schuilplaats zoeken…",
+            "startSec": 332.41,
+            "endSec": 335.33
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat gebeurt er zodra ze bij het uitkijkpunt aankomen?",
+          "choices": [
+            "Er barst een onweer met bliksem los",
+            "De regen houdt op",
+            "Ze vinden hun auto terug",
+            "Ze kunnen om hulp bellen"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Gissell zegt: \"Llegamos al mirador y justo en ese momento empieza una tormenta eléctrica.\" Er begint precies dan een onweer met bliksem.",
+          "evidence": {
+            "es": "Llegamos al mirador y justo en ese momento empieza una tormenta eléctrica.",
+            "nl": "We komen bij het uitkijkpunt aan en precies op dat moment begint er een onweer met bliksem.",
+            "startSec": 341.23,
+            "endSec": 355.67
+          }
         }
-      }
+      ]
     },
     {
       "id": "s09",
@@ -738,24 +930,49 @@
           "es": "La lluvia no para y los rayos y truenos tampoco. Los dos estamos preocupados… Y también estamos un poco asustados. ¿Y si nos pasa algo? ¿Y si cae un rayo aquí? Tenemos que pensar en otra cosa…"
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Waarom kunnen Gissell en Dani geen hulp inroepen?",
-        "choices": [
-          "Hun telefoons hebben geen bereik",
-          "Ze zijn hun telefoons kwijt",
-          "De batterijen zijn leeg",
-          "Ze weten het alarmnummer niet"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "Gissell zegt: \"El mío tampoco tiene señal… Tenemos que esperar.\" Geen van beide telefoons heeft bereik, dus ze moeten wachten.",
-        "evidence": {
-          "es": "El mío tampoco tiene señal… Tenemos que esperar.",
-          "nl": "De mijne heeft ook geen bereik… We moeten wachten.",
-          "startSec": 371.75,
-          "endSec": 376.67
+      "echo": {
+        "es": "La lluvia no para y los rayos y truenos tampoco",
+        "startSec": 383.27,
+        "endSec": 388.63
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Waarom kunnen Gissell en Dani geen hulp inroepen?",
+          "choices": [
+            "Hun telefoons hebben geen bereik",
+            "Ze zijn hun telefoons kwijt",
+            "De batterijen zijn leeg",
+            "Ze weten het alarmnummer niet"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Gissell zegt: \"El mío tampoco tiene señal… Tenemos que esperar.\" Geen van beide telefoons heeft bereik, dus ze moeten wachten.",
+          "evidence": {
+            "es": "El mío tampoco tiene señal… Tenemos que esperar.",
+            "nl": "De mijne heeft ook geen bereik… We moeten wachten.",
+            "startSec": 371.75,
+            "endSec": 376.67
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Hoe voelen Gissell en Dani zich tijdens het onweer?",
+          "choices": [
+            "Blij en ontspannen",
+            "Bezorgd en een beetje bang",
+            "Verveeld",
+            "Boos op elkaar"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Gissell zegt: \"Los dos estamos preocupados… Y también estamos un poco asustados.\" Ze zijn allebei bezorgd en een beetje bang.",
+          "evidence": {
+            "es": "Los dos estamos preocupados… Y también estamos un poco asustados.",
+            "nl": "We zijn allebei bezorgd… en ook een beetje bang.",
+            "startSec": 389.17,
+            "endSec": 395.39
+          }
         }
-      }
+      ]
     },
     {
       "id": "s10",
@@ -768,25 +985,50 @@
           "es": "Entonces, para poder mantener la calma, empezamos a recordar momentos graciosos. Hablamos de nuestra infancia, de películas, aventuras, comida… Hablamos mientras llueve sin parar, pero ya no estamos asustados. El tiempo vuela y cuando nos damos cuenta… ¡La tormenta ha parado!"
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "asustado",
-        "promptNl": "Je hoorde \"ya no estamos asustados\". Wat betekent \"asustados\"?",
-        "choices": [
-          "moe",
-          "bang / geschrokken",
-          "blij",
-          "hongerig"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "\"Asustado\" betekent bang of geschrokken. Door samen grappige herinneringen op te halen zijn ze niet meer bang: \"ya no estamos asustados.\"",
-        "evidence": {
-          "es": "Hablamos mientras llueve sin parar, pero ya no estamos asustados.",
-          "nl": "We praten terwijl het onophoudelijk regent, maar we zijn niet meer bang.",
-          "startSec": 421.93,
-          "endSec": 428.39
+      "echo": {
+        "es": "Hablamos mientras llueve sin parar",
+        "startSec": 421.93,
+        "endSec": 424.91
+      },
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "asustado",
+          "promptNl": "Je hoorde \"ya no estamos asustados\". Wat betekent \"asustados\"?",
+          "choices": [
+            "moe",
+            "bang / geschrokken",
+            "blij",
+            "hongerig"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"Asustado\" betekent bang of geschrokken. Door samen grappige herinneringen op te halen zijn ze niet meer bang: \"ya no estamos asustados.\"",
+          "evidence": {
+            "es": "Hablamos mientras llueve sin parar, pero ya no estamos asustados.",
+            "nl": "We praten terwijl het onophoudelijk regent, maar we zijn niet meer bang.",
+            "startSec": 421.93,
+            "endSec": 428.39
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat doen Gissell en Dani om kalm te blijven?",
+          "choices": [
+            "Ze halen grappige herinneringen op en kletsen",
+            "Ze gaan slapen",
+            "Ze maken muziek",
+            "Ze gaan hardlopen"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Gissell vertelt: \"para poder mantener la calma, empezamos a recordar momentos graciosos.\" Ze halen grappige herinneringen op en praten over hun jeugd, films en eten.",
+          "evidence": {
+            "es": "Para poder mantener la calma, empezamos a recordar momentos graciosos.",
+            "nl": "Om kalm te kunnen blijven begonnen we grappige herinneringen op te halen.",
+            "startSec": 408.37,
+            "endSec": 415.29
+          }
         }
-      }
+      ]
     },
     {
       "id": "s11",
@@ -809,25 +1051,50 @@
           "es": "Sin duda alguna el senderismo es una actividad que vamos a seguir disfrutando. Pero ahora sabemos la importancia de siempre tomar precauciones e investigar los lugares que queremos visitar para viajar de forma más segura."
         }
       ],
-      "question": {
-        "type": "gap",
-        "promptNl": "Vul aan wat je hoorde:",
-        "textEs": "Terminamos nuestra aventura comiendo una deliciosa ___.",
-        "choices": [
-          "sopa",
-          "pizza",
-          "ensalada",
-          "tortilla"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "Gissell zegt: \"terminamos nuestra aventura comiendo una deliciosa pizza.\" Ze sluiten hun avontuur af met een heerlijke pizza.",
-        "evidence": {
-          "es": "Cuando por fin llegamos al centro de Barva, terminamos nuestra aventura comiendo una deliciosa pizza.",
-          "nl": "Toen we eindelijk in het centrum van Barva aankwamen, sloten we ons avontuur af met een heerlijke pizza.",
-          "startSec": 466.03,
-          "endSec": 474.39
+      "echo": {
+        "es": "Terminamos nuestra aventura comiendo una deliciosa pizza",
+        "startSec": 469.57,
+        "endSec": 474.39
+      },
+      "questions": [
+        {
+          "type": "gap",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "Terminamos nuestra aventura comiendo una deliciosa ___.",
+          "choices": [
+            "sopa",
+            "pizza",
+            "ensalada",
+            "tortilla"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Gissell zegt: \"terminamos nuestra aventura comiendo una deliciosa pizza.\" Ze sluiten hun avontuur af met een heerlijke pizza.",
+          "evidence": {
+            "es": "Cuando por fin llegamos al centro de Barva, terminamos nuestra aventura comiendo una deliciosa pizza.",
+            "nl": "Toen we eindelijk in het centrum van Barva aankwamen, sloten we ons avontuur af met een heerlijke pizza.",
+            "startSec": 466.03,
+            "endSec": 474.39
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat hebben Gissell en Dani van dit avontuur geleerd?",
+          "choices": [
+            "Dat je altijd voorzorgsmaatregelen moet nemen en plekken vooraf moet uitzoeken",
+            "Dat wandelen te gevaarlijk is",
+            "Dat ze nooit meer naar het park gaan",
+            "Dat ze een nieuwe auto nodig hebben"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Gissell zegt: \"ahora sabemos la importancia de siempre tomar precauciones e investigar los lugares que queremos visitar.\" Ze willen voortaan beter voorbereid op pad.",
+          "evidence": {
+            "es": "Ahora sabemos la importancia de siempre tomar precauciones e investigar los lugares que queremos visitar para viajar de forma más segura.",
+            "nl": "Nu kennen we het belang om altijd voorzorgsmaatregelen te nemen en de plekken die we willen bezoeken vooraf uit te zoeken, om veiliger te reizen.",
+            "startSec": 482.73,
+            "endSec": 495.13
+          }
         }
-      }
+      ]
     },
     {
       "id": "s12",
@@ -840,24 +1107,49 @@
           "es": "Se suele hablar de la calma antes de la tormenta, pero en este caso, por suerte, Gissell y Dani pudieron experimentar la calma después de la tormenta. Y no me sorprende que quieran seguir haciendo senderismo, acabo de ver algunas de las fotos de su ruta y son espectaculares. Eso sí, ¡espero que no vuelvan a tener problemas con el tiempo!"
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat zegt Rodrigo aan het einde over Gissell en Dani?",
-        "choices": [
-          "Ze willen nooit meer gaan wandelen",
-          "Ze beleefden de rust ná de storm en willen blijven wandelen",
-          "Ze zijn boos op elkaar geworden",
-          "Ze verhuizen naar Spanje"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "Rodrigo zegt: \"Gissell y Dani pudieron experimentar la calma después de la tormenta. Y no me sorprende que quieran seguir haciendo senderismo.\" Ze willen dus blijven wandelen.",
-        "evidence": {
-          "es": "Gissell y Dani pudieron experimentar la calma después de la tormenta. Y no me sorprende que quieran seguir haciendo senderismo.",
-          "nl": "Gissell en Dani konden de rust na de storm ervaren. En het verbaast me niet dat ze willen blijven wandelen.",
-          "startSec": 504.43,
-          "endSec": 516.09
+      "echo": {
+        "es": "Pudieron experimentar la calma después de la tormenta",
+        "startSec": 505.67,
+        "endSec": 511.13
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat zegt Rodrigo aan het einde over Gissell en Dani?",
+          "choices": [
+            "Ze willen nooit meer gaan wandelen",
+            "Ze beleefden de rust ná de storm en willen blijven wandelen",
+            "Ze zijn boos op elkaar geworden",
+            "Ze verhuizen naar Spanje"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Rodrigo zegt: \"Gissell y Dani pudieron experimentar la calma después de la tormenta. Y no me sorprende que quieran seguir haciendo senderismo.\" Ze willen dus blijven wandelen.",
+          "evidence": {
+            "es": "Gissell y Dani pudieron experimentar la calma después de la tormenta. Y no me sorprende que quieran seguir haciendo senderismo.",
+            "nl": "Gissell en Dani konden de rust na de storm ervaren. En het verbaast me niet dat ze willen blijven wandelen.",
+            "startSec": 504.43,
+            "endSec": 516.09
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat zegt Rodrigo over de foto's van hun route?",
+          "choices": [
+            "Dat ze spectaculair zijn",
+            "Dat ze mislukt zijn",
+            "Dat er geen foto's zijn gemaakt",
+            "Dat ze wazig zijn door de regen"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Rodrigo zegt: \"acabo de ver algunas de las fotos de su ruta y son espectaculares.\" Hij vindt de foto's dus spectaculair.",
+          "evidence": {
+            "es": "Acabo de ver algunas de las fotos de su ruta y son espectaculares.",
+            "nl": "Ik heb net een paar foto's van hun route gezien en ze zijn spectaculair.",
+            "startSec": 516.27,
+            "endSec": 522.03
+          }
         }
-      }
+      ]
     }
   ]
 }

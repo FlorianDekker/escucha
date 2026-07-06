@@ -340,32 +340,44 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
     return typeof si === 'number' && si >= 0 && si < segments.length ? si : 0
   })
 
+  // Fase-machine per fragment: listen -> question(q1..qn) -> feedback.
+  // question loopt met qIdx door alle vragen; feedback is één keer per fragment.
+  // (seg.echo blijft inerte content voor het latere zinsdictee, zie docs/leerengine-spec.md §6.)
   const [phase, setPhase] = useState('listen') // listen | question | feedback | done
+  const [qIdx, setQIdx] = useState(0)
   const [selected, setSelected] = useState(null)
   const [revealed, setRevealed] = useState(false) // in de vraagsheet: na Controleer kleuren tonen
   const [correct, setCorrect] = useState(false)
   const [hasPlayed, setHasPlayed] = useState(false)
-  const [results, setResults] = useState({}) // segId -> correct
+  const [qOutcomes, setQOutcomes] = useState([]) // per vraag: true/false
+  const [results, setResults] = useState({}) // segId -> { good, total }
 
   const player = useSegmentPlayer(episode.audioUrl)
   const { playSegment, pause, resume, setRate, isPlaying, position, ended, error } = player
 
   const seg = segments[idx]
 
+  // v2 backward compatible: één of meerdere vragen.
+  const questions = seg.questions || (seg.question ? [seg.question] : [])
+  const segTotal = questions.length
+
+  const currentPart = { startSec: seg.startSec, endSec: seg.endSec }
+
   // Nieuw fragment -> alles resetten (nooit automatisch afspelen: iOS vereist een tap).
   useEffect(() => {
     setPhase('listen')
+    setQIdx(0)
     setSelected(null)
     setRevealed(false)
     setCorrect(false)
     setHasPlayed(false)
+    setQOutcomes([])
   }, [idx])
 
-  // Auto-pauze: als het fragment is uitgespeeld verschijnt de vragensheet.
+  // Auto-pauze: na het uitspelen van het fragment naar de vragen.
   useEffect(() => {
-    if (phase === 'listen' && hasPlayed && ended) {
-      setPhase('question')
-    }
+    if (!hasPlayed || !ended) return
+    if (phase === 'listen') setPhase('question')
   }, [phase, hasPlayed, ended])
 
   function onToggle() {
@@ -374,15 +386,16 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
       pause()
     } else {
       setHasPlayed(true)
-      if (position > seg.startSec + 0.1 && position < seg.endSec - 0.05) resume(rate)
-      else playSegment(seg.startSec, seg.endSec, rate)
+      if (position > currentPart.startSec + 0.1 && position < currentPart.endSec - 0.05)
+        resume(rate)
+      else playSegment(currentPart.startSec, currentPart.endSec, rate)
     }
   }
 
   function onReplay() {
     if (!seg) return
     setHasPlayed(true)
-    playSegment(seg.startSec, seg.endSec, rate)
+    playSegment(currentPart.startSec, currentPart.endSec, rate)
   }
 
   function cycleRate() {
@@ -392,20 +405,41 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
     setRate(nextRate)
   }
 
-  // Controleer: onthul de kleuren in de sheet en registreer het antwoord meteen.
+  // Controleer een vraag: kleuren tonen en het antwoord meteen registreren.
   function check() {
     if (selected === null || revealed) return
-    const ok = selected === seg.question.answerIndex
+    const q = questions[qIdx]
+    const ok = selected === q.answerIndex
     if (ok) playCorrect()
     else playWrong()
-    answerSegment(episodeId, seg.id, ok)
-    setResults((r) => ({ ...r, [seg.id]: ok }))
+    answerSegment(episodeId, seg.id + ':q' + (qIdx + 1), ok)
+    setQOutcomes((o) => {
+      const n = o.slice()
+      n[qIdx] = ok
+      return n
+    })
     setCorrect(ok)
     setRevealed(true)
   }
 
+  // Volgende vraag, of naar de feedback als dit de laatste was.
+  function nextQuestion() {
+    playClick()
+    if (qIdx < questions.length - 1) {
+      setQIdx((i) => i + 1)
+      setSelected(null)
+      setRevealed(false)
+      setCorrect(false)
+    } else {
+      const good = qOutcomes.filter(Boolean).length
+      setResults((r) => ({ ...r, [seg.id]: { good, total: segTotal } }))
+      setPhase('feedback')
+    }
+  }
+
   function advance() {
     playClick()
+    pause()
     if (idx >= segments.length - 1) {
       completeStep(episodeId, step.id)
       setSegmentIndex(episodeId, step.id, 0)
@@ -417,12 +451,16 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
     }
   }
 
+  // Het hele fragment opnieuw: alle fasen van dit fragment resetten.
   function listenAgain() {
     pause()
+    setPhase('listen')
+    setQIdx(0)
     setSelected(null)
     setRevealed(false)
+    setCorrect(false)
     setHasPlayed(false)
-    setPhase('listen')
+    setQOutcomes([])
   }
 
   const headerTitle = `${episode.title} · ${idx + 1}/${segments.length}`
@@ -430,9 +468,9 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
   // ---- Afronding ----
   if (phase === 'done') {
     const outcomes = Object.values(results)
-    const good = outcomes.filter(Boolean).length
-    const wrong = outcomes.length - good
-    const earnedXp = good * XP_PER_CORRECT + wrong * XP_PER_TRY
+    const good = outcomes.reduce((a, r) => a + r.good, 0)
+    const total = outcomes.reduce((a, r) => a + r.total, 0)
+    const earnedXp = good * XP_PER_CORRECT + (total - good) * XP_PER_TRY
     return (
       <div className="session" key="done">
         <div className="s-header">
@@ -446,7 +484,7 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
           <p className="result-emoji">🎉</p>
           <p className="result-title">Goed gedaan!</p>
           <p className="result-sub">
-            Je had {good} van {segments.length} vragen goed in dit deel.
+            Je had {good} van {total} oefeningen goed in dit deel.
           </p>
           <div className="xp-pill" style={{ marginTop: 16 }}>
             <i />+{earnedXp} XP
@@ -461,11 +499,18 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
     )
   }
 
-  // ---- Feedback (scherm 6) ----
+  // ---- Feedback (scherm 6): één keer per fragment, over alle 3 de oefeningen ----
   if (phase === 'feedback') {
-    const q = seg.question
-    const chosen = q.choices[selected]
-    const right = q.choices[q.answerIndex]
+    const good = results[seg.id]?.good ?? 0
+    const total = results[seg.id]?.total ?? segTotal
+    const allGood = good === total
+    const earnedXp = good * XP_PER_CORRECT + (total - good) * XP_PER_TRY
+    // Toon de juiste antwoorden van de fout beantwoorde vragen; was alles goed,
+    // dan die van de laatste vraag.
+    const wrong = questions.map((q, i) => ({ q, i })).filter(({ i }) => qOutcomes[i] === false)
+    const shown = wrong.length
+      ? wrong
+      : [{ q: questions[questions.length - 1], i: questions.length - 1 }]
     return (
       <div className="session" key={'fb-' + idx}>
         <div className="s-header">
@@ -482,32 +527,35 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
 
         <div className="s-body">
           <div style={{ textAlign: 'center' }}>
-            <div className={'fb-badge ' + (correct ? 'ok' : 'casi')}>{correct ? '✓' : '!'}</div>
-            <p className="fb-headline">{correct ? '¡Correcto!' : '¡Casi!'}</p>
-            <div className="xp-pill">
-              <i />+{correct ? XP_PER_CORRECT : XP_PER_TRY} XP
-            </div>
-          </div>
-
-          <div className="answer-card">
-            <p className="lbl">JUISTE ANTWOORD</p>
-            {!correct && (
-              <div className="answer-chip chosen-wrong">
-                {chosen}
-                <span style={{ fontSize: 16 }}>✕</span>
-              </div>
+            <div className={'fb-badge ' + (allGood ? 'ok' : 'casi')}>{allGood ? '✓' : '!'}</div>
+            <p className="fb-headline">{allGood ? '¡Correcto!' : '¡Casi!'}</p>
+            {!allGood && (
+              <p className="fb-subline">
+                {good} van de {total} goed
+              </p>
             )}
-            <div className="answer-chip ok">
-              {right}
-              <span style={{ fontSize: 16 }}>✓</span>
+            <div className="xp-pill">
+              <i />+{earnedXp} XP
             </div>
-            <p className="answer-note">{q.explanationNl}</p>
           </div>
 
-          <EvidenceCard
-            evidence={q.evidence}
-            onPlay={() => playSegment(q.evidence.startSec, q.evidence.endSec, rate)}
-          />
+          {shown.map(({ q, i }) => (
+            <div key={i}>
+              <div className="answer-card">
+                <p className="lbl">JUISTE ANTWOORD</p>
+                {questions.length > 1 && <p className="answer-q">{q.promptNl}</p>}
+                <div className="answer-chip ok">
+                  {q.choices[q.answerIndex]}
+                  <span style={{ fontSize: 16 }}>✓</span>
+                </div>
+                <p className="answer-note">{q.explanationNl}</p>
+              </div>
+              <EvidenceCard
+                evidence={q.evidence}
+                onPlay={() => playSegment(q.evidence.startSec, q.evidence.endSec, rate)}
+              />
+            </div>
+          ))}
 
           <p className="intro-h" style={{ color: '#fff', marginTop: 22 }}>
             Transcript
@@ -521,26 +569,20 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
 
           <div className="grow" style={{ minHeight: 16 }} />
 
-          {correct ? (
-            <button type="button" className="btn btn-primary pad-b" onClick={advance}>
+          <div className="btn-row pad-b">
+            <button type="button" className="btn btn-ghost" onClick={listenAgain}>
+              Luister opnieuw
+            </button>
+            <button type="button" className="btn btn-primary" onClick={advance}>
               Doorgaan ▸
             </button>
-          ) : (
-            <div className="btn-row pad-b">
-              <button type="button" className="btn btn-ghost" onClick={listenAgain}>
-                Luister opnieuw
-              </button>
-              <button type="button" className="btn btn-primary" onClick={advance}>
-                Doorgaan
-              </button>
-            </div>
-          )}
+          </div>
         </div>
       </div>
     )
   }
 
-  // ---- Luisteren + (optioneel) vraagsheet (scherm 5) ----
+  // ---- Luisteren + (optioneel) echo/vraagsheet (scherm 5) ----
   const prevSentences = []
   for (let i = 0; i < idx; i++) for (const s of segments[i].sentences) prevSentences.push(s)
 
@@ -559,7 +601,7 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
       </div>
 
       <SegmentPlayer
-        segment={seg}
+        segment={currentPart}
         isPlaying={isPlaying}
         position={position}
         onToggle={onToggle}
@@ -590,7 +632,7 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
             <p className="transcript-empty">
               Tik op play en luister goed.
               <br />
-              De vraag verschijnt zodra het fragment klaar is.
+              De oefening verschijnt zodra het fragment klaar is.
             </p>
           )
         )}
@@ -599,10 +641,13 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
           <div className="sheet">
             <div className="sheet-label">
               <span className="pause">⏸</span>
-              <span>AUTO-PAUZE · VRAAG</span>
+              <span>
+                AUTO-PAUZE · VRAAG{questions.length > 1 ? ` ${qIdx + 1}/${questions.length}` : ''}
+              </span>
             </div>
             <QuestionCard
-              question={seg.question}
+              key={seg.id + ':q' + qIdx}
+              question={questions[qIdx]}
               selected={selected}
               onSelect={setSelected}
               revealed={revealed}
@@ -617,7 +662,7 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
                 type="button"
                 className="btn btn-primary"
                 style={{ marginTop: 12 }}
-                onClick={() => setPhase('feedback')}
+                onClick={nextQuestion}
               >
                 Doorgaan ▸
               </button>
@@ -647,8 +692,12 @@ function GateFlow({ episode, step, episodeId, navigate }) {
   const rate = useStore((s) => s.settings.playbackRate)
   const setSetting = useStore((s) => s.setSetting)
 
-  const questions = useMemo(() => episode.segments.filter((s) => s.question), [episode])
-  const total = questions.length
+  // v2: segmenten kunnen meerdere vragen hebben; pak per fragment één vraag.
+  const quizSegments = useMemo(
+    () => episode.segments.filter((s) => (s.questions && s.questions.length) || s.question),
+    [episode],
+  )
+  const total = quizSegments.length
   const passPct = step.passPct ?? 80
 
   const [idx, setIdx] = useState(0)
@@ -656,12 +705,25 @@ function GateFlow({ episode, step, episodeId, navigate }) {
   const [revealed, setRevealed] = useState(false)
   const [correctCount, setCorrectCount] = useState(0)
   const [phase, setPhase] = useState('quiz') // quiz | result
+  const [pickSeed, setPickSeed] = useState(0) // bij 'retry' opnieuw kiezen
   const scoreRef = useRef(0)
+
+  // Per quizronde één willekeurige vraag per fragment; herkozen bij een nieuwe poging.
+  const picks = useMemo(
+    () =>
+      quizSegments.map((s) => {
+        const qs = s.questions || (s.question ? [s.question] : [])
+        return qs[Math.floor(Math.random() * qs.length)]
+      }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [quizSegments, pickSeed],
+  )
 
   const player = useSegmentPlayer(episode.audioUrl)
   const { playSegment, pause, resume, setRate, isPlaying, position, error } = player
 
-  const seg = questions[idx]
+  const seg = quizSegments[idx]
+  const q = picks[idx]
 
   function onToggle() {
     if (!seg) return
@@ -685,7 +747,7 @@ function GateFlow({ episode, step, episodeId, navigate }) {
 
   function check() {
     if (selected === null || revealed) return
-    const ok = selected === seg.question.answerIndex
+    const ok = selected === q.answerIndex
     if (ok) playCorrect()
     else playWrong()
     if (ok) setCorrectCount((c) => c + 1)
@@ -714,6 +776,7 @@ function GateFlow({ episode, step, episodeId, navigate }) {
     setSelected(null)
     setRevealed(false)
     setCorrectCount(0)
+    setPickSeed((s) => s + 1)
     setPhase('quiz')
   }
 
@@ -790,7 +853,8 @@ function GateFlow({ episode, step, episodeId, navigate }) {
         )}
 
         <QuestionCard
-          question={seg.question}
+          key={idx + ':' + pickSeed}
+          question={q}
           selected={selected}
           onSelect={setSelected}
           revealed={revealed}
@@ -799,15 +863,15 @@ function GateFlow({ episode, step, episodeId, navigate }) {
 
         {revealed && (
           <>
-            <div className={'fb-bar ' + (selected === seg.question.answerIndex ? 'ok' : 'bad')}>
+            <div className={'fb-bar ' + (selected === q.answerIndex ? 'ok' : 'bad')}>
               <p className="head">
-                {selected === seg.question.answerIndex ? '¡Correcto!' : 'Helaas, niet goed'}
+                {selected === q.answerIndex ? '¡Correcto!' : 'Helaas, niet goed'}
               </p>
-              <p className="sub">{seg.question.explanationNl}</p>
+              <p className="sub">{q.explanationNl}</p>
             </div>
             <EvidenceCard
-              evidence={seg.question.evidence}
-              onPlay={() => playSegment(seg.question.evidence.startSec, seg.question.evidence.endSec, rate)}
+              evidence={q.evidence}
+              onPlay={() => playSegment(q.evidence.startSec, q.evidence.endSec, rate)}
             />
           </>
         )}

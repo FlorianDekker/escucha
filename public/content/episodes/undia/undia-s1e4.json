@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "undia-s1e4",
   "podcastId": "undia",
   "title": "De eerste keer dat ik mijn zus ontmoette",
@@ -303,49 +303,71 @@
   "segments": [
     {
       "id": "s01",
-      "startSec": 6.0,
-      "endSec": 43.0,
+      "startSec": 26.0,
+      "endSec": 56.0,
       "sentences": [
-        {
-          "startSec": 6.0,
-          "speaker": "Rodrigo",
-          "es": "Hola, soy Rodrigo y te doy la bienvenida a Un día en español – monolingüe, el pódcast en español que te da la bienvenida a la vida de hispanohablantes en Estados Unidos y Latinoamérica."
-        },
         {
           "startSec": 26.0,
           "speaker": "Rodrigo",
           "es": "Imagínate que hoy vas a conocer a tu hermano o hermana por primera vez. ¿Cómo crees que sería? ¿Estarías nervioso o nerviosa? ¿Te preguntarías si tienen muchas cosas en común?"
-        }
-      ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat vraagt Rodrigo je je aan het begin voor te stellen?",
-        "choices": [
-          "Dat je naar een ander land verhuist",
-          "Dat je vandaag je broer of zus voor het eerst ontmoet",
-          "Dat je je ouders een week niet ziet",
-          "Dat je een beroemde zanger tegenkomt"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "Rodrigo zegt: \"Imagínate que hoy vas a conocer a tu hermano o hermana por primera vez.\" Je moet je dus voorstellen dat je vandaag voor het eerst je broer of zus ontmoet.",
-        "evidence": {
-          "es": "Imagínate que hoy vas a conocer a tu hermano o hermana por primera vez.",
-          "nl": "Stel je voor dat je vandaag je broer of zus voor de eerste keer gaat ontmoeten.",
-          "startSec": 26.05,
-          "endSec": 33.69
-        }
-      }
-    },
-    {
-      "id": "s02",
-      "startSec": 43.0,
-      "endSec": 71.0,
-      "sentences": [
+        },
         {
           "startSec": 43.0,
           "speaker": "Rodrigo",
           "es": "En todo esto está pensando Melina, nuestra protagonista de hoy. Después de 22 años, hoy, por fin, conocerá a su hermana."
+        }
+      ],
+      "echo": {
+        "es": "En todo esto está pensando Melina, nuestra protagonista de hoy.",
+        "startSec": 43.55,
+        "endSec": 49.31
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat vraagt Rodrigo je aan het begin voor te stellen?",
+          "choices": [
+            "Dat je naar een ander land verhuist",
+            "Dat je vandaag je broer of zus voor het eerst ontmoet",
+            "Dat je je ouders een week niet ziet",
+            "Dat je een beroemde zanger tegenkomt"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Rodrigo zegt: \"Imagínate que hoy vas a conocer a tu hermano o hermana por primera vez.\" Je moet je dus voorstellen dat je vandaag voor het eerst je broer of zus ontmoet.",
+          "evidence": {
+            "es": "Imagínate que hoy vas a conocer a tu hermano o hermana por primera vez.",
+            "nl": "Stel je voor dat je vandaag je broer of zus voor de eerste keer gaat ontmoeten.",
+            "startSec": 26.05,
+            "endSec": 33.69
+          }
         },
+        {
+          "type": "gap",
+          "vocabId": "la-hermana",
+          "promptNl": "Vul aan wat Rodrigo over Melina vertelt:",
+          "textEs": "Después de 22 años, hoy, por fin, conocerá a su ___.",
+          "choices": [
+            "mamá",
+            "esposa",
+            "hermana",
+            "amiga"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Rodrigo zegt: \"Después de 22 años, hoy, por fin, conocerá a su hermana.\" Melina gaat na 22 jaar eindelijk haar zus ontmoeten.",
+          "evidence": {
+            "es": "Después de 22 años, hoy, por fin, conocerá a su hermana.",
+            "nl": "Na 22 jaar zal ze vandaag eindelijk haar zus ontmoeten.",
+            "startSec": 49.35,
+            "endSec": 55.71
+          }
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "startSec": 56.0,
+      "endSec": 89.0,
+      "sentences": [
         {
           "startSec": 56.0,
           "speaker": "Rodrigo",
@@ -355,37 +377,63 @@
           "startSec": 65.0,
           "speaker": "Rodrigo",
           "es": "¡Escuchamos la historia de Melina!"
-        }
-      ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Na hoeveel jaar ontmoet Melina eindelijk haar zus?",
-        "choices": [
-          "Na 2 jaar",
-          "Na 10 jaar",
-          "Na 15 jaar",
-          "Na 22 jaar"
-        ],
-        "answerIndex": 3,
-        "explanationNl": "Rodrigo vertelt: \"Después de 22 años, hoy, por fin, conocerá a su hermana.\" Na 22 jaar ontmoet ze haar zus dus eindelijk.",
-        "evidence": {
-          "es": "Después de 22 años, hoy, por fin, conocerá a su hermana.",
-          "nl": "Na 22 jaar zal ze vandaag eindelijk haar zus ontmoeten.",
-          "startSec": 49.35,
-          "endSec": 55.71
-        }
-      }
-    },
-    {
-      "id": "s03",
-      "startSec": 71.0,
-      "endSec": 126.0,
-      "sentences": [
+        },
         {
           "startSec": 71.0,
           "speaker": "Melina",
           "es": "¡Hola! Me llamo Melina y tengo 22 años. Soy de Lima, la capital de Perú. Vivo aquí con mi mamá y mis abuelos. Mi papá y mi mamá están divorciados desde que soy un bebé."
+        }
+      ],
+      "echo": {
+        "es": "Me llamo Melina y tengo 22 años.",
+        "startSec": 71.95,
+        "endSec": 75.71
+      },
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "los-abuelos",
+          "promptNl": "Je hoorde \"Vivo aquí con mi mamá y mis abuelos\". Wat betekent \"abuelos\"?",
+          "choices": [
+            "grootouders",
+            "ooms en tantes",
+            "buren",
+            "neven en nichten"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"Los abuelos\" zijn de grootouders. Melina woont in Lima bij haar moeder en haar grootouders.",
+          "evidence": {
+            "es": "Vivo aquí con mi mamá y mis abuelos.",
+            "nl": "Ik woon hier met mijn moeder en mijn grootouders.",
+            "startSec": 79.37,
+            "endSec": 83.37
+          }
         },
+        {
+          "type": "mc",
+          "promptNl": "Wat vertelt Melina over haar ouders?",
+          "choices": [
+            "Ze wonen allebei bij haar in Lima",
+            "Ze zijn gescheiden sinds Melina een baby was",
+            "Ze werken samen in Cusco",
+            "Ze zien elkaar elke dag"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Melina zegt: \"Mi papá y mi mamá están divorciados desde que soy un bebé.\" Haar ouders zijn dus gescheiden sinds zij een baby was.",
+          "evidence": {
+            "es": "Mi papá y mi mamá están divorciados desde que soy un bebé.",
+            "nl": "Mijn vader en mijn moeder zijn gescheiden sinds ik een baby ben.",
+            "startSec": 83.49,
+            "endSec": 88.79
+          }
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "startSec": 89.0,
+      "endSec": 126.0,
+      "sentences": [
         {
           "startSec": 89.0,
           "speaker": "Melina",
@@ -402,25 +450,50 @@
           "es": "A veces hablo por teléfono con mi papá, su esposa y mi hermana. Pero yo quiero conocer a Shirley en persona."
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "los-abuelos",
-        "promptNl": "Je hoorde \"Vivo aquí con mi mamá y mis abuelos\". Wat betekent \"abuelos\"?",
-        "choices": [
-          "grootouders",
-          "ooms en tantes",
-          "buren",
-          "neven en nichten"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "\"Los abuelos\" zijn de grootouders. Melina woont in Lima bij haar moeder en haar grootouders.",
-        "evidence": {
-          "es": "Vivo aquí con mi mamá y mis abuelos.",
-          "nl": "Ik woon hier met mijn moeder en mijn grootouders.",
-          "startSec": 79.37,
-          "endSec": 83.37
+      "echo": {
+        "es": "Pero mi papá, su esposa y mi hermana viven muy lejos.",
+        "startSec": 99.43,
+        "endSec": 106.03
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wie is Shirley?",
+          "choices": [
+            "Melina's beste vriendin uit Lima",
+            "De dochter van Melina's vader en zijn vrouw, dus Melina's zus",
+            "De moeder van Melina",
+            "De buurvrouw van de grootouders"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Melina zegt: \"Mi papá y su esposa tienen una hija, Shirley. Shirley es mi hermana.\" Shirley is dus de dochter van haar vader en diens vrouw, en daarmee Melina's zus.",
+          "evidence": {
+            "es": "Mi papá y su esposa tienen una hija, Shirley. Shirley es mi hermana.",
+            "nl": "Mijn vader en zijn vrouw hebben een dochter, Shirley. Shirley is mijn zus.",
+            "startSec": 89.31,
+            "endSec": 98.37
+          }
+        },
+        {
+          "type": "vocabInContext",
+          "vocabId": "conocer",
+          "promptNl": "Je hoorde \"yo quiero conocer a Shirley en persona\". Wat betekent \"conocer\" hier?",
+          "choices": [
+            "bellen",
+            "vergeten",
+            "leren kennen / ontmoeten",
+            "meteen weer verlaten"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "\"Conocer\" is hier leren kennen of ontmoeten. Melina belt soms, maar ze wil Shirley in het echt ontmoeten: \"quiero conocer a Shirley en persona\".",
+          "evidence": {
+            "es": "Pero yo quiero conocer a Shirley en persona.",
+            "nl": "Maar ik wil Shirley in het echt leren kennen.",
+            "startSec": 121.39,
+            "endSec": 125.31
+          }
         }
-      }
+      ]
     },
     {
       "id": "s04",
@@ -438,25 +511,50 @@
           "es": "Primero voy a tomar un avión a Cusco. El vuelo de Lima a Cusco es solo una hora y media, ¡pero para mí es una eternidad! ¡Estoy muy nerviosa por conocer a mi hermana! ¿Vamos a entendernos bien?"
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "el-vuelo",
-        "promptNl": "Je hoorde \"El vuelo de Lima a Cusco es solo una hora y media\". Wat betekent \"el vuelo\"?",
-        "choices": [
-          "de busreis",
-          "de vlucht",
-          "de weg",
-          "de koffer"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "\"El vuelo\" is de vlucht. De vlucht van Lima naar Cusco duurt maar anderhalf uur, maar voor de zenuwachtige Melina voelt dat als een eeuwigheid.",
-        "evidence": {
-          "es": "El vuelo de Lima a Cusco es solo una hora y media, ¡pero para mí es una eternidad!",
-          "nl": "De vlucht van Lima naar Cusco duurt maar anderhalf uur, maar voor mij is het een eeuwigheid!",
-          "startSec": 164.77,
-          "endSec": 174.07
+      "echo": {
+        "es": "Vamos a estar unos días de vacaciones en Cusco.",
+        "startSec": 144.23,
+        "endSec": 149.49
+      },
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "el-vuelo",
+          "promptNl": "Je hoorde \"El vuelo de Lima a Cusco es solo una hora y media\". Wat betekent \"el vuelo\"?",
+          "choices": [
+            "de busreis",
+            "de vlucht",
+            "de weg",
+            "de koffer"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"El vuelo\" is de vlucht. De vlucht van Lima naar Cusco duurt maar anderhalf uur, maar voor de zenuwachtige Melina voelt dat als een eeuwigheid.",
+          "evidence": {
+            "es": "El vuelo de Lima a Cusco es solo una hora y media, ¡pero para mí es una eternidad!",
+            "nl": "De vlucht van Lima naar Cusco duurt maar anderhalf uur, maar voor mij is het een eeuwigheid!",
+            "startSec": 164.77,
+            "endSec": 174.07
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Waar ligt Cusco volgens Melina?",
+          "choices": [
+            "Aan de kust van Peru",
+            "In de Andes, in Peru",
+            "Vlak bij Lima",
+            "In Mexico"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Melina zegt: \"Cusco es una ciudad en Perú que está en los Andes.\" Cusco ligt dus in het Andesgebergte in Peru.",
+          "evidence": {
+            "es": "Cusco es una ciudad en Perú que está en los Andes.",
+            "nl": "Cusco is een stad in Peru die in de Andes ligt.",
+            "startSec": 139.95,
+            "endSec": 144.73
+          }
         }
-      }
+      ]
     },
     {
       "id": "s05",
@@ -499,24 +597,50 @@
           "es": "Mi papá y su esposa nos miran preocupados. Yo también estoy preocupada."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat gebeurt er nadat de zussen elkaar hebben begroet?",
-        "choices": [
-          "Ze omhelzen elkaar en huilen van blijdschap",
-          "Ze maken meteen ruzie",
-          "Ze kijken elkaar alleen aan en weten niet wat ze moeten zeggen",
-          "Ze gaan direct samen eten"
-        ],
-        "answerIndex": 2,
-        "explanationNl": "Melina vertelt: \"Después de saludarnos, mi hermana y yo solo nos miramos sin hablar. No sé qué decir.\" Na de begroeting valt er dus een ongemakkelijke stilte.",
-        "evidence": {
-          "es": "Después de saludarnos, mi hermana y yo solo nos miramos sin hablar. No sé qué decir.",
-          "nl": "Na de begroeting kijken mijn zus en ik elkaar alleen maar aan zonder te praten. Ik weet niet wat ik moet zeggen.",
-          "startSec": 210.83,
-          "endSec": 219.99
+      "echo": {
+        "es": "Mi hermana y yo solo nos miramos sin hablar.",
+        "startSec": 212.93,
+        "endSec": 218.21
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat gebeurt er nadat de zussen elkaar hebben begroet?",
+          "choices": [
+            "Ze omhelzen elkaar en huilen van blijdschap",
+            "Ze maken meteen ruzie",
+            "Ze kijken elkaar alleen aan en weten niet wat ze moeten zeggen",
+            "Ze gaan direct samen eten"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Melina vertelt: \"Después de saludarnos, mi hermana y yo solo nos miramos sin hablar. No sé qué decir.\" Na de begroeting valt er dus een ongemakkelijke stilte.",
+          "evidence": {
+            "es": "Después de saludarnos, mi hermana y yo solo nos miramos sin hablar. No sé qué decir.",
+            "nl": "Na de begroeting kijken mijn zus en ik elkaar alleen maar aan zonder te praten. Ik weet niet wat ik moet zeggen.",
+            "startSec": 210.83,
+            "endSec": 219.99
+          }
+        },
+        {
+          "type": "vocabInContext",
+          "vocabId": "por-fin",
+          "promptNl": "Je hoorde \"Por fin, mi hermana y yo nos conocemos en persona\". Wat betekent \"por fin\"?",
+          "choices": [
+            "opnieuw",
+            "eindelijk",
+            "bijna",
+            "nooit"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"Por fin\" betekent eindelijk. Na 22 jaar ontmoeten de zussen elkaar op het vliegveld eindelijk in het echt.",
+          "evidence": {
+            "es": "Por fin, mi hermana y yo nos conocemos en persona.",
+            "nl": "Eindelijk leren mijn zus en ik elkaar in het echt kennen.",
+            "startSec": 190.03,
+            "endSec": 195.11
+          }
         }
-      }
+      ]
     },
     {
       "id": "s06",
@@ -549,26 +673,51 @@
           "es": "Entonces Shirley y yo empezamos a hablar y no paramos. Hablamos de todo… pero sobre todo hablamos de música."
         }
       ],
-      "question": {
-        "type": "gap",
-        "vocabId": "favorito",
-        "promptNl": "Vul aan wat Shirley in de taxi zegt:",
-        "textEs": "¿Puede subir el volumen? ¡Es mi grupo ___!",
-        "choices": [
-          "pequeño",
-          "nuevo",
-          "favorito",
-          "tradicional"
-        ],
-        "answerIndex": 2,
-        "explanationNl": "Shirley zegt: \"¿Puede subir el volumen? ¡Es mi grupo favorito!\" De band op de radio is haar lievelingsband, en die van Melina ook.",
-        "evidence": {
-          "es": "¿Puede subir el volumen? ¡Es mi grupo favorito!",
-          "nl": "Kunt u het volume harder zetten? Het is mijn lievelingsband!",
-          "startSec": 253.39,
-          "endSec": 258.77
+      "echo": {
+        "es": "Es un grupo de rock en español.",
+        "startSec": 245.85,
+        "endSec": 248.83
+      },
+      "questions": [
+        {
+          "type": "gap",
+          "vocabId": "favorito",
+          "promptNl": "Vul aan wat Shirley in de taxi zegt:",
+          "textEs": "¿Puede subir el volumen? ¡Es mi grupo ___!",
+          "choices": [
+            "pequeño",
+            "nuevo",
+            "favorito",
+            "tradicional"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Shirley zegt: \"¿Puede subir el volumen? ¡Es mi grupo favorito!\" De band op de radio is haar lievelingsband, en die van Melina ook.",
+          "evidence": {
+            "es": "¿Puede subir el volumen? ¡Es mi grupo favorito!",
+            "nl": "Kunt u het volume harder zetten? Het is mijn lievelingsband!",
+            "startSec": 253.39,
+            "endSec": 258.77
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat doorbreekt de stilte in de taxi?",
+          "choices": [
+            "De vader begint een grapje te maken",
+            "Een liedje van hun lievelingsband op de radio",
+            "Ze komen aan bij het hotel",
+            "Shirley begint te huilen"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Melina vertelt: \"Entonces suena una canción en la radio. ¡Es mi grupo favorito!\" Er klinkt een liedje van hun gedeelde lievelingsband, en daardoor beginnen de zussen te praten.",
+          "evidence": {
+            "es": "Entonces suena una canción en la radio. ¡Es mi grupo favorito!",
+            "nl": "Dan klinkt er een liedje op de radio. Het is mijn lievelingsband!",
+            "startSec": 238.91,
+            "endSec": 245.55
+          }
         }
-      }
+      ]
     },
     {
       "id": "s07",
@@ -581,26 +730,51 @@
           "es": "Durante 10 días estamos en la mágica Cusco y conozco la ciudad, su gente amable y sus danzas tradicionales. Y también, y más importante, conozco a mi \"nueva familia\". Estoy muy feliz de conocer más a mi nueva familia y de tener de repente a Shirley como hermana."
         }
       ],
-      "question": {
-        "type": "gap",
-        "vocabId": "la-familia",
-        "promptNl": "Vul aan wat je hoorde:",
-        "textEs": "Estoy muy feliz de conocer más a mi nueva ___.",
-        "choices": [
-          "escuela",
-          "familia",
-          "casa",
-          "canción"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "Melina zegt: \"Estoy muy feliz de conocer más a mi nueva familia.\" Ze is heel blij dat ze haar nieuwe familie beter leert kennen.",
-        "evidence": {
-          "es": "Estoy muy feliz de conocer más a mi nueva familia y de tener de repente a Shirley como hermana.",
-          "nl": "Ik ben heel blij dat ik mijn nieuwe familie beter leer kennen en dat ik opeens Shirley als zus heb.",
-          "startSec": 304.28,
-          "endSec": 312.86
+      "echo": {
+        "es": "Conozco la ciudad, su gente amable y sus danzas tradicionales.",
+        "startSec": 291.63,
+        "endSec": 297.62
+      },
+      "questions": [
+        {
+          "type": "gap",
+          "vocabId": "la-familia",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "Estoy muy feliz de conocer más a mi nueva ___.",
+          "choices": [
+            "escuela",
+            "familia",
+            "casa",
+            "canción"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Melina zegt: \"Estoy muy feliz de conocer más a mi nueva familia.\" Ze is heel blij dat ze haar nieuwe familie beter leert kennen.",
+          "evidence": {
+            "es": "Estoy muy feliz de conocer más a mi nueva familia y de tener de repente a Shirley como hermana.",
+            "nl": "Ik ben heel blij dat ik mijn nieuwe familie beter leer kennen en dat ik opeens Shirley als zus heb.",
+            "startSec": 304.28,
+            "endSec": 312.86
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Hoe lang blijven ze in Cusco?",
+          "choices": [
+            "3 dagen",
+            "een week",
+            "10 dagen",
+            "22 dagen"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Melina zegt: \"Durante 10 días estamos en la mágica Cusco.\" Ze zijn dus tien dagen in Cusco.",
+          "evidence": {
+            "es": "Durante 10 días estamos en la mágica Cusco.",
+            "nl": "Tien dagen lang zijn we in het magische Cusco.",
+            "startSec": 286.67,
+            "endSec": 291.41
+          }
         }
-      }
+      ]
     },
     {
       "id": "s08",
@@ -618,24 +792,49 @@
           "es": "Gracias por escuchar y hasta el próximo día."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat zegt Rodrigo aan het einde over Melina en haar zus?",
-        "choices": [
-          "Ze begrijpen elkaar geweldig",
-          "Ze hebben nog steeds niets gemeen",
-          "Ze gaan samen in Cusco wonen",
-          "Ze bellen elkaar nooit meer"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "Rodrigo zegt: \"Melina y su hermana se entienden de maravilla.\" Ze begrijpen elkaar dus geweldig, en volgens hem zal geen van beiden deze dag ooit vergeten.",
-        "evidence": {
-          "es": "Melina y su hermana se entienden de maravilla. Estoy seguro de que este es un día que ninguna de las dos podrá olvidar.",
-          "nl": "Melina en haar zus begrijpen elkaar geweldig. Ik weet zeker dat dit een dag is die geen van beiden zal vergeten.",
-          "startSec": 322.48,
-          "endSec": 334.18
+      "echo": {
+        "es": "Melina y su hermana se entienden de maravilla.",
+        "startSec": 322.48,
+        "endSec": 327.32
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat zegt Rodrigo aan het einde over Melina en haar zus?",
+          "choices": [
+            "Ze begrijpen elkaar geweldig",
+            "Ze hebben nog steeds niets gemeen",
+            "Ze gaan samen in Cusco wonen",
+            "Ze bellen elkaar nooit meer"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Rodrigo zegt: \"Melina y su hermana se entienden de maravilla.\" Ze begrijpen elkaar dus geweldig, en volgens hem zal geen van beiden deze dag ooit vergeten.",
+          "evidence": {
+            "es": "Y, además, Melina y su hermana se entienden de maravilla.",
+            "nl": "En bovendien begrijpen Melina en haar zus elkaar geweldig.",
+            "startSec": 320.74,
+            "endSec": 327.32
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat zegt Rodrigo dat een gebeurtenis zoals deze kan doen?",
+          "choices": [
+            "Je snel gaan vervelen",
+            "Je leven veranderen",
+            "Alleen maar problemen geven",
+            "Nooit meer gebeuren"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Rodrigo zegt: \"Un evento como este, conocer a tu hermana, puede cambiarte la vida.\" Zo'n gebeurtenis kan dus je leven veranderen.",
+          "evidence": {
+            "es": "Un evento como este, conocer a tu hermana, puede cambiarte la vida.",
+            "nl": "Een gebeurtenis zoals deze, je zus leren kennen, kan je leven veranderen.",
+            "startSec": 313.04,
+            "endSec": 320.16
+          }
         }
-      }
+      ]
     }
   ]
 }

@@ -62,16 +62,22 @@ def main():
     ep = json.loads(ep_path.read_text(encoding="utf-8"))
 
     for seg in ep["segments"]:
-        ev = seg.get("question", {}).get("evidence")
-        if not ev or "startSec" in ev:
-            continue
-        span = find_span(words, ev["es"], seg["startSec"], seg["endSec"])
-        if span:
-            ev.update(span)
-            print(f"  {seg['id']}: {span['startSec']:7.2f} - {span['endSec']:7.2f}")
-        else:
-            print(f"  {seg['id']}: GEEN MATCH, valt terug op hele segment")
-            ev.update({"startSec": seg["startSec"], "endSec": seg["endSec"]})
+        # evidence van elke vraag (schema v2: questions[]; v1: question)
+        questions = seg.get("questions") or ([seg["question"]] if seg.get("question") else [])
+        targets = [q.get("evidence") for q in questions if q.get("evidence")]
+        # echo-zin (schema v2): zelfde matching, pauzepunt = endSec van de zin
+        if seg.get("echo"):
+            targets.append(seg["echo"])
+        for ev in targets:
+            if "startSec" in ev:
+                continue
+            span = find_span(words, ev["es"], seg["startSec"], seg["endSec"])
+            if span:
+                ev.update(span)
+                print(f"  {seg['id']}: {span['startSec']:7.2f} - {span['endSec']:7.2f}  ({ev['es'][:40]}...)")
+            else:
+                print(f"  {seg['id']}: GEEN MATCH ({ev['es'][:40]}...), valt terug op hele segment")
+                ev.update({"startSec": seg["startSec"], "endSec": seg["endSec"]})
 
     ep_path.write_text(json.dumps(ep, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Bijgewerkt: {ep_path}")

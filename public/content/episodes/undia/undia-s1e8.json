@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "undia-s1e8",
   "podcastId": "undia",
   "title": "Mama neemt (geen) afscheid",
@@ -362,43 +362,59 @@
   "segments": [
     {
       "id": "s01",
-      "startSec": 9.0,
+      "startSec": 38.0,
       "endSec": 65.0,
       "sentences": [
-        {
-          "startSec": 9.0,
-          "speaker": "Rodrigo",
-          "es": "Hola, soy Rodrigo y te doy la bienvenida a Un día en español – monolingüe, el pódcast en español que te da la bienvenida a la vida de hispanohablantes en Estados Unidos y Latinoamérica."
-        },
-        {
-          "startSec": 29.0,
-          "speaker": "Rodrigo",
-          "es": "¿Hace poco que aprendes español? Entonces, este pódcast es perfecto para ti."
-        },
         {
           "startSec": 38.0,
           "speaker": "Rodrigo",
           "es": "Hoy vamos a hacer un tour por la hermosa isla de Puerto Rico con Alexandra y sus padres. La mamá de Alexandra cree que tiene que despedirse de sus lugares favoritos, pero, por suerte, el tour no termina siendo una despedida pero un día entrañable para la familia."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat gaan Alexandra en haar ouders vandaag doen?",
-        "choices": [
-          "Verhuizen naar de Verenigde Staten",
-          "Een week op vakantie op Culebra",
-          "Een rondrit maken over het eiland Puerto Rico",
-          "Alexandra ophalen van het vliegveld"
-        ],
-        "answerIndex": 2,
-        "explanationNl": "Rodrigo kondigt aan: \"Hoy vamos a hacer un tour por la hermosa isla de Puerto Rico con Alexandra y sus padres.\" Ze maken samen een rondrit over het eiland.",
-        "evidence": {
-          "es": "Hoy vamos a hacer un tour por la hermosa isla de Puerto Rico con Alexandra y sus padres.",
-          "nl": "Vandaag maken we een rondrit over het prachtige eiland Puerto Rico met Alexandra en haar ouders.",
-          "startSec": 37.81,
-          "endSec": 46.83
+      "echo": {
+        "es": "cree que tiene que despedirse de sus lugares favoritos",
+        "startSec": 48.39,
+        "endSec": 53.91
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat gaan Alexandra en haar ouders vandaag doen?",
+          "choices": [
+            "Verhuizen naar de Verenigde Staten",
+            "Een week op vakantie op Culebra",
+            "Een rondrit maken over het eiland Puerto Rico",
+            "Alexandra ophalen van het vliegveld"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Rodrigo kondigt aan: \"Hoy vamos a hacer un tour por la hermosa isla de Puerto Rico con Alexandra y sus padres.\" Ze maken samen een rondrit over het eiland.",
+          "evidence": {
+            "es": "Hoy vamos a hacer un tour por la hermosa isla de Puerto Rico con Alexandra y sus padres.",
+            "nl": "Vandaag maken we een rondrit over het prachtige eiland Puerto Rico met Alexandra en haar ouders.",
+            "startSec": 37.81,
+            "endSec": 46.83
+          }
+        },
+        {
+          "type": "gap",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "El tour no termina siendo una ___ pero un día entrañable para la familia.",
+          "choices": [
+            "vacación",
+            "despedida",
+            "fiesta",
+            "comida"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Rodrigo zegt dat de tour uiteindelijk geen afscheid wordt: \"el tour no termina siendo una despedida pero un día entrañable para la familia.\" \"Despedida\" betekent afscheid.",
+          "evidence": {
+            "es": "El tour no termina siendo una despedida pero un día entrañable para la familia.",
+            "nl": "De tour wordt uiteindelijk geen afscheid maar een hartverwarmende dag voor het gezin.",
+            "startSec": 56.01,
+            "endSec": 64.93
+          }
         }
-      }
+      ]
     },
     {
       "id": "s02",
@@ -426,24 +442,50 @@
           "es": "Culebra es una isla pequeña cerca de Puerto Rico, pero tranquilos, Culebra no tiene culebras."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat zegt Alexandra grappig genoeg over het eilandje Culebra?",
-        "choices": [
-          "Dat er geen slangen (culebras) zijn",
-          "Dat het heel groot is",
-          "Dat er veel toeristen komen",
-          "Dat het ver van Puerto Rico ligt"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "Alexandra grapt: \"Culebra no tiene culebras.\" Ondanks de naam (culebra betekent slang) zitten er geen slangen.",
-        "evidence": {
-          "es": "Culebra es una isla pequeña cerca de Puerto Rico, pero tranquilos, Culebra no tiene culebras.",
-          "nl": "Culebra is een klein eiland vlak bij Puerto Rico, maar geen zorgen: op Culebra zitten geen slangen.",
-          "startSec": 96.89,
-          "endSec": 105.93
+      "echo": {
+        "es": "Hola, me llamo Alexandra y soy de Puerto Rico",
+        "startSec": 83.25,
+        "endSec": 88.77
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat zegt Alexandra grappig genoeg over het eilandje Culebra?",
+          "choices": [
+            "Dat er geen slangen (culebras) zijn",
+            "Dat het heel groot is",
+            "Dat er veel toeristen komen",
+            "Dat het ver van Puerto Rico ligt"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Alexandra grapt: \"Culebra no tiene culebras.\" Ondanks de naam (culebra betekent slang) zitten er geen slangen.",
+          "evidence": {
+            "es": "Culebra es una isla pequeña cerca de Puerto Rico, pero tranquilos, Culebra no tiene culebras.",
+            "nl": "Culebra is een klein eiland vlak bij Puerto Rico, maar geen zorgen: op Culebra zitten geen slangen.",
+            "startSec": 96.89,
+            "endSec": 105.93
+          }
+        },
+        {
+          "type": "vocabInContext",
+          "vocabId": "la-salud",
+          "promptNl": "Je hoorde \"expresiones para hablar sobre tu salud\". Wat betekent \"la salud\"?",
+          "choices": [
+            "de vakantie",
+            "het eiland",
+            "de gezondheid",
+            "de familie"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "\"La salud\" is de gezondheid. Rodrigo kondigt aan: \"en este episodio hay expresiones para hablar sobre tu salud.\"",
+          "evidence": {
+            "es": "En este episodio hay expresiones para hablar sobre tu salud y también ejemplos sobre cómo usar el verbo doler.",
+            "nl": "In deze aflevering staan uitdrukkingen om over je gezondheid te praten en ook voorbeelden van hoe je het werkwoord doler gebruikt.",
+            "startSec": 66.83,
+            "endSec": 78.89
+          }
         }
-      }
+      ]
     },
     {
       "id": "s03",
@@ -466,25 +508,50 @@
           "es": "Algo no está bien. Mi papá está muy serio. Él me explica que mamá quiere decirme algo y que es mejor no contestar nada a mamá, mejor callar. ¿Qué le pasa a mamá?"
         }
       ],
-      "question": {
-        "type": "gap",
-        "promptNl": "Vul aan wat je hoorde:",
-        "textEs": "Él me explica que mamá quiere decirme algo y que es mejor no contestar nada a mamá, mejor ___.",
-        "choices": [
-          "cantar",
-          "gritar",
-          "callar",
-          "reír"
-        ],
-        "answerIndex": 2,
-        "explanationNl": "Papa maakt duidelijk dat het beter is niets terug te zeggen: \"mejor no contestar nada a mamá, mejor callar.\" \"Callar\" betekent zwijgen.",
-        "evidence": {
-          "es": "Es mejor no contestar nada a mamá, mejor callar.",
-          "nl": "Het is beter niets terug te zeggen tegen mama, beter zwijgen.",
-          "startSec": 141.61,
-          "endSec": 147.39
+      "echo": {
+        "es": "Mi papá está muy serio",
+        "startSec": 134.97,
+        "endSec": 137.17
+      },
+      "questions": [
+        {
+          "type": "gap",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "Él me explica que mamá quiere decirme algo y que es mejor no contestar nada a mamá, mejor ___.",
+          "choices": [
+            "cantar",
+            "gritar",
+            "callar",
+            "reír"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Papa maakt duidelijk dat het beter is niets terug te zeggen: \"mejor no contestar nada a mamá, mejor callar.\" \"Callar\" betekent zwijgen.",
+          "evidence": {
+            "es": "Es mejor no contestar nada a mamá, mejor callar.",
+            "nl": "Het is beter niets terug te zeggen tegen mama, beter zwijgen.",
+            "startSec": 141.61,
+            "endSec": 147.39
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Hoe lang hebben Alexandra en haar ouders elkaar niet gezien?",
+          "choices": [
+            "Een dag",
+            "Een week",
+            "Een maand",
+            "Een jaar"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Alexandra vertelt: \"Mis padres y yo no nos vemos desde hace una semana.\" Ze hebben elkaar een week niet gezien.",
+          "evidence": {
+            "es": "Mis padres y yo no nos vemos desde hace una semana. Tengo muchas cosas que contarles.",
+            "nl": "Mijn ouders en ik hebben elkaar een week niet gezien. Ik heb veel te vertellen.",
+            "startSec": 114.41,
+            "endSec": 122.35
+          }
         }
-      }
+      ]
     },
     {
       "id": "s04",
@@ -512,25 +579,50 @@
           "es": "Yo me quedo en shock. Miro a mi papá y él me mira muy serio y con sus ojos me dice “mejor callar”. ¿Está exagerando mamá?"
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "morir",
-        "promptNl": "Je hoorde \"Creo que me voy a morir\". Wat betekent \"morir\"?",
-        "choices": [
-          "slapen",
-          "sterven",
-          "vertrekken",
-          "huilen"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "\"Morir\" betekent sterven. Mama denkt dat ze doodgaat: \"Creo que me voy a morir.\"",
-        "evidence": {
-          "es": "Creo que me voy a morir.",
-          "nl": "Ik denk dat ik ga sterven.",
-          "startSec": 160.67,
-          "endSec": 163.73
+      "echo": {
+        "es": "Creo que me voy a morir",
+        "startSec": 160.67,
+        "endSec": 163.73
+      },
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "morir",
+          "promptNl": "Je hoorde \"Creo que me voy a morir\". Wat betekent \"morir\"?",
+          "choices": [
+            "slapen",
+            "sterven",
+            "vertrekken",
+            "huilen"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"Morir\" betekent sterven. Mama denkt dat ze doodgaat: \"Creo que me voy a morir.\"",
+          "evidence": {
+            "es": "Creo que me voy a morir.",
+            "nl": "Ik denk dat ik ga sterven.",
+            "startSec": 160.67,
+            "endSec": 163.73
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Hoe reageert Alexandra op het slechte nieuws van mama?",
+          "choices": [
+            "Ze lacht",
+            "Ze wordt boos",
+            "Ze staat in shock",
+            "Ze valt in slaap"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Alexandra vertelt: \"Yo me quedo en shock.\" Ze is verbijsterd door het nieuws.",
+          "evidence": {
+            "es": "Yo me quedo en shock.",
+            "nl": "Ik sta in shock.",
+            "startSec": 164.19,
+            "endSec": 166.79
+          }
         }
-      }
+      ]
     },
     {
       "id": "s05",
@@ -553,25 +645,50 @@
           "es": "Las empanadillas de chapín son deliciosas, creo que es una buena idea decir adiós a estas empanadillas."
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "despedirse",
-        "promptNl": "Je hoorde \"Quiere despedirse de esos lugares\". Wat betekent \"despedirse\"?",
-        "choices": [
-          "afscheid nemen van",
-          "foto's maken van",
-          "praten over",
-          "dromen van"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "\"Despedirse\" betekent afscheid nemen. Mama wil afscheid nemen van haar favoriete plekken: \"Quiere despedirse de esos lugares.\"",
-        "evidence": {
-          "es": "Mamá quiere hacer un tour por la isla para visitar todos sus lugares preferidos. Quiere despedirse de esos lugares…",
-          "nl": "Mama wil een rondrit over het eiland maken om al haar favoriete plekken te bezoeken. Ze wil afscheid nemen van die plekken…",
-          "startSec": 179.17,
-          "endSec": 188.75
+      "echo": {
+        "es": "decidimos ir a Naguabo, un pueblo cerca del mar",
+        "startSec": 193.61,
+        "endSec": 198.41
+      },
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "despedirse",
+          "promptNl": "Je hoorde \"Quiere despedirse de esos lugares\". Wat betekent \"despedirse\"?",
+          "choices": [
+            "afscheid nemen van",
+            "foto's maken van",
+            "praten over",
+            "dromen van"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"Despedirse\" betekent afscheid nemen. Mama wil afscheid nemen van haar favoriete plekken: \"Quiere despedirse de esos lugares.\"",
+          "evidence": {
+            "es": "Mamá quiere hacer un tour por la isla para visitar todos sus lugares preferidos. Quiere despedirse de esos lugares…",
+            "nl": "Mama wil een rondrit over het eiland maken om al haar favoriete plekken te bezoeken. Ze wil afscheid nemen van die plekken…",
+            "startSec": 179.17,
+            "endSec": 188.75
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Waar besluiten ze eerst naartoe te gaan?",
+          "choices": [
+            "Naar San Juan",
+            "Naar Culebra",
+            "Naar Naguabo, een dorp bij de zee",
+            "Naar het ziekenhuis"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Alexandra vertelt: \"Entonces decidimos ir a Naguabo, un pueblo cerca del mar.\" Ze gaan naar Naguabo, een dorp aan zee, om empanadillas te eten.",
+          "evidence": {
+            "es": "Entonces decidimos ir a Naguabo, un pueblo cerca del mar.",
+            "nl": "Dus besluiten we naar Naguabo te gaan, een dorp vlak bij de zee.",
+            "startSec": 192.69,
+            "endSec": 198.41
+          }
         }
-      }
+      ]
     },
     {
       "id": "s06",
@@ -594,25 +711,50 @@
           "es": "Después de comer las empanadillas, satisfechos y con las barrigas llenas, continuamos nuestro tour por la isla."
         }
       ],
-      "question": {
-        "type": "gap",
-        "promptNl": "Vul aan wat je hoorde:",
-        "textEs": "Solo abrazo a mi mamá y le digo que la ___ mucho.",
-        "choices": [
-          "veo",
-          "llamo",
-          "quiero",
-          "escucho"
-        ],
-        "answerIndex": 2,
-        "explanationNl": "Alexandra omhelst haar moeder: \"le digo que la quiero mucho.\" \"Querer\" betekent hier houden van.",
-        "evidence": {
-          "es": "Solo abrazo a mi mamá y le digo que la quiero mucho.",
-          "nl": "Ik omhels mijn moeder alleen maar en zeg dat ik veel van haar hou.",
-          "startSec": 243.73,
-          "endSec": 247.93
+      "echo": {
+        "es": "Solo abrazo a mi mamá y le digo que la quiero mucho",
+        "startSec": 243.73,
+        "endSec": 247.93
+      },
+      "questions": [
+        {
+          "type": "gap",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "Solo abrazo a mi mamá y le digo que la ___ mucho.",
+          "choices": [
+            "veo",
+            "llamo",
+            "quiero",
+            "escucho"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Alexandra omhelst haar moeder: \"le digo que la quiero mucho.\" \"Querer\" betekent hier houden van.",
+          "evidence": {
+            "es": "Solo abrazo a mi mamá y le digo que la quiero mucho.",
+            "nl": "Ik omhels mijn moeder alleen maar en zeg dat ik veel van haar hou.",
+            "startSec": 243.73,
+            "endSec": 247.93
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Waarom vindt Alexandra het vreemd dat mama zo veel empanadillas koopt?",
+          "choices": [
+            "Omdat ze net gegeten hebben",
+            "Omdat mama zegt dat ze doodgaat",
+            "Omdat empanadillas heel duur zijn",
+            "Omdat papa geen honger heeft"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Alexandra denkt: \"¿No son muchas empanadillas para una persona que dice que se va a morir?\" Veel eten voor iemand die zegt dood te gaan.",
+          "evidence": {
+            "es": "¿No son muchas empanadillas para una persona que dice que se va a morir?",
+            "nl": "Zijn dat niet veel empanadillas voor iemand die zegt dat ze doodgaat?",
+            "startSec": 233.99,
+            "endSec": 241.79
+          }
         }
-      }
+      ]
     },
     {
       "id": "s07",
@@ -635,24 +777,50 @@
           "es": "El camino a San Juan por El Yunque es un camino precioso."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat zijn de coquíes die ze in El Yunque horen?",
-        "choices": [
-          "Vogels",
-          "Watervallen",
-          "Muzikanten",
-          "Kleine kikkertjes die typisch zijn voor Puerto Rico"
-        ],
-        "answerIndex": 3,
-        "explanationNl": "Alexandra legt uit: \"Son unos sapos típicos de Puerto Rico, que suenan exacto como su nombre.\" Coquíes zijn kikkertjes die klinken als hun naam.",
-        "evidence": {
-          "es": "Son unos sapos típicos de Puerto Rico, que suenan exacto como su nombre: “co-qui, co-qui”.",
-          "nl": "Het zijn kikkertjes die typisch zijn voor Puerto Rico en die precies als hun naam klinken: co-qui, co-qui.",
-          "startSec": 277.41,
-          "endSec": 288.81
+      "echo": {
+        "es": "Son unos sapos típicos de Puerto Rico",
+        "startSec": 277.41,
+        "endSec": 281.07
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat zijn de coquíes die ze in El Yunque horen?",
+          "choices": [
+            "Vogels",
+            "Watervallen",
+            "Muzikanten",
+            "Kleine kikkertjes die typisch zijn voor Puerto Rico"
+          ],
+          "answerIndex": 3,
+          "explanationNl": "Alexandra legt uit: \"Son unos sapos típicos de Puerto Rico, que suenan exacto como su nombre.\" Coquíes zijn kikkertjes die klinken als hun naam.",
+          "evidence": {
+            "es": "Son unos sapos típicos de Puerto Rico, que suenan exacto como su nombre: “co-qui, co-qui”.",
+            "nl": "Het zijn kikkertjes die typisch zijn voor Puerto Rico en die precies als hun naam klinken: co-qui, co-qui.",
+            "startSec": 277.41,
+            "endSec": 288.81
+          }
+        },
+        {
+          "type": "gap",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "Vamos a cruzar el parque ___, Yunque. Es uno de los lugares favoritos de mi mamá.",
+          "choices": [
+            "nacional",
+            "natural",
+            "central",
+            "tropical"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Alexandra zegt dat ze door het natuurpark rijden: \"vamos a cruzar el parque natural, Yunque.\" \"Natural\" hoort bij parque natural (natuurpark).",
+          "evidence": {
+            "es": "Pero vamos a cruzar el parque natural, Yunque. Es uno de los lugares favoritos de mi mamá.",
+            "nl": "Maar we rijden dwars door het natuurpark Yunque. Het is een van de favoriete plekken van mijn moeder.",
+            "startSec": 261.09,
+            "endSec": 268.77
+          }
         }
-      }
+      ]
     },
     {
       "id": "s08",
@@ -685,24 +853,50 @@
           "es": "Sí, estoy muy mal, me duele la cabeza."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat antwoordt mama als Alexandra vraagt of ze zich beter voelt?",
-        "choices": [
-          "Nee, ze denkt dat het haar laatste dag is",
-          "Ja, het gaat al veel beter",
-          "Ze wil naar huis",
-          "Ze heeft honger"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "Mama zegt: \"no me siento mejor. Creo que hoy es mi último día.\" Ze voelt zich niet beter en denkt dat het haar laatste dag is.",
-        "evidence": {
-          "es": "Ay, mi hija, no me siento mejor. Creo que hoy es mi último día.",
-          "nl": "Ach, mijn kind, ik voel me niet beter. Ik denk dat vandaag mijn laatste dag is.",
-          "startSec": 305.91,
-          "endSec": 313.23
+      "echo": {
+        "es": "Creo que hoy es mi último día",
+        "startSec": 309.85,
+        "endSec": 313.23
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat antwoordt mama als Alexandra vraagt of ze zich beter voelt?",
+          "choices": [
+            "Nee, ze denkt dat het haar laatste dag is",
+            "Ja, het gaat al veel beter",
+            "Ze wil naar huis",
+            "Ze heeft honger"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Mama zegt: \"no me siento mejor. Creo que hoy es mi último día.\" Ze voelt zich niet beter en denkt dat het haar laatste dag is.",
+          "evidence": {
+            "es": "Ay, mi hija, no me siento mejor. Creo que hoy es mi último día.",
+            "nl": "Ach, mijn kind, ik voel me niet beter. Ik denk dat vandaag mijn laatste dag is.",
+            "startSec": 305.91,
+            "endSec": 313.23
+          }
+        },
+        {
+          "type": "vocabInContext",
+          "vocabId": "doler",
+          "promptNl": "Je hoorde \"me duele la cabeza\". Wat betekent \"me duele\"?",
+          "choices": [
+            "ik ben moe",
+            "het doet me pijn",
+            "ik heb honger",
+            "ik val flauw"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"Doler\" betekent pijn doen. Mama zegt: \"me duele la cabeza\", oftewel ik heb hoofdpijn.",
+          "evidence": {
+            "es": "Sí, estoy muy mal, me duele la cabeza.",
+            "nl": "Ja, ik voel me heel slecht, mijn hoofd doet pijn.",
+            "startSec": 315.99,
+            "endSec": 320.41
+          }
         }
-      }
+      ]
     },
     {
       "id": "s09",
@@ -735,25 +929,50 @@
           "es": "Pienso que el dolor de barriga puede ser porque comimos muchas empanadillas, pero miro a mi papá, que con sus ojos me dice otra vez “mejor callar”."
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "la-barriga",
-        "promptNl": "Je hoorde \"me duele la barriga\". Wat betekent \"la barriga\"?",
-        "choices": [
-          "het hoofd",
-          "de buik",
-          "de rug",
-          "de keel"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "\"La barriga\" is de buik. Mama zegt: \"desde hace una hora me duele la barriga.\"",
-        "evidence": {
-          "es": "También estoy muy cansada y desde hace una hora me duele la barriga.",
-          "nl": "Ik ben ook heel moe en sinds een uur heb ik buikpijn.",
-          "startSec": 329.83,
-          "endSec": 337.93
+      "echo": {
+        "es": "es un dolor de cabeza horrible",
+        "startSec": 326.23,
+        "endSec": 329.11
+      },
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "la-barriga",
+          "promptNl": "Je hoorde \"me duele la barriga\". Wat betekent \"la barriga\"?",
+          "choices": [
+            "het hoofd",
+            "de buik",
+            "de rug",
+            "de keel"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"La barriga\" is de buik. Mama zegt: \"desde hace una hora me duele la barriga.\"",
+          "evidence": {
+            "es": "También estoy muy cansada y desde hace una hora me duele la barriga.",
+            "nl": "Ik ben ook heel moe en sinds een uur heb ik buikpijn.",
+            "startSec": 329.83,
+            "endSec": 337.93
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat denkt Alexandra dat de echte oorzaak van mama's buikpijn is?",
+          "choices": [
+            "De hoge bloeddruk",
+            "Een ernstige ziekte",
+            "De lange reis",
+            "Dat ze te veel empanadillas hebben gegeten"
+          ],
+          "answerIndex": 3,
+          "explanationNl": "Alexandra denkt: \"el dolor de barriga puede ser porque comimos muchas empanadillas.\" De buikpijn komt waarschijnlijk van te veel empanadillas.",
+          "evidence": {
+            "es": "Pienso que el dolor de barriga puede ser porque comimos muchas empanadillas.",
+            "nl": "Ik denk dat de buikpijn komt doordat we veel empanadillas hebben gegeten.",
+            "startSec": 342.65,
+            "endSec": 348.41
+          }
         }
-      }
+      ]
     },
     {
       "id": "s10",
@@ -776,24 +995,50 @@
           "es": "Minutos después, la doctora viene con mamá y tienen buenas noticias: ¡mamá solo tiene la tensión alta! ¡Eso explica el dolor de cabeza!"
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat blijkt er volgens de dokter met mama aan de hand te zijn?",
-        "choices": [
-          "Ze heeft een ernstige ziekte",
-          "Ze heeft te veel gegeten",
-          "Ze heeft alleen een hoge bloeddruk",
-          "Er is niets gevonden"
-        ],
-        "answerIndex": 2,
-        "explanationNl": "De dokter komt met goed nieuws: \"¡mamá solo tiene la tensión alta! ¡Eso explica el dolor de cabeza!\" Ze heeft alleen een hoge bloeddruk.",
-        "evidence": {
-          "es": "Minutos después, la doctora viene con mamá y tienen buenas noticias: ¡mamá solo tiene la tensión alta!",
-          "nl": "Minuten later komt de dokter met mama en ze hebben goed nieuws: mama heeft alleen een hoge bloeddruk!",
-          "startSec": 378.45,
-          "endSec": 388.89
+      "echo": {
+        "es": "ahora estamos preocupados, ¿estará realmente enferma?",
+        "startSec": 371.97,
+        "endSec": 377.29
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat blijkt er volgens de dokter met mama aan de hand te zijn?",
+          "choices": [
+            "Ze heeft een ernstige ziekte",
+            "Ze heeft te veel gegeten",
+            "Ze heeft alleen een hoge bloeddruk",
+            "Er is niets gevonden"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "De dokter komt met goed nieuws: \"¡mamá solo tiene la tensión alta! ¡Eso explica el dolor de cabeza!\" Ze heeft alleen een hoge bloeddruk.",
+          "evidence": {
+            "es": "Minutos después, la doctora viene con mamá y tienen buenas noticias: ¡mamá solo tiene la tensión alta!",
+            "nl": "Minuten later komt de dokter met mama en ze hebben goed nieuws: mama heeft alleen een hoge bloeddruk!",
+            "startSec": 378.45,
+            "endSec": 388.89
+          }
+        },
+        {
+          "type": "vocabInContext",
+          "vocabId": "enferma",
+          "promptNl": "Je hoorde \"¿estará realmente enferma?\". Wat betekent \"enferma\"?",
+          "choices": [
+            "ziek",
+            "moe",
+            "bang",
+            "boos"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"Enferma\" betekent ziek. In de wachtkamer vragen ze zich af: \"¿estará realmente enferma?\", oftewel zou ze echt ziek zijn?",
+          "evidence": {
+            "es": "Ahora estamos preocupados, ¿estará realmente enferma?",
+            "nl": "Nu zijn we bezorgd: zou ze echt ziek zijn?",
+            "startSec": 371.97,
+            "endSec": 377.29
+          }
         }
-      }
+      ]
     },
     {
       "id": "s11",
@@ -811,24 +1056,50 @@
           "es": "Después de un día con muchas emociones, volvemos a casa, contentos por el pequeño viaje juntos y aliviados porque mamá está bien."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Waarom zijn ze aan het einde blij en opgelucht?",
-        "choices": [
-          "Omdat de vakantie langer duurt",
-          "Omdat mama in orde is en ze empanadillas hebben voor het avondeten",
-          "Omdat ze een nieuw huis kopen",
-          "Omdat papa jarig is"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "Alexandra zegt: \"nos alegramos mucho porque mamá está bien, y porque tenemos una caja de 12 empanadillas de chapín para cenar.\" Mama is in orde en er zijn empanadillas voor het eten.",
-        "evidence": {
-          "es": "Todos nos reímos y nos alegramos mucho porque mamá está bien, y porque tenemos una caja de 12 empanadillas de chapín para cenar.",
-          "nl": "We lachen allemaal en zijn heel blij omdat mama in orde is, en omdat we een doos met twaalf empanadillas de chapín hebben voor het avondeten.",
-          "startSec": 392.83,
-          "endSec": 404.87
+      "echo": {
+        "es": "volvemos a casa, contentos por el pequeño viaje juntos",
+        "startSec": 409.03,
+        "endSec": 415.17
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Waarom zijn ze aan het einde blij en opgelucht?",
+          "choices": [
+            "Omdat de vakantie langer duurt",
+            "Omdat mama in orde is en ze empanadillas hebben voor het avondeten",
+            "Omdat ze een nieuw huis kopen",
+            "Omdat papa jarig is"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Alexandra zegt: \"nos alegramos mucho porque mamá está bien, y porque tenemos una caja de 12 empanadillas de chapín para cenar.\" Mama is in orde en er zijn empanadillas voor het eten.",
+          "evidence": {
+            "es": "Todos nos reímos y nos alegramos mucho porque mamá está bien, y porque tenemos una caja de 12 empanadillas de chapín para cenar.",
+            "nl": "We lachen allemaal en zijn heel blij omdat mama in orde is, en omdat we een doos met twaalf empanadillas de chapín hebben voor het avondeten.",
+            "startSec": 392.83,
+            "endSec": 404.87
+          }
+        },
+        {
+          "type": "gap",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "Volvemos a casa, contentos por el pequeño ___ juntos y aliviados porque mamá está bien.",
+          "choices": [
+            "viaje",
+            "hospital",
+            "carro",
+            "tour"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Alexandra zegt: \"contentos por el pequeño viaje juntos.\" \"Viaje\" betekent reis of uitstapje.",
+          "evidence": {
+            "es": "Volvemos a casa, contentos por el pequeño viaje juntos y aliviados porque mamá está bien.",
+            "nl": "We gaan terug naar huis, blij met het kleine uitstapje samen en opgelucht omdat mama in orde is.",
+            "startSec": 409.03,
+            "endSec": 418.91
+          }
         }
-      }
+      ]
     },
     {
       "id": "s12",
@@ -841,25 +1112,50 @@
           "es": "Finalmente, y felizmente, todo ha sido un susto y la mamá de Alexandra está bien. ¡Qué alivio para toda la familia! Pero gracias a esa preocupación, han tenido la oportunidad de ir a todos los lugares importantes de la isla para María y también les espera una cena deliciosa."
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "el-susto",
-        "promptNl": "Je hoorde \"todo ha sido un susto\". Wat betekent \"un susto\"?",
-        "choices": [
-          "een feest",
-          "een schrik",
-          "een reis",
-          "een ziekte"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "Rodrigo besluit: \"todo ha sido un susto y la mamá de Alexandra está bien.\" \"Un susto\" is een schrik; het liep met een sisser af.",
-        "evidence": {
-          "es": "Finalmente, y felizmente, todo ha sido un susto y la mamá de Alexandra está bien.",
-          "nl": "Uiteindelijk, en gelukkig, was het allemaal loos alarm en is de moeder van Alexandra in orde.",
-          "startSec": 423.19,
-          "endSec": 431.85
+      "echo": {
+        "es": "¡Qué alivio para toda la familia!",
+        "startSec": 432.35,
+        "endSec": 435.39
+      },
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "el-susto",
+          "promptNl": "Je hoorde \"todo ha sido un susto\". Wat betekent \"un susto\"?",
+          "choices": [
+            "een feest",
+            "een schrik",
+            "een reis",
+            "een ziekte"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Rodrigo besluit: \"todo ha sido un susto y la mamá de Alexandra está bien.\" \"Un susto\" is een schrik; het liep met een sisser af.",
+          "evidence": {
+            "es": "Finalmente, y felizmente, todo ha sido un susto y la mamá de Alexandra está bien.",
+            "nl": "Uiteindelijk, en gelukkig, was het allemaal loos alarm en is de moeder van Alexandra in orde.",
+            "startSec": 423.19,
+            "endSec": 431.85
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat is volgens Rodrigo het positieve gevolg van mama's schrik?",
+          "choices": [
+            "Ze hebben veel geld bespaard",
+            "Mama moet in het ziekenhuis blijven",
+            "Ze hebben alle belangrijke plekken van het eiland kunnen bezoeken",
+            "Ze gaan op reis naar de Verenigde Staten"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Rodrigo zegt: \"gracias a esa preocupación, han tenido la oportunidad de ir a todos los lugares importantes de la isla para María.\" Dankzij de schrik bezochten ze alle belangrijke plekken.",
+          "evidence": {
+            "es": "Pero gracias a esa preocupación, han tenido la oportunidad de ir a todos los lugares importantes de la isla para María y también les espera una cena deliciosa.",
+            "nl": "Maar dankzij die ongerustheid hebben ze de kans gehad om alle belangrijke plekken van het eiland voor María te bezoeken, en er wacht hun ook een heerlijk diner.",
+            "startSec": 435.69,
+            "endSec": 452.89
+          }
         }
-      }
+      ]
     }
   ]
 }

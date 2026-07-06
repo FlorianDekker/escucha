@@ -802,6 +802,120 @@
   padding: 0;
 }
 
+/* ---- Zinsbouw-oefening (echo) ---- */
+.echo-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px 0 0;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--ink);
+}
+.echo-replay {
+  flex: 0 0 auto;
+  border: none;
+  background: var(--chip);
+  color: var(--brand);
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 14px;
+  min-width: 44px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+}
+/* Antwoordbalk: hier verschijnen de gekozen woorden in volgorde */
+.echo-answer {
+  margin-top: 14px;
+  min-height: 58px;
+  border-radius: 16px;
+  border: 2px dashed var(--line);
+  background: var(--chip);
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: flex-start;
+}
+.echo-answer.ok {
+  border-style: solid;
+  border-color: #3fb27f;
+  background: #eaf7f0;
+}
+.echo-answer.bad {
+  border-style: solid;
+  border-color: #e06b6b;
+  background: #fbecec;
+}
+.echo-answer .placeholder {
+  color: var(--ink-mute);
+  font-weight: 700;
+  font-size: 13px;
+  align-self: center;
+}
+.echo-pool {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+/* Grote tap-targets (min 40px hoog) voor de woordtegels */
+.echo-tile {
+  min-height: 44px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--ink);
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 15px;
+  padding: 8px 14px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--line);
+  transition: transform 0.06s ease, box-shadow 0.06s ease;
+}
+.echo-tile:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 var(--line);
+}
+.echo-tile.placed {
+  border-color: var(--brand-mute);
+  box-shadow: 0 3px 0 var(--brand-mute);
+}
+.echo-tile:disabled {
+  cursor: default;
+}
+.echo-correct {
+  margin: 12px 0 0;
+  color: var(--good);
+  font-weight: 700;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+.echo-correct b {
+  color: var(--good);
+  font-weight: 800;
+}
+
+/* Subregel onder de feedback-kop (score over de oefeningen) */
+.fb-subline {
+  color: var(--brand-soft);
+  font-weight: 800;
+  font-size: 14px;
+  margin: 8px 0 0;
+}
+/* Vraagtekst boven een juist-antwoord-kaart bij meerdere vragen */
+.answer-q {
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 8px 0 0;
+}
+
 /* QuestionCard */
 .qc-prompt {
   font-family: var(--font-head);

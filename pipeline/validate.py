@@ -89,20 +89,34 @@ def check_episode(path: Path):
                 err(f"{sid}: zin-startSec {s['startSec']} buiten segment")
             all_words += [normalize(w) for w in s["es"].split()]
 
-        q = seg.get("question")
-        if not q:
-            err(f"{sid}: geen vraag")
+        questions = seg.get("questions") or ([seg["question"]] if seg.get("question") else [])
+        if not questions:
+            err(f"{sid}: geen vragen")
             continue
-        if q["type"] not in QUESTION_TYPES:
-            err(f"{sid}: onbekend vraagtype {q['type']}")
-        if q["type"] == "gap" and "textEs" not in q:
-            err(f"{sid}: gap-vraag zonder textEs")
-        if not (0 <= q["answerIndex"] < len(q["choices"])):
-            err(f"{sid}: answerIndex buiten bereik")
-        if len(q["choices"]) < 3:
-            warn(f"{sid}: maar {len(q['choices'])} keuzes")
-        if q["type"] == "vocabInContext" and q.get("vocabId") not in ids:
-            err(f"{sid}: vocabId {q.get('vocabId')} bestaat niet in vocab")
+        if "questions" in seg and len(questions) != 2:
+            warn(f"{sid}: {len(questions)} vragen (richtlijn: 2)")
+        for qi, q in enumerate(questions):
+            tag = f"{sid}.q{qi + 1}"
+            if q["type"] not in QUESTION_TYPES:
+                err(f"{tag}: onbekend vraagtype {q['type']}")
+            if q["type"] == "gap" and "textEs" not in q:
+                err(f"{tag}: gap-vraag zonder textEs")
+            if not (0 <= q["answerIndex"] < len(q["choices"])):
+                err(f"{tag}: answerIndex buiten bereik")
+            if len(q["choices"]) < 3:
+                warn(f"{tag}: maar {len(q['choices'])} keuzes")
+            if q["type"] == "vocabInContext" and q.get("vocabId") not in ids:
+                err(f"{tag}: vocabId {q.get('vocabId')} bestaat niet in vocab")
+
+        echo = seg.get("echo")
+        if "questions" in seg and not echo:
+            warn(f"{sid}: geen echo-zin (schema v2 verwacht er een)")
+        if echo:
+            n_words = len([w for w in echo["es"].split() if w.strip()])
+            if not (4 <= n_words <= 14):
+                warn(f"{sid}: echo-zin heeft {n_words} woorden (richtlijn 4-12)")
+            if "endSec" in echo and not (seg["startSec"] < echo["endSec"] <= seg["endSec"]):
+                err(f"{sid}: echo-pauzepunt buiten het segment")
 
     # glossary-dekking van inhoudswoorden
     glossary = {normalize(k) for k in ep["glossary"]}
@@ -113,7 +127,13 @@ def check_episode(path: Path):
     if coverage < GLOSSARY_COVERAGE:
         warn(f"glossary-dekking {coverage:.0%} < {GLOSSARY_COVERAGE:.0%}; ontbrekend (uniek): {', '.join(missing[:40])}")
 
-    ntypes = {t: sum(1 for s in ep["segments"] if s.get("question", {}).get("type") == t) for t in QUESTION_TYPES}
+    def seg_questions(s):
+        return s.get("questions") or ([s["question"]] if s.get("question") else [])
+
+    ntypes = {
+        t: sum(1 for s in ep["segments"] for q in seg_questions(s) if q.get("type") == t)
+        for t in QUESTION_TYPES
+    }
     if 0 in ntypes.values():
         warn(f"vraagtypemix onvolledig: {ntypes}")
 

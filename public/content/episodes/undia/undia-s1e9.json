@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "undia-s1e9",
   "podcastId": "undia",
   "title": "De familie leren kennen in het Spaans",
@@ -390,48 +390,69 @@
   "segments": [
     {
       "id": "s01",
-      "startSec": 8.0,
+      "startSec": 37.0,
       "endSec": 66.0,
+      "echo": {
+        "es": "Esto va a ser un test para el español de Tom.",
+        "startSec": 55.27,
+        "endSec": 59.57
+      },
       "sentences": [
-        {
-          "startSec": 8.0,
-          "speaker": "Rodrigo",
-          "es": "Hola, soy Rodrigo y te doy la bienvenida a Un día en español – monolingüe, el pódcast en español que te da la bienvenida a la vida de hispanohablantes en Estados Unidos y Latinoamérica."
-        },
-        {
-          "startSec": 29.0,
-          "speaker": "Rodrigo",
-          "es": "¿Hace poco que aprendes español? Entonces, este pódcast es perfecto para ti."
-        },
         {
           "startSec": 37.0,
           "speaker": "Rodrigo",
           "es": "Hoy viajamos a Argentina con Micaela y su pareja, Tom. Ellos viven en Reino Unido y, por eso, Tom va a conocer por primera vez a la familia de Micaela. Esto va a ser un test para el español de Tom, pero no se preocupen, seguro que Tom va a superar ese test."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Waarom is deze reis bijzonder voor Tom?",
-        "choices": [
-          "Hij gaat voor het eerst op vakantie naar Zuid-Amerika",
-          "Hij gaat in Argentinië werken",
-          "Hij ontmoet voor het eerst de familie van Micaela",
-          "Hij gaat Spaans studeren aan een universiteit"
-        ],
-        "answerIndex": 2,
-        "explanationNl": "Rodrigo zegt: \"Tom va a conocer por primera vez a la familia de Micaela.\" Tom ontmoet dus voor het eerst haar familie.",
-        "evidence": {
-          "es": "Tom va a conocer por primera vez a la familia de Micaela.",
-          "nl": "Tom gaat voor het eerst de familie van Micaela ontmoeten.",
-          "startSec": 47.49,
-          "endSec": 55.01
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Waarom is deze reis bijzonder voor Tom?",
+          "choices": [
+            "Hij gaat voor het eerst op vakantie naar Zuid-Amerika",
+            "Hij gaat in Argentinië werken",
+            "Hij ontmoet voor het eerst de familie van Micaela",
+            "Hij gaat Spaans studeren aan een universiteit"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Rodrigo zegt: \"Tom va a conocer por primera vez a la familia de Micaela.\" Tom ontmoet dus voor het eerst haar familie.",
+          "evidence": {
+            "es": "Tom va a conocer por primera vez a la familia de Micaela.",
+            "nl": "Tom gaat voor het eerst de familie van Micaela ontmoeten.",
+            "startSec": 47.49,
+            "endSec": 55.01
+          }
+        },
+        {
+          "type": "gap",
+          "promptNl": "Vul aan wat Rodrigo zei:",
+          "textEs": "No se preocupen, seguro que Tom va a ___ ese test.",
+          "choices": [
+            "superar",
+            "comer",
+            "visitar",
+            "conocer"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Rodrigo stelt gerust: \"seguro que Tom va a superar ese test.\" Tom gaat de test dus halen.",
+          "evidence": {
+            "es": "pero no se preocupen, seguro que Tom va a superar ese test.",
+            "nl": "maar maak je geen zorgen, Tom haalt die test vast wel.",
+            "startSec": 59.71,
+            "endSec": 65.49
+          }
         }
-      }
+      ]
     },
     {
       "id": "s02",
       "startSec": 66.0,
       "endSec": 119.0,
+      "echo": {
+        "es": "Mi familia vive allá, es una ciudad pequeña.",
+        "startSec": 110.15,
+        "endSec": 115.19
+      },
       "sentences": [
         {
           "startSec": 66.0,
@@ -454,30 +475,55 @@
           "es": "Cuando llegamos a Buenos Aires, tomamos un autobús a Firmat. Mi familia vive allá, es una ciudad pequeña en una zona de mucha agricultura."
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "el-novio",
-        "promptNl": "Je hoorde \"vivo en Reino Unido con mi novio, Tom\". Wat betekent \"novio\"?",
-        "choices": [
-          "buurman",
-          "collega",
-          "broer",
-          "vriend (partner)"
-        ],
-        "answerIndex": 3,
-        "explanationNl": "\"Novio\" is je vriend of partner. Micaela woont in het Verenigd Koninkrijk samen met haar novio Tom.",
-        "evidence": {
-          "es": "Soy Micaela y soy de Argentina, pero vivo en Reino Unido con mi novio, Tom.",
-          "nl": "Ik ben Micaela en ik kom uit Argentinië, maar ik woon in het Verenigd Koninkrijk met mijn vriend Tom.",
-          "startSec": 90.51,
-          "endSec": 97.17
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "el-novio",
+          "promptNl": "Je hoorde \"vivo en Reino Unido con mi novio, Tom\". Wat betekent \"novio\"?",
+          "choices": [
+            "buurman",
+            "collega",
+            "broer",
+            "vriend (partner)"
+          ],
+          "answerIndex": 3,
+          "explanationNl": "\"Novio\" is je vriend of partner. Micaela woont in het Verenigd Koninkrijk samen met haar novio Tom.",
+          "evidence": {
+            "es": "Soy Micaela y soy de Argentina, pero vivo en Reino Unido con mi novio, Tom.",
+            "nl": "Ik ben Micaela en ik kom uit Argentinië, maar ik woon in het Verenigd Koninkrijk met mijn vriend Tom.",
+            "startSec": 90.51,
+            "endSec": 97.17
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Waar woont de familie van Micaela?",
+          "choices": [
+            "In Buenos Aires",
+            "In Firmat, een klein stadje op het platteland",
+            "In het Verenigd Koninkrijk",
+            "In de hoofdstad Madrid"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Micaela vertelt: \"tomamos un autobús a Firmat. Mi familia vive allá, es una ciudad pequeña en una zona de mucha agricultura.\"",
+          "evidence": {
+            "es": "tomamos un autobús a Firmat. Mi familia vive allá, es una ciudad pequeña en una zona de mucha agricultura.",
+            "nl": "we namen een bus naar Firmat. Mijn familie woont daar, het is een klein stadje in een streek met veel landbouw.",
+            "startSec": 106.31,
+            "endSec": 118.21
+          }
         }
-      }
+      ]
     },
     {
       "id": "s03",
       "startSec": 119.0,
       "endSec": 161.0,
+      "echo": {
+        "es": "Estamos muy cansados, pero yo estoy contenta.",
+        "startSec": 129.35,
+        "endSec": 134.37
+      },
       "sentences": [
         {
           "startSec": 119.0,
@@ -495,29 +541,55 @@
           "es": "Esto va a ser una experiencia… ehm… interesante. Tom no habla mucho español y mi familia no habla nada de inglés. ¿Van a poder comunicarse? ¡Vamos a ver!"
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Hoe reisden Micaela en Tom naar Firmat?",
-        "choices": [
-          "Met een vlucht van 13 uur en daarna 8 uur met de bus",
-          "Met de auto vanuit Buenos Aires",
-          "Met de trein door heel Argentinië",
-          "Met een korte binnenlandse vlucht"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "Micaela vertelt: \"Después de un vuelo de 13 horas y un viaje de 8 horas en bus llegamos finalmente a Firmat.\"",
-        "evidence": {
-          "es": "Después de un vuelo de 13 horas y un viaje de 8 horas en bus llegamos finalmente a Firmat.",
-          "nl": "Na een vlucht van 13 uur en een reis van 8 uur met de bus kwamen we eindelijk aan in Firmat.",
-          "startSec": 118.77,
-          "endSec": 128.77
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Hoe reisden Micaela en Tom naar Firmat?",
+          "choices": [
+            "Met een vlucht van 13 uur en daarna 8 uur met de bus",
+            "Met de auto vanuit Buenos Aires",
+            "Met de trein door heel Argentinië",
+            "Met een korte binnenlandse vlucht"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Micaela vertelt: \"Después de un vuelo de 13 horas y un viaje de 8 horas en bus llegamos finalmente a Firmat.\"",
+          "evidence": {
+            "es": "Después de un vuelo de 13 horas y un viaje de 8 horas en bus llegamos finalmente a Firmat.",
+            "nl": "Na een vlucht van 13 uur en een reis van 8 uur met de bus kwamen we eindelijk aan in Firmat.",
+            "startSec": 118.77,
+            "endSec": 128.77
+          }
+        },
+        {
+          "type": "gap",
+          "promptNl": "Vul aan wat Micaela zei over de taal:",
+          "textEs": "Tom no habla mucho español y mi familia no habla nada de ___.",
+          "choices": [
+            "español",
+            "inglés",
+            "italiano",
+            "francés"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Micaela legt het probleem uit: \"Tom no habla mucho español y mi familia no habla nada de inglés.\" De familie spreekt dus geen Engels.",
+          "evidence": {
+            "es": "Tom no habla mucho español y mi familia no habla nada de inglés.",
+            "nl": "Tom spreekt niet veel Spaans en mijn familie spreekt helemaal geen Engels.",
+            "startSec": 150.43,
+            "endSec": 156.61
+          }
         }
-      }
+      ]
     },
     {
       "id": "s04",
       "startSec": 161.0,
       "endSec": 209.0,
+      "echo": {
+        "es": "el plan es comer en casa de mis abuelos.",
+        "startSec": 177.43,
+        "endSec": 182.25
+      },
       "sentences": [
         {
           "startSec": 161.0,
@@ -535,29 +607,55 @@
           "es": "Está bien, mi abuela es muy amable y simpática, mi abuelo… bueno, él también es simpático, pero hace muchas preguntas a las nuevas parejas de sus nietos y nietas, habla mucho de política y tiene un acento muy fuerte."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Hoe beschrijft Micaela haar opa?",
-        "choices": [
-          "Hij is heel verlegen en zegt weinig",
-          "Hij spreekt vloeiend Engels",
-          "Hij houdt niet van bezoek",
-          "Hij stelt veel vragen, praat over politiek en heeft een sterk accent"
-        ],
-        "answerIndex": 3,
-        "explanationNl": "Micaela zegt over haar opa: \"hace muchas preguntas a las nuevas parejas de sus nietos y nietas, habla mucho de política y tiene un acento muy fuerte.\"",
-        "evidence": {
-          "es": "Hace muchas preguntas a las nuevas parejas de sus nietos y nietas, habla mucho de política y tiene un acento muy fuerte.",
-          "nl": "Hij stelt veel vragen aan de nieuwe partners van zijn kleinkinderen, praat veel over politiek en heeft een heel sterk accent.",
-          "startSec": 193.95,
-          "endSec": 208.67
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Hoe beschrijft Micaela haar opa?",
+          "choices": [
+            "Hij is heel verlegen en zegt weinig",
+            "Hij spreekt vloeiend Engels",
+            "Hij houdt niet van bezoek",
+            "Hij stelt veel vragen, praat over politiek en heeft een sterk accent"
+          ],
+          "answerIndex": 3,
+          "explanationNl": "Micaela zegt over haar opa: \"hace muchas preguntas a las nuevas parejas de sus nietos y nietas, habla mucho de política y tiene un acento muy fuerte.\"",
+          "evidence": {
+            "es": "Hace muchas preguntas a las nuevas parejas de sus nietos y nietas, habla mucho de política y tiene un acento muy fuerte.",
+            "nl": "Hij stelt veel vragen aan de nieuwe partners van zijn kleinkinderen, praat veel over politiek en heeft een heel sterk accent.",
+            "startSec": 193.95,
+            "endSec": 208.67
+          }
+        },
+        {
+          "type": "vocabInContext",
+          "vocabId": "la-abuela",
+          "promptNl": "Je hoorde \"mi abuela es muy amable y simpática\". Wat betekent \"abuela\"?",
+          "choices": [
+            "oma",
+            "tante",
+            "moeder",
+            "buurvrouw"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"Abuela\" betekent oma. Micaela zegt: \"mi abuela es muy amable y simpática.\"",
+          "evidence": {
+            "es": "mi abuela es muy amable y simpática.",
+            "nl": "mijn oma is heel aardig en sympathiek.",
+            "startSec": 184.57,
+            "endSec": 188.65
+          }
         }
-      }
+      ]
     },
     {
       "id": "s05",
       "startSec": 209.0,
       "endSec": 242.0,
+      "echo": {
+        "es": "mi abuela hoy invita a toda la familia a comer.",
+        "startSec": 235.37,
+        "endSec": 241.51
+      },
       "sentences": [
         {
           "startSec": 209.0,
@@ -570,31 +668,56 @@
           "es": "Mientras pienso en esto, mi mamá me dice que mi abuela no solo nos invita a mis papás y a nosotros a la comida: mi abuela hoy invita a toda la familia a comer."
         }
       ],
-      "question": {
-        "type": "gap",
-        "vocabId": "la-familia",
-        "promptNl": "Vul aan wat je hoorde:",
-        "textEs": "Mi abuela hoy invita a toda la ___ a comer.",
-        "choices": [
-          "comida",
-          "familia",
-          "casa",
-          "fiesta"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "Micaela's moeder vertelt: \"mi abuela hoy invita a toda la familia a comer.\" Oma nodigt de hele familie uit om te komen eten.",
-        "evidence": {
-          "es": "Mi abuela no solo nos invita a mis papás y a nosotros a la comida: mi abuela hoy invita a toda la familia a comer.",
-          "nl": "Mijn oma nodigt niet alleen mijn ouders en ons uit voor het eten: mijn oma nodigt vandaag de hele familie uit om te komen eten.",
-          "startSec": 226.43,
-          "endSec": 241.51
+      "questions": [
+        {
+          "type": "gap",
+          "vocabId": "la-familia",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "Mi abuela hoy invita a toda la ___ a comer.",
+          "choices": [
+            "comida",
+            "familia",
+            "casa",
+            "fiesta"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Micaela's moeder vertelt: \"mi abuela hoy invita a toda la familia a comer.\" Oma nodigt de hele familie uit om te komen eten.",
+          "evidence": {
+            "es": "Mi abuela no solo nos invita a mis papás y a nosotros a la comida: mi abuela hoy invita a toda la familia a comer.",
+            "nl": "Mijn oma nodigt niet alleen mijn ouders en ons uit voor het eten: mijn oma nodigt vandaag de hele familie uit om te komen eten.",
+            "startSec": 226.43,
+            "endSec": 241.51
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Waar maakt Micaela zich zorgen over?",
+          "choices": [
+            "Dat de arme Tom haar opa ook niet goed zal verstaan",
+            "Dat het eten niet lekker zal zijn",
+            "Dat Tom te laat zal komen",
+            "Dat haar oma boos op haar is"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Micaela denkt: \"Creo que el pobre Tom tampoco va a entender muy bien a mi abuelo.\" Ze vreest dat Tom haar opa niet goed zal verstaan.",
+          "evidence": {
+            "es": "Creo que el pobre Tom tampoco va a entender muy bien a mi abuelo.",
+            "nl": "Ik denk dat de arme Tom mijn opa ook niet goed zal verstaan.",
+            "startSec": 214.67,
+            "endSec": 220.27
+          }
         }
-      }
+      ]
     },
     {
       "id": "s06",
       "startSec": 242.0,
       "endSec": 280.0,
+      "echo": {
+        "es": "cuando decimos toda la familia, significa toda la familia.",
+        "startSec": 243.53,
+        "endSec": 251.35
+      },
       "sentences": [
         {
           "startSec": 242.0,
@@ -607,29 +730,55 @@
           "es": "Y yo tengo muchos primos y primas. ¡Vamos a ser 20 personas en casa de mis abuelos! ¡Todos quieren conocer a Tom!"
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Met hoeveel mensen zullen ze bij de grootouders zijn?",
-        "choices": [
-          "Ongeveer acht",
-          "Ongeveer twaalf",
-          "Twintig personen",
-          "Meer dan vijftig"
-        ],
-        "answerIndex": 2,
-        "explanationNl": "Micaela zegt: \"¡Vamos a ser 20 personas en casa de mis abuelos!\" Er komen dus twintig mensen samen.",
-        "evidence": {
-          "es": "¡Vamos a ser 20 personas en casa de mis abuelos! ¡Todos quieren conocer a Tom!",
-          "nl": "We zullen met twintig mensen zijn bij mijn grootouders thuis! Iedereen wil Tom leren kennen!",
-          "startSec": 272.15,
-          "endSec": 279.77
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Met hoeveel mensen zullen ze bij de grootouders zijn?",
+          "choices": [
+            "Ongeveer acht",
+            "Ongeveer twaalf",
+            "Twintig personen",
+            "Meer dan vijftig"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Micaela zegt: \"¡Vamos a ser 20 personas en casa de mis abuelos!\" Er komen dus twintig mensen samen.",
+          "evidence": {
+            "es": "¡Vamos a ser 20 personas en casa de mis abuelos! ¡Todos quieren conocer a Tom!",
+            "nl": "We zullen met twintig mensen zijn bij mijn grootouders thuis! Iedereen wil Tom leren kennen!",
+            "startSec": 272.15,
+            "endSec": 279.77
+          }
+        },
+        {
+          "type": "vocabInContext",
+          "vocabId": "los-tios",
+          "promptNl": "Je hoorde \"tus tíos y tías y también tus primos y primas\". Wat betekent \"tíos\"?",
+          "choices": [
+            "ooms (en tantes)",
+            "grootouders",
+            "broers",
+            "buren"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"Tíos\" betekent ooms (en tantes). Micaela noemt bij de hele familie ook \"tus tíos y tías\".",
+          "evidence": {
+            "es": "tus tíos y tías y también tus primos y primas.",
+            "nl": "je ooms en tantes en ook je neven en nichten.",
+            "startSec": 261.13,
+            "endSec": 268.01
+          }
         }
-      }
+      ]
     },
     {
       "id": "s07",
       "startSec": 280.0,
       "endSec": 319.0,
+      "echo": {
+        "es": "damos un beso en la mejilla cuando saludamos.",
+        "startSec": 303.11,
+        "endSec": 308.49
+      },
       "sentences": [
         {
           "startSec": 280.0,
@@ -647,30 +796,55 @@
           "es": "Miro cómo mis familiares le dan un beso y él está un poco confundido."
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "el-beso",
-        "promptNl": "Je hoorde \"damos un beso en la mejilla cuando saludamos\". Wat betekent \"beso\"?",
-        "choices": [
-          "kus / zoen",
-          "hand",
-          "cadeau",
-          "glimlach"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "\"Beso\" betekent kus. In Argentinië geef je bij de begroeting een kus op de wang, en Tom is daardoor in de war.",
-        "evidence": {
-          "es": "Tom está confundido porque no sabe que en Argentina damos un beso en la mejilla cuando saludamos, a veces también un abrazo.",
-          "nl": "Tom is in de war omdat hij niet weet dat we in Argentinië bij het begroeten een kus op de wang geven, soms ook een omhelzing.",
-          "startSec": 297.01,
-          "endSec": 312.59
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "el-beso",
+          "promptNl": "Je hoorde \"damos un beso en la mejilla cuando saludamos\". Wat betekent \"beso\"?",
+          "choices": [
+            "kus / zoen",
+            "hand",
+            "cadeau",
+            "glimlach"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"Beso\" betekent kus. In Argentinië geef je bij de begroeting een kus op de wang, en Tom is daardoor in de war.",
+          "evidence": {
+            "es": "Tom está confundido porque no sabe que en Argentina damos un beso en la mejilla cuando saludamos, a veces también un abrazo.",
+            "nl": "Tom is in de war omdat hij niet weet dat we in Argentinië bij het begroeten een kus op de wang geven, soms ook een omhelzing.",
+            "startSec": 297.01,
+            "endSec": 312.59
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Waarom is Tom in de war bij de begroeting?",
+          "choices": [
+            "Omdat er te veel mensen tegelijk zijn",
+            "Omdat hij niemands naam kent",
+            "Omdat hij niet weet dat je in Argentinië een kus op de wang geeft bij het begroeten",
+            "Omdat hij honger heeft"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Micaela legt uit: \"Tom está confundido porque no sabe que en Argentina damos un beso en la mejilla cuando saludamos.\" Hij kent de kus-begroeting niet.",
+          "evidence": {
+            "es": "Tom está confundido porque no sabe que en Argentina damos un beso en la mejilla cuando saludamos.",
+            "nl": "Tom is in de war omdat hij niet weet dat we in Argentinië bij het begroeten een kus op de wang geven.",
+            "startSec": 297.01,
+            "endSec": 308.49
+          }
         }
-      }
+      ]
     },
     {
       "id": "s08",
       "startSec": 319.0,
       "endSec": 368.0,
+      "echo": {
+        "es": "Solo hablo un poco de español.",
+        "startSec": 341.51,
+        "endSec": 344.91
+      },
       "sentences": [
         {
           "startSec": 319.0,
@@ -688,31 +862,56 @@
           "es": "Mis primos son amables y hablan despacio con Tom. Todo va de maravilla. ¡Test superado!"
         }
       ],
-      "question": {
-        "type": "gap",
-        "vocabId": "despacio",
-        "promptNl": "Vul aan wat Tom zei:",
-        "textEs": "Más ___, por favor… Solo hablo un poco de español.",
-        "choices": [
-          "rápido",
-          "alto",
-          "despacio",
-          "tarde"
-        ],
-        "answerIndex": 2,
-        "explanationNl": "Tom vraagt: \"Más despacio, por favor… Solo hablo un poco de español.\" Hij wil dat ze langzamer praten.",
-        "evidence": {
-          "es": "Más despacio, por favor… Solo hablo un poco de español.",
-          "nl": "Langzamer, alsjeblieft… Ik spreek maar een beetje Spaans.",
-          "startSec": 337.15,
-          "endSec": 344.91
+      "questions": [
+        {
+          "type": "gap",
+          "vocabId": "despacio",
+          "promptNl": "Vul aan wat Tom zei:",
+          "textEs": "Más ___, por favor… Solo hablo un poco de español.",
+          "choices": [
+            "rápido",
+            "alto",
+            "despacio",
+            "tarde"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Tom vraagt: \"Más despacio, por favor… Solo hablo un poco de español.\" Hij wil dat ze langzamer praten.",
+          "evidence": {
+            "es": "Más despacio, por favor… Solo hablo un poco de español.",
+            "nl": "Langzamer, alsjeblieft… Ik spreek maar een beetje Spaans.",
+            "startSec": 337.15,
+            "endSec": 344.91
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Hoe reageren de neven op Tom?",
+          "choices": [
+            "Ze lachen hem uit",
+            "Ze zijn aardig en praten langzaam met hem",
+            "Ze negeren hem",
+            "Ze praten alleen Engels met hem"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Micaela zegt: \"Mis primos son amables y hablan despacio con Tom. Todo va de maravilla.\" De neven zijn aardig en praten langzaam.",
+          "evidence": {
+            "es": "Mis primos son amables y hablan despacio con Tom.",
+            "nl": "Mijn neven zijn aardig en praten langzaam met Tom.",
+            "startSec": 357.23,
+            "endSec": 362.69
+          }
         }
-      }
+      ]
     },
     {
       "id": "s09",
       "startSec": 368.0,
       "endSec": 414.0,
+      "echo": {
+        "es": "Mi abuelo y él están dando un paseo por la granja.",
+        "startSec": 400.21,
+        "endSec": 406.23
+      },
       "sentences": [
         {
           "startSec": 368.0,
@@ -730,30 +929,55 @@
           "es": "Voy a buscar a Tom. Mi abuelo y él están dando un paseo por la granja. Seguro que mi abuelo le está haciendo muchas preguntas a Tom…"
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "el-mate",
-        "promptNl": "Je hoorde \"mi tía trae mate, una bebida tradicional en Sudamérica\". Wat is \"mate\"?",
-        "choices": [
-          "een gerecht",
-          "een traditionele drank",
-          "een spel",
-          "een lied"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "\"Mate\" is een traditionele Zuid-Amerikaanse drank. Micaela's tante brengt mate en vraagt of Tom het wil proberen.",
-        "evidence": {
-          "es": "Entonces, mi tía trae mate, una bebida tradicional en Sudamérica, y me pregunta si Tom quiere probar un poco de mate.",
-          "nl": "Dan brengt mijn tante mate, een traditionele drank uit Zuid-Amerika, en ze vraagt me of Tom een beetje mate wil proberen.",
-          "startSec": 368.47,
-          "endSec": 383.11
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "el-mate",
+          "promptNl": "Je hoorde \"mi tía trae mate, una bebida tradicional en Sudamérica\". Wat is \"mate\"?",
+          "choices": [
+            "een gerecht",
+            "een traditionele drank",
+            "een spel",
+            "een lied"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"Mate\" is een traditionele Zuid-Amerikaanse drank. Micaela's tante brengt mate en vraagt of Tom het wil proberen.",
+          "evidence": {
+            "es": "Entonces, mi tía trae mate, una bebida tradicional en Sudamérica, y me pregunta si Tom quiere probar un poco de mate.",
+            "nl": "Dan brengt mijn tante mate, een traditionele drank uit Zuid-Amerika, en ze vraagt me of Tom een beetje mate wil proberen.",
+            "startSec": 368.47,
+            "endSec": 383.11
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat besluit Micaela te doen als ze hoort dat Tom bij de opa is?",
+          "choices": [
+            "Ze gaat Tom zoeken en redden",
+            "Ze gaat rustig mate drinken",
+            "Ze belt haar moeder",
+            "Ze gaat even slapen"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Micaela schrikt: \"¡Oh, no! Tengo que rescatar a Tom.\" en zegt: \"Voy a buscar a Tom.\" Ze gaat hem dus zoeken.",
+          "evidence": {
+            "es": "¡Oh, no! Tengo que rescatar a Tom.",
+            "nl": "Oh nee! Ik moet Tom redden.",
+            "startSec": 393.39,
+            "endSec": 397.13
+          }
         }
-      }
+      ]
     },
     {
       "id": "s10",
       "startSec": 414.0,
       "endSec": 474.0,
+      "echo": {
+        "es": "Parece que se entienden muy bien.",
+        "startSec": 430.53,
+        "endSec": 434.93
+      },
       "sentences": [
         {
           "startSec": 414.0,
@@ -801,29 +1025,55 @@
           "es": "Sí, exacto."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Waarover praten Tom en de opa tijdens hun wandeling over de boerderij?",
-        "choices": [
-          "Over voetbal",
-          "Over de koeien",
-          "Over het weer",
-          "Over politiek"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "Als Micaela vraagt waarover ze praten, antwoordt Tom: \"Sí, las vacas. Mi abuela también tiene vacas.\" Ze praten dus over de koeien.",
-        "evidence": {
-          "es": "Sí, las vacas. Mi abuela también tiene vacas.",
-          "nl": "Ja, de koeien. Mijn oma heeft ook koeien.",
-          "startSec": 458.53,
-          "endSec": 465.35
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Waarover praten Tom en de opa tijdens hun wandeling over de boerderij?",
+          "choices": [
+            "Over voetbal",
+            "Over de koeien",
+            "Over het weer",
+            "Over politiek"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Als Micaela vraagt waarover ze praten, antwoordt Tom: \"Sí, las vacas. Mi abuela también tiene vacas.\" Ze praten dus over de koeien.",
+          "evidence": {
+            "es": "Sí, las vacas. Mi abuela también tiene vacas.",
+            "nl": "Ja, de koeien. Mijn oma heeft ook koeien.",
+            "startSec": 458.53,
+            "endSec": 465.35
+          }
+        },
+        {
+          "type": "vocabInContext",
+          "vocabId": "simpatico",
+          "promptNl": "Je hoorde Tom zeggen \"Tu abuelo es muy… simpático\". Wat betekent \"simpático\"?",
+          "choices": [
+            "streng",
+            "aardig / sympathiek",
+            "verlegen",
+            "boos"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"Simpático\" betekent aardig. Tom zegt over de opa: \"Tu abuelo es muy… simpático y habla despacio para mí.\"",
+          "evidence": {
+            "es": "Tu abuelo es muy… simpático y habla despacio para mí.",
+            "nl": "Jouw opa is heel aardig en praat langzaam voor mij.",
+            "startSec": 439.81,
+            "endSec": 445.25
+          }
         }
-      }
+      ]
     },
     {
       "id": "s11",
       "startSec": 474.0,
       "endSec": 527.0,
+      "echo": {
+        "es": "mi abuelo le muestra a Tom el resto de la granja.",
+        "startSec": 505.09,
+        "endSec": 510.81
+      },
       "sentences": [
         {
           "startSec": 474.0,
@@ -841,29 +1091,55 @@
           "es": "Me pregunto si con gestos también van a poder hablar sobre política, o quizás eso será un tema para la próxima visita."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Hoe lukt het Tom en de opa uiteindelijk om elkaar te begrijpen?",
-        "choices": [
-          "De opa spreekt ineens Engels",
-          "Micaela vertaalt alles voor hen",
-          "Ze schrijven alles op",
-          "Met gebaren, een beetje Engels en Spaans"
-        ],
-        "answerIndex": 3,
-        "explanationNl": "Micaela vertelt: \"Tom responde en una mezcla de gestos, un poco de inglés y español.\" Zo begrijpen ze elkaar prima.",
-        "evidence": {
-          "es": "Tom responde en una mezcla de gestos, un poco de inglés y español.",
-          "nl": "Tom antwoordt met een mengeling van gebaren, een beetje Engels en Spaans.",
-          "startSec": 483.75,
-          "endSec": 492.31
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Hoe lukt het Tom en de opa uiteindelijk om elkaar te begrijpen?",
+          "choices": [
+            "De opa spreekt ineens Engels",
+            "Micaela vertaalt alles voor hen",
+            "Ze schrijven alles op",
+            "Met gebaren, een beetje Engels en Spaans"
+          ],
+          "answerIndex": 3,
+          "explanationNl": "Micaela vertelt: \"Tom responde en una mezcla de gestos, un poco de inglés y español.\" Zo begrijpen ze elkaar prima.",
+          "evidence": {
+            "es": "Tom responde en una mezcla de gestos, un poco de inglés y español.",
+            "nl": "Tom antwoordt met een mengeling van gebaren, een beetje Engels en Spaans.",
+            "startSec": 483.75,
+            "endSec": 492.31
+          }
+        },
+        {
+          "type": "gap",
+          "promptNl": "Vul aan wat Micaela zei:",
+          "textEs": "Es increíble, pero estos dos se entienden ___.",
+          "choices": [
+            "mal",
+            "perfectamente",
+            "poco",
+            "despacio"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Micaela is verbaasd: \"Es increíble, pero estos dos se entienden perfectamente.\" Ze begrijpen elkaar dus perfect.",
+          "evidence": {
+            "es": "Es increíble, pero estos dos se entienden perfectamente.",
+            "nl": "Het is ongelooflijk, maar die twee begrijpen elkaar perfect.",
+            "startSec": 492.55,
+            "endSec": 500.49
+          }
         }
-      }
+      ]
     },
     {
       "id": "s12",
       "startSec": 527.0,
       "endSec": 547.0,
+      "echo": {
+        "es": "con un poco de español y muchas ganas.",
+        "startSec": 529.87,
+        "endSec": 534.29
+      },
       "sentences": [
         {
           "startSec": 527.0,
@@ -871,24 +1147,44 @@
           "es": "Como pueden ver, con un poco de español y muchas ganas, Tom es capaz de comunicar muchas cosas, pero seguramente, hablar de política con el abuelo de Micaela es un tema para la próxima visita."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat concludeert Rodrigo aan het einde?",
-        "choices": [
-          "Tom moet snel beter Spaans leren",
-          "Met een beetje Spaans en veel enthousiasme kan Tom veel duidelijk maken",
-          "De reis was een mislukking",
-          "Tom en de opa hebben ruzie gekregen"
-        ],
-        "answerIndex": 1,
-        "explanationNl": "Rodrigo zegt: \"con un poco de español y muchas ganas, Tom es capaz de comunicar muchas cosas.\"",
-        "evidence": {
-          "es": "Como pueden ver, con un poco de español y muchas ganas, Tom es capaz de comunicar muchas cosas.",
-          "nl": "Zoals jullie kunnen zien, kan Tom met een beetje Spaans en veel enthousiasme heel veel dingen duidelijk maken.",
-          "startSec": 527.63,
-          "endSec": 538.77
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat concludeert Rodrigo aan het einde?",
+          "choices": [
+            "Tom moet snel beter Spaans leren",
+            "Met een beetje Spaans en veel enthousiasme kan Tom veel duidelijk maken",
+            "De reis was een mislukking",
+            "Tom en de opa hebben ruzie gekregen"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Rodrigo zegt: \"con un poco de español y muchas ganas, Tom es capaz de comunicar muchas cosas.\"",
+          "evidence": {
+            "es": "Como pueden ver, con un poco de español y muchas ganas, Tom es capaz de comunicar muchas cosas.",
+            "nl": "Zoals jullie kunnen zien, kan Tom met een beetje Spaans en veel enthousiasme heel veel dingen duidelijk maken.",
+            "startSec": 527.63,
+            "endSec": 538.77
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Welk gespreksonderwerp is volgens Rodrigo iets voor een volgend bezoek?",
+          "choices": [
+            "Politiek praten met Micaela's opa",
+            "Voetbal kijken met de neven",
+            "Mate leren zetten",
+            "Engels leren aan de familie"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Rodrigo zegt: \"hablar de política con el abuelo de Micaela es un tema para la próxima visita.\"",
+          "evidence": {
+            "es": "hablar de política con el abuelo de Micaela es un tema para la próxima visita",
+            "nl": "over politiek praten met Micaela's opa is een onderwerp voor het volgende bezoek",
+            "startSec": 539.99,
+            "endSec": 548.05
+          }
         }
-      }
+      ]
     }
   ]
 }

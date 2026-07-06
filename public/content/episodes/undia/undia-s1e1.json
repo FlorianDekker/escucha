@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "undia-s1e1",
   "podcastId": "undia",
   "title": "Surfen in Puerto Escondido",
@@ -350,24 +350,49 @@
           "es": "¿Hace poco que aprendes español? Entonces, este pódcast es perfecto para ti. En cada episodio te llevamos a un día en la vida de un hispanohablante. Son historias reales contadas por personas reales y en español, ¡claro!"
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat voor verhalen belooft deze podcast?",
-        "choices": [
-          "Echte verhalen van echte mensen, in het Spaans",
-          "Sprookjes voor kinderen",
-          "Nieuwsberichten uit Spanje",
-          "Interviews met beroemdheden"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "Rodrigo zegt: \"Son historias reales contadas por personas reales y en español.\" (Het zijn echte verhalen, verteld door echte mensen, in het Spaans.)",
-        "evidence": {
-          "es": "Son historias reales contadas por personas reales y en español, ¡claro!",
-          "nl": "Het zijn echte verhalen, verteld door echte mensen, en in het Spaans natuurlijk!",
-          "startSec": 42.03,
-          "endSec": 49.13
+      "echo": {
+        "es": "Este pódcast es perfecto para ti.",
+        "startSec": 31.91,
+        "endSec": 35.21
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat voor verhalen belooft deze podcast?",
+          "choices": [
+            "Echte verhalen van echte mensen, in het Spaans",
+            "Sprookjes voor kinderen",
+            "Nieuwsberichten uit Spanje",
+            "Interviews met beroemdheden"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Rodrigo zegt: \"Son historias reales contadas por personas reales y en español.\" (Het zijn echte verhalen, verteld door echte mensen, in het Spaans.)",
+          "evidence": {
+            "es": "Son historias reales contadas por personas reales y en español, ¡claro!",
+            "nl": "Het zijn echte verhalen, verteld door echte mensen, en in het Spaans natuurlijk!",
+            "startSec": 42.03,
+            "endSec": 49.13
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Voor wie is deze podcast volgens Rodrigo perfect?",
+          "choices": [
+            "Voor gevorderde sprekers van het Spaans",
+            "Voor mensen die Portugees leren",
+            "Voor wie net begonnen is met Spaans leren",
+            "Voor moedertaalsprekers van het Spaans"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Rodrigo zegt: \"¿Hace poco que aprendes español? Entonces, este pódcast es perfecto para ti.\" (Leer je nog niet lang Spaans? Dan is deze podcast perfect voor jou.)",
+          "evidence": {
+            "es": "¿Hace poco que aprendes español? Entonces, este pódcast es perfecto para ti.",
+            "nl": "Leer je nog niet lang Spaans? Dan is deze podcast perfect voor jou.",
+            "startSec": 27.65,
+            "endSec": 35.21
+          }
         }
-      }
+      ]
     },
     {
       "id": "s02",
@@ -390,24 +415,50 @@
           "es": "¡Escuchamos ahora la aventura de Andrea!"
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat was Andrea's plan voor vandaag?",
-        "choices": [
-          "Een rustige, ontspannen dag op het strand",
-          "Een surfwedstrijd winnen",
-          "Een lange wandeling in de bergen",
-          "De hele dag thuisblijven"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "\"Andrea planea pasar un día tranquilo y relajado en la playa\": ze is een rustige stranddag van plan, maar het loopt anders.",
-        "evidence": {
-          "es": "Andrea planea pasar un día tranquilo y relajado en la playa, pero su día da un giro inesperado.",
-          "nl": "Andrea is van plan een rustige en ontspannen dag op het strand door te brengen, maar haar dag neemt een onverwachte wending.",
-          "startSec": 49.81,
-          "endSec": 59.83
+      "echo": {
+        "es": "expresar si algo te gusta o si te encanta",
+        "startSec": 73.79,
+        "endSec": 78.69
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat was Andrea's plan voor vandaag?",
+          "choices": [
+            "Een rustige, ontspannen dag op het strand",
+            "Een surfwedstrijd winnen",
+            "Een lange wandeling in de bergen",
+            "De hele dag thuisblijven"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"Andrea planea pasar un día tranquilo y relajado en la playa\": ze is een rustige stranddag van plan, maar het loopt anders.",
+          "evidence": {
+            "es": "Andrea planea pasar un día tranquilo y relajado en la playa, pero su día da un giro inesperado.",
+            "nl": "Andrea is van plan een rustige en ontspannen dag op het strand door te brengen, maar haar dag neemt een onverwachte wending.",
+            "startSec": 49.81,
+            "endSec": 59.83
+          }
+        },
+        {
+          "type": "vocabInContext",
+          "vocabId": "el-miedo",
+          "promptNl": "Je hoorde \"Andrea supera sus miedos\". Wat betekent \"miedos\"?",
+          "choices": [
+            "dromen",
+            "angsten",
+            "vakanties",
+            "vrienden"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"Los miedos\" zijn de angsten. De rustige dag wordt een avontuur waarin Andrea haar angsten overwint: \"una aventura en la que Andrea supera sus miedos\".",
+          "evidence": {
+            "es": "Un día tranquilo se convierte en una aventura en la que Andrea supera sus miedos.",
+            "nl": "Een rustige dag verandert in een avontuur waarin Andrea haar angsten overwint.",
+            "startSec": 60.13,
+            "endSec": 66.89
+          }
         }
-      }
+      ]
     },
     {
       "id": "s03",
@@ -425,25 +476,50 @@
           "es": "Puerto Escondido no es muy famoso para los turistas, como Cancún o Cabo, ¡pero es famoso para todos los amantes del surf!"
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "las-vacaciones",
-        "promptNl": "Je hoorde \"estoy de vacaciones\". Wat betekent dat?",
-        "choices": [
-          "Ik ben op vakantie",
-          "Ik ben aan het werk",
-          "Ik ben verdwaald",
-          "Ik ben thuis"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "\"Estar de vacaciones\" = op vakantie zijn. Andrea is op vakantie in Puerto Escondido, haar favoriete stad.",
-        "evidence": {
-          "es": "Ahora estoy de vacaciones en la costa pacífica de México, en Puerto Escondido, mi ciudad favorita.",
-          "nl": "Ik ben nu op vakantie aan de Pacifische kust van Mexico, in Puerto Escondido, mijn favoriete stad.",
-          "startSec": 100.25,
-          "endSec": 108.87
+      "echo": {
+        "es": "Soy de Panamá pero vivo en México.",
+        "startSec": 96.81,
+        "endSec": 100.03
+      },
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "las-vacaciones",
+          "promptNl": "Je hoorde \"estoy de vacaciones\". Wat betekent dat?",
+          "choices": [
+            "Ik ben op vakantie",
+            "Ik ben aan het werk",
+            "Ik ben verdwaald",
+            "Ik ben thuis"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"Estar de vacaciones\" = op vakantie zijn. Andrea is op vakantie in Puerto Escondido, haar favoriete stad.",
+          "evidence": {
+            "es": "Ahora estoy de vacaciones en la costa pacífica de México, en Puerto Escondido, mi ciudad favorita.",
+            "nl": "Ik ben nu op vakantie aan de Pacifische kust van Mexico, in Puerto Escondido, mijn favoriete stad.",
+            "startSec": 100.25,
+            "endSec": 108.87
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Waarvoor is Puerto Escondido beroemd?",
+          "choices": [
+            "Voor zijn musea",
+            "Als grote toeristenstad zoals Cancún",
+            "Voor het nachtleven",
+            "Voor alle surfliefhebbers"
+          ],
+          "answerIndex": 3,
+          "explanationNl": "\"Es famoso para todos los amantes del surf\": Puerto Escondido is beroemd bij alle surfliefhebbers, niet als gewone toeristenstad zoals Cancún of Cabo.",
+          "evidence": {
+            "es": "Puerto Escondido no es muy famoso para los turistas, como Cancún o Cabo, ¡pero es famoso para todos los amantes del surf!",
+            "nl": "Puerto Escondido is niet erg beroemd bij toeristen, zoals Cancún of Cabo, maar het is beroemd bij alle surfliefhebbers!",
+            "startSec": 109.19,
+            "endSec": 120.67
+          }
         }
-      }
+      ]
     },
     {
       "id": "s04",
@@ -461,24 +537,50 @@
           "es": "Me encanta estar en la playa. Voy a la playa temprano en la mañana todos los días. Me gusta mirar a los surfistas. También me gusta leer en la playa y beber jugos de frutas."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat is Andrea's probleem?",
-        "choices": [
-          "Ze kan niet zwemmen",
-          "Ze heeft geen surfplank",
-          "Ze vindt het strand saai",
-          "Ze is bang voor de zon"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "\"Tengo un problema: ¡no sé nadar!\": ze wil surfen, maar ze kan niet zwemmen.",
-        "evidence": {
-          "es": "Yo quiero practicar surf, pero tengo un problema: ¡no sé nadar!",
-          "nl": "Ik wil surfen, maar ik heb een probleem: ik kan niet zwemmen!",
-          "startSec": 134.43,
-          "endSec": 140.61
+      "echo": {
+        "es": "Me encanta estar en la playa.",
+        "startSec": 142.97,
+        "endSec": 146.41
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat is Andrea's probleem?",
+          "choices": [
+            "Ze kan niet zwemmen",
+            "Ze heeft geen surfplank",
+            "Ze vindt het strand saai",
+            "Ze is bang voor de zon"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"Tengo un problema: ¡no sé nadar!\": ze wil surfen, maar ze kan niet zwemmen.",
+          "evidence": {
+            "es": "Yo quiero practicar surf, pero tengo un problema: ¡no sé nadar!",
+            "nl": "Ik wil surfen, maar ik heb een probleem: ik kan niet zwemmen!",
+            "startSec": 134.43,
+            "endSec": 140.61
+          }
+        },
+        {
+          "type": "gap",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "También me gusta leer en la playa y beber ___ de frutas.",
+          "choices": [
+            "cursos",
+            "tablas",
+            "jugos",
+            "olas"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Andrea drinkt graag \"jugos de frutas\", vruchtensappen, op het strand.",
+          "evidence": {
+            "es": "También me gusta leer en la playa y beber jugos de frutas.",
+            "nl": "Ik lees ook graag op het strand en drink graag vruchtensappen.",
+            "startSec": 154.39,
+            "endSec": 160.13
+          }
         }
-      }
+      ]
     },
     {
       "id": "s05",
@@ -531,24 +633,50 @@
           "es": "¡OK! Buenísimo."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Waarom is niet kunnen zwemmen volgens Tivo geen probleem?",
-        "choices": [
-          "Je zit goed vastgemaakt aan de surfplank",
-          "De zee is daar heel ondiep",
-          "Hij zwemt de hele tijd naast je",
-          "Je blijft gewoon op het strand oefenen"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "Tivo zegt: \"¡Solo necesitas estar bien asegurada a la tabla!\" (Je hoeft alleen maar goed vast te zitten aan de plank.)",
-        "evidence": {
-          "es": "Eso no es un problema: ¡no necesitas saber nadar! ¡Solo necesitas estar bien asegurada a la tabla!",
-          "nl": "Dat is geen probleem: je hoeft niet te kunnen zwemmen! Je hoeft alleen maar goed vast te zitten aan de plank!",
-          "startSec": 195.0,
-          "endSec": 209.66
+      "echo": {
+        "es": "Solo necesitas estar bien asegurada a la tabla",
+        "startSec": 203.06,
+        "endSec": 209.66
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Waarom is niet kunnen zwemmen volgens Tivo geen probleem?",
+          "choices": [
+            "Je zit goed vastgemaakt aan de surfplank",
+            "De zee is daar heel ondiep",
+            "Hij zwemt de hele tijd naast je",
+            "Je blijft gewoon op het strand oefenen"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Tivo zegt: \"¡Solo necesitas estar bien asegurada a la tabla!\" (Je hoeft alleen maar goed vast te zitten aan de plank.)",
+          "evidence": {
+            "es": "Eso no es un problema: ¡no necesitas saber nadar! ¡Solo necesitas estar bien asegurada a la tabla!",
+            "nl": "Dat is geen probleem: je hoeft niet te kunnen zwemmen! Je hoeft alleen maar goed vast te zitten aan de plank!",
+            "startSec": 195.0,
+            "endSec": 209.66
+          }
+        },
+        {
+          "type": "vocabInContext",
+          "vocabId": "aprender",
+          "promptNl": "Je hoorde \"Si quieres aprender, yo te puedo ayudar\". Wat betekent \"aprender\"?",
+          "choices": [
+            "betalen",
+            "zwemmen",
+            "helpen",
+            "leren"
+          ],
+          "answerIndex": 3,
+          "explanationNl": "\"Aprender\" betekent leren. Tivo zegt: \"Si quieres aprender, yo te puedo ayudar\" (Als je wilt leren, kan ik je helpen).",
+          "evidence": {
+            "es": "Sí, en serio. Si quieres aprender, yo te puedo ayudar.",
+            "nl": "Ja, echt. Als je wilt leren, kan ik je helpen.",
+            "startSec": 210.32,
+            "endSec": 217.36
+          }
         }
-      }
+      ]
     },
     {
       "id": "s06",
@@ -571,26 +699,51 @@
           "es": "Primero Tivo y yo practicamos fuera del agua. Él me explica muchas cosas y responde a todas mis preguntas. Ahora no estoy nerviosa y estoy lista para tomar olas."
         }
       ],
-      "question": {
-        "type": "gap",
-        "vocabId": "el-chaleco-salvavidas",
-        "promptNl": "Vul aan wat je hoorde:",
-        "textEs": "Para mi primera lección tengo un chaleco ___.",
-        "choices": [
-          "salvavidas",
-          "favorito",
-          "pequeño",
-          "nuevo"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "\"Un chaleco salvavidas\" = een reddingsvest (letterlijk: een vest dat levens redt).",
-        "evidence": {
-          "es": "Para mi primera lección tengo un chaleco salvavidas. Eso está bien: me gusta la seguridad.",
-          "nl": "Voor mijn eerste les heb ik een reddingsvest. Dat is fijn: ik hou van veiligheid.",
-          "startSec": 228.47,
-          "endSec": 237.81
+      "echo": {
+        "es": "Primero Tivo y yo practicamos fuera del agua.",
+        "startSec": 238.77,
+        "endSec": 243.91
+      },
+      "questions": [
+        {
+          "type": "gap",
+          "vocabId": "el-chaleco-salvavidas",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "Para mi primera lección tengo un chaleco ___.",
+          "choices": [
+            "salvavidas",
+            "favorito",
+            "pequeño",
+            "nuevo"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"Un chaleco salvavidas\" = een reddingsvest (letterlijk: een vest dat levens redt).",
+          "evidence": {
+            "es": "Para mi primera lección tengo un chaleco salvavidas. Eso está bien: me gusta la seguridad.",
+            "nl": "Voor mijn eerste les heb ik een reddingsvest. Dat is fijn: ik hou van veiligheid.",
+            "startSec": 228.47,
+            "endSec": 237.81
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat doen Tivo en Andrea eerst?",
+          "choices": [
+            "Ze gaan meteen de grote golven op",
+            "Ze oefenen eerst buiten het water",
+            "Ze kijken eerst een video",
+            "Ze zwemmen eerst een stuk"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"Primero Tivo y yo practicamos fuera del agua\": ze oefenen eerst buiten het water, en Tivo legt veel dingen uit en beantwoordt haar vragen.",
+          "evidence": {
+            "es": "Primero Tivo y yo practicamos fuera del agua. Él me explica muchas cosas y responde a todas mis preguntas.",
+            "nl": "Eerst oefenen Tivo en ik buiten het water. Hij legt me veel dingen uit en beantwoordt al mijn vragen.",
+            "startSec": 238.77,
+            "endSec": 259.03
+          }
         }
-      }
+      ]
     },
     {
       "id": "s07",
@@ -623,24 +776,50 @@
           "es": "Dos horas después Tivo y yo terminamos la lección."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Lukt het Andrea om een golf te pakken?",
-        "choices": [
-          "Ja, maar pas na een paar pogingen",
-          "Ja, meteen bij de eerste golf",
-          "Nee, het lukt haar niet",
-          "Nee, ze durft het water niet in"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "Ze mist de eerste golf, probeert het steeds opnieuw (\"otra y otra\") en pakt hem dan eindelijk: \"finalmente, tomo la ola\".",
-        "evidence": {
-          "es": "Intento tomar otra ola y después otra y otra, y, finalmente, tomo la ola. ¡Es genial!",
-          "nl": "Ik probeer nog een golf te pakken en daarna nog een en nog een, en eindelijk pak ik de golf. Het is geweldig!",
-          "startSec": 275.33,
-          "endSec": 285.75
+      "echo": {
+        "es": "Pero no puedo tomar la primera ola.",
+        "startSec": 271.35,
+        "endSec": 275.41
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Lukt het Andrea om een golf te pakken?",
+          "choices": [
+            "Ja, maar pas na een paar pogingen",
+            "Ja, meteen bij de eerste golf",
+            "Nee, het lukt haar niet",
+            "Nee, ze durft het water niet in"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Ze mist de eerste golf, probeert het steeds opnieuw (\"otra y otra\") en pakt hem dan eindelijk: \"finalmente, tomo la ola\".",
+          "evidence": {
+            "es": "Intento tomar otra ola y después otra y otra, y, finalmente, tomo la ola. ¡Es genial!",
+            "nl": "Ik probeer nog een golf te pakken en daarna nog een en nog een, en eindelijk pak ik de golf. Het is geweldig!",
+            "startSec": 275.33,
+            "endSec": 285.75
+          }
+        },
+        {
+          "type": "vocabInContext",
+          "vocabId": "la-ola",
+          "promptNl": "Je hoorde \"esperamos una ola\". Wat betekent \"ola\"?",
+          "choices": [
+            "plank",
+            "golf",
+            "les",
+            "strand"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"La ola\" is de golf. Tivo en Andrea liggen op de planken en wachten op een golf: \"esperamos una ola\".",
+          "evidence": {
+            "es": "Tivo y yo estamos en las tablas y esperamos una ola.",
+            "nl": "Tivo en ik liggen op de planken en wachten op een golf.",
+            "startSec": 257.91,
+            "endSec": 264.03
+          }
         }
-      }
+      ]
     },
     {
       "id": "s08",
@@ -668,25 +847,50 @@
           "es": "Normalmente no me gusta madrugar… ¡pero puedo madrugar si voy a practicar surf!"
         }
       ],
-      "question": {
-        "type": "vocabInContext",
-        "vocabId": "madrugar",
-        "promptNl": "Je hoorde \"no me gusta madrugar\". Wat betekent \"madrugar\"?",
-        "choices": [
-          "Vroeg opstaan",
-          "Laat naar bed gaan",
-          "Ontbijten",
-          "Hardlopen"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "\"Madrugar\" = heel vroeg opstaan. Andrea houdt er niet van, maar voor het surfen doet ze het graag.",
-        "evidence": {
-          "es": "Normalmente no me gusta madrugar… ¡pero puedo madrugar si voy a practicar surf!",
-          "nl": "Normaal hou ik niet van vroeg opstaan, maar ik kan vroeg opstaan als ik ga surfen!",
-          "startSec": 316.51,
-          "endSec": 324.19
+      "echo": {
+        "es": "las olas van a estar perfectas",
+        "startSec": 309.19,
+        "endSec": 313.99
+      },
+      "questions": [
+        {
+          "type": "vocabInContext",
+          "vocabId": "madrugar",
+          "promptNl": "Je hoorde \"no me gusta madrugar\". Wat betekent \"madrugar\"?",
+          "choices": [
+            "Vroeg opstaan",
+            "Laat naar bed gaan",
+            "Ontbijten",
+            "Hardlopen"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"Madrugar\" = heel vroeg opstaan. Andrea houdt er niet van, maar voor het surfen doet ze het graag.",
+          "evidence": {
+            "es": "Normalmente no me gusta madrugar… ¡pero puedo madrugar si voy a practicar surf!",
+            "nl": "Normaal hou ik niet van vroeg opstaan, maar ik kan vroeg opstaan als ik ga surfen!",
+            "startSec": 316.51,
+            "endSec": 324.19
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Hoe laat moet Andrea morgen komen voor haar tweede les?",
+          "choices": [
+            "Om tien uur 's ochtends",
+            "Rond het middaguur",
+            "Om zes uur 's ochtends",
+            "Wanneer ze maar wil"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Tivo zegt: \"mañana a las 6 de la mañana las olas van a estar perfectas\" (morgen om zes uur 's ochtends zijn de golven perfect).",
+          "evidence": {
+            "es": "Sí, pero tiene que ser muy temprano, mañana a las 6 de la mañana las olas van a estar perfectas para tu segunda lección.",
+            "nl": "Ja, maar het moet heel vroeg zijn: morgen om zes uur 's ochtends zijn de golven perfect voor je tweede les.",
+            "startSec": 301.21,
+            "endSec": 316.07
+          }
         }
-      }
+      ]
     },
     {
       "id": "s09",
@@ -699,24 +903,49 @@
           "es": "¿Tú también estás impresionado con el valor de Andrea? No es fácil atreverse a hacer surf con olas tan grandes, ¡y menos si no sabes nadar! A veces necesitamos un buen chaleco salvavidas para superar nuestros miedos."
         }
       ],
-      "question": {
-        "type": "mc",
-        "promptNl": "Wat is de boodschap van Rodrigo aan het einde?",
-        "choices": [
-          "Soms heb je een 'reddingsvest' nodig om je angsten te overwinnen",
-          "Surfen is te gevaarlijk als je niet kunt zwemmen",
-          "Iedereen moet surfles nemen in Mexico",
-          "Vroeg opstaan is goed voor je gezondheid"
-        ],
-        "answerIndex": 0,
-        "explanationNl": "\"A veces necesitamos un buen chaleco salvavidas para superar nuestros miedos\": soms heb je iets (of iemand) nodig dat je veiligheid geeft om je angst te overwinnen.",
-        "evidence": {
-          "es": "A veces necesitamos un buen chaleco salvavidas para superar nuestros miedos.",
-          "nl": "Soms hebben we een goed reddingsvest nodig om onze angsten te overwinnen.",
-          "startSec": 340.83,
-          "endSec": 349.21
+      "echo": {
+        "es": "A veces necesitamos un buen chaleco salvavidas",
+        "startSec": 340.83,
+        "endSec": 345.69
+      },
+      "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat is de boodschap van Rodrigo aan het einde?",
+          "choices": [
+            "Soms heb je een 'reddingsvest' nodig om je angsten te overwinnen",
+            "Surfen is te gevaarlijk als je niet kunt zwemmen",
+            "Iedereen moet surfles nemen in Mexico",
+            "Vroeg opstaan is goed voor je gezondheid"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"A veces necesitamos un buen chaleco salvavidas para superar nuestros miedos\": soms heb je iets (of iemand) nodig dat je veiligheid geeft om je angst te overwinnen.",
+          "evidence": {
+            "es": "A veces necesitamos un buen chaleco salvavidas para superar nuestros miedos.",
+            "nl": "Soms hebben we een goed reddingsvest nodig om onze angsten te overwinnen.",
+            "startSec": 340.83,
+            "endSec": 349.21
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat zegt Rodrigo over surfen met zulke grote golven?",
+          "choices": [
+            "Dat het heel makkelijk is voor iedereen",
+            "Dat het niet makkelijk is om te durven, zeker niet als je niet kunt zwemmen",
+            "Dat het verboden is voor beginners",
+            "Dat het alleen leuk is in Hawaï"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "\"No es fácil atreverse a hacer surf con olas tan grandes, ¡y menos si no sabes nadar!\": het is niet makkelijk om te durven surfen met zulke grote golven, laat staan als je niet kunt zwemmen.",
+          "evidence": {
+            "es": "No es fácil atreverse a hacer surf con olas tan grandes, ¡y menos si no sabes nadar!",
+            "nl": "Het is niet makkelijk om te durven surfen met zulke grote golven, laat staan als je niet kunt zwemmen!",
+            "startSec": 329.73,
+            "endSec": 340.71
+          }
         }
-      }
+      ]
     }
   ]
 }
