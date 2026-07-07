@@ -1,5 +1,18 @@
-/* Design-tokens uit Claude Design handoff (Podcast Leerapp.dc.html) */
-:root, [data-theme='aubergine'] {
+/* Design-tokens uit Claude Design handoff 4 (Podcast Leerapp - Prototype.dc.html) */
+/* Standaardthema "Vamos!" (diep navy). Overige thema's blijven kiesbaar. */
+:root, [data-theme='vamos'] {
+  --brand: #1B2A63;
+  --brand-deep: #132049;
+  --brand-soft: #AEB7DC;
+  --brand-mute: #7E88B4;
+  --accent: #F1592A;
+  --accent-deep: #C6431D;
+  --gold: #F6A81C;
+  --page: #EEF3E4;
+  --chip: #EDF1E2;
+  --canvas: #CFE4D6;
+}
+[data-theme='aubergine'] {
   --brand: #6A3E8E;
   --brand-deep: #522f6e;
   --brand-soft: #D9C4E8;
@@ -33,7 +46,7 @@
   --line-soft: #ECEAF6;
   --good: #3FB27F;
   --good-deep: #2f8f65;
-  --gold: #F5B02E;
+  --gold: #F6A81C;
   --locked: #D6D5EC;
   --locked-deep: #bcbbd8;
   --font-head: 'Baloo 2', sans-serif;

@@ -48,15 +48,18 @@ const TABS = [
 ]
 
 /*
- * variant 'dark'  = op brand-achtergrond (Thuis): actief wit, inactief brand-mute.
- * variant 'light' = op lichte achtergrond: actief brand, inactief ink-faint.
+ * Design handoff 4: de navigatiebalk is altijd de navy balk (var(--brand)),
+ * actief in var(--gold) en inactief in var(--brand-mute). De 'variant'-prop
+ * blijft bestaan voor compatibiliteit (o.a. LearningPath geeft variant="light"
+ * mee), maar beide varianten renderen nu identiek.
  */
 export default function TabBar({ variant = 'light' }) {
-  const activeColor = variant === 'dark' ? '#fff' : 'var(--brand)'
-  const inactiveColor = variant === 'dark' ? 'var(--brand-mute)' : 'var(--ink-faint)'
+  void variant
+  const activeColor = 'var(--gold)'
+  const inactiveColor = 'var(--brand-mute)'
 
   return (
-    <nav className={`tabbar tabbar--${variant}`}>
+    <nav className="tabbar tabbar--nav">
       {TABS.map((t) => (
         <NavLink
           key={t.to}

@@ -139,25 +139,29 @@ export default function Words() {
     <div className="screen screen--page">
       <div className="screen__scroll">
         <div className="brand-header">
-          <p style={{ margin: 0, color: 'var(--brand-soft)', fontWeight: 800, fontSize: 11, letterSpacing: '.08em' }}>
-            {noteCount} {noteCount === 1 ? 'WOORD' : 'WOORDEN'}
-          </p>
-          <p style={{ margin: '4px 0 0', fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 24 }}>
-            Mijn woorden
-          </p>
+          <p style={{ margin: 0, fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 22 }}>Woorden</p>
+          <div style={{ marginTop: 12, display: 'flex', gap: 10 }}>
+            <div style={{ flex: 1, background: 'rgba(255,255,255,.12)', borderRadius: 16, padding: '12px 14px' }}>
+              <p style={{ margin: 0, fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 20 }}>{due.length}</p>
+              <p style={{ margin: '1px 0 0', color: 'var(--brand-soft)', fontWeight: 700, fontSize: 11 }}>te herhalen</p>
+            </div>
+            <div style={{ flex: 1, background: 'rgba(255,255,255,.12)', borderRadius: 16, padding: '12px 14px' }}>
+              <p style={{ margin: 0, fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 20 }}>{noteCount}</p>
+              <p style={{ margin: '1px 0 0', color: 'var(--brand-soft)', fontWeight: 700, fontSize: 11 }}>geleerd</p>
+            </div>
+          </div>
         </div>
 
         <div style={{ padding: '18px 20px 24px' }}>
-          {/* Te-herhalen-kaart */}
-          <div className="card" style={{ padding: 18 }}>
-            <p style={{ margin: 0, color: 'var(--ink-mute)', fontWeight: 700, fontSize: 12 }}>Te herhalen</p>
-            <p style={{ margin: '6px 0 0', fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 22, color: 'var(--ink)' }}>
-              {due.length} {due.length === 1 ? 'kaart' : 'kaarten'}
-            </p>
-            <button className="btn-accent" style={{ marginTop: 14 }} disabled={due.length === 0} onClick={() => { playClick(); startSession() }}>
-              Herhaal nu
-            </button>
-          </div>
+          {/* Herhaalsessie starten */}
+          <button
+            className="btn-accent"
+            style={{ marginBottom: 16 }}
+            disabled={due.length === 0}
+            onClick={() => { playClick(); startSession() }}
+          >
+            Start herhaalsessie ▸
+          </button>
 
           {/* Woordenlijst */}
           {allCards.length === 0 ? (
@@ -172,8 +176,8 @@ export default function Words() {
             </div>
           ) : (
             <div style={{ marginTop: 22 }}>
-              <p style={{ margin: '0 4px 10px', fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 15, color: 'var(--ink)' }}>
-                Alle kaarten
+              <p style={{ margin: '0 4px 10px', fontWeight: 800, fontSize: 11, letterSpacing: '.05em', color: 'var(--ink-mute)' }}>
+                JOUW STAPEL
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {allCards.map(({ card, note }) => {
@@ -188,12 +192,11 @@ export default function Words() {
                         alignItems: 'center',
                         justifyContent: 'space-between',
                         padding: '12px 15px',
-                        boxShadow: 'none',
-                        border: '1px solid var(--line)',
+                        boxShadow: '0 8px 20px -14px rgba(20,40,90,.4)',
                       }}
                     >
                       <div style={{ minWidth: 0 }}>
-                        <p style={{ margin: 0, fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 16, color: 'var(--ink)' }}>
+                        <p style={{ margin: 0, fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16, color: 'var(--brand)' }}>
                           {note.es}
                         </p>
                         <p style={{ margin: '2px 0 0', color: 'var(--ink-soft)', fontWeight: 600, fontSize: 13 }}>

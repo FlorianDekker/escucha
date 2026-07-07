@@ -15,7 +15,7 @@ const XP_PER_TRY = 5
 const MAX_STRUGGLES = 50
 
 const initialState = {
-  settings: { playbackRate: 1, theme: 'aubergine', dailyGoal: 3, sounds: true, unlockAll: false },
+  settings: { playbackRate: 1, theme: 'vamos', dailyGoal: 3, sounds: true, unlockAll: false },
   streak: { current: 0, best: 0, lastActiveDate: null },
   xp: { total: 0, byDate: {} },
   episodes: {}, // epId -> { status, segmentIndexByStep, answers: {segId: {correct, attempts}}, scorePct, completedSteps: [] }
@@ -34,6 +34,10 @@ function migrate(persisted, version) {
   const next = { ...initialState, ...(persisted || {}) }
   delete next.srs
   if (!next.engine || !next.engine.notes) next.engine = freshEngine()
+  // Restyle handoff 4: wie nog op het oude default-thema stond gaat mee naar Vamos.
+  if (!next.settings.theme || next.settings.theme === 'aubergine') {
+    next.settings = { ...next.settings, theme: 'vamos' }
+  }
   return next
 }
 

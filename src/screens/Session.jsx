@@ -20,7 +20,7 @@ const RATES = [0.75, 1, 1.25]
 function EvidenceCard({ evidence, onPlay }) {
   if (!evidence || evidence.startSec == null) return null
   return (
-    <div className="answer-card">
+    <div className="answer-card heard">
       <p className="lbl">HIER HOORDE JE HET</p>
       <div className="evidence-row">
         <button type="button" className="evidence-play" onClick={onPlay} aria-label="Speel het fragment">
@@ -314,9 +314,26 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
           ) : (
             <>
               {/* Woorddekking vóór en ná de pre-teach (spec §4.1). */}
-              <p className="intro-desc" style={{ marginTop: 10, fontWeight: 700 }}>
-                Woorddekking: {covBefore}% → {covAfter}% na deze les
-              </p>
+              <div className="coverage">
+                <div className="coverage-top">
+                  <span className="coverage-label">WOORDDEKKING</span>
+                  <span className="coverage-pct">
+                    {covBefore}% <span className="arrow">→</span>{' '}
+                    <span className="after">{covAfter}%</span>
+                  </span>
+                </div>
+                <div className="coverage-bar">
+                  <div className="coverage-before" style={{ width: covBefore + '%' }} />
+                  <div
+                    className="coverage-delta"
+                    style={{ left: covBefore + '%', width: Math.max(0, covAfter - covBefore) + '%' }}
+                  />
+                </div>
+                <p className="coverage-note">
+                  De app kiest max. 15 woorden op jouw niveau · +{Math.max(0, covAfter - covBefore)}% na deze
+                  les
+                </p>
+              </div>
               <p className="intro-h">Woorden in deze aflevering</p>
               <div className="word-list">
                 {preteach.items.map((it) => (
@@ -402,6 +419,19 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
   const fill = (initialCount ? (resolved.size / initialCount) * 100 : 0).toFixed(1)
   // Unieke sleutel per presentatie zodat de oefening bij re-queue opnieuw mount.
   const presentationKey = entry.cardId + ':' + pos
+
+  // Meerkeuze/Typen-toggle: staat onder de luisterknop (herkenning). Wordt als
+  // node aan VocabExercise doorgegeven zodat de state hier blijft.
+  const modeToggle = isProduction ? null : (
+    <div className="mode-toggle">
+      <button className={mode === 'mc' ? 'on' : ''} disabled={itemChecked} onClick={() => setMode('mc')}>
+        Meerkeuze
+      </button>
+      <button className={mode === 'type' ? 'on' : ''} disabled={itemChecked} onClick={() => setMode('type')}>
+        Typen
+      </button>
+    </div>
+  )
   return (
     <div className="session" key={'ex-' + pos}>
       <div className="s-header">
@@ -418,25 +448,6 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
       </div>
 
       <div className="s-body">
-        {!isProduction && (
-          <div className="mode-toggle">
-            <button
-              className={mode === 'mc' ? 'on' : ''}
-              disabled={itemChecked}
-              onClick={() => setMode('mc')}
-            >
-              Meerkeuze
-            </button>
-            <button
-              className={mode === 'type' ? 'on' : ''}
-              disabled={itemChecked}
-              onClick={() => setMode('type')}
-            >
-              Typen
-            </button>
-          </div>
-        )}
-
         <VocabExercise
           key={presentationKey}
           direction={card.direction}
@@ -447,6 +458,7 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
           onGraded={onGraded}
           onContinue={onContinue}
           continueLabel={pos + 1 >= queue.length ? 'Afronden ▸' : 'Doorgaan ▸'}
+          modeToggle={modeToggle}
         />
       </div>
     </div>
@@ -848,10 +860,12 @@ function ListenFlow({ episode, episodeId, step, navigate, reading = false }) {
           </button>
         </div>
         <div className="s-body">
-          <p className="chunk-kicker">
-            FRASE {chunkIdx + 1}/{stepChunks.length}
-          </p>
-          <p className="chunk-lead">Luister naar de frase en kies de betekenis.</p>
+          <div className="chunk-head">
+            <span className="chunk-pill">
+              CHUNK {chunkIdx + 1}/{stepChunks.length}
+            </span>
+            <span className="chunk-sub">Handige frases uit dit fragment</span>
+          </div>
           <ChunkDrill
             key={chunkIdx}
             chunk={chunk}
@@ -865,7 +879,50 @@ function ListenFlow({ episode, episodeId, step, navigate, reading = false }) {
     )
   }
 
-  // ---- Luisteren + (optioneel) focus/vraagsheet (scherm 5) ----
+  // ---- Luisterfocus (spec §3 stap 2, harde regel 5): eigen schermvullende fase ----
+  // Toont de setup + vraagstam, géén antwoordopties. De gebruiker tikt zelf op
+  // play; dat start het fragment (binnen de klik) en gaat naar de luisterfase.
+  if (phase === 'focus') {
+    return (
+      <div className="session" key={'focus-' + idx}>
+        <div className="s-header">
+          <button className="s-iconbtn" onClick={() => navigate('/path')} aria-label="Terug">
+            ‹
+          </button>
+          <span className="s-title">
+            Fragment {idx + 1} · {segments.length}
+          </span>
+          <button className="s-iconbtn" onClick={() => navigate('/path')} aria-label="Sluiten">
+            ✕
+          </button>
+        </div>
+
+        <div className="focus-screen">
+          {seg.contextNl && <p className="focus-context">{seg.contextNl}</p>}
+          <div className="focus-tag">
+            <span className="focus-tag-icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4-4" />
+              </svg>
+            </span>
+            <span className="focus-label">LUISTERFOCUS</span>
+          </div>
+          <p className="focus-q">{seg.focusNl}</p>
+          <p className="focus-none">Nog geen antwoordopties. Luister eerst goed.</p>
+        </div>
+
+        <div className="focus-foot">
+          <button type="button" className="focus-play" onClick={onToggle} aria-label="Speel het fragment">
+            <span className="tri" />
+          </button>
+          <p className="focus-play-label">Tik op play om te luisteren</p>
+        </div>
+      </div>
+    )
+  }
+
+  // ---- Luisteren + vraagsheet (scherm 5) ----
   const prevSentences = []
   for (let i = 0; i < idx; i++) for (const s of segments[i].sentences) prevSentences.push(s)
 
@@ -900,37 +957,24 @@ function ListenFlow({ episode, episodeId, step, navigate, reading = false }) {
       )}
 
       <div className="transcript">
-        {phase === 'focus' ? (
-          /* Luisterfocus (spec §3 stap 2 / harde regel 5): setup + focusvraag,
-             géén antwoordopties. De gebruiker tikt zelf op play. */
-          <div className="focus-panel">
-            {seg.contextNl && <p className="focus-context">{seg.contextNl}</p>}
-            <p className="focus-label">LUISTERFOCUS</p>
-            <p className="focus-q">{seg.focusNl}</p>
-            <p className="focus-hint">Tik op play en luister waar het antwoord zit.</p>
-          </div>
+        {prevSentences.length > 0 && (
+          <TranscriptBubbles sentences={prevSentences} glossary={episode.glossary} episodeId={episodeId} dimmed />
+        )}
+        {reading ? (
+          <TranscriptBubbles
+            sentences={seg.sentences}
+            glossary={episode.glossary}
+            episodeId={episodeId}
+            highlightSec={isPlaying || position > seg.startSec ? position : null}
+          />
         ) : (
-          <>
-            {prevSentences.length > 0 && (
-              <TranscriptBubbles sentences={prevSentences} glossary={episode.glossary} episodeId={episodeId} dimmed />
-            )}
-            {reading ? (
-              <TranscriptBubbles
-                sentences={seg.sentences}
-                glossary={episode.glossary}
-                episodeId={episodeId}
-                highlightSec={isPlaying || position > seg.startSec ? position : null}
-              />
-            ) : (
-              prevSentences.length === 0 && (
-                <p className="transcript-empty">
-                  Tik op play en luister goed.
-                  <br />
-                  De oefening verschijnt zodra het fragment klaar is.
-                </p>
-              )
-            )}
-          </>
+          prevSentences.length === 0 && (
+            <p className="transcript-empty">
+              Tik op play en luister goed.
+              <br />
+              De oefening verschijnt zodra het fragment klaar is.
+            </p>
+          )
         )}
 
         {phase === 'question' && (

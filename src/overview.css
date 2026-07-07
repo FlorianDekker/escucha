@@ -12,6 +12,10 @@
 }
 .screen--brand { background: var(--brand); }
 .screen--page { background: var(--page); }
+/* Thuis: lichte crème-gradient (design handoff 4) */
+.screen--home {
+  background: linear-gradient(180deg, #FBF6EA 0%, #F3EFE0 55%, #E9EBD3 100%);
+}
 
 .screen__scroll {
   flex: 1 1 auto;
@@ -29,8 +33,11 @@
   align-items: center;
   padding: 10px 8px calc(12px + env(safe-area-inset-bottom, 0px));
 }
-.tabbar--dark { background: var(--brand-deep); }
-.tabbar--light { background: #fff; border-top: 1px solid var(--line); }
+/* Nieuwe navy navigatiebalk (design handoff 4): actief goud, inactief brand-mute. */
+.tabbar--nav { background: var(--brand); }
+/* Behouden voor compatibiliteit; renderen nu allemaal als de navy balk. */
+.tabbar--dark,
+.tabbar--light { background: var(--brand); }
 
 .tab {
   display: flex;

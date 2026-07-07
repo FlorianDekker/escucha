@@ -5,6 +5,7 @@ import TabBar from '../components/TabBar.jsx'
 import '../overview.css'
 
 const THEMES = [
+  { key: 'vamos', color: '#1B2A63', label: 'Vamos!' },
   { key: 'aubergine', color: '#6A3E8E', label: 'Aubergine' },
   { key: 'indigo', color: '#4C4FD6', label: 'Indigo' },
   { key: 'groen', color: '#1F9E63', label: 'Groen' },
@@ -16,7 +17,7 @@ const SPEEDS = [0.75, 1, 1.25]
 function Stat({ value, label }) {
   return (
     <div style={{ flex: 1, textAlign: 'center' }}>
-      <p style={{ margin: 0, fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 24, color: 'var(--ink)' }}>
+      <p style={{ margin: 0, fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 24, color: 'var(--brand)' }}>
         {value}
       </p>
       <p style={{ margin: '3px 0 0', color: 'var(--ink-mute)', fontWeight: 700, fontSize: 11.5 }}>{label}</p>

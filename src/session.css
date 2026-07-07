@@ -332,6 +332,65 @@
   font-size: 13px;
   text-align: right;
 }
+/* Woorddekking-blok (design handoff 4): navy-gevuld deel + groen gestreepte delta */
+.coverage {
+  margin-top: 14px;
+  background: var(--chip);
+  border-radius: 16px;
+  padding: 12px 14px;
+}
+.coverage-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.coverage-label {
+  font-weight: 800;
+  font-size: 10.5px;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+}
+.coverage-pct {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--brand);
+}
+.coverage-pct .arrow {
+  color: #b7b6ce;
+}
+.coverage-pct .after {
+  color: var(--good);
+}
+.coverage-bar {
+  position: relative;
+  margin-top: 9px;
+  height: 11px;
+  border-radius: 999px;
+  background: #e1e0ef;
+  overflow: hidden;
+}
+.coverage-before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--brand);
+  border-radius: 999px;
+}
+.coverage-delta {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(135deg, #3fb27f, #3fb27f 5px, #5cc496 5px, #5cc496 10px);
+}
+.coverage-note {
+  margin: 8px 0 0;
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--ink-mute);
+}
+
 .intro-attr {
   margin: 16px 0 0;
   font-size: 10.5px;
@@ -376,6 +435,32 @@
   font-size: 19px;
   color: #fff;
   margin: 16px 2px 0;
+}
+/* Productiekaart: gouden pill + NL-woord groot in een rgba-kaart */
+.prod-pill {
+  align-self: center;
+  margin-top: 6px;
+  background: var(--gold);
+  color: #5a3d05;
+  font-weight: 800;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+.prod-word-card {
+  margin-top: 12px;
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 18px;
+  padding: 20px 16px;
+  text-align: center;
+}
+.prod-word {
+  margin: 0;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 26px;
+  color: #fff;
 }
 .word-card {
   margin-top: 12px;
@@ -422,29 +507,13 @@
   position: relative;
   background: var(--card);
   border: 2.5px solid var(--line-soft);
-  border-radius: 18px;
-  padding: 24px 12px 16px;
+  border-radius: 16px;
+  padding: 15px 10px;
   text-align: center;
   font-family: var(--font-head);
   font-weight: 800;
   font-size: 15px;
   color: var(--ink);
-  min-height: 78px;
-}
-.vopt .num {
-  position: absolute;
-  top: 8px;
-  left: 10px;
-  width: 18px;
-  height: 18px;
-  border-radius: 6px;
-  border: 1.5px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 9px;
-  font-weight: 800;
-  color: var(--ink-mute);
 }
 .vopt.sel {
   border-color: var(--accent);
@@ -561,7 +630,8 @@
   line-height: 1.45;
 }
 
-/* Vraagkant herkenningskaart: ALLEEN audio, geen Spaanse tekst (spec §2/regel 4). */
+/* Vraagkant herkenningskaart: ALLEEN audio, geen Spaanse tekst (spec §2/regel 4).
+   Grote ronde accent-luisterknop (96px) met pulseRing-ring. */
 .audio-q {
   margin-top: 14px;
   width: 100%;
@@ -569,26 +639,109 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.11);
+  background: transparent;
   border: none;
-  border-radius: 22px;
-  padding: 30px 16px;
+  padding: 0;
   cursor: pointer;
 }
 .audio-q-icon {
-  width: 72px;
-  height: 72px;
+  position: relative;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   background: var(--accent, #f15a29);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(241, 90, 41, 0.45);
+  box-shadow: 0 10px 22px rgba(241, 90, 41, 0.45);
+}
+.audio-q-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.35;
+  animation: pulseRing 1.9s ease-out infinite;
 }
 .audio-q-label {
   color: var(--brand-soft);
   font-weight: 800;
-  font-size: 13px;
+  font-size: 12.5px;
+}
+
+/* Reveal-paneel na Controleren (beide kaarttypen): witte kaart met
+   speaker-knopje, Spaans woord groot + NL, voorbeeldzin en klank/schrift-hint. */
+.reveal {
+  margin-top: 16px;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 12px 26px -14px rgba(20, 40, 90, 0.4);
+}
+.reveal-head {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.reveal-spk {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--chip);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border: none;
+  cursor: pointer;
+}
+.reveal-es {
+  margin: 0;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--brand);
+}
+.reveal-nl {
+  margin: 1px 0 0;
+  color: var(--accent);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 14px;
+}
+.reveal-example {
+  margin: 12px 0 0;
+  color: var(--ink-soft);
+  font-weight: 700;
+  font-size: 12.5px;
+  font-style: italic;
+  line-height: 1.4;
+}
+.reveal-example-nl {
+  margin: 3px 0 0;
+  color: var(--ink-mute);
+  font-weight: 700;
+  font-size: 11.5px;
+}
+.reveal-hint {
+  margin-top: 12px;
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  background: #fff4e0;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+.reveal-hint-ico {
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+.reveal-hint p {
+  margin: 0;
+  color: #8a6a1e;
+  font-weight: 700;
+  font-size: 11.5px;
+  line-height: 1.4;
 }
 
 /* ============ SCHERM 5 · LUISTEREN ============ */
@@ -869,55 +1022,114 @@
   gap: 6px;
 }
 
-/* ---- Luisterfocus (scherm 5, fase vóór het luisteren) ---- */
-.focus-panel {
-  text-align: center;
-  padding: 18px 6px 8px;
+/* ---- Luisterfocus: eigen schermvullende fase (spec §3 stap 2) ---- */
+.focus-screen {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 26px;
+  min-height: 0;
 }
 .focus-context {
   color: var(--brand-soft);
   font-weight: 700;
-  font-size: 12.5px;
+  font-size: 13.5px;
   line-height: 1.5;
-  margin: 0 0 18px;
+  margin: 0;
+}
+.focus-tag {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.focus-tag-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
 }
 .focus-label {
   color: var(--gold);
   font-weight: 800;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.1em;
 }
 .focus-q {
   font-family: var(--font-head);
   font-weight: 800;
-  font-size: 21px;
+  font-size: 26px;
   color: #fff;
-  line-height: 1.25;
-  margin: 8px 0 0;
+  line-height: 1.2;
+  margin: 12px 0 0;
 }
-.focus-hint {
-  color: var(--brand-soft);
+.focus-none {
+  color: var(--brand-mute);
   font-weight: 700;
   font-size: 12.5px;
-  margin: 20px 0 0;
+  margin: 16px 0 0;
+}
+.focus-foot {
+  flex: 0 0 auto;
+  padding: 0 26px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.focus-play {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: 0 10px 24px rgba(241, 90, 41, 0.5);
+  cursor: pointer;
+}
+.focus-play .tri {
+  width: 0;
+  height: 0;
+  border-left: 26px solid #fff;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  margin-left: 6px;
+}
+.focus-play-label {
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 14px;
 }
 
 /* ---- Chunk-drill (scherm na de laatste feedback) ---- */
-.chunk-kicker {
-  color: var(--gold);
-  font-weight: 800;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  margin: 6px 0 0;
-  text-align: center;
+.chunk-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
 }
-.chunk-lead {
+.chunk-pill {
+  background: var(--gold);
+  color: #5a3d05;
+  font-weight: 800;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  padding: 4px 11px;
+  border-radius: 999px;
+}
+.chunk-sub {
   color: var(--brand-soft);
-  font-weight: 700;
-  font-size: 13px;
-  text-align: center;
-  margin: 6px 0 0;
+  font-weight: 800;
+  font-size: 11.5px;
 }
 
 /* ---- Zinsbouw-oefening (echo) ---- */
@@ -1184,6 +1396,23 @@
   font-size: 11px;
   letter-spacing: 0.06em;
   margin: 0;
+}
+/* "HIER HOORDE JE HET": witte kaart met navy zin (design handoff 4). */
+.answer-card.heard {
+  background: var(--card);
+  box-shadow: 0 12px 26px -16px rgba(20, 40, 90, 0.4);
+}
+.answer-card.heard .lbl {
+  color: var(--ink-mute);
+}
+.answer-card.heard .evidence-es {
+  color: var(--brand);
+  font-family: var(--font-head);
+  font-size: 14.5px;
+}
+.answer-card.heard .evidence-nl {
+  color: var(--ink-mute);
+  font-style: normal;
 }
 /* Bewijsfragment: de zin waarin het antwoord zat, met NL-vertaling */
 .evidence-row {
