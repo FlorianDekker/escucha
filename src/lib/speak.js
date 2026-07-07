@@ -77,12 +77,14 @@ export function playClip(url, startSec, endSec, fallbackWord) {
 }
 
 /*
- * De vraagkant-audio van een woordkaart: gebruik de podcast-clip als die er is,
- * anders de losse native uitspraak (spec §F).
+ * De vraagkant-audio van een woordkaart: altijd de losse native uitspraak
+ * (SpanishDict, met browser-TTS-vangnet). Expliciete keuze van Florian: een
+ * los, helder uitgesproken woord werkt beter dan de podcast-clip. Uitzondering:
+ * chunks/zinnen hebben geen losse uitspraak en gebruiken wel hun clip.
  */
 export function playCardAudio(note) {
   if (!note) return
-  if (note.clip && note.audioUrl && note.clip.startSec != null) {
+  if (note.kind && note.kind !== 'word' && note.clip && note.audioUrl && note.clip.startSec != null) {
     playClip(note.audioUrl, note.clip.startSec, note.clip.endSec, note.es)
     return
   }
