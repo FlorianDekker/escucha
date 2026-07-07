@@ -37,3 +37,54 @@ export function playWord(text) {
   audio.play().catch(() => speechFallback(word))
   audio.onerror = () => speechFallback(word)
 }
+
+/*
+ * Speelt een fragment uit een aflevering-audio af (start..eind), met de native
+ * woorduitspraak van playWord als vangnet. Eén gedeeld element zodat er nooit
+ * twee clips over elkaar heen lopen.
+ */
+let clipEl = null
+export function playClip(url, startSec, endSec, fallbackWord) {
+  try {
+    if (!clipEl) clipEl = new Audio()
+    clipEl.pause()
+    if (clipEl.dataset?.src !== url) {
+      clipEl.src = url
+      if (clipEl.dataset) clipEl.dataset.src = url
+    }
+    const stopper = () => {
+      if (clipEl.currentTime >= endSec) {
+        clipEl.pause()
+        clipEl.removeEventListener('timeupdate', stopper)
+      }
+    }
+    const start = () => {
+      try {
+        clipEl.currentTime = startSec
+      } catch {
+        /* seek kan mislukken vóór metadata; timeupdate vangt het op */
+      }
+      clipEl.removeEventListener('timeupdate', stopper)
+      clipEl.addEventListener('timeupdate', stopper)
+      clipEl.play().catch(() => speechFallback(fallbackWord))
+    }
+    if (clipEl.readyState >= 1) start()
+    else clipEl.addEventListener('loadedmetadata', start, { once: true })
+    clipEl.onerror = () => speechFallback(fallbackWord)
+  } catch {
+    if (fallbackWord) speechFallback(fallbackWord)
+  }
+}
+
+/*
+ * De vraagkant-audio van een woordkaart: gebruik de podcast-clip als die er is,
+ * anders de losse native uitspraak (spec §F).
+ */
+export function playCardAudio(note) {
+  if (!note) return
+  if (note.clip && note.audioUrl && note.clip.startSec != null) {
+    playClip(note.audioUrl, note.clip.startSec, note.clip.endSec, note.es)
+    return
+  }
+  playWord(note.es)
+}

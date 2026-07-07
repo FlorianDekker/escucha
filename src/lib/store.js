@@ -1,8 +1,14 @@
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
-import { newSrsItem, review, todayStr } from './srs'
+import {
+  freshEngine,
+  introduceNote,
+  reviewCard,
+  maybeIntroduceProduction,
+  todayStr,
+} from './cards'
 
-const SCHEMA_VERSION = 1
+const SCHEMA_VERSION = 2
 const XP_PER_CORRECT = 15
 const XP_PER_TRY = 5
 const MAX_STRUGGLES = 50
@@ -12,15 +18,22 @@ const initialState = {
   streak: { current: 0, best: 0, lastActiveDate: null },
   xp: { total: 0, byDate: {} },
   episodes: {}, // epId -> { status, segmentIndexByStep, answers: {segId: {correct, attempts}}, scorePct, completedSteps: [] }
-  srs: {}, // genormaliseerd Spaans woord -> srs-item
+  // FSRS-6 leerengine: notes + kaarten (herkenning/productie) + append-only reviewlog.
+  engine: freshEngine(),
   struggles: [], // { kind: 'segment', episodeId, segmentId, at }
   lastWeeklyReview: null,
 }
 
+/*
+ * Migratie. v1 -> v2: het oude SM-2-veld `srs` vervalt volledig (bewuste keuze,
+ * spec §1: schoon beginnen met één FSRS-scheduler). De rest blijft behouden.
+ */
 function migrate(persisted, version) {
-  // Toekomstige schema-wijzigingen: switch (version) met fallthrough per versie.
   void version
-  return { ...initialState, ...persisted }
+  const next = { ...initialState, ...(persisted || {}) }
+  delete next.srs
+  if (!next.engine || !next.engine.notes) next.engine = freshEngine()
+  return next
 }
 
 export const useStore = create(
@@ -131,18 +144,30 @@ export const useStore = create(
         }))
       },
 
-      /* Woord toevoegen aan de SRS-stapel (uit vocab-les of tap-op-woord). */
-      srsAdd(key, es, nl, sourceEpisodeId, extras) {
-        if (get().srs[key]) return
-        set((s) => ({ srs: { ...s.srs, [key]: newSrsItem(es, nl, sourceEpisodeId, extras) } }))
+      /*
+       * Leerengine (FSRS-6). Alle acties delegeren naar de pure functies in
+       * cards.js; de store houdt alleen state + XP/streak-bijwerking bij.
+       */
+
+      /* Note introduceren (woordles of tap-op-woord). Maakt alleen de
+         herkenningskaart aan; productie volgt gefaseerd via cards.js. */
+      engineIntroduceNote(note) {
+        set((s) => ({ engine: introduceNote(s.engine, note) }))
       },
 
-      srsReview(key, correct) {
-        const item = get().srs[key]
-        if (!item) return
+      /* Eén beoordeling verwerken. Roep dit precies één keer per kaart per
+         sessie aan (eerste poging telt). Goed levert XP op, net als voorheen. */
+      engineReview(cardId, correct) {
+        if (!get().engine.cards[cardId]) return
         get().touchStreak()
-        if (correct) get().addXp(5)
-        set((s) => ({ srs: { ...s.srs, [key]: review(item, correct) } }))
+        if (correct) get().addXp(XP_PER_TRY)
+        set((s) => ({ engine: reviewCard(s.engine, cardId, correct) }))
+      },
+
+      /* Productiekaarten aanmaken zodra hun herkenningskaart daar klaar voor is.
+         Aanroepen bij het openen van een woordsessie of de Woorden-tab. */
+      engineMaybeIntroduceProduction() {
+        set((s) => ({ engine: maybeIntroduceProduction(s.engine) }))
       },
 
       setLastWeeklyReview(date) {
@@ -150,9 +175,9 @@ export const useStore = create(
       },
 
       exportData() {
-        const { settings, streak, xp, episodes, srs, struggles, lastWeeklyReview } = get()
+        const { settings, streak, xp, episodes, engine, struggles, lastWeeklyReview } = get()
         return JSON.stringify(
-          { schemaVersion: SCHEMA_VERSION, settings, streak, xp, episodes, srs, struggles, lastWeeklyReview },
+          { schemaVersion: SCHEMA_VERSION, settings, streak, xp, episodes, engine, struggles, lastWeeklyReview },
           null,
           2,
         )
@@ -173,7 +198,7 @@ export const useStore = create(
         streak: s.streak,
         xp: s.xp,
         episodes: s.episodes,
-        srs: s.srs,
+        engine: s.engine,
         struggles: s.struggles,
         lastWeeklyReview: s.lastWeeklyReview,
       }),

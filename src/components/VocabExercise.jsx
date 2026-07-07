@@ -1,49 +1,62 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useStore } from '../lib/store'
-import { normalizeWord } from '../lib/contentLoader'
+import { spellingHint } from '../lib/cards'
 import { playClick, playCorrect, playWrong } from '../lib/sounds'
-import { playWord } from '../lib/speak'
+import { playCardAudio } from '../lib/speak'
 
 /*
- * Eén woordoefening (scherm 4), in meerkeuze- of typvorm.
+ * Eén woordkaart-presentatie. Twee richtingen (siblings, spec §2):
+ *
+ *  - recognition (ES-audio -> NL): de vraagkant is ALLEEN audio, geen Spaanse
+ *    tekst. Antwoord via meerkeuze (4 NL-betekenissen) of typen (NL). Na de
+ *    reveal: audio nogmaals + Spaanse spelling + NL + voorbeeldzin + klank/schrift-hint.
+ *
+ *  - production (NL -> ES): de vraagkant is de Nederlandse tekst; de gebruiker
+ *    typt het Spaanse woord (accent-vergevend). Reveal: native audio + spelling.
+ *
+ * De acquisitie-logica (2x goed, re-queue) zit in de ouder (WordsFlow / Words).
+ * Deze component beoordeelt één presentatie en meldt de uitkomst via onGraded.
  *
  * Props:
- *  - item: { id, es, nl, exampleEs? }
- *  - mode: 'mc' | 'type'
- *  - pool: array met nl-betekenissen van andere items (distractors)
- *  - glossaryValues: array met glossary-waarden als fallback-distractors
- *  - episodeId
- *  - onChecked(): laat de ouder weten dat er nagegaan is (mode-toggle uitzetten)
+ *  - direction: 'recognition' | 'production'
+ *  - note: { es, nl, exampleEs?, clip?, audioUrl? }
+ *  - mode: 'mc' | 'type'  (alleen relevant voor recognition; production = altijd typen)
+ *  - pool: NL-betekenissen van andere items (distractors, recognition-mc)
+ *  - glossaryValues: extra NL-distractors als fallback
+ *  - onGraded(correct): eenmalig bij Controleren
  *  - onContinue(): naar het volgende item
- *  - isLast: laatste item? -> knoptekst
+ *  - continueLabel: knoptekst voor Doorgaan
  */
 export default function VocabExercise({
-  item,
-  mode,
-  pool,
-  glossaryValues,
-  episodeId,
-  onChecked,
+  direction = 'recognition',
+  note,
+  mode = 'mc',
+  pool = [],
+  glossaryValues = [],
+  onGraded,
   onContinue,
-  isLast,
+  continueLabel = 'Doorgaan ▸',
 }) {
-  const srsAdd = useStore((s) => s.srsAdd)
-  const srsReview = useStore((s) => s.srsReview)
+  const isProduction = direction === 'production'
+  const effectiveMode = isProduction ? 'type' : mode
 
   const [selected, setSelected] = useState(null) // mc-index
   const [typed, setTyped] = useState('')
   const [checked, setChecked] = useState(false)
   const [correct, setCorrect] = useState(false)
 
+  // De vraagkant-audio van een herkenningskaart wordt door de ouder afgespeeld
+  // bij het verschijnen (binnen de klik, zodat de browser het niet blokkeert).
+  // Hier hoeft alleen de herbeluster-knop + reveal-audio te werken.
+
   // Reset invoer als de oefenvorm wisselt (kan alleen vóór het nagaan).
   useEffect(() => {
     setSelected(null)
     setTyped('')
-  }, [mode])
+  }, [effectiveMode])
 
-  // Meerkeuze-opties: juiste betekenis + 3 distractors, eenmalig per item geschud.
+  // Meerkeuze-opties (alleen recognition-mc): juiste NL + 3 distractors.
   const choices = useMemo(() => {
-    const correctNl = item.nl
+    const correctNl = note.nl
     const seen = new Set([normalizeNl(correctNl)])
     const distractors = []
     for (const cand of shuffle([...pool])) {
@@ -64,57 +77,69 @@ export default function VocabExercise({
     }
     return shuffle([correctNl, ...distractors])
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [item.id])
+  }, [note.es])
 
-  const correctChoiceIndex = choices.indexOf(item.nl)
+  const correctChoiceIndex = choices.indexOf(note.nl)
 
   function grade() {
     if (checked) return
     let ok
-    if (mode === 'mc') {
+    if (isProduction) {
+      ok = matchesTypedEs(typed, note.es)
+    } else if (effectiveMode === 'mc') {
       ok = selected === correctChoiceIndex
     } else {
-      ok = matchesTyped(typed, item.nl)
+      ok = matchesTyped(typed, note.nl)
     }
-    // SRS bijwerken: eerst toevoegen indien nieuw, dan de review verwerken.
-    const key = normalizeWord(item.es)
-    srsAdd(key, item.es, item.nl, episodeId)
-    srsReview(key, ok)
     if (ok) playCorrect()
     else playWrong()
     setCorrect(ok)
     setChecked(true)
-    onChecked && onChecked()
+    // Reveal: de native uitspraak (nogmaals) als bevestiging/feedback.
+    playCardAudio(note)
+    if (onGraded) onGraded(ok)
   }
 
-  const canCheck = mode === 'mc' ? selected !== null : typed.trim().length > 0
+  const canCheck =
+    effectiveMode === 'mc' ? selected !== null : typed.trim().length > 0
+  const hint = spellingHint(note.es)
 
   return (
     <>
-      <p className="q-prompt">Wat betekent dit woord?</p>
+      {isProduction ? (
+        // ---- Productie: NL-tekst als vraag ----
+        <>
+          <p className="q-prompt">Hoe zeg je dit in het Spaans?</p>
+          <div className="word-card" aria-hidden="false">
+            <div>
+              <p className="es">{note.nl}</p>
+              <p className="sub">typ het Spaanse woord</p>
+            </div>
+          </div>
+        </>
+      ) : (
+        // ---- Herkenning: alleen audio als vraag ----
+        <>
+          <p className="q-prompt">Welk woord hoor je?</p>
+          <button
+            type="button"
+            className="audio-q"
+            onClick={() => playCardAudio(note)}
+            aria-label="Luister nog eens"
+          >
+            <span className="audio-q-icon">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 9v6h4l5 4V5L8 9H4z" />
+                <path d="M16.5 8.5a5 5 0 0 1 0 7" />
+                <path d="M19 6a8 8 0 0 1 0 12" />
+              </svg>
+            </span>
+            <span className="audio-q-label">Tik om nog eens te luisteren</span>
+          </button>
+        </>
+      )}
 
-      <div
-        className="word-card"
-        onClick={() => playWord(item.es)}
-        role="button"
-        style={{ cursor: 'pointer' }}
-      >
-        <div className="spk" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M4 9v6h4l5 4V5L8 9H4z" />
-            <path d="M16.5 8.5a5 5 0 0 1 0 7" />
-            <path d="M19 6a8 8 0 0 1 0 12" />
-          </svg>
-        </div>
-        <div>
-          <p className="es">{item.es}</p>
-          <p style={{ margin: '2px 0 0', color: 'var(--brand-soft)', fontWeight: 700, fontSize: 12 }}>
-            tik om te beluisteren
-          </p>
-        </div>
-      </div>
-
-      {mode === 'mc' ? (
+      {effectiveMode === 'mc' && !isProduction ? (
         <div className="vgrid">
           {choices.map((choice, i) => (
             <button
@@ -143,7 +168,7 @@ export default function VocabExercise({
           type="text"
           value={typed}
           onChange={(e) => setTyped(e.target.value)}
-          placeholder="Typ de Nederlandse vertaling"
+          placeholder={isProduction ? 'Typ het Spaanse woord' : 'Typ de Nederlandse vertaling'}
           autoComplete="off"
           autoCorrect="off"
           spellCheck={false}
@@ -160,14 +185,18 @@ export default function VocabExercise({
         <div className={'fb-bar ' + (correct ? 'ok' : 'bad')}>
           <p className="head">{correct ? '¡Correcto!' : 'Bijna. Het juiste antwoord:'}</p>
           <p className="sub">
-            <b>{item.es}</b> = {item.nl}
-            {item.exampleEs ? (
+            <button type="button" className="fb-spk" onClick={() => playCardAudio(note)} aria-label="Beluister">
+              🔊
+            </button>
+            <b>{note.es}</b> = {note.nl}
+            {note.exampleEs ? (
               <>
                 <br />
-                {item.exampleEs}
+                <i>{note.exampleEs}</i>
               </>
             ) : null}
           </p>
+          {hint && <p className="fb-hint">Klank &amp; schrift: {hint}</p>}
         </div>
       )}
 
@@ -177,10 +206,10 @@ export default function VocabExercise({
           className="btn btn-primary pad-b"
           onClick={() => {
             playClick()
-            onContinue()
+            if (onContinue) onContinue()
           }}
         >
-          {isLast ? 'Afronden ▸' : 'Doorgaan ▸'}
+          {continueLabel}
         </button>
       ) : (
         <button
@@ -218,13 +247,38 @@ function normalizeNl(s) {
   return words.join(' ')
 }
 
-/* Typvorm goedkeuren: elk deel gescheiden door "/" of "," is een geldig antwoord. */
+/* Typvorm (NL) goedkeuren: elk deel gescheiden door "/" of "," is geldig. */
 function matchesTyped(input, expected) {
   const guess = normalizeNl(input)
   if (!guess) return false
   const forms = String(expected)
     .split(/[/,]/)
     .map(normalizeNl)
+    .filter(Boolean)
+  return forms.includes(guess)
+}
+
+/* Normaliseer een Spaans antwoord: lowercase, accenten/leestekens weg,
+   lidwoorden (el/la/los/las/un/una) negeren. Zo geldt "playa" ook voor
+   "la playa" en telt een vergeten accent niet als fout. */
+function normalizeEs(s) {
+  const words = String(s)
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[¿?¡!.,;:"'«»()]/g, '')
+    .trim()
+    .split(/\s+/)
+    .filter((w) => w && !['el', 'la', 'los', 'las', 'un', 'una'].includes(w))
+  return words.join(' ')
+}
+
+function matchesTypedEs(input, expected) {
+  const guess = normalizeEs(input)
+  if (!guess) return false
+  const forms = String(expected)
+    .split(/[/,]/)
+    .map(normalizeEs)
     .filter(Boolean)
   return forms.includes(guess)
 }

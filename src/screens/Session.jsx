@@ -2,10 +2,10 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useStore, XP_PER_CORRECT, XP_PER_TRY } from '../lib/store'
 import { loadLadder, loadEpisode, normalizeWord } from '../lib/contentLoader'
-import { dueItems } from '../lib/srs'
+import { dueCards } from '../lib/cards'
 import { useSegmentPlayer } from '../lib/audio'
 import { playClick, playCorrect, playWrong } from '../lib/sounds'
-import { playWord } from '../lib/speak'
+import { playWord, playCardAudio } from '../lib/speak'
 import QuestionCard from '../components/QuestionCard.jsx'
 import TranscriptBubbles from '../components/TranscriptBubbles.jsx'
 import VocabExercise from '../components/VocabExercise.jsx'
@@ -138,43 +138,132 @@ export default function Session() {
 function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
   const completeStep = useStore((s) => s.completeStep)
   const streak = useStore((s) => s.streak)
+  const engineReview = useStore((s) => s.engineReview)
 
   const [phase, setPhase] = useState('intro')
-  const [index, setIndex] = useState(0)
-  const [mode, setMode] = useState('mc') // 'mc' | 'type'
+  const [mode, setMode] = useState('mc') // 'mc' | 'type' (alleen herkenning)
   const [itemChecked, setItemChecked] = useState(false)
 
-  // Oefenitems eenmalig samenstellen: core-vocab + max 6 due SRS-items (geen duplicaten).
-  const [items] = useState(() => {
-    const core = episode.vocab.filter((v) => v.core)
-    const keys = new Set(core.map((v) => normalizeWord(v.es)))
-    const extra = []
-    for (const it of dueItems(useStore.getState().srs)) {
-      const k = normalizeWord(it.es)
-      if (keys.has(k)) continue
-      keys.add(k)
-      extra.push({ id: 'srs-' + k, es: it.es, nl: it.nl })
-      if (extra.length >= 6) break
-    }
-    return [...core, ...extra]
-  })
+  // De studeer-wachtrij. Elke entry = { cardId, phase: 'acquire' | 'review' }.
+  //  - acquire: nieuw kernwoord (herkenning). Moet 2x goed binnen de sessie.
+  //  - review: een due kaart (herkenning of productie) van eerdere afleveringen.
+  const [queue, setQueue] = useState([])
+  const [pos, setPos] = useState(0)
+  const [initialCount, setInitialCount] = useState(0)
 
-  const pool = useMemo(() => items.map((i) => i.nl), [items])
+  // correctCounts: goede antwoorden per kaart deze sessie (acquisitie-teller).
+  // resolved: kaarten die klaar zijn (acquire 2x goed, of review 1x behandeld).
+  const [correctCounts, setCorrectCounts] = useState({})
+  const [resolved, setResolved] = useState(() => new Set())
+  // Kaarten die al één FSRS-review kregen deze sessie (eerste poging telt).
+  const reviewedRef = useRef(new Set())
+  const attemptsRef = useRef({})
+
+  const engine = useStore((s) => s.engine)
+  const entry = queue[pos]
+  const card = entry ? engine.cards[entry.cardId] : null
+  const note = card ? engine.notes[card.noteId] : null
+
+  const pool = useMemo(
+    () => Object.values(engine.notes).map((n) => n.nl),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [phase],
+  )
   const glossaryValues = useMemo(() => Object.values(episode.glossary || {}), [episode])
 
-  const total = items.length
+  // Vraagkant-audio afspelen binnen een klik (herkenning). Productie toont NL-tekst.
+  // eng meegeven omdat de store net bijgewerkt kan zijn (nieuwe notes/kaarten).
+  function speakQuestion(c, eng = engine) {
+    if (!c) return
+    if (c.direction === 'recognition') playCardAudio(eng.notes[c.noteId])
+  }
 
-  // Wordt aangeroepen vanuit een klik, zodat het automatisch uitspreken van het
-  // volgende woord als user-gesture telt (anders blokkeert de browser het).
-  function next() {
-    if (index >= total - 1) {
+  // ---- Sessie opbouwen (binnen de "Leer de woorden"-klik) ----
+  function startExercise() {
+    const store = useStore.getState()
+    // Productiekaarten aanmaken die aan hun fasering toe zijn.
+    store.engineMaybeIntroduceProduction()
+    // Kernwoorden introduceren (maakt de herkenningskaarten aan).
+    const core = episode.vocab.filter((v) => v.core)
+    const coreIds = new Set()
+    for (const v of core) {
+      store.engineIntroduceNote({
+        es: v.es,
+        nl: v.nl,
+        exampleEs: v.exampleEs,
+        clip: v.clip,
+        audioUrl: episode.audioUrl,
+        sourceEpisodeId: episodeId,
+      })
+      coreIds.add(normalizeWord(v.es))
+    }
+    const eng = useStore.getState().engine
+    const acquire = [...coreIds].map((id) => ({ cardId: id + ':recognition', phase: 'acquire' }))
+    const review = []
+    for (const c of dueCards(eng)) {
+      if (coreIds.has(c.noteId)) continue
+      review.push({ cardId: c.id, phase: 'review' })
+      if (review.length >= 6) break
+    }
+    const q = [...acquire, ...review]
+    setQueue(q)
+    setInitialCount(q.length)
+    setPos(0)
+    setPhase('exercise')
+    // Eerste vraag-audio binnen deze klik afspelen.
+    const first = q[0] && eng.cards[q[0].cardId]
+    speakQuestion(first, eng)
+  }
+
+  // ---- Eén beoordeling (eerste poging = de FSRS-review) ----
+  function onGraded(correct) {
+    if (!entry) return
+    const id = entry.cardId
+    if (!reviewedRef.current.has(id)) {
+      engineReview(id, correct)
+      reviewedRef.current.add(id)
+    }
+    setItemChecked(true)
+    if (entry.phase === 'review') {
+      setResolved((r) => new Set(r).add(id))
+    } else if (correct) {
+      setCorrectCounts((c) => {
+        const nextCount = (c[id] || 0) + 1
+        if (nextCount >= 2) setResolved((r) => new Set(r).add(id))
+        return { ...c, [id]: nextCount }
+      })
+    }
+  }
+
+  // ---- Doorgaan: re-queue bij acquisitie, anders vooruit ----
+  function onContinue() {
+    if (!entry) return
+    const id = entry.cardId
+    attemptsRef.current[id] = (attemptsRef.current[id] || 0) + 1
+
+    let q = queue
+    const acquired = (correctCounts[id] || 0) >= 2
+    const tooMany = attemptsRef.current[id] >= 6 // veiligheidsklep tegen eindeloos herhalen
+    if (entry.phase === 'acquire' && !acquired && !tooMany) {
+      // Opnieuw inplannen met minimaal 2 andere items ertussen.
+      q = [...queue]
+      const insertAt = Math.min(pos + 3, q.length)
+      q.splice(insertAt, 0, entry)
+      setQueue(q)
+    }
+
+    const nextPos = pos + 1
+    setItemChecked(false)
+    if (nextPos >= q.length) {
       completeStep(episodeId, step.id)
       navigate('/path')
       return
     }
-    playWord(items[index + 1].es)
-    setIndex((i) => i + 1)
-    setItemChecked(false)
+    setPos(nextPos)
+    // Vraag-audio van de volgende kaart binnen deze klik.
+    const eng = useStore.getState().engine
+    const nextEntry = q[nextPos]
+    speakQuestion(nextEntry && eng.cards[nextEntry.cardId], eng)
   }
 
   // ---- Intro (scherm 3) ----
@@ -251,8 +340,7 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
             style={{ marginTop: 14 }}
             onClick={() => {
               playClick()
-              playWord(items[0].es)
-              setPhase('exercise')
+              startExercise()
             }}
           >
             Leer de woorden
@@ -263,10 +351,35 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
   }
 
   // ---- Oefening (scherm 4) ----
-  const item = items[index]
-  const fill = (((index + 1) / total) * 100).toFixed(1)
+  if (!entry || !card || !note) {
+    // Niets te oefenen (geen kernwoorden en geen due kaarten). Zeldzaam;
+    // markeer de stap als klaar via de knop (geen side effect tijdens render).
+    return (
+      <div className="session" key="empty">
+        <div className="s-status">
+          <div style={{ fontSize: 44 }}>✅</div>
+          <p>Niets te oefenen hier</p>
+          <button
+            type="button"
+            className="btn btn-primary"
+            style={{ marginTop: 22 }}
+            onClick={() => {
+              completeStep(episodeId, step.id)
+              navigate('/path')
+            }}
+          >
+            Terug naar het leerpad
+          </button>
+        </div>
+      </div>
+    )
+  }
+  const isProduction = card.direction === 'production'
+  const fill = (initialCount ? (resolved.size / initialCount) * 100 : 0).toFixed(1)
+  // Unieke sleutel per presentatie zodat de oefening bij re-queue opnieuw mount.
+  const presentationKey = entry.cardId + ':' + pos
   return (
-    <div className="session" key={'ex-' + index}>
+    <div className="session" key={'ex-' + pos}>
       <div className="s-header">
         <button className="s-iconbtn" onClick={() => navigate('/path')} aria-label="Sluiten">
           ✕
@@ -281,33 +394,35 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
       </div>
 
       <div className="s-body">
-        <div className="mode-toggle">
-          <button
-            className={mode === 'mc' ? 'on' : ''}
-            disabled={itemChecked}
-            onClick={() => setMode('mc')}
-          >
-            Meerkeuze
-          </button>
-          <button
-            className={mode === 'type' ? 'on' : ''}
-            disabled={itemChecked}
-            onClick={() => setMode('type')}
-          >
-            Typen
-          </button>
-        </div>
+        {!isProduction && (
+          <div className="mode-toggle">
+            <button
+              className={mode === 'mc' ? 'on' : ''}
+              disabled={itemChecked}
+              onClick={() => setMode('mc')}
+            >
+              Meerkeuze
+            </button>
+            <button
+              className={mode === 'type' ? 'on' : ''}
+              disabled={itemChecked}
+              onClick={() => setMode('type')}
+            >
+              Typen
+            </button>
+          </div>
+        )}
 
         <VocabExercise
-          key={item.id}
-          item={item}
+          key={presentationKey}
+          direction={card.direction}
+          note={note}
           mode={mode}
           pool={pool}
           glossaryValues={glossaryValues}
-          episodeId={episodeId}
-          onChecked={() => setItemChecked(true)}
-          onContinue={next}
-          isLast={index === total - 1}
+          onGraded={onGraded}
+          onContinue={onContinue}
+          continueLabel={pos + 1 >= queue.length ? 'Afronden ▸' : 'Doorgaan ▸'}
         />
       </div>
     </div>

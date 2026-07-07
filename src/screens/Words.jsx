@@ -1,182 +1,105 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useStore } from '../lib/store'
-import { dueItems, isDue, todayStr } from '../lib/srs'
-import { playClick, playCorrect, playWrong } from '../lib/sounds'
-import { playWord } from '../lib/speak'
+import { dueCards, cardsWithNotes, dueInDays } from '../lib/cards'
+import { playClick } from '../lib/sounds'
+import { playCardAudio } from '../lib/speak'
+import VocabExercise from '../components/VocabExercise.jsx'
 import TabBar from '../components/TabBar.jsx'
 import '../overview.css'
-
-function shuffle(arr) {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
-
-function daysUntil(dueDate) {
-  const today = new Date(todayStr() + 'T12:00:00')
-  const due = new Date(dueDate + 'T12:00:00')
-  return Math.round((due - today) / 86400000)
-}
-
-/* Bouw meerkeuze-opties: juiste NL + tot 3 unieke distractors uit andere srs-woorden. */
-function buildOptions(item, allNl) {
-  const pool = shuffle([...new Set(allNl.filter((n) => n !== item.nl))]).slice(0, 3)
-  return shuffle([item.nl, ...pool])
-}
+import '../session.css'
 
 export default function Words() {
-  const srs = useStore((s) => s.srs)
-  const srsReview = useStore((s) => s.srsReview)
+  const engine = useStore((s) => s.engine)
+  const streak = useStore((s) => s.streak)
+  const engineReview = useStore((s) => s.engineReview)
+  const engineMaybeIntroduceProduction = useStore((s) => s.engineMaybeIntroduceProduction)
 
-  const items = useMemo(() => Object.values(srs), [srs])
-  const due = useMemo(() => dueItems(srs), [srs])
-  const totalCount = items.length
+  // Bij het openen: productiekaarten aanmaken die aan hun fasering toe zijn.
+  useEffect(() => {
+    engineMaybeIntroduceProduction()
+  }, [engineMaybeIntroduceProduction])
 
-  // Inline herhaalsessie
-  const [session, setSession] = useState(null) // { questions, index, selected, correctCount, done }
+  const due = useMemo(() => dueCards(engine), [engine])
+  const allCards = useMemo(() => cardsWithNotes(engine), [engine])
+  const noteCount = Object.keys(engine.notes).length
+
+  // NL-distractors voor de meerkeuze (herkenning).
+  const pool = useMemo(() => Object.values(engine.notes).map((n) => n.nl), [engine])
+
+  // Inline herhaalsessie op de engine (zelfde oefenvormen als de woordles).
+  const [session, setSession] = useState(null) // { cards, pos, correctCount, done }
+  const reviewedRef = useRef(new Set())
 
   function startSession() {
-    const allNl = items.map((i) => i.nl)
-    const questions = due.map((item) => ({
-      key: item.es,
-      es: item.es,
-      nl: item.nl,
-      options: buildOptions(item, allNl),
-    }))
-    if (!questions.length) return
-    playWord(questions[0].es)
-    setSession({ questions, index: 0, selected: null, correctCount: 0, done: false })
+    const cards = dueCards(useStore.getState().engine)
+    if (!cards.length) return
+    reviewedRef.current = new Set()
+    setSession({ cards, pos: 0, correctCount: 0, done: false })
+    const first = cards[0]
+    if (first.direction === 'recognition') playCardAudio(useStore.getState().engine.notes[first.noteId])
   }
 
-  function answer(option) {
-    if (session.selected != null) return
-    const q = session.questions[session.index]
-    const correct = option === q.nl
-    if (correct) playCorrect()
-    else playWrong()
-    srsReview(q.key, correct)
-    setSession((s) => ({ ...s, selected: option, correctCount: s.correctCount + (correct ? 1 : 0) }))
+  function onGraded(correct) {
+    const cardRec = session.cards[session.pos]
+    if (!reviewedRef.current.has(cardRec.id)) {
+      engineReview(cardRec.id, correct)
+      reviewedRef.current.add(cardRec.id)
+    }
+    setItemChecked(true)
+    if (correct) setSession((s) => ({ ...s, correctCount: s.correctCount + 1 }))
   }
 
-  function next() {
-    playClick()
-    // Binnen de klik afspelen zodat de browser het niet als autoplay blokkeert.
-    const upcoming = session.questions[session.index + 1]
-    if (upcoming) playWord(upcoming.es)
+  function onContinue() {
+    setItemChecked(false)
     setSession((s) => {
-      const nextIndex = s.index + 1
-      if (nextIndex >= s.questions.length) return { ...s, done: true }
-      return { ...s, index: nextIndex, selected: null }
+      const nextPos = s.pos + 1
+      if (nextPos >= s.cards.length) return { ...s, done: true }
+      const nextCard = s.cards[nextPos]
+      if (nextCard.direction === 'recognition')
+        playCardAudio(useStore.getState().engine.notes[nextCard.noteId])
+      return { ...s, pos: nextPos }
     })
   }
 
-  const sortedItems = useMemo(
-    () => [...items].sort((a, b) => (a.dueDate < b.dueDate ? -1 : a.dueDate > b.dueDate ? 1 : 0)),
-    [items],
-  )
-
-  // --- Render: actieve sessie ---
+  // --- Render: actieve herhaalsessie (donkere sessie-shell) ---
   if (session && !session.done) {
-    const q = session.questions[session.index]
-    const answered = session.selected != null
+    const cardRec = session.cards[session.pos]
+    const note = engine.notes[cardRec.noteId]
+    const fill = (((session.pos + 1) / session.cards.length) * 100).toFixed(1)
     return (
-      <div className="screen screen--page">
-        <div className="screen__scroll" style={{ padding: '20px 20px 24px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <p style={{ margin: 0, fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 16, color: 'var(--ink)' }}>
-              Herhalen
-            </p>
-            <span style={{ color: 'var(--ink-mute)', fontWeight: 800, fontSize: 13 }}>
-              {session.index + 1} / {session.questions.length}
-            </span>
+      <div className="session" key={'rev-' + session.pos}>
+        <div className="s-header">
+          <button className="s-iconbtn" onClick={() => setSession(null)} aria-label="Sluiten">
+            ✕
+          </button>
+          <div className="s-progress green">
+            <i style={{ width: fill + '%' }} />
           </div>
-
-          <div
-            className="card"
-            style={{ marginTop: 16, padding: 20, textAlign: 'center', cursor: 'pointer' }}
-            onClick={() => playWord(q.es)}
-            role="button"
-          >
-            <p style={{ margin: 0, color: 'var(--ink-mute)', fontWeight: 700, fontSize: 12 }}>Wat betekent</p>
-            <p style={{ margin: '8px 0 0', fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 26, color: 'var(--ink)' }}>
-              🔊 {q.es}
-            </p>
-            <p style={{ margin: '6px 0 0', color: 'var(--ink-faint)', fontWeight: 700, fontSize: 11.5 }}>
-              tik om te beluisteren
-            </p>
-          </div>
-
-          <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {q.options.map((opt) => {
-              let border = '2px solid var(--line)'
-              let bg = '#fff'
-              let color = 'var(--ink)'
-              if (answered) {
-                if (opt === q.nl) {
-                  border = '2px solid var(--good)'
-                  bg = 'var(--good)'
-                  color = '#fff'
-                } else if (opt === session.selected) {
-                  border = '2px solid var(--accent)'
-                  bg = 'var(--accent)'
-                  color = '#fff'
-                }
-              }
-              return (
-                <button
-                  key={opt}
-                  onClick={() => answer(opt)}
-                  disabled={answered}
-                  style={{
-                    border,
-                    background: bg,
-                    color,
-                    borderRadius: 14,
-                    padding: '14px 16px',
-                    fontFamily: 'var(--font-head)',
-                    fontWeight: 800,
-                    fontSize: 15,
-                    textAlign: 'left',
-                    minHeight: 48,
-                    cursor: answered ? 'default' : 'pointer',
-                  }}
-                >
-                  {opt}
-                </button>
-              )
-            })}
-          </div>
-
-          {answered && (
-            <div style={{ marginTop: 16 }}>
-              <p
-                style={{
-                  margin: 0,
-                  fontFamily: 'var(--font-head)',
-                  fontWeight: 800,
-                  fontSize: 17,
-                  color: session.selected === q.nl ? 'var(--good)' : 'var(--accent)',
-                }}
-              >
-                {session.selected === q.nl ? '¡Correcto!' : `Bijna: ${q.es} = ${q.nl}`}
-              </p>
-              <button className="btn-accent" style={{ marginTop: 14 }} onClick={next}>
-                {session.index + 1 >= session.questions.length ? 'Afronden ▸' : 'Volgende ▸'}
-              </button>
-            </div>
-          )}
+          <span className="s-streak" aria-label="Streak">
+            <span className="fire">🔥</span>
+            {streak.current}
+          </span>
         </div>
-        <TabBar variant="light" />
+        <div className="s-body">
+          <VocabExercise
+            key={cardRec.id + ':' + session.pos}
+            direction={cardRec.direction}
+            note={note}
+            mode="mc"
+            pool={pool}
+            glossaryValues={[]}
+            onGraded={onGraded}
+            onContinue={onContinue}
+            continueLabel={session.pos + 1 >= session.cards.length ? 'Afronden ▸' : 'Doorgaan ▸'}
+          />
+        </div>
       </div>
     )
   }
 
   // --- Render: samenvatting ---
   if (session && session.done) {
-    const y = session.questions.length
+    const y = session.cards.length
     return (
       <div className="screen screen--page">
         <div className="screen__scroll" style={{ padding: '20px 20px 24px' }}>
@@ -217,7 +140,7 @@ export default function Words() {
       <div className="screen__scroll">
         <div className="brand-header">
           <p style={{ margin: 0, color: 'var(--brand-soft)', fontWeight: 800, fontSize: 11, letterSpacing: '.08em' }}>
-            {totalCount} {totalCount === 1 ? 'WOORD' : 'WOORDEN'}
+            {noteCount} {noteCount === 1 ? 'WOORD' : 'WOORDEN'}
           </p>
           <p style={{ margin: '4px 0 0', fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 24 }}>
             Mijn woorden
@@ -229,15 +152,15 @@ export default function Words() {
           <div className="card" style={{ padding: 18 }}>
             <p style={{ margin: 0, color: 'var(--ink-mute)', fontWeight: 700, fontSize: 12 }}>Te herhalen</p>
             <p style={{ margin: '6px 0 0', fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 22, color: 'var(--ink)' }}>
-              {due.length} {due.length === 1 ? 'woord' : 'woorden'}
+              {due.length} {due.length === 1 ? 'kaart' : 'kaarten'}
             </p>
-            <button className="btn-accent" style={{ marginTop: 14 }} disabled={due.length === 0} onClick={startSession}>
+            <button className="btn-accent" style={{ marginTop: 14 }} disabled={due.length === 0} onClick={() => { playClick(); startSession() }}>
               Herhaal nu
             </button>
           </div>
 
           {/* Woordenlijst */}
-          {totalCount === 0 ? (
+          {allCards.length === 0 ? (
             <div className="card" style={{ marginTop: 18, padding: 22, textAlign: 'center' }}>
               <p style={{ margin: 0, fontSize: 34 }}>📚</p>
               <p style={{ margin: '10px 0 0', fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 17, color: 'var(--ink)' }}>
@@ -250,15 +173,15 @@ export default function Words() {
           ) : (
             <div style={{ marginTop: 22 }}>
               <p style={{ margin: '0 4px 10px', fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 15, color: 'var(--ink)' }}>
-                Alle woorden
+                Alle kaarten
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {sortedItems.map((item) => {
-                  const due_ = isDue(item)
-                  const d = daysUntil(item.dueDate)
+                {allCards.map(({ card, note }) => {
+                  const d = dueInDays(card)
+                  const isDue = d <= 0
                   return (
                     <div
-                      key={item.es}
+                      key={card.id}
                       className="card"
                       style={{
                         display: 'flex',
@@ -271,10 +194,14 @@ export default function Words() {
                     >
                       <div style={{ minWidth: 0 }}>
                         <p style={{ margin: 0, fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 16, color: 'var(--ink)' }}>
-                          {item.es}
+                          {note.es}
                         </p>
                         <p style={{ margin: '2px 0 0', color: 'var(--ink-soft)', fontWeight: 600, fontSize: 13 }}>
-                          {item.nl}
+                          {note.nl}
+                          <span style={{ color: 'var(--ink-faint)', fontWeight: 700 }}>
+                            {' · '}
+                            {card.direction === 'production' ? 'NL→ES' : 'luister'}
+                          </span>
                         </p>
                       </div>
                       <span
@@ -282,10 +209,10 @@ export default function Words() {
                           flexShrink: 0,
                           fontWeight: 800,
                           fontSize: 12,
-                          color: due_ ? 'var(--accent)' : 'var(--ink-faint)',
+                          color: isDue ? 'var(--accent)' : 'var(--ink-faint)',
                         }}
                       >
-                        {due_ ? 'nu' : `over ${d} ${d === 1 ? 'dag' : 'dagen'}`}
+                        {isDue ? 'nu' : `over ${d} ${d === 1 ? 'dag' : 'dagen'}`}
                       </span>
                     </div>
                   )

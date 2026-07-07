@@ -540,6 +540,56 @@
 .fb-bar .sub b {
   color: #fff;
 }
+/* Kleine beluister-knop in de feedbackbalk (reveal). */
+.fb-spk {
+  border: none;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-right: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+/* Klank-vs-schrift-hint onder de reveal (Spaans-specifiek). */
+.fb-hint {
+  margin: 8px 0 0;
+  color: var(--brand-soft);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* Vraagkant herkenningskaart: ALLEEN audio, geen Spaanse tekst (spec §2/regel 4). */
+.audio-q {
+  margin-top: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.11);
+  border: none;
+  border-radius: 22px;
+  padding: 30px 16px;
+  cursor: pointer;
+}
+.audio-q-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--accent, #f15a29);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(241, 90, 41, 0.45);
+}
+.audio-q-label {
+  color: var(--brand-soft);
+  font-weight: 800;
+  font-size: 13px;
+}
 
 /* ============ SCHERM 5 · LUISTEREN ============ */
 .player {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useStore } from '../lib/store'
-import { dueItems, todayStr } from '../lib/srs'
+import { dueCount, todayStr } from '../lib/cards'
 import { loadLadder, loadEpisode } from '../lib/contentLoader'
 import { computeProgress } from './LearningPath.jsx'
 import TabBar from '../components/TabBar.jsx'
@@ -28,7 +28,7 @@ const artGradient =
 export default function Home() {
   const streak = useStore((s) => s.streak)
   const xp = useStore((s) => s.xp)
-  const srs = useStore((s) => s.srs)
+  const engine = useStore((s) => s.engine)
   const episodes = useStore((s) => s.episodes)
 
   const [ladder, setLadder] = useState(null)
@@ -52,7 +52,7 @@ export default function Home() {
   }, [ladder, current])
 
   const greeting = greetingFor()
-  const dueCount = dueItems(srs).length
+  const dueTodayCount = dueCount(engine)
   const goalTarget = 60
   const earnedToday = xp.byDate[todayStr()] || 0
   const goalPct = Math.min(100, Math.round((earnedToday / goalTarget) * 100))
@@ -206,7 +206,7 @@ export default function Home() {
           >
             <p style={{ margin: 0, color: 'var(--brand-soft)', fontWeight: 700, fontSize: 12 }}>Woorden</p>
             <p style={{ margin: '6px 0 0', fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: 20, color: '#fff' }}>
-              {dueCount}
+              {dueTodayCount}
             </p>
             <p style={{ margin: '4px 0 0', color: 'var(--brand-mute)', fontWeight: 700, fontSize: 11 }}>te herhalen</p>
           </Link>

@@ -20,8 +20,8 @@ export default function TranscriptBubbles({
   dimmed = false,
   highlightSec = null,
 }) {
-  const srsAdd = useStore((s) => s.srsAdd)
-  const srsMap = useStore((s) => s.srs)
+  const engineIntroduceNote = useStore((s) => s.engineIntroduceNote)
+  const notes = useStore((s) => s.engine.notes)
   const [active, setActive] = useState(null) // "sentenceIdx-wordIdx"
 
   // Sprekervolgorde bepaalt links/rechts (eerste spreker links).
@@ -68,8 +68,8 @@ export default function TranscriptBubbles({
                 glossary={glossary}
                 active={active}
                 setActive={setActive}
-                srsAdd={srsAdd}
-                srsMap={srsMap}
+                introduceNote={engineIntroduceNote}
+                notes={notes}
                 episodeId={episodeId}
               />
             )}
@@ -80,7 +80,7 @@ export default function TranscriptBubbles({
   )
 }
 
-function Words({ text, si, glossary, active, setActive, srsAdd, srsMap, episodeId }) {
+function Words({ text, si, glossary, active, setActive, introduceNote, notes, episodeId }) {
   // Splits op witruimte maar behoud de spaties, zodat de zin natuurlijk blijft.
   const tokens = String(text).split(/(\s+)/)
   return (
@@ -92,7 +92,7 @@ function Words({ text, si, glossary, active, setActive, srsAdd, srsMap, episodeI
         const translation = glossary[key] || 'geen vertaling gevonden'
         const id = `${si}-${wi}`
         const isActive = active === id
-        const added = !!srsMap[key]
+        const added = !!notes[key]
         return (
           <span
             key={wi}
@@ -113,7 +113,9 @@ function Words({ text, si, glossary, active, setActive, srsAdd, srsMap, episodeI
                   <button
                     type="button"
                     disabled={added}
-                    onClick={() => srsAdd(key, token.trim(), translation, episodeId)}
+                    onClick={() =>
+                      introduceNote({ es: token.trim(), nl: translation, sourceEpisodeId: episodeId })
+                    }
                   >
                     {added ? 'Toegevoegd ✓' : '+ Mijn woorden'}
                   </button>

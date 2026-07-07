@@ -28,7 +28,7 @@ export default function Profile() {
   const settings = useStore((s) => s.settings)
   const streak = useStore((s) => s.streak)
   const xp = useStore((s) => s.xp)
-  const srs = useStore((s) => s.srs)
+  const engine = useStore((s) => s.engine)
   const episodes = useStore((s) => s.episodes)
   const setSetting = useStore((s) => s.setSetting)
   const exportData = useStore((s) => s.exportData)
@@ -37,7 +37,7 @@ export default function Profile() {
   const [importText, setImportText] = useState('')
   const [notice, setNotice] = useState(null) // { kind: 'ok'|'err', text }
 
-  const wordCount = Object.keys(srs).length
+  const wordCount = Object.keys(engine.notes).length
   const completedEpisodes = Object.values(episodes).filter((e) => e.status === 'completed').length
 
   async function handleExport() {
@@ -209,7 +209,7 @@ export default function Profile() {
               className="io"
               value={importText}
               onChange={(e) => setImportText(e.target.value)}
-              placeholder='{ "schemaVersion": 1, ... }'
+              placeholder='{ "schemaVersion": 2, ... }'
             />
             <button
               className="btn-ghost"
