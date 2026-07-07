@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useStore, XP_PER_CORRECT, XP_PER_TRY } from '../lib/store'
 import { loadLadder, loadEpisode, normalizeWord } from '../lib/contentLoader'
-import { dueCards } from '../lib/cards'
+import { selectPreTeach } from '../lib/preteach'
 import { useSegmentPlayer } from '../lib/audio'
 import { playClick, playCorrect, playWrong } from '../lib/sounds'
 import { playWord, playCardAudio } from '../lib/speak'
@@ -173,6 +173,11 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
   )
   const glossaryValues = useMemo(() => Object.values(episode.glossary || {}), [episode])
 
+  // Datagedreven pre-teach (spec §4.1, harde regel 8): kies op basis van
+  // lexicale dekking + FSRS-state welke onbekende woorden deze les nodig heeft.
+  // Berekend op de huidige engine (vóór introductie), zodat de dekking klopt.
+  const preteach = useMemo(() => selectPreTeach(engine, episode), [engine, episode])
+
   // Vraagkant-audio afspelen binnen een klik (herkenning). Productie toont NL-tekst.
   // eng meegeven omdat de store net bijgewerkt kan zijn (nieuwe notes/kaarten).
   function speakQuestion(c, eng = engine) {
@@ -183,31 +188,26 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
   // ---- Sessie opbouwen (binnen de "Leer de woorden"-klik) ----
   function startExercise() {
     const store = useStore.getState()
-    // Productiekaarten aanmaken die aan hun fasering toe zijn.
+    // Productiekaarten aanmaken die aan hun fasering toe zijn (engine-onderhoud).
     store.engineMaybeIntroduceProduction()
-    // Kernwoorden introduceren (maakt de herkenningskaarten aan).
-    const core = episode.vocab.filter((v) => v.core)
-    const coreIds = new Set()
-    for (const v of core) {
+    // De pre-teach-selectie introduceren (maakt de herkenningskaarten aan). De
+    // note-id is de canonieke sleutel uit selectPreTeach, zodat dekking, de
+    // "bekend"-toets en de acquisitiewachtrij op dezelfde sleutel werken.
+    // Due-kaarten worden hier NIET meer gemengd: die horen bij de Woorden-tab.
+    const items = preteach.items
+    for (const it of items) {
       store.engineIntroduceNote({
-        es: v.es,
-        nl: v.nl,
-        exampleEs: v.exampleEs,
-        clip: v.clip,
-        audioUrl: episode.audioUrl,
+        id: it.id,
+        es: it.es,
+        nl: it.nl,
+        exampleEs: it.exampleEs,
+        clip: it.clip,
+        audioUrl: it.audioUrl,
         sourceEpisodeId: episodeId,
       })
-      coreIds.add(normalizeWord(v.es))
     }
     const eng = useStore.getState().engine
-    const acquire = [...coreIds].map((id) => ({ cardId: id + ':recognition', phase: 'acquire' }))
-    const review = []
-    for (const c of dueCards(eng)) {
-      if (coreIds.has(c.noteId)) continue
-      review.push({ cardId: c.id, phase: 'review' })
-      if (review.length >= 6) break
-    }
-    const q = [...acquire, ...review]
+    const q = items.map((it) => ({ cardId: it.id + ':recognition', phase: 'acquire' }))
     setQueue(q)
     setInitialCount(q.length)
     setPos(0)
@@ -271,7 +271,11 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
   // ---- Intro (scherm 3) ----
   if (phase === 'intro') {
     const minutes = Math.round(episode.durationSec / 60)
-    const meta = `${episode.segments.length} fragmenten · ${minutes} min · ${episode.vocab.length} woorden`
+    const count = preteach.items.length
+    const allKnown = count === 0
+    const covBefore = Math.round(preteach.coverageBefore * 100)
+    const covAfter = Math.round(preteach.coverageAfter * 100)
+    const meta = `${episode.segments.length} fragmenten · ${minutes} min · ${count} ${count === 1 ? 'woord' : 'woorden'}`
     return (
       <div className="session" key="intro">
         <div className="s-header">
@@ -302,23 +306,36 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
 
         <div className="intro-sheet">
           <p className="intro-desc">{episode.descriptionNl}</p>
-          <p className="intro-h">Woorden in deze aflevering</p>
-          <div className="word-list">
-            {episode.vocab.map((v) => (
-              <button key={v.id} type="button" className="word-row" onClick={() => playWord(v.es)}>
-                <span className="word-es">
-                  <i>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M4 9v6h4l5 4V5L8 9H4z" />
-                      <path d="M16.5 8.5a5 5 0 0 1 0 7" />
-                    </svg>
-                  </i>
-                  {v.es}
-                </span>
-                <span className="word-nl">{v.nl}</span>
-              </button>
-            ))}
-          </div>
+
+          {allKnown ? (
+            <p className="intro-desc" style={{ marginTop: 10, fontWeight: 700 }}>
+              Je kent alle woorden voor deze aflevering al.
+            </p>
+          ) : (
+            <>
+              {/* Woorddekking vóór en ná de pre-teach (spec §4.1). */}
+              <p className="intro-desc" style={{ marginTop: 10, fontWeight: 700 }}>
+                Woorddekking: {covBefore}% → {covAfter}% na deze les
+              </p>
+              <p className="intro-h">Woorden in deze aflevering</p>
+              <div className="word-list">
+                {preteach.items.map((it) => (
+                  <button key={it.id} type="button" className="word-row" onClick={() => playWord(it.es)}>
+                    <span className="word-es">
+                      <i>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M4 9v6h4l5 4V5L8 9H4z" />
+                          <path d="M16.5 8.5a5 5 0 0 1 0 7" />
+                        </svg>
+                      </i>
+                      {it.es}
+                    </span>
+                    <span className="word-nl">{it.nl}</span>
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
 
           <div className="grow" />
 
@@ -342,10 +359,15 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
             style={{ marginTop: 14 }}
             onClick={() => {
               playClick()
-              startExercise()
+              if (allKnown) {
+                completeStep(episodeId, step.id)
+                navigate('/path')
+              } else {
+                startExercise()
+              }
             }}
           >
-            Leer de woorden
+            {allKnown ? 'Doorgaan ▸' : 'Leer de woorden'}
           </button>
         </div>
       </div>

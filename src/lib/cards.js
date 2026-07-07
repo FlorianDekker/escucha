@@ -290,6 +290,19 @@ export function noteOf(engine, card) {
 }
 
 /* ------------------------------------------------------------------ */
+/*  retrievabilityOf — hoe waarschijnlijk de gebruiker deze kaart NU    */
+/*  nog kent, volgens de FSRS-vergeetcurve (0..1). Nieuwe kaarten of    */
+/*  kaarten zonder review geven 0 (ts-fsrs zelf: New -> 0).             */
+/*  De opgeslagen fsrs-vorm is een geldige CardInput, dus die kan er    */
+/*  rechtstreeks in. Gebruikt door de pre-teach (spec §4.1) om te       */
+/*  bepalen of een woord al "bekend" genoeg is.                         */
+/* ------------------------------------------------------------------ */
+export function retrievabilityOf(cardRecord, now = new Date()) {
+  if (!cardRecord || !cardRecord.fsrs) return 0
+  return scheduler.get_retrievability(cardRecord.fsrs, now, false)
+}
+
+/* ------------------------------------------------------------------ */
 /*  Spaans-specifieke uitspraakhint (spec §2, klank vs. schrift).       */
 /*  Kort en simpel: benoem alleen wat in dit woord voorkomt.            */
 /* ------------------------------------------------------------------ */
