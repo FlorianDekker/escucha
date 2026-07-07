@@ -10,6 +10,7 @@ import QuestionCard from '../components/QuestionCard.jsx'
 import TranscriptBubbles from '../components/TranscriptBubbles.jsx'
 import VocabExercise from '../components/VocabExercise.jsx'
 import SegmentPlayer from '../components/SegmentPlayer.jsx'
+import ChunkDrill from '../components/ChunkDrill.jsx'
 import '../session.css'
 
 const RATES = [0.75, 1, 1.25]
@@ -127,6 +128,7 @@ export default function Session() {
   if (step.type === 'words') return <WordsFlow key={stepId} {...common} />
   if (step.type === 'listen') return <ListenFlow key={stepId} {...common} />
   if (step.type === 'read') return <ListenFlow key={stepId} {...common} reading />
+  if (step.type === 'extensive') return <ExtensiveFlow key={stepId} {...common} />
   if (step.type === 'gate') return <GateFlow key={stepId} {...common} />
 
   return null
@@ -437,10 +439,12 @@ function WordsFlow({ episode, step, episodeId, podcast, navigate }) {
  * antwoord). reading=true (leesmodus): het transcript van het huidige fragment
  * leest live mee tijdens het luisteren, met de actieve zin uitgelicht.
  */
-function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
+function ListenFlow({ episode, episodeId, step, navigate, reading = false }) {
   const answerSegment = useStore((s) => s.answerSegment)
   const completeStep = useStore((s) => s.completeStep)
   const setSegmentIndex = useStore((s) => s.setSegmentIndex)
+  const engineReviewFromListening = useStore((s) => s.engineReviewFromListening)
+  const engineIntroduceNote = useStore((s) => s.engineIntroduceNote)
   const rate = useStore((s) => s.settings.playbackRate)
   const setSetting = useStore((s) => s.setSetting)
 
@@ -450,15 +454,22 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
   )
 
   // Hervatten: start op de voor déze stap opgeslagen index.
-  const [idx, setIdx] = useState(() => {
+  const initialIdx = useMemo(() => {
     const si = useStore.getState().episodes[episodeId]?.segmentIndexByStep?.[step.id]
     return typeof si === 'number' && si >= 0 && si < segments.length ? si : 0
-  })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  const [idx, setIdx] = useState(initialIdx)
 
-  // Fase-machine per fragment: listen -> question(q1..qn) -> feedback.
-  // question loopt met qIdx door alle vragen; feedback is één keer per fragment.
+  // Fase-machine per fragment: focus -> listen -> question(q1..qn) -> feedback.
+  // Na de feedback van het láátste fragment volgt (indien er chunks zijn) de
+  // chunk-drill, daarna done. De 'focus'-fase (spec §3 stap 2) toont de
+  // luisterfocus vóór het afspelen; bij v2-content zonder focusNl starten we
+  // meteen op 'listen' (dan verschijnt de bestaande hint).
   // (seg.echo blijft inerte content voor het latere zinsdictee, zie docs/leerengine-spec.md §6.)
-  const [phase, setPhase] = useState('listen') // listen | question | feedback | done
+  const [phase, setPhase] = useState(() =>
+    segments[initialIdx]?.focusNl ? 'focus' : 'listen',
+  ) // focus | listen | question | feedback | chunks | done
   const [qIdx, setQIdx] = useState(0)
   const [selected, setSelected] = useState(null)
   const [revealed, setRevealed] = useState(false) // in de vraagsheet: na Controleer kleuren tonen
@@ -467,10 +478,43 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
   const [qOutcomes, setQOutcomes] = useState([]) // per vraag: true/false
   const [results, setResults] = useState({}) // segId -> { good, total }
 
+  // Chunk-drill aan het einde van de stap.
+  const [chunkIdx, setChunkIdx] = useState(0)
+  const [chunksAdded, setChunksAdded] = useState(0)
+  const chunkAddedRef = useRef(new Set())
+  // Podcast-als-review / fout-wordt-kaart: max. één keer per vraag verwerken.
+  const reviewProcessedRef = useRef(new Set())
+
   const player = useSegmentPlayer(episode.audioUrl)
   const { playSegment, pause, resume, setRate, isPlaying, position, ended, error } = player
 
   const seg = segments[idx]
+
+  // Alle chunks van de fragmenten in deze stap (max ~5, ontdubbeld op de frase).
+  // Zonder chunks in de content blijft dit leeg en wordt de drill overgeslagen.
+  const stepChunks = useMemo(() => {
+    const seen = new Set()
+    const out = []
+    for (const s of segments) {
+      if (!Array.isArray(s.chunks)) continue
+      for (const c of s.chunks) {
+        const key = normalizeWord(c.es)
+        if (seen.has(key)) continue
+        seen.add(key)
+        out.push(c)
+        if (out.length >= 5) return out
+      }
+    }
+    return out
+  }, [segments])
+
+  // Distractor-pool voor de chunk-drill: NL-betekenissen van andere chunks + vocab.
+  const chunkNlPool = useMemo(() => {
+    const set = new Set()
+    for (const c of stepChunks) if (c.nl) set.add(c.nl)
+    for (const v of episode.vocab || []) if (v.nl) set.add(v.nl)
+    return [...set]
+  }, [stepChunks, episode])
 
   // v2 backward compatible: één of meerdere vragen.
   const questions = seg.questions || (seg.question ? [seg.question] : [])
@@ -479,14 +523,16 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
   const currentPart = { startSec: seg.startSec, endSec: seg.endSec }
 
   // Nieuw fragment -> alles resetten (nooit automatisch afspelen: iOS vereist een tap).
+  // Heeft het fragment een luisterfocus, dan start het op de focus-fase.
   useEffect(() => {
-    setPhase('listen')
+    setPhase(segments[idx]?.focusNl ? 'focus' : 'listen')
     setQIdx(0)
     setSelected(null)
     setRevealed(false)
     setCorrect(false)
     setHasPlayed(false)
     setQOutcomes([])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [idx])
 
   // Auto-pauze: na het uitspelen van het fragment naar de vragen.
@@ -501,6 +547,7 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
       pause()
     } else {
       setHasPlayed(true)
+      if (phase === 'focus') setPhase('listen') // luisterfocus gelezen, nu luisteren
       if (position > currentPart.startSec + 0.1 && position < currentPart.endSec - 0.05)
         resume(rate)
       else playSegment(currentPart.startSec, currentPart.endSec, rate)
@@ -510,6 +557,7 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
   function onReplay() {
     if (!seg) return
     setHasPlayed(true)
+    if (phase === 'focus') setPhase('listen')
     playSegment(currentPart.startSec, currentPart.endSec, rate)
   }
 
@@ -528,6 +576,36 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
     if (ok) playCorrect()
     else playWrong()
     answerSegment(episodeId, seg.id + ':q' + (qIdx + 1), ok)
+
+    // Koppeling vocab <-> podcast (spec §4.2/§4.3), conservatief en één keer per
+    // vraag. Alleen expliciete woord- of audio-cloze-vragen met een vocabId:
+    //  - goed  -> tel als FSRS-review (Good) op de herkenningskaart (als die bestaat).
+    //  - fout (audio-cloze) -> introduceer de note als die nog niet bestaat.
+    const qKey = seg.id + ':q' + qIdx
+    if (
+      !reviewProcessedRef.current.has(qKey) &&
+      q.vocabId &&
+      (q.type === 'vocabInContext' || q.type === 'gap')
+    ) {
+      reviewProcessedRef.current.add(qKey)
+      const v = (episode.vocab || []).find((x) => x.id === q.vocabId)
+      if (v) {
+        if (ok) {
+          engineReviewFromListening(v.es)
+        } else if (q.type === 'gap') {
+          engineIntroduceNote({
+            kind: 'word',
+            es: v.es,
+            nl: v.nl,
+            exampleEs: v.exampleEs,
+            clip: v.clip,
+            audioUrl: episode.audioUrl,
+            sourceEpisodeId: episodeId,
+          })
+        }
+      }
+    }
+
     setQOutcomes((o) => {
       const n = o.slice()
       n[qIdx] = ok
@@ -552,13 +630,24 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
     }
   }
 
+  function finishStep() {
+    completeStep(episodeId, step.id)
+    setSegmentIndex(episodeId, step.id, 0)
+    setPhase('done')
+  }
+
   function advance() {
     playClick()
     pause()
     if (idx >= segments.length - 1) {
-      completeStep(episodeId, step.id)
-      setSegmentIndex(episodeId, step.id, 0)
-      setPhase('done')
+      // Na het laatste fragment van een luisterstap: de chunk-drill (spec §3
+      // stap 9), mits er chunks zijn. De leesstap slaat de drill over.
+      if (!reading && stepChunks.length > 0) {
+        setChunkIdx(0)
+        setPhase('chunks')
+      } else {
+        finishStep()
+      }
     } else {
       const n = idx + 1
       setSegmentIndex(episodeId, step.id, n)
@@ -566,10 +655,30 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
     }
   }
 
+  // Eén chunk afgerond: fout beantwoorde chunks worden kaarten (spec §4.3),
+  // goede niet. Daarna door naar de volgende chunk of afronden.
+  function onChunkResult(wasCorrect) {
+    const chunk = stepChunks[chunkIdx]
+    if (chunk && !wasCorrect && !chunkAddedRef.current.has(chunk.es)) {
+      chunkAddedRef.current.add(chunk.es)
+      engineIntroduceNote({
+        kind: 'chunk',
+        es: chunk.es,
+        nl: chunk.nl,
+        clip: { startSec: chunk.startSec, endSec: chunk.endSec },
+        audioUrl: episode.audioUrl,
+        sourceEpisodeId: episodeId,
+      })
+      setChunksAdded((n) => n + 1)
+    }
+    if (chunkIdx >= stepChunks.length - 1) finishStep()
+    else setChunkIdx((i) => i + 1)
+  }
+
   // Het hele fragment opnieuw: alle fasen van dit fragment resetten.
   function listenAgain() {
     pause()
-    setPhase('listen')
+    setPhase(seg?.focusNl ? 'focus' : 'listen')
     setQIdx(0)
     setSelected(null)
     setRevealed(false)
@@ -601,6 +710,12 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
           <p className="result-sub">
             Je had {good} van {total} oefeningen goed in dit deel.
           </p>
+          {chunksAdded > 0 && (
+            <p className="result-sub" style={{ marginTop: 10 }}>
+              {chunksAdded} {chunksAdded === 1 ? 'chunk gaat' : 'chunks gaan'} naar je herhaalstapel,
+              die komen binnenkort terug.
+            </p>
+          )}
           <div className="xp-pill" style={{ marginTop: 16 }}>
             <i />+{earnedXp} XP
           </div>
@@ -697,7 +812,38 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
     )
   }
 
-  // ---- Luisteren + (optioneel) echo/vraagsheet (scherm 5) ----
+  // ---- Chunk-drill (spec §3 stap 9): na het laatste fragment, vóór done ----
+  if (phase === 'chunks') {
+    const chunk = stepChunks[chunkIdx]
+    const isLast = chunkIdx >= stepChunks.length - 1
+    return (
+      <div className="session" key={'chunks-' + chunkIdx}>
+        <div className="s-header">
+          <span className="s-iconbtn" style={{ visibility: 'hidden' }} />
+          <span className="s-title">Handige frases</span>
+          <button className="s-iconbtn" onClick={() => navigate('/path')} aria-label="Sluiten">
+            ✕
+          </button>
+        </div>
+        <div className="s-body">
+          <p className="chunk-kicker">
+            FRASE {chunkIdx + 1}/{stepChunks.length}
+          </p>
+          <p className="chunk-lead">Luister naar de frase en kies de betekenis.</p>
+          <ChunkDrill
+            key={chunkIdx}
+            chunk={chunk}
+            pool={chunkNlPool}
+            onPlay={() => playSegment(chunk.startSec, chunk.endSec, rate)}
+            onResult={onChunkResult}
+            continueLabel={isLast ? 'Afronden ▸' : 'Doorgaan ▸'}
+          />
+        </div>
+      </div>
+    )
+  }
+
+  // ---- Luisteren + (optioneel) focus/vraagsheet (scherm 5) ----
   const prevSentences = []
   for (let i = 0; i < idx; i++) for (const s of segments[i].sentences) prevSentences.push(s)
 
@@ -732,33 +878,44 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
       )}
 
       <div className="transcript">
-        {prevSentences.length > 0 && (
-          <TranscriptBubbles sentences={prevSentences} glossary={episode.glossary} episodeId={episodeId} dimmed />
-        )}
-        {reading ? (
-          <TranscriptBubbles
-            sentences={seg.sentences}
-            glossary={episode.glossary}
-            episodeId={episodeId}
-            highlightSec={isPlaying || position > seg.startSec ? position : null}
-          />
+        {phase === 'focus' ? (
+          /* Luisterfocus (spec §3 stap 2 / harde regel 5): setup + focusvraag,
+             géén antwoordopties. De gebruiker tikt zelf op play. */
+          <div className="focus-panel">
+            {seg.contextNl && <p className="focus-context">{seg.contextNl}</p>}
+            <p className="focus-label">LUISTERFOCUS</p>
+            <p className="focus-q">{seg.focusNl}</p>
+            <p className="focus-hint">Tik op play en luister waar het antwoord zit.</p>
+          </div>
         ) : (
-          prevSentences.length === 0 && (
-            <p className="transcript-empty">
-              Tik op play en luister goed.
-              <br />
-              De oefening verschijnt zodra het fragment klaar is.
-            </p>
-          )
+          <>
+            {prevSentences.length > 0 && (
+              <TranscriptBubbles sentences={prevSentences} glossary={episode.glossary} episodeId={episodeId} dimmed />
+            )}
+            {reading ? (
+              <TranscriptBubbles
+                sentences={seg.sentences}
+                glossary={episode.glossary}
+                episodeId={episodeId}
+                highlightSec={isPlaying || position > seg.startSec ? position : null}
+              />
+            ) : (
+              prevSentences.length === 0 && (
+                <p className="transcript-empty">
+                  Tik op play en luister goed.
+                  <br />
+                  De oefening verschijnt zodra het fragment klaar is.
+                </p>
+              )
+            )}
+          </>
         )}
 
         {phase === 'question' && (
           <div className="sheet">
             <div className="sheet-label">
               <span className="pause">⏸</span>
-              <span>
-                AUTO-PAUZE · VRAAG{questions.length > 1 ? ` ${qIdx + 1}/${questions.length}` : ''}
-              </span>
+              <span>{qIdx === 0 ? 'VRAAG · HOOFDLIJN' : 'VRAAG · DETAIL'}</span>
             </div>
             <QuestionCard
               key={seg.id + ':q' + qIdx}
@@ -767,6 +924,22 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
               onSelect={setSelected}
               revealed={revealed}
             />
+            {questions[qIdx].type === 'gap' && questions[qIdx].evidence?.startSec != null && (
+              /* Audio-cloze (spec §3 stap 6): de zin nog eens horen, dan het gat vullen. */
+              <button
+                type="button"
+                className="cloze-play"
+                onClick={() =>
+                  playSegment(
+                    questions[qIdx].evidence.startSec,
+                    questions[qIdx].evidence.endSec,
+                    rate,
+                  )
+                }
+              >
+                🔊 Speel de zin
+              </button>
+            )}
             {!revealed && (
               <button type="button" className="sheet-replay" onClick={onReplay}>
                 ‹‹ Nog eens luisteren
@@ -799,7 +972,121 @@ function ListenFlow({ episode, step, episodeId, navigate, reading = false }) {
 }
 
 /* ============================================================
-   C) GATE  ·  quiz-poort over de hele aflevering
+   C) EXTENSIVE  ·  de hele aflevering vrij uitluisteren (spec §3 stap 10)
+   ============================================================ */
+/*
+ * Afsluitende luisterstap: volume + tempogewenning. Geen vragen, geen
+ * verplicht transcript. De speler beslaat de HELE aflevering (0..durationSec).
+ * "Afronden" wordt actief zodra >= 60% is beluisterd of het einde is bereikt.
+ */
+function ExtensiveFlow({ episode, step, episodeId, podcast, navigate }) {
+  const completeStep = useStore((s) => s.completeStep)
+  const rate = useStore((s) => s.settings.playbackRate)
+  const setSetting = useStore((s) => s.setSetting)
+
+  const player = useSegmentPlayer(episode.audioUrl)
+  const { playSegment, pause, resume, setRate, isPlaying, position, ended, error } = player
+
+  const whole = { startSec: 0, endSec: episode.durationSec }
+  const [maxPos, setMaxPos] = useState(0)
+
+  // Verste beluisterde positie bijhouden (voor de 60%-drempel).
+  useEffect(() => {
+    setMaxPos((m) => (position > m ? position : m))
+  }, [position])
+
+  function onToggle() {
+    if (isPlaying) {
+      pause()
+    } else if (position > 0.1 && position < episode.durationSec - 0.5) {
+      resume(rate)
+    } else {
+      playSegment(0, episode.durationSec, rate)
+    }
+  }
+  function onReplay() {
+    playSegment(0, episode.durationSec, rate)
+  }
+  function cycleRate() {
+    const i = RATES.indexOf(rate)
+    const nextRate = RATES[(i + 1) % RATES.length] ?? 1
+    setSetting('playbackRate', nextRate)
+    setRate(nextRate)
+  }
+
+  const listenedPct = episode.durationSec ? maxPos / episode.durationSec : 0
+  const canFinish = listenedPct >= 0.6 || ended
+
+  function finish() {
+    playClick()
+    pause()
+    completeStep(episodeId, step.id)
+    navigate('/path')
+  }
+
+  return (
+    <div className="session" key="extensive">
+      <div className="s-header">
+        <button className="s-iconbtn" onClick={() => navigate('/path')} aria-label="Terug">
+          ‹
+        </button>
+        <span className="s-title" style={ellipsis}>
+          {step.labelNl || 'Uitluisteren'}
+        </span>
+        <button className="s-iconbtn" onClick={() => navigate('/path')} aria-label="Sluiten">
+          ✕
+        </button>
+      </div>
+
+      <div
+        className="intro-art"
+        style={
+          podcast?.artUrl
+            ? {
+                backgroundImage: `url(${import.meta.env.BASE_URL}${podcast.artUrl})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }
+            : undefined
+        }
+      />
+      <p className="intro-kicker">UITLUISTEREN</p>
+      <p className="intro-title">{episode.title}</p>
+      <p className="intro-meta">Luister de aflevering nu vrij uit, zonder vragen.</p>
+
+      <SegmentPlayer
+        segment={whole}
+        isPlaying={isPlaying}
+        position={position}
+        onToggle={onToggle}
+        onReplay={onReplay}
+        rate={rate}
+        onCycleRate={cycleRate}
+      />
+
+      {error && (
+        <p style={{ color: '#fff', textAlign: 'center', fontWeight: 700, fontSize: 12, padding: '0 22px' }}>
+          {error}
+        </p>
+      )}
+
+      <div className="grow" />
+
+      <div className="btn-row pad-b" style={{ padding: '0 22px 22px' }}>
+        <button
+          type="button"
+          className={'btn btn-primary' + (canFinish ? '' : ' is-locked')}
+          onClick={finish}
+        >
+          Afronden ▸
+        </button>
+      </div>
+    </div>
+  )
+}
+
+/* ============================================================
+   D) GATE  ·  quiz-poort over de hele aflevering
    ============================================================ */
 function GateFlow({ episode, step, episodeId, navigate }) {
   const setEpisodeScore = useStore((s) => s.setEpisodeScore)

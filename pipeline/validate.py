@@ -108,6 +108,20 @@ def check_episode(path: Path):
             if q["type"] == "vocabInContext" and q.get("vocabId") not in ids:
                 err(f"{tag}: vocabId {q.get('vocabId')} bestaat niet in vocab")
 
+        # schema v3: contextNl/focusNl + chunks
+        if "questions" in seg:
+            if not seg.get("focusNl"):
+                warn(f"{sid}: geen focusNl (luisterfocus, schema v3)")
+            if not seg.get("contextNl"):
+                warn(f"{sid}: geen contextNl (schema v3)")
+            chunks = seg.get("chunks") or []
+            if not (1 <= len(chunks) <= 3):
+                warn(f"{sid}: {len(chunks)} chunks (richtlijn 1-2)")
+            for ch in chunks:
+                nw = len(ch.get("es", "").split())
+                if not (2 <= nw <= 7):
+                    warn(f"{sid}: chunk '{ch.get('es', '')[:30]}' heeft {nw} woorden (richtlijn 2-6)")
+
         echo = seg.get("echo")
         if "questions" in seg and not echo:
             warn(f"{sid}: geen echo-zin (schema v2 verwacht er een)")

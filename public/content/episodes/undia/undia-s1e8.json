@@ -364,6 +364,8 @@
       "id": "s01",
       "startSec": 38.0,
       "endSec": 65.0,
+      "contextNl": "Rodrigo kondigt de aflevering aan: een rondrit over Puerto Rico met Alexandra en haar ouders.",
+      "focusNl": "Luister wat het gezin vandaag gaat doen en waarom mama denkt dat het een afscheid wordt.",
       "sentences": [
         {
           "startSec": 38.0,
@@ -376,6 +378,20 @@
         "startSec": 48.39,
         "endSec": 53.91
       },
+      "chunks": [
+        {
+          "es": "vamos a hacer un tour",
+          "nl": "we gaan een rondrit maken",
+          "startSec": 38.25,
+          "endSec": 40.85
+        },
+        {
+          "es": "sus lugares favoritos",
+          "nl": "haar favoriete plekken",
+          "startSec": 51.91,
+          "endSec": 53.91
+        }
+      ],
       "questions": [
         {
           "type": "mc",
@@ -420,6 +436,8 @@
       "id": "s02",
       "startSec": 65.0,
       "endSec": 107.0,
+      "contextNl": "Alexandra stelt zich voor: haar vakantie op Culebra is voorbij en ze gaat terug naar San Juan.",
+      "focusNl": "Luister waar Alexandra vandaan komt en waar ze naartoe gaat.",
       "sentences": [
         {
           "startSec": 65.0,
@@ -447,7 +465,39 @@
         "startSec": 83.25,
         "endSec": 88.77
       },
+      "chunks": [
+        {
+          "es": "vuelvo a San Juan",
+          "nl": "ik ga terug naar San Juan",
+          "startSec": 93.93,
+          "endSec": 95.43
+        },
+        {
+          "es": "no tiene culebras",
+          "nl": "heeft geen slangen",
+          "startSec": 103.77,
+          "endSec": 105.93
+        }
+      ],
       "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat doet Alexandra aan het begin van dit fragment?",
+          "choices": [
+            "Ze vertrekt op vakantie naar Culebra",
+            "Ze gaat na haar vakantie op Culebra terug naar San Juan",
+            "Ze verhuist naar de Verenigde Staten",
+            "Ze gaat op zoek naar haar vrienden"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Alexandra vertelt: \"Hoy terminan mis vacaciones con amigos en la isla Culebra y vuelvo a San Juan con mis padres.\" Haar vakantie is voorbij en ze gaat met haar ouders terug naar San Juan.",
+          "evidence": {
+            "es": "Hoy terminan mis vacaciones con amigos en la isla Culebra y vuelvo a San Juan con mis padres.",
+            "nl": "Vandaag eindigt mijn vakantie met vrienden op het eiland Culebra en ga ik met mijn ouders terug naar San Juan.",
+            "startSec": 89.41,
+            "endSec": 96.33
+          }
+        },
         {
           "type": "mc",
           "promptNl": "Wat zegt Alexandra grappig genoeg over het eilandje Culebra?",
@@ -465,25 +515,6 @@
             "startSec": 96.89,
             "endSec": 105.93
           }
-        },
-        {
-          "type": "vocabInContext",
-          "vocabId": "la-salud",
-          "promptNl": "Je hoorde \"expresiones para hablar sobre tu salud\". Wat betekent \"la salud\"?",
-          "choices": [
-            "de vakantie",
-            "het eiland",
-            "de gezondheid",
-            "de familie"
-          ],
-          "answerIndex": 2,
-          "explanationNl": "\"La salud\" is de gezondheid. Rodrigo kondigt aan: \"en este episodio hay expresiones para hablar sobre tu salud.\"",
-          "evidence": {
-            "es": "En este episodio hay expresiones para hablar sobre tu salud y también ejemplos sobre cómo usar el verbo doler.",
-            "nl": "In deze aflevering staan uitdrukkingen om over je gezondheid te praten en ook voorbeelden van hoe je het werkwoord doler gebruikt.",
-            "startSec": 66.83,
-            "endSec": 78.89
-          }
         }
       ]
     },
@@ -491,6 +522,8 @@
       "id": "s03",
       "startSec": 107.0,
       "endSec": 151.0,
+      "contextNl": "Alexandra's ouders halen haar op, maar de sfeer bij het weerzien is vreemd gespannen.",
+      "focusNl": "Luister waarom de sfeer bij het weerzien gespannen is.",
       "sentences": [
         {
           "startSec": 107.0,
@@ -513,7 +546,39 @@
         "startSec": 134.97,
         "endSec": 137.17
       },
+      "chunks": [
+        {
+          "es": "algo no está bien",
+          "nl": "er is iets niet in orde",
+          "startSec": 132.53,
+          "endSec": 134.51
+        },
+        {
+          "es": "mejor callar",
+          "nl": "beter zwijgen",
+          "startSec": 145.61,
+          "endSec": 147.39
+        }
+      ],
       "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat merkt Alexandra als ze weer bij haar ouders is?",
+          "choices": [
+            "Dat haar ouders vrolijk en ontspannen zijn",
+            "Dat er iets niet in orde is en haar vader heel serieus is",
+            "Dat de auto kapot is",
+            "Dat mama niet is komen opdagen"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Alexandra voelt de spanning: \"Algo no está bien. Mi papá está muy serio.\" Er is iets aan de hand en haar vader kijkt heel ernstig.",
+          "evidence": {
+            "es": "Algo no está bien. Mi papá está muy serio.",
+            "nl": "Er is iets niet in orde. Mijn vader kijkt heel serieus.",
+            "startSec": 132.53,
+            "endSec": 137.17
+          }
+        },
         {
           "type": "gap",
           "promptNl": "Vul aan wat je hoorde:",
@@ -532,24 +597,6 @@
             "startSec": 141.61,
             "endSec": 147.39
           }
-        },
-        {
-          "type": "mc",
-          "promptNl": "Hoe lang hebben Alexandra en haar ouders elkaar niet gezien?",
-          "choices": [
-            "Een dag",
-            "Een week",
-            "Een maand",
-            "Een jaar"
-          ],
-          "answerIndex": 1,
-          "explanationNl": "Alexandra vertelt: \"Mis padres y yo no nos vemos desde hace una semana.\" Ze hebben elkaar een week niet gezien.",
-          "evidence": {
-            "es": "Mis padres y yo no nos vemos desde hace una semana. Tengo muchas cosas que contarles.",
-            "nl": "Mijn ouders en ik hebben elkaar een week niet gezien. Ik heb veel te vertellen.",
-            "startSec": 114.41,
-            "endSec": 122.35
-          }
         }
       ]
     },
@@ -557,6 +604,8 @@
       "id": "s04",
       "startSec": 151.0,
       "endSec": 179.0,
+      "contextNl": "In de auto vertelt mama Alexandra het slechte nieuws.",
+      "focusNl": "Luister welk slecht nieuws mama in de auto vertelt.",
       "sentences": [
         {
           "startSec": 151.0,
@@ -584,7 +633,39 @@
         "startSec": 160.67,
         "endSec": 163.73
       },
+      "chunks": [
+        {
+          "es": "no me encuentro bien",
+          "nl": "ik voel me niet goed",
+          "startSec": 158.81,
+          "endSec": 160.83
+        },
+        {
+          "es": "me voy a morir",
+          "nl": "ik ga sterven",
+          "startSec": 162.01,
+          "endSec": 163.73
+        }
+      ],
       "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Welk slecht nieuws vertelt mama in de auto?",
+          "choices": [
+            "Dat ze zich niet goed voelt en denkt dat ze doodgaat",
+            "Dat ze op reis wil naar het buitenland",
+            "Dat ze boos is op papa",
+            "Dat ze honger heeft"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Mama zegt: \"Hija, no me encuentro bien. Creo que me voy a morir.\" Ze voelt zich niet goed en denkt dat ze zal sterven.",
+          "evidence": {
+            "es": "Hija, no me encuentro bien. Creo que me voy a morir.",
+            "nl": "Dochter, ik voel me niet goed. Ik denk dat ik ga sterven.",
+            "startSec": 157.49,
+            "endSec": 163.73
+          }
+        },
         {
           "type": "vocabInContext",
           "vocabId": "morir",
@@ -603,24 +684,6 @@
             "startSec": 160.67,
             "endSec": 163.73
           }
-        },
-        {
-          "type": "mc",
-          "promptNl": "Hoe reageert Alexandra op het slechte nieuws van mama?",
-          "choices": [
-            "Ze lacht",
-            "Ze wordt boos",
-            "Ze staat in shock",
-            "Ze valt in slaap"
-          ],
-          "answerIndex": 2,
-          "explanationNl": "Alexandra vertelt: \"Yo me quedo en shock.\" Ze is verbijsterd door het nieuws.",
-          "evidence": {
-            "es": "Yo me quedo en shock.",
-            "nl": "Ik sta in shock.",
-            "startSec": 164.19,
-            "endSec": 166.79
-          }
         }
       ]
     },
@@ -628,6 +691,8 @@
       "id": "s05",
       "startSec": 179.0,
       "endSec": 221.0,
+      "contextNl": "In plaats van meteen naar het ziekenhuis wil mama eerst langs haar favoriete plekken.",
+      "focusNl": "Luister wat mama per se wil doen voordat ze naar het ziekenhuis gaat.",
       "sentences": [
         {
           "startSec": 179.0,
@@ -650,7 +715,39 @@
         "startSec": 193.61,
         "endSec": 198.41
       },
+      "chunks": [
+        {
+          "es": "sus lugares preferidos",
+          "nl": "haar favoriete plekken",
+          "startSec": 183.53,
+          "endSec": 185.53
+        },
+        {
+          "es": "cerca del mar",
+          "nl": "dicht bij de zee",
+          "startSec": 196.89,
+          "endSec": 198.41
+        }
+      ],
       "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat wil mama doen voordat ze naar het ziekenhuis gaat?",
+          "choices": [
+            "Meteen naar huis gaan",
+            "Al haar favoriete plekken op het eiland bezoeken en er afscheid van nemen",
+            "Haar vrienden op Culebra bellen",
+            "Uitrusten in de auto"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Alexandra vertelt: \"Mamá quiere hacer un tour por la isla para visitar todos sus lugares preferidos. Quiere despedirse de esos lugares.\" Mama wil eerst langs al haar favoriete plekken.",
+          "evidence": {
+            "es": "Mamá quiere hacer un tour por la isla para visitar todos sus lugares preferidos.",
+            "nl": "Mama wil een rondrit over het eiland maken om al haar favoriete plekken te bezoeken.",
+            "startSec": 179.17,
+            "endSec": 185.53
+          }
+        },
         {
           "type": "vocabInContext",
           "vocabId": "despedirse",
@@ -669,24 +766,6 @@
             "startSec": 179.17,
             "endSec": 188.75
           }
-        },
-        {
-          "type": "mc",
-          "promptNl": "Waar besluiten ze eerst naartoe te gaan?",
-          "choices": [
-            "Naar San Juan",
-            "Naar Culebra",
-            "Naar Naguabo, een dorp bij de zee",
-            "Naar het ziekenhuis"
-          ],
-          "answerIndex": 2,
-          "explanationNl": "Alexandra vertelt: \"Entonces decidimos ir a Naguabo, un pueblo cerca del mar.\" Ze gaan naar Naguabo, een dorp aan zee, om empanadillas te eten.",
-          "evidence": {
-            "es": "Entonces decidimos ir a Naguabo, un pueblo cerca del mar.",
-            "nl": "Dus besluiten we naar Naguabo te gaan, een dorp vlak bij de zee.",
-            "startSec": 192.69,
-            "endSec": 198.41
-          }
         }
       ]
     },
@@ -694,6 +773,8 @@
       "id": "s06",
       "startSec": 221.0,
       "endSec": 258.0,
+      "contextNl": "Mama koopt in Naguabo een grote hoeveelheid empanadillas, wat Alexandra vreemd vindt.",
+      "focusNl": "Luister waarom Alexandra begint te twijfelen aan mama's ziekte.",
       "sentences": [
         {
           "startSec": 221.0,
@@ -716,7 +797,39 @@
         "startSec": 243.73,
         "endSec": 247.93
       },
+      "chunks": [
+        {
+          "es": "una caja de 12",
+          "nl": "een doos van 12",
+          "startSec": 229.99,
+          "endSec": 232.43
+        },
+        {
+          "es": "la quiero mucho",
+          "nl": "ik hou veel van haar",
+          "startSec": 246.57,
+          "endSec": 247.93
+        }
+      ],
       "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Waarom vindt Alexandra het vreemd dat mama zo veel empanadillas koopt?",
+          "choices": [
+            "Omdat ze net gegeten hebben",
+            "Omdat mama zegt dat ze doodgaat",
+            "Omdat empanadillas heel duur zijn",
+            "Omdat papa geen honger heeft"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Alexandra denkt: \"¿No son muchas empanadillas para una persona que dice que se va a morir?\" Veel eten voor iemand die zegt dood te gaan.",
+          "evidence": {
+            "es": "¿No son muchas empanadillas para una persona que dice que se va a morir?",
+            "nl": "Zijn dat niet veel empanadillas voor iemand die zegt dat ze doodgaat?",
+            "startSec": 233.99,
+            "endSec": 241.79
+          }
+        },
         {
           "type": "gap",
           "promptNl": "Vul aan wat je hoorde:",
@@ -735,24 +848,6 @@
             "startSec": 243.73,
             "endSec": 247.93
           }
-        },
-        {
-          "type": "mc",
-          "promptNl": "Waarom vindt Alexandra het vreemd dat mama zo veel empanadillas koopt?",
-          "choices": [
-            "Omdat ze net gegeten hebben",
-            "Omdat mama zegt dat ze doodgaat",
-            "Omdat empanadillas heel duur zijn",
-            "Omdat papa geen honger heeft"
-          ],
-          "answerIndex": 1,
-          "explanationNl": "Alexandra denkt: \"¿No son muchas empanadillas para una persona que dice que se va a morir?\" Veel eten voor iemand die zegt dood te gaan.",
-          "evidence": {
-            "es": "¿No son muchas empanadillas para una persona que dice que se va a morir?",
-            "nl": "Zijn dat niet veel empanadillas voor iemand die zegt dat ze doodgaat?",
-            "startSec": 233.99,
-            "endSec": 241.79
-          }
         }
       ]
     },
@@ -760,6 +855,8 @@
       "id": "s07",
       "startSec": 258.0,
       "endSec": 293.0,
+      "contextNl": "Op weg naar San Juan rijden ze door het natuurpark El Yunque, een favoriete plek van mama.",
+      "focusNl": "Luister wat ze horen terwijl ze door El Yunque rijden.",
       "sentences": [
         {
           "startSec": 258.0,
@@ -782,6 +879,20 @@
         "startSec": 277.41,
         "endSec": 281.07
       },
+      "chunks": [
+        {
+          "es": "uno de los lugares favoritos",
+          "nl": "een van de favoriete plekken",
+          "startSec": 265.45,
+          "endSec": 267.59
+        },
+        {
+          "es": "un camino precioso",
+          "nl": "een prachtige weg",
+          "startSec": 291.79,
+          "endSec": 293.47
+        }
+      ],
       "questions": [
         {
           "type": "mc",
@@ -826,6 +937,8 @@
       "id": "s08",
       "startSec": 293.0,
       "endSec": 320.0,
+      "contextNl": "Bij het ziekenhuis vraagt Alexandra of mama zich al beter voelt.",
+      "focusNl": "Luister hoe mama zich voelt als ze bij het ziekenhuis aankomen.",
       "sentences": [
         {
           "startSec": 293.0,
@@ -858,6 +971,20 @@
         "startSec": 309.85,
         "endSec": 313.23
       },
+      "chunks": [
+        {
+          "es": "te sientes mejor",
+          "nl": "voel je je beter",
+          "startSec": 303.53,
+          "endSec": 305.37
+        },
+        {
+          "es": "me duele la cabeza",
+          "nl": "ik heb hoofdpijn",
+          "startSec": 318.51,
+          "endSec": 320.41
+        }
+      ],
       "questions": [
         {
           "type": "mc",
@@ -902,6 +1029,8 @@
       "id": "s09",
       "startSec": 320.0,
       "endSec": 355.0,
+      "contextNl": "Mama somt haar klachten op, maar Alexandra vermoedt een heel andere oorzaak.",
+      "focusNl": "Luister wat Alexandra denkt dat mama's buikpijn echt veroorzaakt.",
       "sentences": [
         {
           "startSec": 320.0,
@@ -934,26 +1063,21 @@
         "startSec": 326.23,
         "endSec": 329.11
       },
-      "questions": [
+      "chunks": [
         {
-          "type": "vocabInContext",
-          "vocabId": "la-barriga",
-          "promptNl": "Je hoorde \"me duele la barriga\". Wat betekent \"la barriga\"?",
-          "choices": [
-            "het hoofd",
-            "de buik",
-            "de rug",
-            "de keel"
-          ],
-          "answerIndex": 1,
-          "explanationNl": "\"La barriga\" is de buik. Mama zegt: \"desde hace una hora me duele la barriga.\"",
-          "evidence": {
-            "es": "También estoy muy cansada y desde hace una hora me duele la barriga.",
-            "nl": "Ik ben ook heel moe en sinds een uur heb ik buikpijn.",
-            "startSec": 329.83,
-            "endSec": 337.93
-          }
+          "es": "de vez en cuando",
+          "nl": "af en toe",
+          "startSec": 322.93,
+          "endSec": 324.31
         },
+        {
+          "es": "otra vez",
+          "nl": "weer / opnieuw",
+          "startSec": 352.21,
+          "endSec": 353.39
+        }
+      ],
+      "questions": [
         {
           "type": "mc",
           "promptNl": "Wat denkt Alexandra dat de echte oorzaak van mama's buikpijn is?",
@@ -971,6 +1095,25 @@
             "startSec": 342.65,
             "endSec": 348.41
           }
+        },
+        {
+          "type": "gap",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "También estoy muy cansada y desde hace una hora me duele la ___.",
+          "choices": [
+            "cabeza",
+            "barriga",
+            "espalda",
+            "garganta"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Mama noemt nog een klacht: \"desde hace una hora me duele la barriga.\" \"La barriga\" is de buik.",
+          "evidence": {
+            "es": "También estoy muy cansada y desde hace una hora me duele la barriga.",
+            "nl": "Ik ben ook heel moe en sinds een uur heb ik buikpijn.",
+            "startSec": 329.83,
+            "endSec": 337.93
+          }
         }
       ]
     },
@@ -978,6 +1121,8 @@
       "id": "s10",
       "startSec": 355.0,
       "endSec": 392.0,
+      "contextNl": "In de wachtkamer maken papa en Alexandra zich zorgen tot de dokter met nieuws komt.",
+      "focusNl": "Luister wat de dokter uiteindelijk over mama zegt.",
       "sentences": [
         {
           "startSec": 355.0,
@@ -1000,6 +1145,20 @@
         "startSec": 371.97,
         "endSec": 377.29
       },
+      "chunks": [
+        {
+          "es": "la sala de espera",
+          "nl": "de wachtkamer",
+          "startSec": 362.95,
+          "endSec": 364.51
+        },
+        {
+          "es": "buenas noticias",
+          "nl": "goed nieuws",
+          "startSec": 383.75,
+          "endSec": 385.35
+        }
+      ],
       "questions": [
         {
           "type": "mc",
@@ -1044,6 +1203,8 @@
       "id": "s11",
       "startSec": 392.0,
       "endSec": 422.0,
+      "contextNl": "Opgelucht dat mama in orde is, gaat het gezin terug naar huis.",
+      "focusNl": "Luister waarom het gezin blij en opgelucht naar huis gaat.",
       "sentences": [
         {
           "startSec": 392.0,
@@ -1061,6 +1222,20 @@
         "startSec": 409.03,
         "endSec": 415.17
       },
+      "chunks": [
+        {
+          "es": "nos alegramos mucho",
+          "nl": "we zijn heel blij",
+          "startSec": 395.09,
+          "endSec": 396.93
+        },
+        {
+          "es": "volvemos a casa",
+          "nl": "we gaan naar huis",
+          "startSec": 409.03,
+          "endSec": 411.33
+        }
+      ],
       "questions": [
         {
           "type": "mc",
@@ -1105,6 +1280,8 @@
       "id": "s12",
       "startSec": 422.0,
       "endSec": 453.0,
+      "contextNl": "Rodrigo sluit af: het was loos alarm, maar de schrik bracht het gezin toch iets moois.",
+      "focusNl": "Luister wat het gezin uiteindelijk aan de schrik heeft overgehouden.",
       "sentences": [
         {
           "startSec": 422.0,
@@ -1117,7 +1294,39 @@
         "startSec": 432.35,
         "endSec": 435.39
       },
+      "chunks": [
+        {
+          "es": "todo ha sido un susto",
+          "nl": "het was allemaal loos alarm",
+          "startSec": 426.17,
+          "endSec": 428.83
+        },
+        {
+          "es": "está bien",
+          "nl": "is in orde / gaat goed",
+          "startSec": 417.35,
+          "endSec": 418.91
+        }
+      ],
       "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat is volgens Rodrigo het positieve gevolg van mama's schrik?",
+          "choices": [
+            "Ze hebben veel geld bespaard",
+            "Mama moet in het ziekenhuis blijven",
+            "Ze hebben alle belangrijke plekken van het eiland kunnen bezoeken",
+            "Ze gaan op reis naar de Verenigde Staten"
+          ],
+          "answerIndex": 2,
+          "explanationNl": "Rodrigo zegt: \"gracias a esa preocupación, han tenido la oportunidad de ir a todos los lugares importantes de la isla para María.\" Dankzij de schrik bezochten ze alle belangrijke plekken.",
+          "evidence": {
+            "es": "Pero gracias a esa preocupación, han tenido la oportunidad de ir a todos los lugares importantes de la isla para María y también les espera una cena deliciosa.",
+            "nl": "Maar dankzij die ongerustheid hebben ze de kans gehad om alle belangrijke plekken van het eiland voor María te bezoeken, en er wacht hun ook een heerlijk diner.",
+            "startSec": 435.69,
+            "endSec": 452.89
+          }
+        },
         {
           "type": "vocabInContext",
           "vocabId": "el-susto",
@@ -1135,24 +1344,6 @@
             "nl": "Uiteindelijk, en gelukkig, was het allemaal loos alarm en is de moeder van Alexandra in orde.",
             "startSec": 423.19,
             "endSec": 431.85
-          }
-        },
-        {
-          "type": "mc",
-          "promptNl": "Wat is volgens Rodrigo het positieve gevolg van mama's schrik?",
-          "choices": [
-            "Ze hebben veel geld bespaard",
-            "Mama moet in het ziekenhuis blijven",
-            "Ze hebben alle belangrijke plekken van het eiland kunnen bezoeken",
-            "Ze gaan op reis naar de Verenigde Staten"
-          ],
-          "answerIndex": 2,
-          "explanationNl": "Rodrigo zegt: \"gracias a esa preocupación, han tenido la oportunidad de ir a todos los lugares importantes de la isla para María.\" Dankzij de schrik bezochten ze alle belangrijke plekken.",
-          "evidence": {
-            "es": "Pero gracias a esa preocupación, han tenido la oportunidad de ir a todos los lugares importantes de la isla para María y también les espera una cena deliciosa.",
-            "nl": "Maar dankzij die ongerustheid hebben ze de kans gehad om alle belangrijke plekken van het eiland voor María te bezoeken, en er wacht hun ook een heerlijk diner.",
-            "startSec": 435.69,
-            "endSec": 452.89
           }
         }
       ]

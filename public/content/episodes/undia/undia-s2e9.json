@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "undia-s2e9",
   "podcastId": "undia",
   "title": "De dood was geen strand",
@@ -362,6 +362,22 @@
       "id": "s01",
       "startSec": 34.8,
       "endSec": 56.0,
+      "contextNl": "Rodrigo kondigt de nieuwe aflevering aan en geeft een luistertip.",
+      "focusNl": "Luister waarmee je in deze aflevering vooral kunt oefenen.",
+      "chunks": [
+        {
+          "es": "en el pasado",
+          "nl": "in de verleden tijd",
+          "startSec": 38.35,
+          "endSec": 39.59
+        },
+        {
+          "es": "vas a ver que",
+          "nl": "je zult zien dat",
+          "startSec": 47.27,
+          "endSec": 49.29
+        }
+      ],
       "sentences": [
         {
           "startSec": 34.8,
@@ -417,6 +433,22 @@
       "id": "s02",
       "startSec": 71.0,
       "endSec": 125.0,
+      "contextNl": "Rodrigo stelt Silvia voor, die zichzelf en haar streek beschrijft.",
+      "focusNl": "Luister wie Silvia is en waar ze vandaan komt.",
+      "chunks": [
+        {
+          "es": "en el sur de",
+          "nl": "in het zuiden van",
+          "startSec": 107.69,
+          "endSec": 109.41
+        },
+        {
+          "es": "un lugar famoso",
+          "nl": "een beroemde plek",
+          "startSec": 112.23,
+          "endSec": 113.85
+        }
+      ],
       "sentences": [
         {
           "startSec": 71.0,
@@ -459,16 +491,17 @@
           }
         },
         {
-          "type": "mc",
-          "promptNl": "Waar staat Andalucía volgens Silvia bekend om?",
+          "type": "gap",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "Andalucía es un lugar famoso por su buen ___, su comida deliciosa.",
           "choices": [
-            "Om de sneeuw en de bergen",
-            "Om de grote fabrieken",
-            "Om de lange, koude winters",
-            "Om het goede weer, het lekkere eten en de mooie stranden"
+            "tiempo",
+            "dinero",
+            "trabajo",
+            "ruido"
           ],
-          "answerIndex": 3,
-          "explanationNl": "Silvia zegt: \"Andalucía es un lugar famoso por su buen tiempo, su comida deliciosa, sus playas hermosas...\" (Andalusië staat bekend om zijn goede weer, lekkere eten en mooie stranden.)",
+          "answerIndex": 0,
+          "explanationNl": "\"Su buen tiempo\" = het goede weer. Silvia noemt Andalusië beroemd om zijn goede weer, lekkere eten en mooie stranden.",
           "evidence": {
             "es": "Andalucía es un lugar famoso por su buen tiempo, su comida deliciosa, sus playas hermosas y una historia muy rica y diversa.",
             "nl": "Andalusië is een plek die beroemd is om zijn goede weer, zijn heerlijke eten, zijn mooie stranden en een heel rijke en diverse geschiedenis.",
@@ -482,6 +515,22 @@
       "id": "s03",
       "startSec": 125.0,
       "endSec": 165.0,
+      "contextNl": "Silvia introduceert het grote thema van haar verhaal.",
+      "focusNl": "Luister welke openbaring volgens Silvia iedereen ooit krijgt.",
+      "chunks": [
+        {
+          "es": "en algún momento",
+          "nl": "op een bepaald moment",
+          "startSec": 142.76,
+          "endSec": 145.38
+        },
+        {
+          "es": "no somos inmortales",
+          "nl": "we zijn niet onsterfelijk",
+          "startSec": 151.64,
+          "endSec": 154.28
+        }
+      ],
       "sentences": [
         {
           "startSec": 125.0,
@@ -501,6 +550,24 @@
       },
       "questions": [
         {
+          "type": "mc",
+          "promptNl": "Welke openbaring krijgt volgens Silvia iedereen ooit in zijn leven?",
+          "choices": [
+            "Dat niemand onsterfelijk is",
+            "Dat iedereen ooit rijk wordt",
+            "Dat de zomer altijd terugkomt",
+            "Dat dromen altijd uitkomen"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Silvia zegt dat alle mensen op een dag dezelfde openbaring krijgen: \"no somos inmortales\" (we zijn niet onsterfelijk).",
+          "evidence": {
+            "es": "todas las personas tenemos una revelación: no somos inmortales",
+            "nl": "alle mensen krijgen een openbaring: we zijn niet onsterfelijk",
+            "startSec": 146.8,
+            "endSec": 154.28
+          }
+        },
+        {
           "type": "vocabInContext",
           "vocabId": "inmortal",
           "promptNl": "Je hoorde \"no somos inmortales\". Wat betekent \"inmortal\"?",
@@ -518,24 +585,6 @@
             "startSec": 142.76,
             "endSec": 154.28
           }
-        },
-        {
-          "type": "mc",
-          "promptNl": "Wanneer is deze openbaring volgens Silvia vooral aangrijpend?",
-          "choices": [
-            "Als we al heel oud zijn",
-            "Als we nog kinderen zijn",
-            "Als we op vakantie zijn",
-            "Als we alleen thuis zijn"
-          ],
-          "answerIndex": 1,
-          "explanationNl": "Silvia zegt: \"Esta revelación puede ser muy impactante, especialmente cuando somos niñas y niños.\" (Deze openbaring kan heel aangrijpend zijn, vooral wanneer we nog kinderen zijn.)",
-          "evidence": {
-            "es": "Esta revelación puede ser muy impactante, especialmente cuando somos niñas y niños.",
-            "nl": "Deze openbaring kan heel aangrijpend zijn, vooral wanneer we meisjes en jongens zijn.",
-            "startSec": 154.92,
-            "endSec": 163.42
-          }
         }
       ]
     },
@@ -543,6 +592,22 @@
       "id": "s04",
       "startSec": 165.0,
       "endSec": 216.0,
+      "contextNl": "Silvia vertelt over haar grote zorg als kind en het verhaal van haar vader.",
+      "focusNl": "Luister waarom de kleine Silvia zich zorgen maakte.",
+      "chunks": [
+        {
+          "es": "una gran preocupación",
+          "nl": "een grote zorg",
+          "startSec": 186.96,
+          "endSec": 189.56
+        },
+        {
+          "es": "me contaba una historia",
+          "nl": "vertelde me een verhaal",
+          "startSec": 192.82,
+          "endSec": 195.4
+        }
+      ],
       "sentences": [
         {
           "startSec": 165.0,
@@ -563,20 +628,20 @@
       "questions": [
         {
           "type": "mc",
-          "promptNl": "Wat vertelde Silvia's vader over de toverdrank?",
+          "promptNl": "Waar dacht Silvia als kind van zes veel over na?",
           "choices": [
-            "Dat hij hem zelf ooit had gedronken",
-            "Dat hij heel vies smaakte",
-            "Dat je er heel oud van werd",
-            "Dat hij in zijn dokterspraktijk stond"
+            "Over de mogelijkheid om niet meer te bestaan",
+            "Over haar volgende verjaardag",
+            "Over school en haar vriendinnen",
+            "Over de zomervakantie aan zee"
           ],
-          "answerIndex": 3,
-          "explanationNl": "Haar vader is arts en vertelde: \"esta poción estaba en su consulta\", de toverdrank stond in zijn praktijk.",
+          "answerIndex": 0,
+          "explanationNl": "Silvia zegt dat ze veel nadacht \"en la posibilidad de no existir más\" (over de mogelijkheid om niet meer te bestaan), en dat dit een grote zorg voor haar was.",
           "evidence": {
-            "es": "Él era y aún es médico. Y me contaba que esta poción estaba en su consulta.",
-            "nl": "Hij was en is nog steeds arts. En hij vertelde me dat deze toverdrank in zijn praktijk stond.",
-            "startSec": 203.32,
-            "endSec": 211.88
+            "es": "pensaba mucho en la posibilidad de no existir más. Y esta idea era una gran preocupación para mí.",
+            "nl": "ik dacht veel na over de mogelijkheid om niet meer te bestaan. En dit idee was een grote zorg voor mij.",
+            "startSec": 181.22,
+            "endSec": 190.12
           }
         },
         {
@@ -605,6 +670,22 @@
       "id": "s05",
       "startSec": 216.0,
       "endSec": 267.0,
+      "contextNl": "Silvia twijfelt aan haar vader en vertelt over de middagen met haar moeder.",
+      "focusNl": "Luister waarom het verhaal van haar vader Silvia niet geruststelde.",
+      "chunks": [
+        {
+          "es": "todas las tardes",
+          "nl": "elke middag",
+          "startSec": 237.26,
+          "endSec": 239.88
+        },
+        {
+          "es": "después de la escuela",
+          "nl": "na school",
+          "startSec": 239.66,
+          "endSec": 241.54
+        }
+      ],
       "sentences": [
         {
           "startSec": 216.0,
@@ -624,6 +705,24 @@
       },
       "questions": [
         {
+          "type": "mc",
+          "promptNl": "Waarom stelde het verhaal van haar vader Silvia niet gerust?",
+          "choices": [
+            "Omdat hij te snel praatte",
+            "Omdat ze het verhaal niet begreep",
+            "Omdat hij het in het Engels vertelde",
+            "Omdat de uitdrukking op zijn gezicht niet oprecht leek"
+          ],
+          "answerIndex": 3,
+          "explanationNl": "Silvia zegt: \"la expresión en la cara de mi padre no era muy sincera\" (de uitdrukking op het gezicht van mijn vader was niet erg oprecht), en ze vraagt zich af of hij loog.",
+          "evidence": {
+            "es": "La verdad es que esa historia de mi padre no me tranquilizaba… porque la expresión en la cara de mi padre no era muy sincera.",
+            "nl": "De waarheid is dat dat verhaal van mijn vader me niet geruststelde, want de uitdrukking op zijn gezicht was niet erg oprecht.",
+            "startSec": 214.82,
+            "endSec": 229.72
+          }
+        },
+        {
           "type": "gap",
           "vocabId": "el-bocadillo",
           "promptNl": "Vul aan wat je hoorde:",
@@ -642,24 +741,6 @@
             "startSec": 245.66,
             "endSec": 255.98
           }
-        },
-        {
-          "type": "mc",
-          "promptNl": "Waarom stelde het verhaal van haar vader Silvia niet gerust?",
-          "choices": [
-            "Omdat hij te snel praatte",
-            "Omdat ze het verhaal niet begreep",
-            "Omdat hij het in het Engels vertelde",
-            "Omdat de uitdrukking op zijn gezicht niet oprecht leek"
-          ],
-          "answerIndex": 3,
-          "explanationNl": "Silvia zegt: \"la expresión en la cara de mi padre no era muy sincera\" (de uitdrukking op het gezicht van mijn vader was niet erg oprecht), en ze vraagt zich af of hij loog.",
-          "evidence": {
-            "es": "La verdad es que esa historia de mi padre no me tranquilizaba… porque la expresión en la cara de mi padre no era muy sincera.",
-            "nl": "De waarheid is dat dat verhaal van mijn vader me niet geruststelde, want de uitdrukking op zijn gezicht was niet erg oprecht.",
-            "startSec": 214.82,
-            "endSec": 229.72
-          }
         }
       ]
     },
@@ -667,6 +748,22 @@
       "id": "s06",
       "startSec": 267.0,
       "endSec": 323.0,
+      "contextNl": "Op een middag hoort Silvia op tv een titel die haar grote vraag oproept.",
+      "focusNl": "Luister wat Silvia op tv hoort waardoor ze haar moeder iets gaat vragen.",
+      "chunks": [
+        {
+          "es": "un día",
+          "nl": "op een dag",
+          "startSec": 287.04,
+          "endSec": 288.94
+        },
+        {
+          "es": "el nombre del episodio",
+          "nl": "de naam van de aflevering",
+          "startSec": 305.16,
+          "endSec": 308.16
+        }
+      ],
       "sentences": [
         {
           "startSec": 267.0,
@@ -732,6 +829,22 @@
       "id": "s07",
       "startSec": 323.0,
       "endSec": 354.0,
+      "contextNl": "Silvia stelt haar moeder de vraag die haar al zo lang bezighoudt.",
+      "focusNl": "Luister wat Silvia's moeder antwoordt op haar vraag over doodgaan.",
+      "chunks": [
+        {
+          "es": "como todo el mundo",
+          "nl": "net als iedereen",
+          "startSec": 329.68,
+          "endSec": 331.34
+        },
+        {
+          "es": "creo que no",
+          "nl": "ik denk het niet",
+          "startSec": 344.1,
+          "endSec": 345.32
+        }
+      ],
       "sentences": [
         {
           "startSec": 323.0,
@@ -772,24 +885,6 @@
       "questions": [
         {
           "type": "mc",
-          "promptNl": "Wat zegt mama over de toverdrank om onsterfelijk te worden?",
-          "choices": [
-            "Dat die alleen voor kinderen werkt",
-            "Dat die volgens haar niet bestaat",
-            "Dat papa hem thuis bewaart",
-            "Dat die heel duur is"
-          ],
-          "answerIndex": 1,
-          "explanationNl": "Op de vraag \"¿No hay una poción para ser inmortal?\" antwoordt mama: \"Creo que no.\" (Ik denk het niet.)",
-          "evidence": {
-            "es": "Creo que no. Pero… ahora no tienes que pensar en estas cosas. Eso va a pasar dentro de mucho tiempo.",
-            "nl": "Ik denk het niet. Maar aan die dingen hoef je nu niet te denken. Dat gebeurt pas over heel lange tijd.",
-            "startSec": 344.1,
-            "endSec": 353.66
-          }
-        },
-        {
-          "type": "mc",
           "promptNl": "Wat antwoordt mama op de vraag of zij en Silvia doodgaan?",
           "choices": [
             "Nee, wij tweeën niet",
@@ -805,6 +900,24 @@
             "startSec": 322.68,
             "endSec": 331.34
           }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Wat zegt mama over de toverdrank om onsterfelijk te worden?",
+          "choices": [
+            "Dat die alleen voor kinderen werkt",
+            "Dat die volgens haar niet bestaat",
+            "Dat papa hem thuis bewaart",
+            "Dat die heel duur is"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Op de vraag \"¿No hay una poción para ser inmortal?\" antwoordt mama: \"Creo que no.\" (Ik denk het niet.)",
+          "evidence": {
+            "es": "Creo que no. Pero… ahora no tienes que pensar en estas cosas. Eso va a pasar dentro de mucho tiempo.",
+            "nl": "Ik denk het niet. Maar aan die dingen hoef je nu niet te denken. Dat gebeurt pas over heel lange tijd.",
+            "startSec": 344.1,
+            "endSec": 353.66
+          }
         }
       ]
     },
@@ -812,6 +925,22 @@
       "id": "s08",
       "startSec": 354.0,
       "endSec": 400.0,
+      "contextNl": "Silvia reageert heftig op het nieuws, maar haar verdriet duurt kort.",
+      "focusNl": "Luister hoe Silvia reageert als ze de waarheid hoort.",
+      "chunks": [
+        {
+          "es": "empecé a llorar",
+          "nl": "ik begon te huilen",
+          "startSec": 358.26,
+          "endSec": 360.14
+        },
+        {
+          "es": "la melodía de la serie",
+          "nl": "de melodie van de serie",
+          "startSec": 383.38,
+          "endSec": 385.72
+        }
+      ],
       "sentences": [
         {
           "startSec": 354.0,
@@ -831,17 +960,16 @@
       },
       "questions": [
         {
-          "type": "vocabInContext",
-          "vocabId": "llorar",
-          "promptNl": "Je hoorde \"empecé a llorar\". Wat betekent \"llorar\"?",
+          "type": "mc",
+          "promptNl": "Hoe reageert Silvia als ze hoort dat iedereen doodgaat?",
           "choices": [
-            "Huilen",
-            "Lachen",
-            "Schreeuwen",
-            "Rennen"
+            "Ze laat haar broodje vallen en begint te huilen",
+            "Ze begint te lachen",
+            "Ze rent de kamer uit",
+            "Ze zet de tv uit"
           ],
           "answerIndex": 0,
-          "explanationNl": "\"Llorar\" = huilen. Silvia laat haar broodje los en begint ontroostbaar te huilen: \"empecé a llorar desconsoladamente\".",
+          "explanationNl": "Silvia zegt: \"solté mi bocadillo y empecé a llorar desconsoladamente\" (ik liet mijn broodje los en begon ontroostbaar te huilen).",
           "evidence": {
             "es": "Entonces, solté mi bocadillo y empecé a llorar desconsoladamente.",
             "nl": "Toen liet ik mijn broodje los en begon ik ontroostbaar te huilen.",
@@ -874,6 +1002,22 @@
       "id": "s09",
       "startSec": 400.0,
       "endSec": 442.0,
+      "contextNl": "De muziek verandert alles voor Silvia en geeft haar een levensles.",
+      "focusNl": "Luister welke levensles Silvia aan dit moment overhoudt.",
+      "chunks": [
+        {
+          "es": "nada es para siempre",
+          "nl": "niets is voor altijd",
+          "startSec": 429.12,
+          "endSec": 431.7
+        },
+        {
+          "es": "disfrutar del momento",
+          "nl": "genieten van het moment",
+          "startSec": 434.82,
+          "endSec": 437.82
+        }
+      ],
       "sentences": [
         {
           "startSec": 400.0,
@@ -893,6 +1037,24 @@
       },
       "questions": [
         {
+          "type": "mc",
+          "promptNl": "Welke levensles houdt Silvia over aan dit moment?",
+          "choices": [
+            "Dat niets voor altijd is en je van het moment moet genieten",
+            "Dat je nooit meer tv moet kijken",
+            "Dat je altijd broodjes moet eten",
+            "Dat de dood niet echt bestaat"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Silvia zegt: \"nada es para siempre. Y por eso es importante disfrutar del momento\" (niets is voor altijd, en daarom is het belangrijk van het moment te genieten).",
+          "evidence": {
+            "es": "Su foto me recuerda que nada es para siempre. Y por eso es importante disfrutar del momento.",
+            "nl": "Haar foto herinnert me eraan dat niets voor altijd is. En daarom is het belangrijk om van het moment te genieten.",
+            "startSec": 425.86,
+            "endSec": 437.82
+          }
+        },
+        {
           "type": "gap",
           "vocabId": "me-tranquilizo",
           "promptNl": "Vul aan wat je hoorde:",
@@ -911,24 +1073,6 @@
             "startSec": 399.66,
             "endSec": 411.56
           }
-        },
-        {
-          "type": "mc",
-          "promptNl": "Wat heeft Silvia nu aan de muur van haar woonkamer hangen?",
-          "choices": [
-            "Een foto van haar moeder",
-            "Een schilderij van een strand",
-            "Een poster van Andalusië",
-            "Een foto van Nick Slaughter, de hoofdpersoon van de serie"
-          ],
-          "answerIndex": 3,
-          "explanationNl": "Silvia zegt: \"tengo una fotografía del protagonista de la serie, Nick Slaughter, en la pared de mi salón\" (ik heb een foto van Nick Slaughter, de hoofdpersoon van de serie, aan de muur van mijn woonkamer).",
-          "evidence": {
-            "es": "A día de hoy tengo una fotografía del protagonista de la serie, Nick Slaughter, en la pared de mi salón.",
-            "nl": "Tot op de dag van vandaag heb ik een foto van Nick Slaughter, de hoofdpersoon van de serie, aan de muur van mijn woonkamer.",
-            "startSec": 412.94,
-            "endSec": 425.24
-          }
         }
       ]
     },
@@ -936,6 +1080,22 @@
       "id": "s10",
       "startSec": 442.0,
       "endSec": 477.0,
+      "contextNl": "Rodrigo sluit af met de moraal van Silvia's verhaal.",
+      "focusNl": "Luister welke boodschap Rodrigo uit het verhaal haalt.",
+      "chunks": [
+        {
+          "es": "un impacto tan fuerte",
+          "nl": "zo'n sterke impact",
+          "startSec": 448.7,
+          "endSec": 451.46
+        },
+        {
+          "es": "gracias a",
+          "nl": "dankzij",
+          "startSec": 453.72,
+          "endSec": 455.2
+        }
+      ],
       "sentences": [
         {
           "startSec": 442.0,

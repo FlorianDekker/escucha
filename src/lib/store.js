@@ -7,6 +7,7 @@ import {
   maybeIntroduceProduction,
   todayStr,
 } from './cards'
+import { normalizeWord } from './contentLoader'
 
 const SCHEMA_VERSION = 2
 const XP_PER_CORRECT = 15
@@ -168,6 +169,20 @@ export const useStore = create(
          Aanroepen bij het openen van een woordsessie of de Woorden-tab. */
       engineMaybeIntroduceProduction() {
         set((s) => ({ engine: maybeIntroduceProduction(s.engine) }))
+      },
+
+      /* Podcast-als-review (spec §4.2, conservatief). Een correct beantwoorde
+         woord- of audio-cloze-vraag telt als FSRS-review (Good) op de
+         herkenningskaart, maar ALLEEN als die note + kaart al bestaan. Bestaan
+         ze niet, dan gebeurt er niets. esOrNoteId mag het Spaanse woord of een
+         al-genormaliseerde note-id zijn (normalizeWord is idempotent). */
+      engineReviewFromListening(esOrNoteId) {
+        const noteId = normalizeWord(esOrNoteId)
+        const recogId = noteId + ':recognition'
+        const eng = get().engine
+        if (!eng.notes[noteId] || !eng.cards[recogId]) return
+        get().touchStreak()
+        set((s) => ({ engine: reviewCard(s.engine, recogId, true) }))
       },
 
       setLastWeeklyReview(date) {

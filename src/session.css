@@ -852,6 +852,74 @@
   padding: 0;
 }
 
+/* Audio-cloze: de zin nog eens horen in de vraagsheet (spec §3 stap 6). */
+.cloze-play {
+  margin-top: 12px;
+  border: none;
+  background: var(--chip);
+  color: var(--brand);
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ---- Luisterfocus (scherm 5, fase vóór het luisteren) ---- */
+.focus-panel {
+  text-align: center;
+  padding: 18px 6px 8px;
+}
+.focus-context {
+  color: var(--brand-soft);
+  font-weight: 700;
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin: 0 0 18px;
+}
+.focus-label {
+  color: var(--gold);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  margin: 0;
+}
+.focus-q {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 21px;
+  color: #fff;
+  line-height: 1.25;
+  margin: 8px 0 0;
+}
+.focus-hint {
+  color: var(--brand-soft);
+  font-weight: 700;
+  font-size: 12.5px;
+  margin: 20px 0 0;
+}
+
+/* ---- Chunk-drill (scherm na de laatste feedback) ---- */
+.chunk-kicker {
+  color: var(--gold);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  margin: 6px 0 0;
+  text-align: center;
+}
+.chunk-lead {
+  color: var(--brand-soft);
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  margin: 6px 0 0;
+}
+
 /* ---- Zinsbouw-oefening (echo) ---- */
 .echo-prompt {
   display: flex;

@@ -10,6 +10,12 @@ Je zet een gescrapete podcast-aflevering om naar een Escucha-aflevering-JSON. In
 4. **Glossary**: map van genormaliseerd woord (lowercase, zonder leestekens, mét accenten) naar korte NL-vertaling, voor ALLE inhoudswoorden in de segments (werkwoordsvormen apart opnemen zoals ze voorkomen). Eigennamen krijgen een korte duiding. Doel: validator-dekking ≥95%.
 4b. **Intro-regel**: alleen de allereerste aflevering van de app behoudt de generieke podcast-welkomstintro van Rodrigo ("Hola, soy Rodrigo... este pódcast es perfecto para ti"). Bij alle andere afleveringen begint het eerste segment bij de aflevering-specifieke preview of het verhaal zelf; de generieke welkomstzinnen krijgen geen segment. Dek verder het volledige verhaal; alleen pure Babbel-productiecredits en bonus-promo's krijgen geen segment.
 
+4d. **Guided listening (schema v3, spec §3)**: per segment ook:
+   - `"contextNl"`: één korte setup-zin voor het fragment ("Andrea staat voor haar eerste surfles").
+   - `"focusNl"`: de luisterfocus, een vraagstam zónder antwoordopties ("Luister waarom Andrea niet bang meer is"). Sluit aan op de gist-vraag.
+   - `questions[0]` is de GIST-vraag (breed, over de hoofdlijn; promptNl matcht de focus), `questions[1]` de detailvraag. Maak bij ongeveer de helft van de segmenten de detailvraag een `gap` (audio-cloze: de app speelt dan de evidence-zin als audio bij de vraag), zodat audio-cloze zwaar meeweegt.
+   - `"chunks"`: 1 à 2 nuttige frases per segment als `[{ "es": "<letterlijke frase, 2-6 woorden>", "nl": "<vertaling>" }]` (geen losse random woorden; denk aan "voy a...", "no sé nadar", "otra vez"). Tijden vult `evidence_times.py`.
+
 4c. **Echo-zin** (schema v2): kies per segment één letterlijke zin uit dat segment van 4-12 woorden, ergens rond het midden, die dragend en goed na te bouwen is. Schrijf hem als `"echo": { "es": "<zin>" }` op het segment; de tijden (startSec/endSec = pauzepunt) vult `evidence_times.py` in. De app pauzeert daar en laat de gebruiker de zin nabouwen met woordtegels.
 
 5. **Vragen** (schema v2): per segment een array `"questions"` met precies TWEE vragen, mix over de aflevering van de drie typen:

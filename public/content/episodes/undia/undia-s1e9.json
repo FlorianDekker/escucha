@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "undia-s1e9",
   "podcastId": "undia",
   "title": "De familie leren kennen in het Spaans",
@@ -392,6 +392,8 @@
       "id": "s01",
       "startSec": 37.0,
       "endSec": 66.0,
+      "contextNl": "Rodrigo introduceert de aflevering: Micaela reist met haar vriend Tom naar Argentinië.",
+      "focusNl": "Luister waarom deze reis bijzonder is voor Tom.",
       "echo": {
         "es": "Esto va a ser un test para el español de Tom.",
         "startSec": 55.27,
@@ -442,12 +444,28 @@
             "endSec": 65.49
           }
         }
+      ],
+      "chunks": [
+        {
+          "es": "va a conocer",
+          "nl": "gaat leren kennen",
+          "startSec": 48.69,
+          "endSec": 50.83
+        },
+        {
+          "es": "por primera vez",
+          "nl": "voor het eerst",
+          "startSec": 50.33,
+          "endSec": 52.39
+        }
       ]
     },
     {
       "id": "s02",
       "startSec": 66.0,
       "endSec": 119.0,
+      "contextNl": "Micaela stelt zich voor en vertelt over de reis naar haar familie.",
+      "focusNl": "Luister waar de familie van Micaela woont.",
       "echo": {
         "es": "Mi familia vive allá, es una ciudad pequeña.",
         "startSec": 110.15,
@@ -477,6 +495,24 @@
       ],
       "questions": [
         {
+          "type": "mc",
+          "promptNl": "Waar woont de familie van Micaela?",
+          "choices": [
+            "In Buenos Aires",
+            "In Firmat, een klein stadje op het platteland",
+            "In het Verenigd Koninkrijk",
+            "In de hoofdstad Madrid"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Micaela vertelt: \"tomamos un autobús a Firmat. Mi familia vive allá, es una ciudad pequeña en una zona de mucha agricultura.\"",
+          "evidence": {
+            "es": "tomamos un autobús a Firmat. Mi familia vive allá, es una ciudad pequeña en una zona de mucha agricultura.",
+            "nl": "we namen een bus naar Firmat. Mijn familie woont daar, het is een klein stadje in een streek met veel landbouw.",
+            "startSec": 106.31,
+            "endSec": 118.21
+          }
+        },
+        {
           "type": "vocabInContext",
           "vocabId": "el-novio",
           "promptNl": "Je hoorde \"vivo en Reino Unido con mi novio, Tom\". Wat betekent \"novio\"?",
@@ -494,24 +530,20 @@
             "startSec": 90.51,
             "endSec": 97.17
           }
+        }
+      ],
+      "chunks": [
+        {
+          "es": "con mi novio",
+          "nl": "met mijn vriend",
+          "startSec": 95.09,
+          "endSec": 96.73
         },
         {
-          "type": "mc",
-          "promptNl": "Waar woont de familie van Micaela?",
-          "choices": [
-            "In Buenos Aires",
-            "In Firmat, een klein stadje op het platteland",
-            "In het Verenigd Koninkrijk",
-            "In de hoofdstad Madrid"
-          ],
-          "answerIndex": 1,
-          "explanationNl": "Micaela vertelt: \"tomamos un autobús a Firmat. Mi familia vive allá, es una ciudad pequeña en una zona de mucha agricultura.\"",
-          "evidence": {
-            "es": "tomamos un autobús a Firmat. Mi familia vive allá, es una ciudad pequeña en una zona de mucha agricultura.",
-            "nl": "we namen een bus naar Firmat. Mijn familie woont daar, het is een klein stadje in een streek met veel landbouw.",
-            "startSec": 106.31,
-            "endSec": 118.21
-          }
+          "es": "una ciudad pequeña",
+          "nl": "een klein stadje",
+          "startSec": 113.43,
+          "endSec": 115.19
         }
       ]
     },
@@ -519,6 +551,8 @@
       "id": "s03",
       "startSec": 119.0,
       "endSec": 161.0,
+      "contextNl": "Na een vlucht van 13 uur en 8 uur met de bus komen ze eindelijk aan in Firmat.",
+      "focusNl": "Luister hoe Micaela zich voelt bij de aankomst en waarom.",
       "echo": {
         "es": "Estamos muy cansados, pero yo estoy contenta.",
         "startSec": 129.35,
@@ -544,20 +578,20 @@
       "questions": [
         {
           "type": "mc",
-          "promptNl": "Hoe reisden Micaela en Tom naar Firmat?",
+          "promptNl": "Hoe voelt Micaela zich als ze aankomt, en waarom?",
           "choices": [
-            "Met een vlucht van 13 uur en daarna 8 uur met de bus",
-            "Met de auto vanuit Buenos Aires",
-            "Met de trein door heel Argentinië",
-            "Met een korte binnenlandse vlucht"
+            "Moe maar blij, omdat ze haar familie gaat zien",
+            "Boos, omdat de reis veel te lang duurde",
+            "Verdrietig, omdat ze haar vrienden in het VK mist",
+            "Nerveus, omdat ze de weg naar Firmat niet kent"
           ],
           "answerIndex": 0,
-          "explanationNl": "Micaela vertelt: \"Después de un vuelo de 13 horas y un viaje de 8 horas en bus llegamos finalmente a Firmat.\"",
+          "explanationNl": "Micaela zegt: \"Estamos muy cansados, pero yo estoy contenta porque vamos a visitar a mi familia.\" Ze is moe maar blij.",
           "evidence": {
-            "es": "Después de un vuelo de 13 horas y un viaje de 8 horas en bus llegamos finalmente a Firmat.",
-            "nl": "Na een vlucht van 13 uur en een reis van 8 uur met de bus kwamen we eindelijk aan in Firmat.",
-            "startSec": 118.77,
-            "endSec": 128.77
+            "es": "Estamos muy cansados, pero yo estoy contenta porque vamos a visitar a mi familia.",
+            "nl": "We zijn heel moe, maar ik ben blij omdat we mijn familie gaan bezoeken.",
+            "startSec": 129.35,
+            "endSec": 136.95
           }
         },
         {
@@ -579,12 +613,28 @@
             "endSec": 156.61
           }
         }
+      ],
+      "chunks": [
+        {
+          "es": "estamos muy cansados",
+          "nl": "we zijn heel moe",
+          "startSec": 129.35,
+          "endSec": 131.77
+        },
+        {
+          "es": "vamos a ver",
+          "nl": "we zullen zien",
+          "startSec": 159.73,
+          "endSec": 161.07
+        }
       ]
     },
     {
       "id": "s04",
       "startSec": 161.0,
       "endSec": 209.0,
+      "contextNl": "Micaela's moeder belt met het plan voor vandaag; Micaela vertelt ook hoe haar opa is.",
+      "focusNl": "Luister wat het plan voor vandaag is.",
       "echo": {
         "es": "el plan es comer en casa de mis abuelos.",
         "startSec": 177.43,
@@ -610,40 +660,54 @@
       "questions": [
         {
           "type": "mc",
-          "promptNl": "Hoe beschrijft Micaela haar opa?",
+          "promptNl": "Wat is het plan voor vandaag, volgens Micaela's moeder?",
           "choices": [
-            "Hij is heel verlegen en zegt weinig",
-            "Hij spreekt vloeiend Engels",
-            "Hij houdt niet van bezoek",
-            "Hij stelt veel vragen, praat over politiek en heeft een sterk accent"
+            "Eten bij de grootouders thuis",
+            "Meteen gaan slapen na de reis",
+            "Boodschappen doen in Firmat",
+            "Terugreizen naar Buenos Aires"
           ],
-          "answerIndex": 3,
-          "explanationNl": "Micaela zegt over haar opa: \"hace muchas preguntas a las nuevas parejas de sus nietos y nietas, habla mucho de política y tiene un acento muy fuerte.\"",
+          "answerIndex": 0,
+          "explanationNl": "Micaela vertelt: \"Mi mamá me dice que el plan es comer en casa de mis abuelos.\" Ze gaan eten bij de grootouders.",
           "evidence": {
-            "es": "Hace muchas preguntas a las nuevas parejas de sus nietos y nietas, habla mucho de política y tiene un acento muy fuerte.",
-            "nl": "Hij stelt veel vragen aan de nieuwe partners van zijn kleinkinderen, praat veel over politiek en heeft een heel sterk accent.",
-            "startSec": 193.95,
-            "endSec": 208.67
+            "es": "Mi mamá me dice que el plan es comer en casa de mis abuelos.",
+            "nl": "Mijn moeder zegt me dat het plan is om bij mijn grootouders te gaan eten.",
+            "startSec": 173.91,
+            "endSec": 182.25
           }
         },
         {
-          "type": "vocabInContext",
-          "vocabId": "la-abuela",
-          "promptNl": "Je hoorde \"mi abuela es muy amable y simpática\". Wat betekent \"abuela\"?",
+          "type": "gap",
+          "promptNl": "Vul aan wat Micaela over haar opa zei:",
+          "textEs": "Habla mucho de ___ y tiene un acento muy fuerte.",
           "choices": [
-            "oma",
-            "tante",
-            "moeder",
-            "buurvrouw"
+            "comida",
+            "política",
+            "fútbol",
+            "música"
           ],
-          "answerIndex": 0,
-          "explanationNl": "\"Abuela\" betekent oma. Micaela zegt: \"mi abuela es muy amable y simpática.\"",
+          "answerIndex": 1,
+          "explanationNl": "Micaela zegt over haar opa: \"habla mucho de política y tiene un acento muy fuerte.\" Hij praat veel over politiek.",
           "evidence": {
-            "es": "mi abuela es muy amable y simpática.",
-            "nl": "mijn oma is heel aardig en sympathiek.",
-            "startSec": 184.57,
-            "endSec": 188.65
+            "es": "habla mucho de política y tiene un acento muy fuerte.",
+            "nl": "hij praat veel over politiek en heeft een heel sterk accent.",
+            "startSec": 201.61,
+            "endSec": 208.67
           }
+        }
+      ],
+      "chunks": [
+        {
+          "es": "el plan es comer",
+          "nl": "het plan is te eten",
+          "startSec": 177.43,
+          "endSec": 179.85
+        },
+        {
+          "es": "hace muchas preguntas",
+          "nl": "stelt veel vragen",
+          "startSec": 193.95,
+          "endSec": 196.55
         }
       ]
     },
@@ -651,6 +715,8 @@
       "id": "s05",
       "startSec": 209.0,
       "endSec": 242.0,
+      "contextNl": "Terwijl Micaela nadenkt over Tom en haar opa, belt haar moeder met nieuws.",
+      "focusNl": "Luister waar Micaela zich zorgen over maakt.",
       "echo": {
         "es": "mi abuela hoy invita a toda la familia a comer.",
         "startSec": 235.37,
@@ -670,6 +736,24 @@
       ],
       "questions": [
         {
+          "type": "mc",
+          "promptNl": "Waar maakt Micaela zich zorgen over?",
+          "choices": [
+            "Dat de arme Tom haar opa ook niet goed zal verstaan",
+            "Dat het eten niet lekker zal zijn",
+            "Dat Tom te laat zal komen",
+            "Dat haar oma boos op haar is"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Micaela denkt: \"Creo que el pobre Tom tampoco va a entender muy bien a mi abuelo.\" Ze vreest dat Tom haar opa niet goed zal verstaan.",
+          "evidence": {
+            "es": "Creo que el pobre Tom tampoco va a entender muy bien a mi abuelo.",
+            "nl": "Ik denk dat de arme Tom mijn opa ook niet goed zal verstaan.",
+            "startSec": 214.67,
+            "endSec": 220.27
+          }
+        },
+        {
           "type": "gap",
           "vocabId": "la-familia",
           "promptNl": "Vul aan wat je hoorde:",
@@ -688,24 +772,20 @@
             "startSec": 226.43,
             "endSec": 241.51
           }
+        }
+      ],
+      "chunks": [
+        {
+          "es": "no entiendo muy bien",
+          "nl": "ik begrijp het niet goed",
+          "startSec": 211.63,
+          "endSec": 213.45
         },
         {
-          "type": "mc",
-          "promptNl": "Waar maakt Micaela zich zorgen over?",
-          "choices": [
-            "Dat de arme Tom haar opa ook niet goed zal verstaan",
-            "Dat het eten niet lekker zal zijn",
-            "Dat Tom te laat zal komen",
-            "Dat haar oma boos op haar is"
-          ],
-          "answerIndex": 0,
-          "explanationNl": "Micaela denkt: \"Creo que el pobre Tom tampoco va a entender muy bien a mi abuelo.\" Ze vreest dat Tom haar opa niet goed zal verstaan.",
-          "evidence": {
-            "es": "Creo que el pobre Tom tampoco va a entender muy bien a mi abuelo.",
-            "nl": "Ik denk dat de arme Tom mijn opa ook niet goed zal verstaan.",
-            "startSec": 214.67,
-            "endSec": 220.27
-          }
+          "es": "toda la familia",
+          "nl": "de hele familie",
+          "startSec": 238.61,
+          "endSec": 240.65
         }
       ]
     },
@@ -713,6 +793,8 @@
       "id": "s06",
       "startSec": 242.0,
       "endSec": 280.0,
+      "contextNl": "Micaela legt uit hoe groot een Argentijnse familiebijeenkomst is.",
+      "focusNl": "Luister wat 'de hele familie' in Argentinië betekent.",
       "echo": {
         "es": "cuando decimos toda la familia, significa toda la familia.",
         "startSec": 243.53,
@@ -768,12 +850,28 @@
             "endSec": 268.01
           }
         }
+      ],
+      "chunks": [
+        {
+          "es": "muchos primos y primas",
+          "nl": "veel neven en nichten",
+          "startSec": 269.75,
+          "endSec": 272.41
+        },
+        {
+          "es": "quieren conocer",
+          "nl": "willen leren kennen",
+          "startSec": 277.83,
+          "endSec": 279.33
+        }
       ]
     },
     {
       "id": "s07",
       "startSec": 280.0,
       "endSec": 319.0,
+      "contextNl": "Micaela en Tom komen aan bij de grootouders en worden begroet.",
+      "focusNl": "Luister hoe de familie Micaela en Tom ontvangt.",
       "echo": {
         "es": "damos un beso en la mejilla cuando saludamos.",
         "startSec": 303.11,
@@ -798,6 +896,24 @@
       ],
       "questions": [
         {
+          "type": "mc",
+          "promptNl": "Wat gebeurt er als Micaela en Tom bij de grootouders aankomen?",
+          "choices": [
+            "De hele familie verwelkomt hen hartelijk",
+            "Er is niemand thuis",
+            "Alleen de oma staat hen op te wachten",
+            "Ze moeten lang buiten wachten"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Micaela vertelt: \"Llegamos a casa de mis abuelos y toda mi familia nos da la bienvenida.\" De hele familie verwelkomt hen.",
+          "evidence": {
+            "es": "Llegamos a casa de mis abuelos y toda mi familia nos da la bienvenida.",
+            "nl": "We komen aan bij mijn grootouders en de hele familie verwelkomt ons.",
+            "startSec": 280.27,
+            "endSec": 288.67
+          }
+        },
+        {
           "type": "vocabInContext",
           "vocabId": "el-beso",
           "promptNl": "Je hoorde \"damos un beso en la mejilla cuando saludamos\". Wat betekent \"beso\"?",
@@ -815,24 +931,20 @@
             "startSec": 297.01,
             "endSec": 312.59
           }
+        }
+      ],
+      "chunks": [
+        {
+          "es": "nos da la bienvenida",
+          "nl": "heet ons welkom",
+          "startSec": 286.03,
+          "endSec": 288.67
         },
         {
-          "type": "mc",
-          "promptNl": "Waarom is Tom in de war bij de begroeting?",
-          "choices": [
-            "Omdat er te veel mensen tegelijk zijn",
-            "Omdat hij niemands naam kent",
-            "Omdat hij niet weet dat je in Argentinië een kus op de wang geeft bij het begroeten",
-            "Omdat hij honger heeft"
-          ],
-          "answerIndex": 2,
-          "explanationNl": "Micaela legt uit: \"Tom está confundido porque no sabe que en Argentina damos un beso en la mejilla cuando saludamos.\" Hij kent de kus-begroeting niet.",
-          "evidence": {
-            "es": "Tom está confundido porque no sabe que en Argentina damos un beso en la mejilla cuando saludamos.",
-            "nl": "Tom is in de war omdat hij niet weet dat we in Argentinië bij het begroeten een kus op de wang geven.",
-            "startSec": 297.01,
-            "endSec": 308.49
-          }
+          "es": "un beso en la mejilla",
+          "nl": "een kus op de wang",
+          "startSec": 304.41,
+          "endSec": 306.75
         }
       ]
     },
@@ -840,6 +952,8 @@
       "id": "s08",
       "startSec": 319.0,
       "endSec": 368.0,
+      "contextNl": "De vijf neven van Micaela omringen Tom en stellen hem vragen over de reis.",
+      "focusNl": "Luister hoe Toms eerste gesprek met de neven verloopt.",
       "echo": {
         "es": "Solo hablo un poco de español.",
         "startSec": 341.51,
@@ -864,6 +978,24 @@
       ],
       "questions": [
         {
+          "type": "mc",
+          "promptNl": "Hoe reageren de neven op Tom?",
+          "choices": [
+            "Ze lachen hem uit",
+            "Ze zijn aardig en praten langzaam met hem",
+            "Ze negeren hem",
+            "Ze praten alleen Engels met hem"
+          ],
+          "answerIndex": 1,
+          "explanationNl": "Micaela zegt: \"Mis primos son amables y hablan despacio con Tom. Todo va de maravilla.\" De neven zijn aardig en praten langzaam.",
+          "evidence": {
+            "es": "Mis primos son amables y hablan despacio con Tom.",
+            "nl": "Mijn neven zijn aardig en praten langzaam met Tom.",
+            "startSec": 357.23,
+            "endSec": 362.69
+          }
+        },
+        {
           "type": "gap",
           "vocabId": "despacio",
           "promptNl": "Vul aan wat Tom zei:",
@@ -882,24 +1014,20 @@
             "startSec": 337.15,
             "endSec": 344.91
           }
+        }
+      ],
+      "chunks": [
+        {
+          "es": "Más despacio, por favor",
+          "nl": "langzamer, alsjeblieft",
+          "startSec": 337.15,
+          "endSec": 340.99
         },
         {
-          "type": "mc",
-          "promptNl": "Hoe reageren de neven op Tom?",
-          "choices": [
-            "Ze lachen hem uit",
-            "Ze zijn aardig en praten langzaam met hem",
-            "Ze negeren hem",
-            "Ze praten alleen Engels met hem"
-          ],
-          "answerIndex": 1,
-          "explanationNl": "Micaela zegt: \"Mis primos son amables y hablan despacio con Tom. Todo va de maravilla.\" De neven zijn aardig en praten langzaam.",
-          "evidence": {
-            "es": "Mis primos son amables y hablan despacio con Tom.",
-            "nl": "Mijn neven zijn aardig en praten langzaam met Tom.",
-            "startSec": 357.23,
-            "endSec": 362.69
-          }
+          "es": "solo hablo un poco",
+          "nl": "ik spreek maar een beetje",
+          "startSec": 341.51,
+          "endSec": 344.23
         }
       ]
     },
@@ -907,6 +1035,8 @@
       "id": "s09",
       "startSec": 368.0,
       "endSec": 414.0,
+      "contextNl": "Een tante brengt mate, maar dan blijkt Tom verdwenen.",
+      "focusNl": "Luister wat Micaela doet als ze hoort waar Tom is.",
       "echo": {
         "es": "Mi abuelo y él están dando un paseo por la granja.",
         "startSec": 400.21,
@@ -931,6 +1061,24 @@
       ],
       "questions": [
         {
+          "type": "mc",
+          "promptNl": "Wat besluit Micaela te doen als ze hoort dat Tom bij de opa is?",
+          "choices": [
+            "Ze gaat Tom zoeken en redden",
+            "Ze gaat rustig mate drinken",
+            "Ze belt haar moeder",
+            "Ze gaat even slapen"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Micaela schrikt: \"¡Oh, no! Tengo que rescatar a Tom.\" en zegt: \"Voy a buscar a Tom.\" Ze gaat hem dus zoeken.",
+          "evidence": {
+            "es": "¡Oh, no! Tengo que rescatar a Tom.",
+            "nl": "Oh nee! Ik moet Tom redden.",
+            "startSec": 393.39,
+            "endSec": 397.13
+          }
+        },
+        {
           "type": "vocabInContext",
           "vocabId": "el-mate",
           "promptNl": "Je hoorde \"mi tía trae mate, una bebida tradicional en Sudamérica\". Wat is \"mate\"?",
@@ -948,24 +1096,20 @@
             "startSec": 368.47,
             "endSec": 383.11
           }
+        }
+      ],
+      "chunks": [
+        {
+          "es": "quiere probar un poco",
+          "nl": "wil een beetje proberen",
+          "startSec": 379.85,
+          "endSec": 382.51
         },
         {
-          "type": "mc",
-          "promptNl": "Wat besluit Micaela te doen als ze hoort dat Tom bij de opa is?",
-          "choices": [
-            "Ze gaat Tom zoeken en redden",
-            "Ze gaat rustig mate drinken",
-            "Ze belt haar moeder",
-            "Ze gaat even slapen"
-          ],
-          "answerIndex": 0,
-          "explanationNl": "Micaela schrikt: \"¡Oh, no! Tengo que rescatar a Tom.\" en zegt: \"Voy a buscar a Tom.\" Ze gaat hem dus zoeken.",
-          "evidence": {
-            "es": "¡Oh, no! Tengo que rescatar a Tom.",
-            "nl": "Oh nee! Ik moet Tom redden.",
-            "startSec": 393.39,
-            "endSec": 397.13
-          }
+          "es": "voy a buscar",
+          "nl": "ik ga zoeken",
+          "startSec": 397.79,
+          "endSec": 399.19
         }
       ]
     },
@@ -973,6 +1117,8 @@
       "id": "s10",
       "startSec": 414.0,
       "endSec": 474.0,
+      "contextNl": "Micaela vindt Tom en haar opa terug bij de koeien op de boerderij.",
+      "focusNl": "Luister waarover Tom en de opa het hebben.",
       "echo": {
         "es": "Parece que se entienden muy bien.",
         "startSec": 430.53,
@@ -1063,12 +1209,28 @@
             "endSec": 445.25
           }
         }
+      ],
+      "chunks": [
+        {
+          "es": "todo muy bien",
+          "nl": "alles gaat goed",
+          "startSec": 438.23,
+          "endSec": 439.63
+        },
+        {
+          "es": "se entienden muy bien",
+          "nl": "ze begrijpen elkaar goed",
+          "startSec": 433.23,
+          "endSec": 434.93
+        }
       ]
     },
     {
       "id": "s11",
       "startSec": 474.0,
       "endSec": 527.0,
+      "contextNl": "Tom en de opa lopen over de boerderij en proberen elkaar te begrijpen.",
+      "focusNl": "Luister hoe het Tom en de opa lukt om elkaar te begrijpen.",
       "echo": {
         "es": "mi abuelo le muestra a Tom el resto de la granja.",
         "startSec": 505.09,
@@ -1129,12 +1291,28 @@
             "endSec": 500.49
           }
         }
+      ],
+      "chunks": [
+        {
+          "es": "se entienden perfectamente",
+          "nl": "ze begrijpen elkaar perfect",
+          "startSec": 496.75,
+          "endSec": 500.49
+        },
+        {
+          "es": "un poco de inglés",
+          "nl": "een beetje Engels",
+          "startSec": 488.47,
+          "endSec": 490.77
+        }
       ]
     },
     {
       "id": "s12",
       "startSec": 527.0,
       "endSec": 547.0,
+      "contextNl": "Rodrigo sluit de aflevering af met een terugblik op Toms bezoek.",
+      "focusNl": "Luister welke conclusie Rodrigo trekt over Tom.",
       "echo": {
         "es": "con un poco de español y muchas ganas.",
         "startSec": 529.87,
@@ -1183,6 +1361,20 @@
             "startSec": 539.99,
             "endSec": 548.05
           }
+        }
+      ],
+      "chunks": [
+        {
+          "es": "un poco de español",
+          "nl": "een beetje Spaans",
+          "startSec": 530.13,
+          "endSec": 532.05
+        },
+        {
+          "es": "es capaz de comunicar",
+          "nl": "is in staat te communiceren",
+          "startSec": 534.89,
+          "endSec": 537.27
         }
       ]
     }

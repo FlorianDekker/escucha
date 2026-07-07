@@ -68,6 +68,9 @@ def main():
         # echo-zin (schema v2): zelfde matching, pauzepunt = endSec van de zin
         if seg.get("echo"):
             targets.append(seg["echo"])
+        # chunks (schema v3): frases voor de chunk-drill
+        for ch in seg.get("chunks") or []:
+            targets.append(ch)
         for ev in targets:
             if "startSec" in ev:
                 continue

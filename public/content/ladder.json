@@ -10,14 +10,62 @@
     }
   },
   "chapters": [
-    { "id": "ch-1", "title": "¡Aventura!", "theme": "aventura", "unitIds": ["unit-1", "unit-2", "unit-3"] },
-    { "id": "ch-2", "title": "La familia", "theme": "familia", "unitIds": ["unit-4", "unit-5", "unit-6"] },
-    { "id": "ch-3", "title": "¡Qué rico!", "theme": "rico", "unitIds": [] },
-    { "id": "ch-4", "title": "De viaje", "theme": "viaje", "unitIds": [] },
-    { "id": "ch-5", "title": "Animales y naturaleza", "theme": "animales", "unitIds": [] },
-    { "id": "ch-6", "title": "Amor y amistad", "theme": "amor", "unitIds": [] },
-    { "id": "ch-7", "title": "Fiestas y leyendas", "theme": "fiestas", "unitIds": [] },
-    { "id": "ch-8", "title": "Sueños y trabajo", "theme": "suenos", "unitIds": [] }
+    {
+      "id": "ch-1",
+      "title": "¡Aventura!",
+      "theme": "aventura",
+      "unitIds": [
+        "unit-1",
+        "unit-2",
+        "unit-3"
+      ]
+    },
+    {
+      "id": "ch-2",
+      "title": "La familia",
+      "theme": "familia",
+      "unitIds": [
+        "unit-4",
+        "unit-5",
+        "unit-6"
+      ]
+    },
+    {
+      "id": "ch-3",
+      "title": "¡Qué rico!",
+      "theme": "rico",
+      "unitIds": []
+    },
+    {
+      "id": "ch-4",
+      "title": "De viaje",
+      "theme": "viaje",
+      "unitIds": []
+    },
+    {
+      "id": "ch-5",
+      "title": "Animales y naturaleza",
+      "theme": "animales",
+      "unitIds": []
+    },
+    {
+      "id": "ch-6",
+      "title": "Amor y amistad",
+      "theme": "amor",
+      "unitIds": []
+    },
+    {
+      "id": "ch-7",
+      "title": "Fiestas y leyendas",
+      "theme": "fiestas",
+      "unitIds": []
+    },
+    {
+      "id": "ch-8",
+      "title": "Sueños y trabajo",
+      "theme": "suenos",
+      "unitIds": []
+    }
   ],
   "units": [
     {
@@ -27,11 +75,59 @@
       "illustration": "surfer.svg",
       "episodeId": "undia-s1e1",
       "steps": [
-        { "id": "unit-1-words", "type": "words" },
-        { "id": "unit-1-listen-1", "type": "listen", "labelNl": "Luister · deel 1", "segmentIds": ["s01", "s02", "s03", "s04", "s05"] },
-        { "id": "unit-1-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s06", "s07", "s08", "s09"] },
-        { "id": "unit-1-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09"] },
-        { "id": "unit-1-gate", "type": "gate", "passPct": 80 }
+        {
+          "id": "unit-1-words",
+          "type": "words"
+        },
+        {
+          "id": "unit-1-listen-1",
+          "type": "listen",
+          "labelNl": "Luister · deel 1",
+          "segmentIds": [
+            "s01",
+            "s02",
+            "s03",
+            "s04",
+            "s05"
+          ]
+        },
+        {
+          "id": "unit-1-listen-2",
+          "type": "listen",
+          "labelNl": "Luister · deel 2",
+          "segmentIds": [
+            "s06",
+            "s07",
+            "s08",
+            "s09"
+          ]
+        },
+        {
+          "id": "unit-1-read",
+          "type": "read",
+          "labelNl": "Lezen",
+          "segmentIds": [
+            "s01",
+            "s02",
+            "s03",
+            "s04",
+            "s05",
+            "s06",
+            "s07",
+            "s08",
+            "s09"
+          ]
+        },
+        {
+          "id": "unit-1-extensive",
+          "type": "extensive",
+          "labelNl": "Uitluisteren"
+        },
+        {
+          "id": "unit-1-gate",
+          "type": "gate",
+          "passPct": 80
+        }
       ]
     },
     {
@@ -41,12 +137,72 @@
       "illustration": "climbing.svg",
       "episodeId": "undia-s2e1",
       "steps": [
-        { "id": "unit-2-words", "type": "words" },
-        { "id": "unit-2-listen-1", "type": "listen", "labelNl": "Luister · deel 1", "segmentIds": ["s01", "s02", "s03", "s04"] },
-        { "id": "unit-2-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s05", "s06", "s07", "s08"] },
-        { "id": "unit-2-listen-3", "type": "listen", "labelNl": "Luister · deel 3", "segmentIds": ["s09", "s10", "s11", "s12"] },
-        { "id": "unit-2-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12"] },
-        { "id": "unit-2-gate", "type": "gate", "passPct": 80 }
+        {
+          "id": "unit-2-words",
+          "type": "words"
+        },
+        {
+          "id": "unit-2-listen-1",
+          "type": "listen",
+          "labelNl": "Luister · deel 1",
+          "segmentIds": [
+            "s01",
+            "s02",
+            "s03",
+            "s04"
+          ]
+        },
+        {
+          "id": "unit-2-listen-2",
+          "type": "listen",
+          "labelNl": "Luister · deel 2",
+          "segmentIds": [
+            "s05",
+            "s06",
+            "s07",
+            "s08"
+          ]
+        },
+        {
+          "id": "unit-2-listen-3",
+          "type": "listen",
+          "labelNl": "Luister · deel 3",
+          "segmentIds": [
+            "s09",
+            "s10",
+            "s11",
+            "s12"
+          ]
+        },
+        {
+          "id": "unit-2-read",
+          "type": "read",
+          "labelNl": "Lezen",
+          "segmentIds": [
+            "s01",
+            "s02",
+            "s03",
+            "s04",
+            "s05",
+            "s06",
+            "s07",
+            "s08",
+            "s09",
+            "s10",
+            "s11",
+            "s12"
+          ]
+        },
+        {
+          "id": "unit-2-extensive",
+          "type": "extensive",
+          "labelNl": "Uitluisteren"
+        },
+        {
+          "id": "unit-2-gate",
+          "type": "gate",
+          "passPct": 80
+        }
       ]
     },
     {
@@ -56,12 +212,68 @@
       "illustration": "standout.svg",
       "episodeId": "undia-s2e9",
       "steps": [
-        { "id": "unit-3-words", "type": "words" },
-        { "id": "unit-3-listen-1", "type": "listen", "labelNl": "Luister · deel 1", "segmentIds": ["s01", "s02", "s03"] },
-        { "id": "unit-3-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s04", "s05", "s06"] },
-        { "id": "unit-3-listen-3", "type": "listen", "labelNl": "Luister · deel 3", "segmentIds": ["s07", "s08", "s09", "s10"] },
-        { "id": "unit-3-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10"] },
-        { "id": "unit-3-gate", "type": "gate", "passPct": 80 }
+        {
+          "id": "unit-3-words",
+          "type": "words"
+        },
+        {
+          "id": "unit-3-listen-1",
+          "type": "listen",
+          "labelNl": "Luister · deel 1",
+          "segmentIds": [
+            "s01",
+            "s02",
+            "s03"
+          ]
+        },
+        {
+          "id": "unit-3-listen-2",
+          "type": "listen",
+          "labelNl": "Luister · deel 2",
+          "segmentIds": [
+            "s04",
+            "s05",
+            "s06"
+          ]
+        },
+        {
+          "id": "unit-3-listen-3",
+          "type": "listen",
+          "labelNl": "Luister · deel 3",
+          "segmentIds": [
+            "s07",
+            "s08",
+            "s09",
+            "s10"
+          ]
+        },
+        {
+          "id": "unit-3-read",
+          "type": "read",
+          "labelNl": "Lezen",
+          "segmentIds": [
+            "s01",
+            "s02",
+            "s03",
+            "s04",
+            "s05",
+            "s06",
+            "s07",
+            "s08",
+            "s09",
+            "s10"
+          ]
+        },
+        {
+          "id": "unit-3-extensive",
+          "type": "extensive",
+          "labelNl": "Uitluisteren"
+        },
+        {
+          "id": "unit-3-gate",
+          "type": "gate",
+          "passPct": 80
+        }
       ]
     },
     {
@@ -71,11 +283,57 @@
       "illustration": "curly.svg",
       "episodeId": "undia-s1e4",
       "steps": [
-        { "id": "unit-4-words", "type": "words" },
-        { "id": "unit-4-listen-1", "type": "listen", "labelNl": "Luister · deel 1", "segmentIds": ["s01", "s02", "s03", "s04"] },
-        { "id": "unit-4-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s05", "s06", "s07", "s08"] },
-        { "id": "unit-4-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08"] },
-        { "id": "unit-4-gate", "type": "gate", "passPct": 80 }
+        {
+          "id": "unit-4-words",
+          "type": "words"
+        },
+        {
+          "id": "unit-4-listen-1",
+          "type": "listen",
+          "labelNl": "Luister · deel 1",
+          "segmentIds": [
+            "s01",
+            "s02",
+            "s03",
+            "s04"
+          ]
+        },
+        {
+          "id": "unit-4-listen-2",
+          "type": "listen",
+          "labelNl": "Luister · deel 2",
+          "segmentIds": [
+            "s05",
+            "s06",
+            "s07",
+            "s08"
+          ]
+        },
+        {
+          "id": "unit-4-read",
+          "type": "read",
+          "labelNl": "Lezen",
+          "segmentIds": [
+            "s01",
+            "s02",
+            "s03",
+            "s04",
+            "s05",
+            "s06",
+            "s07",
+            "s08"
+          ]
+        },
+        {
+          "id": "unit-4-extensive",
+          "type": "extensive",
+          "labelNl": "Uitluisteren"
+        },
+        {
+          "id": "unit-4-gate",
+          "type": "gate",
+          "passPct": 80
+        }
       ]
     },
     {
@@ -85,12 +343,72 @@
       "illustration": "ash.svg",
       "episodeId": "undia-s1e9",
       "steps": [
-        { "id": "unit-5-words", "type": "words" },
-        { "id": "unit-5-listen-1", "type": "listen", "labelNl": "Luister · deel 1", "segmentIds": ["s01", "s02", "s03", "s04"] },
-        { "id": "unit-5-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s05", "s06", "s07", "s08"] },
-        { "id": "unit-5-listen-3", "type": "listen", "labelNl": "Luister · deel 3", "segmentIds": ["s09", "s10", "s11", "s12"] },
-        { "id": "unit-5-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12"] },
-        { "id": "unit-5-gate", "type": "gate", "passPct": 80 }
+        {
+          "id": "unit-5-words",
+          "type": "words"
+        },
+        {
+          "id": "unit-5-listen-1",
+          "type": "listen",
+          "labelNl": "Luister · deel 1",
+          "segmentIds": [
+            "s01",
+            "s02",
+            "s03",
+            "s04"
+          ]
+        },
+        {
+          "id": "unit-5-listen-2",
+          "type": "listen",
+          "labelNl": "Luister · deel 2",
+          "segmentIds": [
+            "s05",
+            "s06",
+            "s07",
+            "s08"
+          ]
+        },
+        {
+          "id": "unit-5-listen-3",
+          "type": "listen",
+          "labelNl": "Luister · deel 3",
+          "segmentIds": [
+            "s09",
+            "s10",
+            "s11",
+            "s12"
+          ]
+        },
+        {
+          "id": "unit-5-read",
+          "type": "read",
+          "labelNl": "Lezen",
+          "segmentIds": [
+            "s01",
+            "s02",
+            "s03",
+            "s04",
+            "s05",
+            "s06",
+            "s07",
+            "s08",
+            "s09",
+            "s10",
+            "s11",
+            "s12"
+          ]
+        },
+        {
+          "id": "unit-5-extensive",
+          "type": "extensive",
+          "labelNl": "Uitluisteren"
+        },
+        {
+          "id": "unit-5-gate",
+          "type": "gate",
+          "passPct": 80
+        }
       ]
     },
     {
@@ -100,12 +418,72 @@
       "illustration": "mother.svg",
       "episodeId": "undia-s1e8",
       "steps": [
-        { "id": "unit-6-words", "type": "words" },
-        { "id": "unit-6-listen-1", "type": "listen", "labelNl": "Luister · deel 1", "segmentIds": ["s01", "s02", "s03", "s04"] },
-        { "id": "unit-6-listen-2", "type": "listen", "labelNl": "Luister · deel 2", "segmentIds": ["s05", "s06", "s07", "s08"] },
-        { "id": "unit-6-listen-3", "type": "listen", "labelNl": "Luister · deel 3", "segmentIds": ["s09", "s10", "s11", "s12"] },
-        { "id": "unit-6-read", "type": "read", "labelNl": "Lezen", "segmentIds": ["s01", "s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "s11", "s12"] },
-        { "id": "unit-6-gate", "type": "gate", "passPct": 80 }
+        {
+          "id": "unit-6-words",
+          "type": "words"
+        },
+        {
+          "id": "unit-6-listen-1",
+          "type": "listen",
+          "labelNl": "Luister · deel 1",
+          "segmentIds": [
+            "s01",
+            "s02",
+            "s03",
+            "s04"
+          ]
+        },
+        {
+          "id": "unit-6-listen-2",
+          "type": "listen",
+          "labelNl": "Luister · deel 2",
+          "segmentIds": [
+            "s05",
+            "s06",
+            "s07",
+            "s08"
+          ]
+        },
+        {
+          "id": "unit-6-listen-3",
+          "type": "listen",
+          "labelNl": "Luister · deel 3",
+          "segmentIds": [
+            "s09",
+            "s10",
+            "s11",
+            "s12"
+          ]
+        },
+        {
+          "id": "unit-6-read",
+          "type": "read",
+          "labelNl": "Lezen",
+          "segmentIds": [
+            "s01",
+            "s02",
+            "s03",
+            "s04",
+            "s05",
+            "s06",
+            "s07",
+            "s08",
+            "s09",
+            "s10",
+            "s11",
+            "s12"
+          ]
+        },
+        {
+          "id": "unit-6-extensive",
+          "type": "extensive",
+          "labelNl": "Uitluisteren"
+        },
+        {
+          "id": "unit-6-gate",
+          "type": "gate",
+          "passPct": 80
+        }
       ]
     }
   ]

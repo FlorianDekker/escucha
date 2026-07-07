@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "undia-s2e1",
   "podcastId": "undia",
   "title": "Overvallen door het noodweer",
@@ -439,6 +439,22 @@
         "startSec": 83.75,
         "endSec": 89.79
       },
+      "contextNl": "Rodrigo kondigt de aflevering aan.",
+      "focusNl": "Luister waarom deze wandeling gevaarlijker wordt dan Gissell en Dani hadden gepland.",
+      "chunks": [
+        {
+          "es": "hablar del tiempo",
+          "nl": "over het weer praten",
+          "startSec": 105.45,
+          "endSec": 107.19
+        },
+        {
+          "es": "una ruta de senderismo",
+          "nl": "een wandelroute",
+          "startSec": 91.31,
+          "endSec": 93.97
+        }
+      ],
       "questions": [
         {
           "type": "mc",
@@ -500,6 +516,22 @@
         "startSec": 115.75,
         "endSec": 119.41
       },
+      "contextNl": "Gissell stelt zich voor.",
+      "focusNl": "Luister waar Gissell vandaan komt en hoe ze haar land beschrijft.",
+      "chunks": [
+        {
+          "es": "¿Cómo están?",
+          "nl": "Hoe gaat het?",
+          "startSec": 114.55,
+          "endSec": 115.77
+        },
+        {
+          "es": "soy de",
+          "nl": "ik kom uit",
+          "startSec": 117.51,
+          "endSec": 118.73
+        }
+      ],
       "questions": [
         {
           "type": "mc",
@@ -561,7 +593,41 @@
         "startSec": 147.67,
         "endSec": 151.07
       },
+      "contextNl": "Gissell vertelt over haar wandelmaatje Dani.",
+      "focusNl": "Luister wie Dani is en hoe Gissell en Dani samen zijn gaan wandelen.",
+      "chunks": [
+        {
+          "es": "es mi amigo",
+          "nl": "is mijn vriend",
+          "startSec": 145.21,
+          "endSec": 146.95
+        },
+        {
+          "es": "empezamos a hacer senderismo",
+          "nl": "we begonnen te wandelen",
+          "startSec": 148.45,
+          "endSec": 151.07
+        }
+      ],
       "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wie is Dani voor Gissell?",
+          "choices": [
+            "Haar vriend uit Spanje met wie ze sinds 2017 wandelt",
+            "Haar broer uit Costa Rica",
+            "Een wandelgids die ze hebben ingehuurd",
+            "Een toerist die ze net hadden ontmoet"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Gissell zegt: \"Dani es mi amigo de España. Él y yo empezamos a hacer senderismo en 2017.\" Dani is haar vriend uit Spanje met wie ze al jaren wandelt.",
+          "evidence": {
+            "es": "Dani es mi amigo de España. Él y yo empezamos a hacer senderismo en 2017 en los parques de Costa Rica.",
+            "nl": "Dani is mijn vriend uit Spanje. Hij en ik zijn in 2017 begonnen met wandelen in de parken van Costa Rica.",
+            "startSec": 144.09,
+            "endSec": 154.63
+          }
+        },
         {
           "type": "vocabInContext",
           "vocabId": "el-senderismo",
@@ -579,24 +645,6 @@
             "nl": "Hij en ik zijn in 2017 begonnen met wandelen in de parken van Costa Rica.",
             "startSec": 147.67,
             "endSec": 154.63
-          }
-        },
-        {
-          "type": "mc",
-          "promptNl": "Waar komt Dani, de vriend van Gissell, vandaan?",
-          "choices": [
-            "Uit Costa Rica",
-            "Uit Frankrijk",
-            "Uit Portugal",
-            "Uit Spanje"
-          ],
-          "answerIndex": 3,
-          "explanationNl": "Gissell zegt: \"Dani es mi amigo de España.\" Dani komt dus uit Spanje.",
-          "evidence": {
-            "es": "Dani es mi amigo de España.",
-            "nl": "Dani is mijn vriend uit Spanje.",
-            "startSec": 144.09,
-            "endSec": 147.49
           }
         }
       ]
@@ -622,6 +670,22 @@
         "startSec": 194.19,
         "endSec": 197.73
       },
+      "contextNl": "Gissell introduceert het park en legt uit waar je op moet letten.",
+      "focusNl": "Luister hoeveel seizoenen Costa Rica heeft en waarom dat belangrijk is voor wandelaars.",
+      "chunks": [
+        {
+          "es": "tener en cuenta",
+          "nl": "rekening houden met",
+          "startSec": 190.25,
+          "endSec": 191.91
+        },
+        {
+          "es": "la estación lluviosa",
+          "nl": "het regenseizoen",
+          "startSec": 207.81,
+          "endSec": 209.43
+        }
+      ],
       "questions": [
         {
           "type": "mc",
@@ -642,16 +706,18 @@
           }
         },
         {
-          "type": "mc",
-          "promptNl": "Waarom is het Parque Nacional Braulio Carrillo bijzonder?",
+          "type": "gap",
+          "vocabId": "el-volcan",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "También es famoso por tener un ___ activo llamado Barva.",
           "choices": [
-            "Er ligt een actieve vulkaan die Barva heet",
-            "Het is het kleinste park van het land",
-            "Er is een groot strand",
-            "Het ligt in Spanje"
+            "volcán",
+            "río",
+            "lago",
+            "bosque"
           ],
           "answerIndex": 0,
-          "explanationNl": "Gissell zegt: \"es famoso por tener un volcán activo llamado Barva.\" Het park is beroemd om de actieve vulkaan Barva.",
+          "explanationNl": "\"Un volcán activo llamado Barva\" is een actieve vulkaan die Barva heet. Daar is het park beroemd om.",
           "evidence": {
             "es": "Y también es famoso por tener un volcán activo llamado Barva.",
             "nl": "En het is ook beroemd omdat er een actieve vulkaan is die Barva heet.",
@@ -677,6 +743,22 @@
         "startSec": 230.07,
         "endSec": 234.35
       },
+      "contextNl": "Gissell legt het weerpatroon in het regenseizoen uit.",
+      "focusNl": "Luister waarom het riskant is dat ze pas rond het middaguur vertrekken.",
+      "chunks": [
+        {
+          "es": "a veces",
+          "nl": "soms",
+          "startSec": 235.25,
+          "endSec": 236.19
+        },
+        {
+          "es": "empezar temprano",
+          "nl": "vroeg beginnen",
+          "startSec": 244.15,
+          "endSec": 245.81
+        }
+      ],
       "questions": [
         {
           "type": "mc",
@@ -737,7 +819,41 @@
         "startSec": 269.29,
         "endSec": 274.25
       },
+      "contextNl": "Gissell en Dani beginnen aan de wandeling.",
+      "focusNl": "Luister hoe het weer is en wat Gissell onderweg opvalt.",
+      "chunks": [
+        {
+          "es": "hace muy buen tiempo",
+          "nl": "het is heel mooi weer",
+          "startSec": 265.71,
+          "endSec": 267.71
+        },
+        {
+          "es": "buena suerte",
+          "nl": "geluk / mazzel",
+          "startSec": 272.87,
+          "endSec": 274.25
+        }
+      ],
       "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat valt Gissell op tijdens dit deel van de wandeling?",
+          "choices": [
+            "De uitzichten zijn indrukwekkend en de bladeren hebben felle kleuren",
+            "Het is koud en er hangt dichte mist",
+            "Er zijn heel veel andere wandelaars",
+            "Ze is de weg kwijtgeraakt"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Gissell zegt: \"Las vistas son impresionantes y, gracias a la lluvia de ayer, las hojas tienen colores muy intensos.\" De uitzichten zijn indrukwekkend en de bladeren hebben felle kleuren.",
+          "evidence": {
+            "es": "Las vistas son impresionantes y, gracias a la lluvia de ayer, las hojas tienen colores muy intensos.",
+            "nl": "De uitzichten zijn indrukwekkend en dankzij de regen van gisteren hebben de bladeren heel felle kleuren.",
+            "startSec": 275.59,
+            "endSec": 285.01
+          }
+        },
         {
           "type": "gap",
           "vocabId": "buen-tiempo",
@@ -756,24 +872,6 @@
             "nl": "De lucht is helder en het is heel mooi weer.",
             "startSec": 263.51,
             "endSec": 267.71
-          }
-        },
-        {
-          "type": "mc",
-          "promptNl": "Waarom hebben de bladeren zulke felle kleuren?",
-          "choices": [
-            "Door de regen van gisteren",
-            "Door de felle middagzon",
-            "Omdat het herfst is",
-            "Door de harde wind"
-          ],
-          "answerIndex": 0,
-          "explanationNl": "Gissell zegt: \"gracias a la lluvia de ayer, las hojas tienen colores muy intensos.\" De felle kleuren komen dus door de regen van de vorige dag.",
-          "evidence": {
-            "es": "Gracias a la lluvia de ayer, las hojas tienen colores muy intensos.",
-            "nl": "Dankzij de regen van gisteren hebben de bladeren heel felle kleuren.",
-            "startSec": 279.11,
-            "endSec": 285.01
           }
         }
       ]
@@ -794,6 +892,22 @@
         "startSec": 309.81,
         "endSec": 313.49
       },
+      "contextNl": "De wandeling voert langs een bijzonder meer.",
+      "focusNl": "Luister welke bijzondere plek ze bereiken en wat er dan met het weer gebeurt.",
+      "chunks": [
+        {
+          "es": "seguimos caminando",
+          "nl": "we lopen door",
+          "startSec": 289.67,
+          "endSec": 292.11
+        },
+        {
+          "es": "empieza a llover",
+          "nl": "het begint te regenen",
+          "startSec": 315.17,
+          "endSec": 319.73
+        }
+      ],
       "questions": [
         {
           "type": "mc",
@@ -864,37 +978,54 @@
         "startSec": 335.83,
         "endSec": 338.93
       },
+      "contextNl": "Het begint plotseling te regenen.",
+      "focusNl": "Luister wat Gissell en Dani doen zodra het begint te regenen.",
+      "chunks": [
+        {
+          "es": "¿Qué hacemos?",
+          "nl": "Wat doen we?",
+          "startSec": 327.31,
+          "endSec": 328.65
+        },
+        {
+          "es": "tenemos que buscar refugio",
+          "nl": "we moeten een schuilplaats zoeken",
+          "startSec": 332.41,
+          "endSec": 335.33
+        }
+      ],
       "questions": [
         {
-          "type": "vocabInContext",
-          "vocabId": "el-refugio",
-          "promptNl": "Je hoorde \"Tenemos que buscar refugio\". Wat betekent \"refugio\"?",
+          "type": "mc",
+          "promptNl": "Wat gebeurt er in dit fragment?",
           "choices": [
-            "een kaart",
-            "proviand",
-            "een schuilplaats",
-            "een gids"
+            "Het begint te regenen en ze moeten een schuilplaats zoeken",
+            "De zon breekt door en ze rusten uit",
+            "Ze vinden hun auto meteen terug",
+            "Ze bereiken de top van de vulkaan"
           ],
-          "answerIndex": 2,
-          "explanationNl": "\"Refugio\" is een schuilplaats. Omdat het begint te regenen, moeten Gissell en Dani ergens schuilen.",
+          "answerIndex": 0,
+          "explanationNl": "Dani roept \"¡Está lloviendo!\" en Gissell zegt \"Tenemos que buscar refugio.\" Het gaat regenen en ze moeten schuilen.",
           "evidence": {
-            "es": "Tenemos que buscar refugio…",
-            "nl": "We moeten een schuilplaats zoeken…",
-            "startSec": 332.41,
+            "es": "¿Qué hacemos? Estamos muy lejos del carro… Tenemos que buscar refugio…",
+            "nl": "Wat doen we? We zijn heel ver van de auto… We moeten een schuilplaats zoeken…",
+            "startSec": 327.31,
             "endSec": 335.33
           }
         },
         {
-          "type": "mc",
-          "promptNl": "Wat gebeurt er zodra ze bij het uitkijkpunt aankomen?",
+          "type": "gap",
+          "vocabId": "la-tormenta",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "Llegamos al mirador y justo en ese momento empieza una ___ eléctrica.",
           "choices": [
-            "Er barst een onweer met bliksem los",
-            "De regen houdt op",
-            "Ze vinden hun auto terug",
-            "Ze kunnen om hulp bellen"
+            "tormenta",
+            "lluvia",
+            "mañana",
+            "aventura"
           ],
           "answerIndex": 0,
-          "explanationNl": "Gissell zegt: \"Llegamos al mirador y justo en ese momento empieza una tormenta eléctrica.\" Er begint precies dan een onweer met bliksem.",
+          "explanationNl": "\"Una tormenta eléctrica\" is een onweer met bliksem. Dat begint precies wanneer ze bij het uitkijkpunt aankomen.",
           "evidence": {
             "es": "Llegamos al mirador y justo en ese momento empieza una tormenta eléctrica.",
             "nl": "We komen bij het uitkijkpunt aan en precies op dat moment begint er een onweer met bliksem.",
@@ -935,25 +1066,23 @@
         "startSec": 383.27,
         "endSec": 388.63
       },
-      "questions": [
+      "contextNl": "Gissell en Dani zitten vast in het onweer.",
+      "focusNl": "Luister hoe Gissell en Dani zich voelen terwijl ze vastzitten.",
+      "chunks": [
         {
-          "type": "mc",
-          "promptNl": "Waarom kunnen Gissell en Dani geen hulp inroepen?",
-          "choices": [
-            "Hun telefoons hebben geen bereik",
-            "Ze zijn hun telefoons kwijt",
-            "De batterijen zijn leeg",
-            "Ze weten het alarmnummer niet"
-          ],
-          "answerIndex": 0,
-          "explanationNl": "Gissell zegt: \"El mío tampoco tiene señal… Tenemos que esperar.\" Geen van beide telefoons heeft bereik, dus ze moeten wachten.",
-          "evidence": {
-            "es": "El mío tampoco tiene señal… Tenemos que esperar.",
-            "nl": "De mijne heeft ook geen bereik… We moeten wachten.",
-            "startSec": 371.75,
-            "endSec": 376.67
-          }
+          "es": "pedir ayuda",
+          "nl": "om hulp vragen",
+          "startSec": 364.05,
+          "endSec": 365.47
         },
+        {
+          "es": "no tiene señal",
+          "nl": "heeft geen bereik",
+          "startSec": 366.13,
+          "endSec": 368.17
+        }
+      ],
+      "questions": [
         {
           "type": "mc",
           "promptNl": "Hoe voelen Gissell en Dani zich tijdens het onweer?",
@@ -970,6 +1099,24 @@
             "nl": "We zijn allebei bezorgd… en ook een beetje bang.",
             "startSec": 389.17,
             "endSec": 395.39
+          }
+        },
+        {
+          "type": "mc",
+          "promptNl": "Waarom kunnen Gissell en Dani geen hulp inroepen?",
+          "choices": [
+            "Hun telefoons hebben geen bereik",
+            "Ze zijn hun telefoons kwijt",
+            "De batterijen zijn leeg",
+            "Ze weten het alarmnummer niet"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Gissell zegt: \"El mío tampoco tiene señal… Tenemos que esperar.\" Geen van beide telefoons heeft bereik, dus ze moeten wachten.",
+          "evidence": {
+            "es": "El mío tampoco tiene señal… Tenemos que esperar.",
+            "nl": "De mijne heeft ook geen bereik… We moeten wachten.",
+            "startSec": 371.75,
+            "endSec": 376.67
           }
         }
       ]
@@ -990,26 +1137,23 @@
         "startSec": 421.93,
         "endSec": 424.91
       },
-      "questions": [
+      "contextNl": "Gissell en Dani wachten tot de storm voorbij is.",
+      "focusNl": "Luister hoe Gissell en Dani rustig proberen te blijven tijdens de storm.",
+      "chunks": [
         {
-          "type": "vocabInContext",
-          "vocabId": "asustado",
-          "promptNl": "Je hoorde \"ya no estamos asustados\". Wat betekent \"asustados\"?",
-          "choices": [
-            "moe",
-            "bang / geschrokken",
-            "blij",
-            "hongerig"
-          ],
-          "answerIndex": 1,
-          "explanationNl": "\"Asustado\" betekent bang of geschrokken. Door samen grappige herinneringen op te halen zijn ze niet meer bang: \"ya no estamos asustados.\"",
-          "evidence": {
-            "es": "Hablamos mientras llueve sin parar, pero ya no estamos asustados.",
-            "nl": "We praten terwijl het onophoudelijk regent, maar we zijn niet meer bang.",
-            "startSec": 421.93,
-            "endSec": 428.39
-          }
+          "es": "mantener la calma",
+          "nl": "kalm blijven",
+          "startSec": 409.29,
+          "endSec": 411.17
         },
+        {
+          "es": "el tiempo vuela",
+          "nl": "de tijd vliegt",
+          "startSec": 428.67,
+          "endSec": 430.63
+        }
+      ],
+      "questions": [
         {
           "type": "mc",
           "promptNl": "Wat doen Gissell en Dani om kalm te blijven?",
@@ -1026,6 +1170,26 @@
             "nl": "Om kalm te kunnen blijven begonnen we grappige herinneringen op te halen.",
             "startSec": 408.37,
             "endSec": 415.29
+          }
+        },
+        {
+          "type": "gap",
+          "vocabId": "asustado",
+          "promptNl": "Vul aan wat je hoorde:",
+          "textEs": "Hablamos mientras llueve sin parar, pero ya no estamos ___.",
+          "choices": [
+            "asustados",
+            "contentos",
+            "cansados",
+            "solos"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "\"Asustado\" betekent bang of geschrokken. Door samen grappige herinneringen op te halen zijn ze niet meer bang: \"ya no estamos asustados.\"",
+          "evidence": {
+            "es": "Hablamos mientras llueve sin parar, pero ya no estamos asustados.",
+            "nl": "We praten terwijl het onophoudelijk regent, maar we zijn niet meer bang.",
+            "startSec": 421.93,
+            "endSec": 428.39
           }
         }
       ]
@@ -1056,7 +1220,41 @@
         "startSec": 469.57,
         "endSec": 474.39
       },
+      "contextNl": "Na de storm sluiten ze hun avontuur af.",
+      "focusNl": "Luister wat Gissell en Dani van dit avontuur hebben geleerd.",
+      "chunks": [
+        {
+          "es": "por fin",
+          "nl": "eindelijk",
+          "startSec": 466.31,
+          "endSec": 467.41
+        },
+        {
+          "es": "tomar precauciones",
+          "nl": "voorzorgsmaatregelen nemen",
+          "startSec": 486.07,
+          "endSec": 488.01
+        }
+      ],
       "questions": [
+        {
+          "type": "mc",
+          "promptNl": "Wat hebben Gissell en Dani van dit avontuur geleerd?",
+          "choices": [
+            "Dat je altijd voorzorgsmaatregelen moet nemen en plekken vooraf moet uitzoeken",
+            "Dat wandelen te gevaarlijk is",
+            "Dat ze nooit meer naar het park gaan",
+            "Dat ze een nieuwe auto nodig hebben"
+          ],
+          "answerIndex": 0,
+          "explanationNl": "Gissell zegt: \"ahora sabemos la importancia de siempre tomar precauciones e investigar los lugares que queremos visitar.\" Ze willen voortaan beter voorbereid op pad.",
+          "evidence": {
+            "es": "Ahora sabemos la importancia de siempre tomar precauciones e investigar los lugares que queremos visitar para viajar de forma más segura.",
+            "nl": "Nu kennen we het belang om altijd voorzorgsmaatregelen te nemen en de plekken die we willen bezoeken vooraf uit te zoeken, om veiliger te reizen.",
+            "startSec": 482.73,
+            "endSec": 495.13
+          }
+        },
         {
           "type": "gap",
           "promptNl": "Vul aan wat je hoorde:",
@@ -1074,24 +1272,6 @@
             "nl": "Toen we eindelijk in het centrum van Barva aankwamen, sloten we ons avontuur af met een heerlijke pizza.",
             "startSec": 466.03,
             "endSec": 474.39
-          }
-        },
-        {
-          "type": "mc",
-          "promptNl": "Wat hebben Gissell en Dani van dit avontuur geleerd?",
-          "choices": [
-            "Dat je altijd voorzorgsmaatregelen moet nemen en plekken vooraf moet uitzoeken",
-            "Dat wandelen te gevaarlijk is",
-            "Dat ze nooit meer naar het park gaan",
-            "Dat ze een nieuwe auto nodig hebben"
-          ],
-          "answerIndex": 0,
-          "explanationNl": "Gissell zegt: \"ahora sabemos la importancia de siempre tomar precauciones e investigar los lugares que queremos visitar.\" Ze willen voortaan beter voorbereid op pad.",
-          "evidence": {
-            "es": "Ahora sabemos la importancia de siempre tomar precauciones e investigar los lugares que queremos visitar para viajar de forma más segura.",
-            "nl": "Nu kennen we het belang om altijd voorzorgsmaatregelen te nemen en de plekken die we willen bezoeken vooraf uit te zoeken, om veiliger te reizen.",
-            "startSec": 482.73,
-            "endSec": 495.13
           }
         }
       ]
@@ -1112,6 +1292,22 @@
         "startSec": 505.67,
         "endSec": 511.13
       },
+      "contextNl": "Rodrigo blikt terug op het avontuur.",
+      "focusNl": "Luister hoe Rodrigo het avontuur van Gissell en Dani samenvat.",
+      "chunks": [
+        {
+          "es": "por suerte",
+          "nl": "gelukkig / met geluk",
+          "startSec": 503.07,
+          "endSec": 504.35
+        },
+        {
+          "es": "seguir haciendo senderismo",
+          "nl": "blijven wandelen",
+          "startSec": 513.85,
+          "endSec": 516.09
+        }
+      ],
       "questions": [
         {
           "type": "mc",
